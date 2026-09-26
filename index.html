@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <title>Gaming — Premium Laptops & Gaming Gear</title>
+  <style>
+    :root {
+      --primary-50: #eef4ff; --primary-100: #d9e6ff; --primary-200: #bcd3ff; --primary-300: #8eb5ff; --primary-400: #598dff; --primary-500: #3366ff; --primary-600: #1a47e6; --primary-700: #1538b8; --primary-800: #142f8f; --primary-900: #142b72;
+      --accent-50: #e6fffa; --accent-100: #b2f5e0; --accent-200: #81e6c9; --accent-300: #4fd1b5; --accent-400: #2bc7a5; --accent-500: #14a88f; --accent-600: #0d8773; --accent-700: #0a6b5c;
+      --warning-400: #fbbf24; --warning-500: #f59e0b; --error-400: #f87171; --error-500: #ef4444; --success-400: #34d399; --success-500: #10b981;
+      --font-display: 'Space Grotesk', 'Cairo', sans-serif;
+      --font-body: 'Inter', 'Cairo', sans-serif;
+      --glass-blur: 20px;
+      --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2rem; --space-5: 2.5rem; --space-6: 3rem; --space-8: 4rem;
+      --radius-sm: 0.5rem; --radius-md: 1rem; --radius-lg: 1.5rem; --radius-xl: 2rem; --radius-2xl: 2.5rem; --radius-full: 9999px;
+      --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1); --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1); --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Dark Theme (Default) */
+    body.dark {
+      --neutral-0: #ffffff; --neutral-50: #f8fafc; --neutral-100: #f1f5f9; --neutral-200: #e2e8f0; --neutral-300: #cbd5e1; --neutral-400: #94a3b8; --neutral-500: #64748b; --neutral-600: #475569; --neutral-700: #334155; --neutral-800: #1e293b; --neutral-900: #0f172a; --neutral-950: #020617;
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --glass-bg-strong: rgba(255, 255, 255, 0.12);
+      --glass-border: rgba(255, 255, 255, 0.18);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12); --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.18); --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.25); --shadow-glow: 0 0 40px rgba(51, 102, 255, 0.3);
+      background: var(--neutral-950);
+      color: var(--neutral-100);
+    }
+
+    /* Light Theme */
+    body.light {
+      --neutral-0: #0f172a; --neutral-50: #1e293b; --neutral-100: #1e293b; --neutral-200: #334155; --neutral-300: #475569; --neutral-400: #64748b; --neutral-500: #94a3b8; --neutral-600: #cbd5e1; --neutral-700: #e2e8f0; --neutral-800: #f1f5f9; --neutral-900: #f8fafc; --neutral-950: #ffffff;
+      --glass-bg: rgba(0, 0, 0, 0.04);
+      --glass-bg-strong: rgba(0, 0, 0, 0.08);
+      --glass-border: rgba(0, 0, 0, 0.1);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06); --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08); --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12); --shadow-glow: 0 0 40px rgba(51, 102, 255, 0.15);
+      background: var(--neutral-950);
+      color: var(--neutral-100);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); overflow-x: hidden; line-height: 1.5; -webkit-font-smoothing: antialiased; transition: background 0.3s, color 0.3s; }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    img { max-width: 100%; display: block; }
+    
+    .bg-animated { position: fixed; inset: 0; z-index: -2; background: radial-gradient(ellipse at 20% 0%, rgba(51, 102, 255, 0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 50%, rgba(20, 168, 143, 0.12) 0%, transparent 50%), var(--neutral-950); }
+    .bg-blobs { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+    .bg-blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.4; animation: float 20s ease-in-out infinite; }
+    .bg-blob-1 { width: 500px; height: 500px; background: radial-gradient(circle, var(--primary-500), transparent 70%); top: -10%; left: -5%; }
+    .bg-blob-2 { width: 600px; height: 600px; background: radial-gradient(circle, var(--accent-500), transparent 70%); bottom: -15%; right: -10%; }
+    @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(30px, -40px) scale(1.05); } 66% { transform: translate(-20px, 30px) scale(0.95); } }
+    
+    .glass { 
+      background: var(--glass-bg); 
+      backdrop-filter: blur(var(--glass-blur)); 
+      -webkit-backdrop-filter: blur(var(--glass-blur)); 
+      border: 1px solid var(--glass-border); 
+      border-radius: var(--radius-lg); 
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-strong { background: var(--glass-bg-strong); backdrop-filter: blur(var(--glass-blur)); -webkit-backdrop-filter: blur(var(--glass-blur)); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 var(--space-4); }
+    
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-1); padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); font-weight: 500; font-size: 1rem; transition: all var(--transition-base); white-space: nowrap; }
+    .btn-primary { background: linear-gradient(135deg, var(--primary-500), var(--primary-600)); color: white; box-shadow: var(--shadow-glow); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(51, 102, 255, 0.5), var(--shadow-md); }
+    .btn-glass { background: var(--glass-bg); backdrop-filter: blur(var(--glass-blur)); border: 1px solid var(--glass-border); color: var(--neutral-100); }
+    .btn-glass:hover { background: var(--glass-bg-strong); transform: translateY(-2px); }
+    
+    .lang-switcher { display: flex; gap: 0.25rem; padding: 0.25rem; border-radius: var(--radius-full); background: var(--glass-bg); backdrop-filter: blur(var(--glass-blur)); border: 1px solid var(--glass-border); }
+    .lang-btn { padding: 0.35rem 0.75rem; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 600; color: var(--neutral-300); transition: all var(--transition-fast); }
+    .lang-btn.active { background: var(--primary-500); color: white; box-shadow: var(--shadow-sm); }
+    .lang-btn:hover:not(.active) { color: var(--neutral-0); background: rgba(255, 255, 255, 0.05); }
+
+    /* CORNER VIDEO-STYLE GLASS TOGGLE SWITCH */
+    .corner-toggle-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+    .glass-toggle {
+      display: flex;
+      align-items: center;
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-full);
+      padding: 4px;
+      cursor: pointer;
+      position: relative;
+      width: 100px;
+      height: 42px;
+      transition: all var(--transition-base);
+      box-shadow: var(--shadow-md);
+    }
+    .glass-toggle-thumb {
+      position: absolute;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--glass-bg-strong);
+      border: 1px solid var(--glass-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s;
+      color: var(--neutral-0);
+      z-index: 2;
+    }
+    .glass-toggle.dark-mode .glass-toggle-thumb {
+      transform: translateX(58px);
+    }
+    .glass-toggle.light-mode .glass-toggle-thumb {
+      transform: translateX(0px);
+    }
+    .glass-toggle-labels {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--neutral-400);
+      user-select: none;
+      z-index: 1;
+    }
+
+    .section-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; text-align: center; margin-bottom: var(--space-2); background: linear-gradient(135deg, var(--neutral-0), var(--neutral-300)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .section-subtitle { text-align: center; color: var(--neutral-400); font-size: 1.125rem; max-width: 600px; margin: 0 auto var(--space-8); line-height: 1.6; }
+    
+    /* NAVBAR */
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.5rem 0; transition: all var(--transition-base); }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.5rem; border-radius: var(--radius-full); }
+    .brand { display: flex; align-items: center; gap: 0.5rem; }
+    .brand-logo { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-500), var(--accent-500)); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); color: white; font-weight: 700; }
+    .brand-name { font-weight: 700; font-size: 1.25rem; color: var(--neutral-0); }
+    .nav-desktop-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-link { color: var(--neutral-300); font-size: 0.9rem; font-weight: 500; display: flex; align-items: center; gap: 0.4rem; transition: color var(--transition-fast); cursor: pointer; }
+    .nav-link:hover, .nav-link.active { color: var(--primary-400); }
+    .navbar-actions { display: flex; gap: 1rem; align-items: center; }
+
+    /* SEARCH BAR */
+    .search-container { display: flex; justify-content: center; align-items: center; flex: 1; max-width: 400px; margin: 0 1.5rem; }
+    .search-input-wrapper { position: relative; width: 100%; border-radius: var(--radius-full); padding: 2px; background: linear-gradient(0deg, #ff0055, #00ffff, #ff0055); background-size: 200% 200%; animation: rotateLed 3s linear infinite; }
+    @keyframes rotateLed {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .search-inner-box { position: relative; width: 100%; border-radius: var(--radius-full); background: var(--neutral-900); display: flex; align-items: center; }
+    .search-input { width: 100%; padding: 0.5rem 1rem 0.5rem 2.5rem; border-radius: var(--radius-full); background: transparent; border: none; color: var(--neutral-0); font-size: 0.9rem; outline: none; }
+    .search-icon { position: absolute; top: 50%; transform: translateY(-50%); inset-inline-start: 0.8rem; color: var(--neutral-400); pointer-events: none; }
+
+    /* HERO SECTION */
+    .hero-carousel-section { padding: 9rem 0 3rem; perspective: 1000px; overflow: hidden; position: relative; }
+    
+    .gaming-glass-hero {
+      max-width: 1100px;
+      margin: 0 auto 3rem auto;
+      padding: 3rem 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gaming-glass-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(51, 102, 255, 0.15), transparent 70%);
+      pointer-events: none;
+    }
+
+    .gaming-main-title {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--neutral-0) 30%, var(--primary-400) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .gaming-gears-chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .gear-chip {
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-full);
+      background: var(--glass-bg-strong);
+      border: 1px solid var(--glass-border);
+      color: var(--neutral-100);
+      font-weight: 600;
+      font-size: 0.95rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .gear-chip:hover {
+      background: var(--primary-500);
+      border-color: var(--primary-400);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .carousel-3d-container { display: flex; justify-content: center; align-items: center; height: 300px; position: relative; transform-style: preserve-3d; animation: carouselRotate 25s linear infinite; }
+    @keyframes carouselRotate {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
+    .carousel-3d-item {
+      position: absolute;
+      width: 240px;
+      height: 160px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--shadow-lg);
+      background: var(--neutral-900);
+      transform-style: preserve-3d;
+    }
+    .carousel-3d-item img { width: 100%; height: 100%; object-fit: cover; }
+    
+    .carousel-3d-item:nth-child(1) { transform: rotateY(0deg) translateZ(280px); }
+    .carousel-3d-item:nth-child(2) { transform: rotateY(60deg) translateZ(280px); }
+    .carousel-3d-item:nth-child(3) { transform: rotateY(120deg) translateZ(280px); }
+    .carousel-3d-item:nth-child(4) { transform: rotateY(180deg) translateZ(280px); }
+    .carousel-3d-item:nth-child(5) { transform: rotateY(240deg) translateZ(280px); }
+    .carousel-3d-item:nth-child(6) { transform: rotateY(300deg) translateZ(280px); }
+
+    /* PRODUCTS SECTION */
+    .products-section { padding: 3rem 0 5rem; }
+    .products-glass-container {
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-2xl);
+      padding: 3rem 2rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    
+    .section-icon-wrapper { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 1rem; }
+    .section-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    
+    @keyframes spinInTop {
+      0% { opacity: 0; transform: translateY(-50px) rotate(-10deg) scale(0.8); }
+      100% { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+    }
+    .product-card { 
+      border-radius: var(--radius-lg); 
+      overflow: hidden; 
+      transition: all var(--transition-base); 
+      display: flex; 
+      flex-direction: column; 
+      background: var(--glass-bg-strong); 
+      position: relative;
+    }
+    
+    .product-card.clicked-led {
+      border-color: #00ffff !important;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.7), inset 0 0 15px rgba(0, 255, 255, 0.4);
+    }
+
+    .product-card.just-added {
+      animation: spinInTop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      border-color: var(--primary-400);
+      box-shadow: var(--shadow-glow);
+    }
+    .product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: rgba(51, 102, 255, 0.3); }
+    
+    .product-image-wrapper { position: relative; overflow: hidden; aspect-ratio: 16 / 10; background: var(--neutral-900); }
+    .product-image { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); cursor: pointer; }
+    .product-card:hover .product-image { transform: scale(1.08); }
+    .product-badge { position: absolute; top: 1rem; inset-inline-start: 1rem; padding: 0.35rem 0.875rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600; color: white; z-index: 2; }
+    
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 0.2s, background 0.2s;
+    }
+    .product-image-wrapper:hover .slider-arrow { opacity: 1; }
+    .slider-arrow:hover { background: var(--primary-500); }
+    .slider-arrow.prev { left: 8px; }
+    .slider-arrow.next { right: 8px; }
+
+    .product-content { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; flex: 1; position: relative; z-index: 1; }
+    .product-rating { display: flex; align-items: center; gap: 0.4rem; }
+    .product-rating-number { color: var(--neutral-200); font-size: 0.875rem; }
+    .product-name { font-size: 1.25rem; font-weight: 600; color: var(--neutral-0); cursor: pointer; transition: color 0.2s; }
+    .product-name:hover { color: var(--primary-400); }
+    .product-specs { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .product-spec { padding: 0.25rem 0.625rem; border-radius: var(--radius-sm); font-size: 0.75rem; color: var(--neutral-300); background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .product-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 0.75rem; }
+    .product-prices { display: flex; align-items: baseline; gap: 0.5rem; }
+    .product-price { font-size: 1.5rem; font-weight: 700; color: var(--neutral-0); }
+    .product-old-price { font-size: 1rem; font-weight: 500; color: var(--neutral-400); text-decoration: line-through; }
+    
+    /* MODALS */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(2, 6, 23, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+    
+    /* LOGIN GLASS CARD */
+    .login-glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid var(--glass-border);
+      padding: 2.5rem;
+      border-radius: var(--radius-2xl);
+      width: 100%;
+      max-width: 420px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      color: var(--neutral-100);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .login-title { font-size: 2rem; font-weight: 700; color: var(--neutral-0); }
+    .login-subtitle { font-size: 0.9rem; color: var(--neutral-400); margin-top: -0.75rem; }
+    .input-group { position: relative; width: 100%; }
+    .login-input {
+      width: 100%;
+      padding: 0.9rem 1rem 0.9rem 2.75rem;
+      border-radius: var(--radius-full);
+      background: var(--glass-bg-strong);
+      border: 1px solid var(--glass-border);
+      color: var(--neutral-0);
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .login-input:focus { border-color: var(--primary-400); box-shadow: var(--shadow-glow); }
+    .login-input-icon { position: absolute; top: 50%; transform: translateY(-50%); inset-inline-start: 1rem; color: var(--neutral-400); pointer-events: none; }
+    .remember-row { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--neutral-300); cursor: pointer; }
+    .remember-checkbox { width: 18px; height: 18px; accent-color: var(--success-500); cursor: pointer; }
+    .login-submit-btn {
+      width: 100%;
+      padding: 0.9rem;
+      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, var(--success-500), var(--accent-500));
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .login-submit-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-glow); }
+    .signup-prompt { text-align: center; font-size: 0.85rem; color: var(--neutral-400); }
+    .signup-link { color: var(--neutral-0); font-weight: 600; text-decoration: underline; cursor: pointer; }
+    .login-footer-sig { text-align: center; font-size: 0.75rem; color: var(--neutral-500); margin-top: 0.5rem; }
+
+    .modal-content { background: var(--neutral-900); border: 1px solid var(--glass-border); padding: 2.5rem; border-radius: var(--radius-xl); width: 100%; max-width: 500px; box-shadow: var(--shadow-lg); position: relative; color: var(--neutral-100); }
+    .admin-form { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+    .admin-input { padding: 0.8rem 1rem; border-radius: var(--radius-md); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--neutral-0); font-family: inherit; font-size: 0.95rem; }
+    .admin-input:focus { border-color: var(--primary-400); outline: none; }
+    .close-modal { position: absolute; top: 1.2rem; inset-inline-end: 1.2rem; color: var(--neutral-400); cursor: pointer; font-size: 1.2rem; z-index: 10; }
+
+    .footer { padding: 4rem 0 2rem; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+    
+    @media (max-width: 900px) {
+      .nav-desktop-links { display: none; }
+      .search-container { max-width: 100%; margin: 0.5rem 0; order: 3; width: 100%; }
+      .navbar-inner { flex-wrap: wrap; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .products-glass-container { padding: 1.5rem 1rem; }
+    }
+  </style>
+</head>
+<body class="dark">
+  <div class="bg-animated"></div>
+  <div class="bg-blobs">
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+  </div>
+
+  <!-- CORNER VIDEO-STYLE GLASS TOGGLE SWITCH (سووچەی گۆشەی سەرەوەی ڕاست) -->
+  <div class="corner-toggle-container">
+    <div 
+      class={`glass-toggle ${theme === 'dark' ? 'dark-mode' : 'light-mode'}`}
+      onClick={toggleTheme}
+      title="Toggle Theme"
+      id="cornerToggle"
+    >
+      <div class="glass-toggle-thumb">
+        <i data-lucide={theme === 'dark' ? 'moon' : 'sun'} style={{ width: 16, height: 16, strokeWidth: 2 }}></i>
+      </div>
+      <div class="glass-toggle-labels">
+        <span>Dark</span>
+        <span>Light</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="root"></div>
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script type="text/babel">
+    const { useEffect, useState } = React;
+
+    const translations = {
+      ku: {
+        navAll: 'هەمووی',
+        navLaptop: 'لاپتۆپ',
+        navMouse: 'ماوس',
+        navKeyboard: 'کیبۆرد',
+        navCase: 'کەیس',
+        navHeadset: 'هێتسێت',
+        navGaming: 'گەیمینگ',
+        navConsole: 'کونسوڵ',
+        navAdmin: 'بەڕێوەبەر',
+        navLogin: 'چوونەژوورەوە',
+        shopNow: 'سەبەتە',
+        productsTitle: 'بەرهەمەکانمان',
+        productsSub: 'باشترین ئامێر و کەلوپەلی پێشکەوتوو بۆ پێویستییەکانت.',
+        searchPlaceholder: 'گەڕان بەدوای بەرهەمەکاندا...',
+        loginTitle: 'چوونەژوورەوە',
+        loginSub: 'بەخێراییەوە بێگێڕەوە، تکایە بۆ هەژمارەکەت بچۆ ژوورەوە',
+        usernamePlaceholder: 'ناوی بەکارهێنەر',
+        passwordPlaceholder: 'وشەی تێپەڕ',
+        rememberMe: 'بیرمبێنەوە',
+        loginActionBtn: 'چوونەژوورەوە',
+        noAccount: 'هەژمارت نییە؟ خۆت تۆمارکە',
+        adminModalTitle: 'چوونەژوورەوەی بەڕێوەبەر',
+        adminPasswordLabel: 'رەمزی بەڕێوەبەر بنووسە',
+        loginBtn: 'چوونەژوورەوە',
+        adminDashboardTitle: 'پەڕەی بەڕێوەبەر (بەڕێوەبردنی بەرهەمەکان)',
+        productNamePlaceholder: 'ناوی بەرهەم',
+        productPricePlaceholder: 'نرخی ئێستا ($)',
+        productOldPricePlaceholder: 'نرخی پێشوو (کۆن) ($)',
+        productSpecsPlaceholder: 'موسەفات (بە کۆما لێکجیان بکەرەوە وەکو: Mechanical, RGB)',
+        uploadImagesLabel: 'بارکردنی وێنەکان (تاوەکو ٥ وێنە)',
+        positionLabel: 'شوێنی بەرهەم لە ماڵپەڕدا:',
+        posTop: 'باکگراوندی سەرەوە (هێرۆ / سەرەکی)',
+        posNormal: 'لە ناو لیستەی بەرهەمەکانی خوارەوە',
+        addProductBtn: 'زیادکردنی بەرهەم بۆ ماڵپەڕ',
+        wrongPassword: 'رەمزەکە هەڵەیە! تکایە دووبارە هەوڵ بدەرەوە.',
+        cartTitle: 'سەبەتەی کڕین و داواکاری',
+        fullNameLabel: 'ناوی تەواو',
+        addressLabel: 'شوێن (ناونیشان)',
+        phoneLabel: 'ژمارەی مۆبایل',
+        confirmOrder: 'ناردنی داواکاری',
+        orderSuccess: 'داواکارییەکەت بە سەرکەوتوویی نێردرا!',
+        emptyCart: 'سەبەتەکەت بەتاڵە',
+        footerDesc: 'مەنزڵی متمانەپێکراوی تۆ بۆ لاپتۆپی پێشکەوتوو و کەرەستەی یارییکردن.',
+        rights: '© ٢٠٢٦ Gaming. هەموو مافەکان پارێزراون.',
+        deleteProduct: 'سڕینەوە',
+        specsTitle: 'تایبەتمەندییەکان و مواسەفات',
+        categoryLabel: 'پۆلێن',
+        addToCart: 'زیادکردن بۆ سەبەتە',
+        heroSub: 'کیبۆرد • ماوس • لاپتۆپ • کەیس • گەیمینگ • کونسوڵ • هێتسێت'
+      },
+      ar: {
+        navAll: 'الكل',
+        navLaptop: 'لابتوب',
+        navMouse: 'ماوس',
+        navKeyboard: 'كيبورد',
+        navCase: 'كيس',
+        navHeadset: 'هێتسێت',
+        navGaming: 'ألعاب',
+        navConsole: 'كونسول',
+        navAdmin: 'المدير',
+        navLogin: 'دخول',
+        shopNow: 'السلة',
+        productsTitle: 'منتجاتنا',
+        productsSub: 'أفضل الأجهزة والمعدات المتطورة لتلبية احتياجاتك.',
+        searchPlaceholder: 'ابحث عن المنتجات...',
+        loginTitle: 'تسجيل الدخول',
+        loginSub: 'مرحباً بعودتك، يرجى تسجيل الدخول لحسابك',
+        usernamePlaceholder: 'اسم المستخدم',
+        passwordPlaceholder: 'كلمة المرور',
+        rememberMe: 'تذكرني',
+        loginActionBtn: 'دخول',
+        noAccount: 'ليس لديك حساب؟ تسجيل',
+        adminModalTitle: 'تسجيل دخول المدير',
+        adminPasswordLabel: 'أدخل رمز المرور للمدير',
+        loginBtn: 'دخول',
+        adminDashboardTitle: 'لوحة التحكم (إدارة المنتجات)',
+        productNamePlaceholder: 'اسم المنتج',
+        productPricePlaceholder: 'السعر الحالي ($)',
+        productOldPricePlaceholder: 'السعر السابق ($)',
+        productSpecsPlaceholder: 'المواصفات (مفصولة بفاصلة)',
+        uploadImagesLabel: 'رفع الصور (حتى 5 صور)',
+        positionLabel: 'موقع المنتج في الموقع:',
+        posTop: 'خلفية الأعلى (القسم الرئيسي)',
+        posNormal: 'في قائمة المنتجات بالأسفل',
+        addProductBtn: 'إضافة المنتج للموقع',
+        wrongPassword: 'كلمة المرور غير صحيحة! حاول مرة أخرى.',
+        cartTitle: 'سلة التسوق وإتمام الطلب',
+        fullNameLabel: 'الاسم الكامل',
+        addressLabel: 'العنوان (الموقع)',
+        phoneLabel: 'رقم الهاتف',
+        confirmOrder: 'تأكيد الطلب',
+        orderSuccess: 'تم إرسال طلبك بنجاح!',
+        emptyCart: 'السلة فارغة',
+        footerDesc: 'وجهتك الموثوقة لأجهزة اللابتوب الفاخرة ومعدات الألعاب.',
+        rights: '© 2026 Gaming. جميع الحقوق محفوظة.',
+        deleteProduct: 'حذف',
+        specsTitle: 'المواصفات والتفاصيل',
+        categoryLabel: 'الفئة',
+        addToCart: 'إضافة إلى السلة',
+        heroSub: 'كيبورد • ماوس • لابتوب • كيس • ألعاب • كونسول • هێتسێت'
+      },
+      en: {
+        navAll: 'All',
+        navLaptop: 'Laptop',
+        navMouse: 'Mouse',
+        navKeyboard: 'Keyboard',
+        navCase: 'Case',
+        navHeadset: 'Headset',
+        navGaming: 'Gaming',
+        navConsole: 'Console',
+        navAdmin: 'Admin',
+        navLogin: 'Login',
+        shopNow: 'Cart',
+        productsTitle: 'Our Products',
+        productsSub: 'Top-tier devices and pro-grade gear designed for your workflow.',
+        searchPlaceholder: 'Search products...',
+        loginTitle: 'Login',
+        loginSub: 'Welcome back please login to your account',
+        usernamePlaceholder: 'User Name',
+        passwordPlaceholder: 'Password',
+        rememberMe: 'Remember me',
+        loginActionBtn: 'Login',
+        noAccount: "Don't have an account? Signup",
+        adminModalTitle: 'Admin Login',
+        adminPasswordLabel: 'Enter Admin Password',
+        loginBtn: 'Login',
+        adminDashboardTitle: 'Admin Dashboard (Manage Products)',
+        productNamePlaceholder: 'Product Name',
+        productPricePlaceholder: 'Current Price ($)',
+        productOldPricePlaceholder: 'Old Price ($)',
+        productSpecsPlaceholder: 'Specs (comma separated)',
+        uploadImagesLabel: 'Upload Images (Up to 5)',
+        positionLabel: 'Product Position:',
+        posTop: 'Top Hero Background/Carousel',
+        posNormal: 'Bottom Products List',
+        addProductBtn: 'Add Product to Store',
+        wrongPassword: 'Wrong password! Try again.',
+        cartTitle: 'Shopping Cart & Checkout',
+        fullNameLabel: 'Full Name',
+        addressLabel: 'Address / Location',
+        phoneLabel: 'Phone Number',
+        confirmOrder: 'Confirm Order',
+        orderSuccess: 'Order placed successfully!',
+        emptyCart: 'Your cart is empty',
+        footerDesc: 'Your trusted destination for premium laptops and gaming gear.',
+        rights: '© 2026 Gaming. All rights reserved.',
+        deleteProduct: 'Delete',
+        specsTitle: 'Product Specifications',
+        categoryLabel: 'Category',
+        addToCart: 'Add to Cart',
+        heroSub: 'Keyboard • Mouse • Laptop • Case • Gaming • Console • Headset'
+      }
+    };
+
+    function Icon({ name, size = 20, strokeWidth = 2 }) {
+      useEffect(() => { if (window.lucide) { window.lucide.createIcons(); } });
+      return <i data-lucide={name} style={{ width: size, height: size, strokeWidth: strokeWidth }} />;
+    }
+
+    function App() {
+      const [lang, setLang] = useState('ku');
+      const [theme, setTheme] = useState('dark');
+      const t = translations[lang];
+
+      const [searchQuery, setSearchQuery] = useState('');
+      const [selectedCategory, setSelectedCategory] = useState('All');
+      const [clickedProductId, setClickedProductId] = useState(null);
+
+      const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+      const [loginUser, setLoginUser] = useState('');
+      const [loginPass, setLoginPass] = useState('');
+
+      const [isAdminOpen, setIsAdminOpen] = useState(false);
+      const [passwordInput, setPasswordInput] = useState('');
+      const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
+
+      const [isCartOpen, setIsCartOpen] = useState(false);
+      const [cartItems, setCartItems] = useState([]);
+      const [fullName, setFullName] = useState('');
+      const [address, setAddress] = useState('');
+      const [phone, setPhone] = useState('');
+
+      const [selectedProductDetails, setSelectedProductDetails] = useState(null);
+
+      const [newTitle, setNewTitle] = useState('');
+      const [newPrice, setNewPrice] = useState('');
+      const [newOldPrice, setNewOldPrice] = useState('');
+      const [newSpecs, setNewSpecs] = useState('');
+      const [newCategory, setNewCategory] = useState('Laptop');
+      const [newImages, setNewImages] = useState([]);
+      const [newPosition, setNewPosition] = useState('normal');
+
+      const [carouselImages, setCarouselImages] = useState([
+        'https://images.pexels.com/photos/8533587/pexels-photo-8533587.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+        'https://images.pexels.com/photos/943596/pexels-photo-943596.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+        'https://images.pexels.com/photos/7858742/pexels-photo-7858742.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+        'https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+        'https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+        'https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'
+      ]);
+
+      const [products, setProducts] = useState([
+        { id: 1, name: 'ProBook X1 Ultra', category: 'Laptop', price: 2499, oldPrice: 2899, images: ['https://images.pexels.com/photos/8533587/pexels-photo-8533587.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', 'https://images.pexels.com/photos/943596/pexels-photo-943596.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 4.9, badge: 'Best Seller', specs: [ 'Intel Core i9', '32GB RAM', '1TB SSD', '16" Retina' ], justAdded: false },
+        { id: 2, name: 'AirSlim 14', category: 'Laptop', price: 1299, oldPrice: 1499, images: ['https://images.pexels.com/photos/943596/pexels-photo-943596.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 4.7, badge: 'New', specs: [ 'Apple M3', '16GB RAM', '512GB SSD', '14" Display' ], justAdded: false },
+        { id: 3, name: 'RGB Battle Station', category: 'Gaming', price: 3499, oldPrice: 3999, images: ['https://images.pexels.com/photos/7858742/pexels-photo-7858742.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 5.0, badge: 'Top Rated', specs: [ 'Curved 34" Monitor', 'RGB Keyboard', 'Gaming Mouse', 'LED Lighting' ], justAdded: false },
+        { id: 4, name: 'Pro Wireless Mouse', category: 'Mouse', price: 89, oldPrice: 119, images: ['https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 4.8, badge: 'Popular', specs: [ '25k DPI', 'Ultra Lightweight', 'Wireless' ], justAdded: false },
+        { id: 5, name: 'Mechanic RGB Keyboard V3', category: 'Keyboard', price: 129, oldPrice: 159, images: ['https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 4.9, badge: 'Hot', specs: [ 'Mechanical Switches', 'RGB Backlight', 'Aluminum Frame', 'Hot-Swappable' ], justAdded: false },
+        { id: 6, name: 'Cyberpunk Gaming Case X', category: 'Case', price: 199, oldPrice: 249, images: ['https://images.pexels.com/photos/792345/pexels-photo-792345.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 4.9, badge: 'New', specs: [ 'Tempered Glass', 'ARGB Fans Included', 'E-ATX Support', 'Vertical GPU Mount' ], justAdded: false },
+        { id: 7, name: 'Immersive Headset 7.1', category: 'Headset', price: 149, oldPrice: 199, images: ['https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 4.9, badge: 'Hi-Fi', specs: [ '7.1 Surround', 'Noise Canceling', 'RGB Mic' ], justAdded: false },
+        { id: 8, name: 'NextGen Console X', category: 'Console', price: 499, oldPrice: 599, images: ['https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 4.9, badge: 'Hot', specs: [ '4K Gaming', '1TB SSD', 'Ray Tracing' ], justAdded: false }
+      ]);
+
+      const [activeImageIndices, setActiveImageIndices] = useState({});
+
+      const handleProductClick = (prod) => {
+        setClickedProductId(prod.id);
+        setSelectedProductDetails(prod);
+      };
+
+      const handleNextImage = (e, prod) => {
+        e.stopPropagation();
+        const currentIndex = activeImageIndices[prod.id] || 0;
+        const nextIndex = (currentIndex + 1) % prod.images.length;
+        setActiveImageIndices(prev => ({ ...prev, [prod.id]: nextIndex }));
+      };
+
+      const handlePrevImage = (e, prod) => {
+        e.stopPropagation();
+        const currentIndex = activeImageIndices[prod.id] || 0;
+        const prevIndex = (currentIndex - 1 + prod.images.length) % prod.images.length;
+        setActiveImageIndices(prev => ({ ...prev, [prod.id]: prevIndex }));
+      };
+
+      useEffect(() => {
+        document.documentElement.setAttribute('dir', lang === 'en' ? 'ltr' : 'rtl');
+        document.documentElement.setAttribute('lang', lang);
+        document.body.className = theme;
+        if (window.lucide) { window.lucide.createIcons(); }
+      }, [lang, theme]);
+
+      const toggleTheme = () => {
+        setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+      };
+
+      const handleLoginSubmit = (e) => {
+        e.preventDefault();
+        alert('بە سەرکەوتوویی چوویتە ژوورەوە!');
+        setIsLoginModalOpen(false);
+        setLoginUser('');
+        setLoginPass('');
+      };
+
+      const handleAdminLogin = (e) => {
+        e.preventDefault();
+        if (passwordInput === '1234') {
+          setIsAdminLoggedIn(true);
+          setPasswordInput('');
+        } else {
+          alert(t.wrongPassword);
+        }
+      };
+
+      const handleImageUpload = (e) => {
+        const files = Array.from(e.target.files);
+        const readers = files.map(file => {
+          return new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onload = (uploadEvent) => resolve(uploadEvent.target.result);
+            reader.readAsDataURL(file);
+          });
+        });
+
+        Promise.all(readers).then(imagesBase64 => {
+          setNewImages(imagesBase64);
+        });
+      };
+
+      const handleAddProductSubmit = (e) => {
+        e.preventDefault();
+        if (!newTitle || !newPrice || newImages.length === 0) return;
+
+        const parsedSpecs = newSpecs ? newSpecs.split(',').map(s => s.trim()).filter(Boolean) : [newCategory, 'High Performance'];
+
+        const newProdObj = {
+          id: Date.now(),
+          name: newTitle,
+          category: newCategory,
+          price: Number(newPrice),
+          oldPrice: newOldPrice ? Number(newOldPrice) : Number(newPrice) + 150,
+          images: newImages,
+          rating: 5.0,
+          badge: newPosition === 'top' ? 'Hero BG' : 'New',
+          specs: parsedSpecs,
+          justAdded: true
+        };
+
+        if (newPosition === 'top') {
+          setCarouselImages(prev => [newImages[0], ...prev]);
+        }
+
+        setProducts([newProdObj, ...products]);
+        setNewTitle('');
+        setNewPrice('');
+        setNewOldPrice('');
+        setNewSpecs('');
+        setNewImages([]);
+        setNewPosition('normal');
+      };
+
+      const handleDeleteProduct = (id) => {
+        setProducts(products.filter(p => p.id !== id));
+      };
+
+      const handleAddToCart = (prod) => {
+        setCartItems(prev => {
+          const existingIndex = prev.findIndex(item => item.product.id === prod.id);
+          if (existingIndex > -1) {
+            const updated = [...prev];
+            updated[existingIndex].quantity += 1;
+            return updated;
+          } else {
+            return [...prev, { product: prod, quantity: 1 }];
+          }
+        });
+        setIsCartOpen(true);
+      };
+
+      const handleIncreaseQty = (prodId) => {
+        setCartItems(prev => prev.map(item => {
+          if (item.product.id === prodId) {
+            return { ...item, quantity: item.quantity + 1 };
+          }
+          return item;
+        }));
+      };
+
+      const handleDecreaseQty = (prodId) => {
+        setCartItems(prev => prev.map(item => {
+          if (item.product.id === prodId && item.quantity > 1) {
+            return { ...item, quantity: item.quantity - 1 };
+          }
+          return item;
+        }).filter(item => item.quantity > 0));
+      };
+
+      const handleRemoveFromCart = (prodId) => {
+        setCartItems(prev => prev.filter(item => item.product.id !== prodId));
+      };
+
+      const handleCheckout = (e) => {
+        e.preventDefault();
+        if(!fullName || !address || !phone) {
+          alert('تکایە سەرجەم خانەکان پڕبکەوە (ناوی تەواو، شوێن، ژمارەی مۆبایل)');
+          return;
+        }
+        alert(t.orderSuccess);
+        setCartItems([]);
+        setFullName('');
+        setAddress('');
+        setPhone('');
+        setIsCartOpen(false);
+      };
+
+      const filteredProducts = products.filter(p => {
+        const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesCat = selectedCategory === 'All' || p.category.toLowerCase() === selectedCategory.toLowerCase();
+        return matchesSearch && matchesCat;
+      });
+
+      const totalCartItemsCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
+      return (
+        <>
+          {/* NAVBAR */}
+          <nav className="navbar">
+            <div className="container">
+              <div className="glass navbar-inner">
+                <a href="#" className="brand">
+                  <div className="brand-logo"><span>G</span></div>
+                  <span className="brand-name">Gaming</span>
+                </a>
+
+                <div className="search-container">
+                  <div className="search-input-wrapper">
+                    <div className="search-inner-box">
+                      <span className="search-icon"><Icon name="search" size={16} /></span>
+                      <input 
+                        type="text" 
+                        className="search-input" 
+                        placeholder={t.searchPlaceholder} 
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="nav-desktop-links">
+                  <button className="nav-link" onClick={() => setIsLoginModalOpen(true)}>
+                    <Icon name="user" size={16} />{t.navLogin}
+                  </button>
+                  <button className="nav-link" onClick={() => setIsAdminOpen(true)}>
+                    <Icon name="lock" size={16} />{t.navAdmin}
+                  </button>
+                </div>
+
+                <div className="navbar-actions">
+                  <div className="lang-switcher">
+                    <button className={`lang-btn ${lang === 'ku' ? 'active' : ''}`} onClick={() => setLang('ku')}>کوردی</button>
+                    <button className={`lang-btn ${lang === 'ar' ? 'active' : ''}`} onClick={() => setLang('ar')}>عربي</button>
+                    <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</button>
+                  </div>
+                  <button className="btn btn-primary" style={{ padding: '0.5rem 1.2rem', fontSize: '0.9rem' }} onClick={() => setIsCartOpen(true)}>
+                    <Icon name="shopping-cart" size={18} /> {t.shopNow} ({totalCartItemsCount})
+                  </button>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          {/* LOGIN MODAL */}
+          {isLoginModalOpen && (
+            <div className="modal-overlay" onClick={() => setIsLoginModalOpen(false)}>
+              <div className="login-glass-card" onClick={e => e.stopPropagation()}>
+                <span className="close-modal" onClick={() => setIsLoginModalOpen(false)}>✕</span>
+                <div>
+                  <h2 className="login-title">{t.loginTitle}</h2>
+                  <p className="login-subtitle">{t.loginSub}</p>
+                </div>
+
+                <form onSubmit={handleLoginSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <div className="input-group">
+                    <span className="login-input-icon"><Icon name="user" size={18} /></span>
+                    <input 
+                      type="text" 
+                      className="login-input" 
+                      placeholder={t.usernamePlaceholder}
+                      value={loginUser}
+                      onChange={e => setLoginUser(e.target.value)}
+                      required 
+                    />
+                  </div>
+
+                  <div className="input-group">
+                    <span className="login-input-icon"><Icon name="eye-off" size={18} /></span>
+                    <input 
+                      type="password" 
+                      className="login-input" 
+                      placeholder={t.passwordPlaceholder}
+                      value={loginPass}
+                      onChange={e => setLoginPass(e.target.value)}
+                      required 
+                    />
+                  </div>
+
+                  <label className="remember-row">
+                    <input type="checkbox" className="remember-checkbox" defaultChecked />
+                    <span>{t.rememberMe}</span>
+                  </label>
+
+                  <button type="submit" className="login-submit-btn">{t.loginActionBtn}</button>
+                </form>
+
+                <div className="signup-prompt">
+                  <span>{t.noAccount.split('?')[0]}? </span>
+                  <a className="signup-link" onClick={() => alert('بەشی خۆتۆمارکردن چالاکە')}>{t.noAccount.split('?')[1] || 'Signup'}</a>
+                </div>
+
+                <div className="login-footer-sig">
+                  Created by anggidwiiputra
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* PRODUCT SPECS GLASS MODAL */}
+          {selectedProductDetails && (
+            <div className="modal-overlay" onClick={() => setSelectedProductDetails(null)}>
+              <div className="modal-content glass" style={{ background: 'var(--neutral-900)', border: '1px solid var(--glass-border)' }} onClick={e => e.stopPropagation()}>
+                <span className="close-modal" onClick={() => setSelectedProductDetails(null)}>✕</span>
+                
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                  <div style={{ width: '100%', height: '200px', borderRadius: 'var(--radius-md)', overflow: 'hidden', background: '#000', position: 'relative' }}>
+                    <img src={selectedProductDetails.images[activeImageIndices[selectedProductDetails.id] || 0]} alt={selectedProductDetails.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    
+                    {selectedProductDetails.images.length > 1 && (
+                      <>
+                        <button className="slider-arrow prev" onClick={(e) => handlePrevImage(e, selectedProductDetails)}>‹</button>
+                        <button className="slider-arrow next" onClick={(e) => handleNextImage(e, selectedProductDetails)}>›</button>
+                      </>
+                    )}
+                  </div>
+
+                  <div>
+                    <span style={{ fontSize: '0.8rem', padding: '0.2rem 0.6rem', borderRadius: '4px', background: 'var(--primary-500)', color: '#fff', fontWeight: '600' }}>
+                      {selectedProductDetails.category}
+                    </span>
+                    <h2 style={{ fontSize: '1.5rem', marginTop: '0.5rem', color: 'var(--neutral-0)' }}>{selectedProductDetails.name}</h2>
+                  </div>
+
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.75rem' }}>
+                      <span style={{ fontSize: '1.75rem', fontWeight: '700', color: 'var(--neutral-0)' }}>${selectedProductDetails.price.toLocaleString()}</span>
+                      {selectedProductDetails.oldPrice && (
+                        <span style={{ fontSize: '1rem', color: 'var(--neutral-400)', textDecoration: 'line-through' }}>${selectedProductDetails.oldPrice.toLocaleString()}</span>
+                      )}
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--warning-400)' }}>
+                      <Icon name="star" size={16} />
+                      <span style={{ fontWeight: '600', color: 'var(--neutral-200)' }}>{selectedProductDetails.rating}</span>
+                    </div>
+                  </div>
+
+                  <div style={{ borderTop: '1px solid var(--glass-border)', paddingTop: '1rem' }}>
+                    <h4 style={{ fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--neutral-300)' }}>{t.specsTitle}:</h4>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                      {selectedProductDetails.specs.map((spec, idx) => (
+                        <span key={idx} style={{ padding: '0.4rem 0.8rem', borderRadius: 'var(--radius-sm)', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid var(--glass-border)', fontSize: '0.85rem', color: 'var(--neutral-200)' }}>
+                          ✓ {spec}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <button 
+                    className="btn btn-primary" 
+                    style={{ width: '100%', marginTop: '0.5rem', padding: '0.75rem' }} 
+                    onClick={() => {
+                      handleAddToCart(selectedProductDetails);
+                      setSelectedProductDetails(null);
+                    }}
+                  >
+                    <Icon name="shopping-cart" size={18} /> {t.addToCart}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* CART & CHECKOUT MODAL */}
+          {isCartOpen && (
+            <div className="modal-overlay" onClick={() => setIsCartOpen(false)}>
+              <div className="modal-content" onClick={e => e.stopPropagation()}>
+                <span className="close-modal" onClick={() => setIsCartOpen(false)}>✕</span>
+                <h2 style={{ marginBottom: '1rem', color: 'var(--neutral-0)' }}>{t.cartTitle}</h2>
+                
+                {cartItems.length === 0 ? (
+                  <p style={{ color: 'var(--neutral-400)', padding: '1rem 0' }}>{t.emptyCart}</p>
+                ) : (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                    <div style={{ maxHeight: '200px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.5rem', paddingRight: '4px' }}>
+                      {cartItems.map((item) => (
+                        <div key={item.product.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--glass-bg)', padding: '0.5rem 1rem', borderRadius: '8px' }}>
+                          <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <span style={{ fontWeight: '600', fontSize: '0.9rem' }}>{item.product.name}</span>
+                            <span style={{ fontSize: '0.8rem', color: 'var(--neutral-400)' }}>${item.product.price} x {item.quantity}</span>
+                          </div>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <button onClick={() => handleDecreaseQty(item.product.id)} className="btn btn-glass" style={{ padding: '0.2rem 0.5rem', fontSize: '0.8rem' }}>-</button>
+                            <span style={{ fontWeight: 'bold', minWidth: '20px', textAlign: 'center' }}>{item.quantity}</span>
+                            <button onClick={() => handleIncreaseQty(item.product.id)} className="btn btn-glass" style={{ padding: '0.2rem 0.5rem', fontSize: '0.8rem' }}>+</button>
+                            <button onClick={() => handleRemoveFromCart(item.product.id)} className="btn btn-glass" style={{ padding: '0.2rem 0.5rem', color: 'var(--error-500)', borderColor: 'var(--error-500)' }} title="Delete">
+                              <Icon name="trash-2" size={14} />
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <form onSubmit={handleCheckout} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '0.5rem' }}>
+                      <input type="text" placeholder={t.fullNameLabel} value={fullName} onChange={e => setFullName(e.target.value)} className="admin-input" required />
+                      <input type="text" placeholder={t.addressLabel} value={address} onChange={e => setAddress(e.target.value)} className="admin-input" required />
+                      <input type="tel" placeholder={t.phoneLabel} value={phone} onChange={e => setPhone(e.target.value)} className="admin-input" required />
+                      <button type="submit" className="btn btn-primary" style={{ marginTop: '0.5rem' }}>{t.confirmOrder}</button>
+                    </form>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* ADMIN MODAL */}
+          {isAdminOpen && (
+            <div className="modal-overlay" onClick={() => setIsAdminOpen(false)}>
+              <div className="modal-content" onClick={e => e.stopPropagation()} style={{ maxWidth: '600px', maxHeight: '90vh', overflowY: 'auto' }}>
+                <span className="close-modal" onClick={() => setIsAdminOpen(false)}>✕</span>
+                
+                {!isAdminLoggedIn ? (
+                  <div>
+                    <h2 style={{ marginBottom: '1rem', color: 'var(--neutral-0)' }}>{t.adminModalTitle}</h2>
+                    <form onSubmit={handleAdminLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                      <label style={{ color: 'var(--neutral-300)', fontSize: '0.9rem' }}>{t.adminPasswordLabel} (1234):</label>
+                      <input type="password" value={passwordInput} onChange={e => setPasswordInput(e.target.value)} className="admin-input" placeholder="••••" required />
+                      <button type="submit" className="btn btn-primary">{t.loginBtn}</button>
+                    </form>
+                  </div>
+                ) : (
+                  <div>
+                    <h2 style={{ marginBottom: '1rem', color: 'var(--neutral-0)' }}>{t.adminDashboardTitle}</h2>
+                    <form onSubmit={handleAddProductSubmit} className="admin-form">
+                      <input type="text" placeholder={t.productNamePlaceholder} value={newTitle} onChange={e => setNewTitle(e.target.value)} className="admin-input" required />
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+                        <input type="number" placeholder={t.productPricePlaceholder} value={newPrice} onChange={e => setNewPrice(e.target.value)} className="admin-input" required />
+                        <input type="number" placeholder={t.productOldPricePlaceholder} value={newOldPrice} onChange={e => setNewOldPrice(e.target.value)} className="admin-input" />
+                      </div>
+                      <select value={newCategory} onChange={e => setNewCategory(e.target.value)} className="admin-input">
+                        <option value="Laptop">Laptop</option>
+                        <option value="Mouse">Mouse</option>
+                        <option value="Keyboard">Keyboard</option>
+                        <option value="Case">Case</option>
+                        <option value="Headset">Headset</option>
+                        <option value="Gaming">Gaming</option>
+                        <option value="Console">Console</option>
+                      </select>
+                      
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                        <label style={{ fontSize: '0.85rem', color: 'var(--neutral-300)' }}>{t.positionLabel}</label>
+                        <select value={newPosition} onChange={e => setNewPosition(e.target.value)} className="admin-input">
+                          <option value="normal">{t.posNormal}</option>
+                          <option value="top">{t.posTop}</option>
+                        </select>
+                      </div>
+
+                      <input type="text" placeholder={t.productSpecsPlaceholder} value={newSpecs} onChange={e => setNewSpecs(e.target.value)} className="admin-input" />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                        <label style={{ fontSize: '0.85rem', color: 'var(--neutral-300)' }}>{t.uploadImagesLabel}</label>
+                        <input type="file" accept="image/*" multiple onChange={handleImageUpload} className="admin-input" style={{ padding: '0.5rem' }} />
+                      </div>
+                      <button type="submit" className="btn btn-primary" style={{ marginTop: '0.5rem' }}>{t.addProductBtn}</button>
+                    </form>
+
+                    <div style={{ marginTop: '2rem', borderTop: '1px solid var(--glass-border)', paddingTop: '1rem' }}>
+                      <h3 style={{ marginBottom: '1rem', fontSize: '1.1rem' }}>ڕیزبەندی بەرهەمەکان و سڕینەوە</h3>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', maxHeight: '200px', overflowY: 'auto' }}>
+                        {products.map(p => (
+                          <div key={p.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--glass-bg)', padding: '0.5rem 1rem', borderRadius: '8px' }}>
+                            <span style={{ fontSize: '0.9rem' }}>{p.name} (${p.price})</span>
+                            <button onClick={() => handleDeleteProduct(p.id)} className="btn btn-glass" style={{ padding: '0.2rem 0.6rem', color: 'var(--error-500)', fontSize: '0.85rem' }}>
+                              {t.deleteProduct}
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          <main>
+            <section className="hero-carousel-section">
+              <div className="container">
+                <div className="gaming-glass-hero">
+                  <h1 className="gaming-main-title">gaming</h1>
+                  <div className="gaming-gears-chips">
+                    <span className="gear-chip">کیبۆرد</span>
+                    <span className="gear-chip">ماوس</span>
+                    <span className="gear-chip">لاپتۆپ</span>
+                    <span className="gear-chip">کەیس</span>
+                    <span className="gear-chip">گەیمینگ</span>
+                    <span className="gear-chip">کونسوڵ</span>
+                    <span className="gear-chip">هێتسێت</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="carousel-3d-container">
+                {carouselImages.slice(0, 6).map((imgUrl, idx) => (
+                  <div key={idx} className="carousel-3d-item"><img src={imgUrl} alt={`Carousel ${idx}`} /></div>
+                ))}
+              </div>
+            </section>
+
+            <section className="products-section">
+              <div className="container">
+                <div className="products-glass-container">
+                  <div className="section-icon-wrapper"><div className="glass section-icon"><Icon name="grid" size={24} /></div></div>
+                  <h2 className="section-title">{t.productsTitle}</h2>
+                  <p className="section-subtitle">{t.productsSub}</p>
+                  <div className="products-grid">
+                    {filteredProducts.map(p => {
+                      const currentIndex = activeImageIndices[p.id] || 0;
+                      const currentImg = p.images[currentIndex] || p.images[0];
+                      const isClicked = clickedProductId === p.id;
+                      return (
+                        <div 
+                          key={p.id} 
+                          className={`glass product-card ${isClicked ? 'clicked-led' : ''} ${p.justAdded ? 'just-added' : ''}`}
+                          onClick={() => handleProductClick(p)}
+                        >
+                          <div className="product-image-wrapper">
+                            <img src={currentImg} alt={p.name} className="product-image" />
+                            {p.badge && <div className="product-badge" style={{ background: 'var(--primary-500)' }}>{p.badge}</div>}
+                            
+                            {p.images && p.images.length > 1 && (
+                              <>
+                                <button className="slider-arrow prev" onClick={(e) => handlePrevImage(e, p)}>‹</button>
+                                <button className="slider-arrow next" onClick={(e) => handleNextImage(e, p)}>›</button>
+                              </>
+                            )}
+                          </div>
+
+                          <div className="product-content">
+                            <div className="product-rating"><Icon name="star" size={16} /><span className="product-rating-number">{p.rating}</span></div>
+                            <h3 className="product-name">{p.name}</h3>
+                            <div className="product-specs">{p.specs.map(s => <span key={s} className="product-spec">{s}</span>)}</div>
+                            <div className="product-bottom">
+                              <div className="product-prices">
+                                <span className="product-price">${p.price.toLocaleString()}</span>
+                                {p.oldPrice && <span className="product-old-price">${p.oldPrice.toLocaleString()}</span>}
+                              </div>
+                              <button className="btn btn-primary" style={{ padding: '0.5rem' }} onClick={(e) => { e.stopPropagation(); handleAddToCart(p); }}><Icon name="shopping-cart" size={16} /></button>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </section>
+          </main>
+
+          <footer className="footer">
+            <div className="container">
+              <div className="footer-grid">
+                <div>
+                  <div className="brand" style={{ marginBottom: '1rem' }}><div className="brand-logo"><span>G</span></div><span className="brand-name">Gaming</span></div>
+                  <p style={{ color: 'var(--neutral-400)', fontSize: '0.95rem', maxWidth: '360px' }}>{t.footerDesc}</p>
+                </div>
+              </div>
+              <div className="footer-bottom">
+                <p style={{ color: 'var(--neutral-500)', fontSize: '0.85rem' }}>{t.rights}</p>
+              </div>
+            </div>
+          </footer>
+        </>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<React.StrictMode><App /></React.StrictMode>);
+  </script>
+</body>
+</html>
