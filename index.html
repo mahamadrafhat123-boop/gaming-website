@@ -127,12 +127,13 @@
     .section-title { font-size: clamp(1.75rem, 4vw, 3.5rem); font-weight: 700; text-align: center; margin-bottom: var(--space-2); background: linear-gradient(135deg, var(--neutral-0), var(--neutral-300)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family: 'Shrikhand', sans-serif; }
     .section-subtitle { text-align: center; color: var(--neutral-400); font-size: 1rem; max-width: 600px; margin: 0 auto var(--space-6); line-height: 1.6; padding: 0 1rem; font-family: 'Shrikhand', sans-serif; }
     
-    /* LAYOUT WITH RIGHT SIDEBAR */
+    /* LAYOUT WITH RIGHT SIDEBAR - بە پێچەوانەکردنەوەی ریزبەندی لە مۆبایل تا ستوونەکە بێتە سەرەوە */
     .main-layout {
       display: flex;
       min-height: 100vh;
       position: relative;
       padding-top: 5rem;
+      flex-direction: row-reverse;
     }
 
     .content-area {
@@ -147,7 +148,7 @@
       background: var(--glass-bg);
       backdrop-filter: blur(var(--glass-blur));
       -webkit-backdrop-filter: blur(var(--glass-blur));
-      border-left: 1px solid var(--glass-border);
+      border-right: 1px solid var(--glass-border);
       padding: 1.5rem 1rem;
       display: flex;
       flex-direction: column;
@@ -196,14 +197,10 @@
       border-color: var(--success-400);
     }
     
-    /* NAVBAR - دوو بەش (سەرەوە و خوارەوە) */
+    /* NAVBAR */
     .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.4rem 0.5rem; transition: all var(--transition-base); }
     .navbar-inner { display: flex; flex-direction: column; padding: 0.4rem 0.75rem; border-radius: var(--radius-xl); width: 100%; gap: 0.4rem; }
-    
-    /* نیوەی سەرەوەی ناوڤار */
     .navbar-row-top { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 0.5rem; }
-    
-    /* نیوەی خوارەوەی ناوڤار */
     .navbar-row-bottom { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 0.5rem; border-top: 1px solid var(--glass-border); padding-top: 0.35rem; }
 
     .brand { display: flex; align-items: center; gap: 0.3rem; text-decoration: none; flex-shrink: 0; }
@@ -425,7 +422,7 @@
     
     @media (max-width: 900px) {
       .main-layout { flex-direction: column; }
-      .sidebar-right { width: 100%; height: auto; position: relative; top: 0; border-left: none; border-bottom: 1px solid var(--glass-border); }
+      .sidebar-right { width: 100%; height: auto; position: relative; top: 0; border-right: none; border-bottom: 1px solid var(--glass-border); }
       .hero-carousel-section { padding-top: 2rem; }
       .carousel-3d-container { height: 160px; }
       .carousel-3d-item { width: 130px; height: 90px; }
@@ -775,12 +772,12 @@
 
       return (
         <>
-          {/* NAVBAR - دابەشبوو بۆ دوو بەش (نیوەی سەرەوە و نیوەی خوارەوە) */}
+          {/* NAVBAR */}
           <nav className="navbar">
             <div className="container">
               <div className="glass navbar-inner">
                 
-                {/* نیوەی سەرەوە: لۆگۆ، ناو، زمانەکان، دوگمەی تاریک/ڕووناک و سەبەتە */}
+                {/* نیوەی سەرەوە */}
                 <div className="navbar-row-top">
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <a href="#" className="brand">
@@ -826,7 +823,7 @@
                   </div>
                 </div>
 
-                {/* نیوەی خوارەوە: خانەی گەڕان (Search Box) */}
+                {/* نیوەی خوارەوە */}
                 <div className="navbar-row-bottom">
                   <div className="search-container">
                     <div className="search-input-wrapper">
@@ -1026,6 +1023,71 @@
           {/* MAIN LAYOUT WITH RIGHT SIDEBAR */}
           <div className="main-layout">
             
+            {/* SIDEBAR ستونی شوشەیی (لەمەودوا لە مۆبایلیشدا دەکەوێتە پێشەوە / سەرەوە) */}
+            <aside className="sidebar-right">
+              <div>
+                <h3 className="sidebar-section-title">{t.categoriesTitle}</h3>
+                <div className="sidebar-menu-list">
+                  <button 
+                    className={`sidebar-menu-item ${selectedCategory === 'All' ? 'active' : ''}`}
+                    onClick={() => setSelectedCategory('All')}
+                  >
+                    <Icon name="layout-grid" size={16} /> {t.allCategories}
+                  </button>
+                  <button 
+                    className={`sidebar-menu-item ${selectedCategory === 'Laptop' ? 'active' : ''}`}
+                    onClick={() => setSelectedCategory('Laptop')}
+                  >
+                    <Icon name="laptop" size={16} /> لاپتۆپ (Laptop)
+                  </button>
+                  <button 
+                    className={`sidebar-menu-item ${selectedCategory === 'Gaming' ? 'active' : ''}`}
+                    onClick={() => setSelectedCategory('Gaming')}
+                  >
+                    <Icon name="monitor" size={16} /> گەیمینگ (Gaming)
+                  </button>
+                  <button 
+                    className={`sidebar-menu-item ${selectedCategory === 'Mouse' ? 'active' : ''}`}
+                    onClick={() => setSelectedCategory('Mouse')}
+                  >
+                    <Icon name="mouse" size={16} /> ماوس (Mouse)
+                  </button>
+                  <button 
+                    className={`sidebar-menu-item ${selectedCategory === 'Keyboard' ? 'active' : ''}`}
+                    onClick={() => setSelectedCategory('Keyboard')}
+                  >
+                    <Icon name="keyboard" size={16} /> کیبۆرد (Keyboard)
+                  </button>
+                  <button 
+                    className={`sidebar-menu-item ${selectedCategory === 'Case' ? 'active' : ''}`}
+                    onClick={() => setSelectedCategory('Case')}
+                  >
+                    <Icon name="hard-drive" size={16} /> کەیس (Case)
+                  </button>
+                  <button 
+                    className={`sidebar-menu-item ${selectedCategory === 'Headset' ? 'active' : ''}`}
+                    onClick={() => setSelectedCategory('Headset')}
+                  >
+                    <Icon name="headphones" size={16} /> هێتسێت (Headset)
+                  </button>
+                  <button 
+                    className={`sidebar-menu-item ${selectedCategory === 'Console' ? 'active' : ''}`}
+                    onClick={() => setSelectedCategory('Console')}
+                  >
+                    <Icon name="gamepad-2" size={16} /> کونسوڵ (Console)
+                  </button>
+                </div>
+              </div>
+
+              <div style={{ marginTop: 'auto', background: 'var(--glass-bg-strong)', padding: '1rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--glass-border)' }}>
+                <h4 style={{ fontSize: '0.85rem', marginBottom: '0.4rem', color: 'var(--neutral-0)' }}>پشتیوانی ڕاستەوخۆ</h4>
+                <p style={{ fontSize: '0.75rem', color: 'var(--neutral-400)', marginBottom: '0.6rem' }}>بۆ هەر پرسیارێک لە خزمەتتداین.</p>
+                <button className="btn btn-primary" style={{ width: '100%', fontSize: '0.75rem', padding: '0.4rem' }} onClick={() => alert('پەیوەندیکردن بە پشتیوانیەوە')}>
+                  پەیوەندی بکە
+                </button>
+              </div>
+            </aside>
+
             {/* MAIN CONTENT */}
             <div className="content-area">
               <main>
@@ -1119,71 +1181,6 @@
                 </div>
               </footer>
             </div>
-
-            {/* SIDEBAR ستونی شوشەیی لای ڕاست */}
-            <aside className="sidebar-right">
-              <div>
-                <h3 className="sidebar-section-title">{t.categoriesTitle}</h3>
-                <div className="sidebar-menu-list">
-                  <button 
-                    className={`sidebar-menu-item ${selectedCategory === 'All' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('All')}
-                  >
-                    <Icon name="layout-grid" size={16} /> {t.allCategories}
-                  </button>
-                  <button 
-                    className={`sidebar-menu-item ${selectedCategory === 'Laptop' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('Laptop')}
-                  >
-                    <Icon name="laptop" size={16} /> لاپتۆپ (Laptop)
-                  </button>
-                  <button 
-                    className={`sidebar-menu-item ${selectedCategory === 'Gaming' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('Gaming')}
-                  >
-                    <Icon name="monitor" size={16} /> گەیمینگ (Gaming)
-                  </button>
-                  <button 
-                    className={`sidebar-menu-item ${selectedCategory === 'Mouse' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('Mouse')}
-                  >
-                    <Icon name="mouse" size={16} /> ماوس (Mouse)
-                  </button>
-                  <button 
-                    className={`sidebar-menu-item ${selectedCategory === 'Keyboard' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('Keyboard')}
-                  >
-                    <Icon name="keyboard" size={16} /> کیبۆرد (Keyboard)
-                  </button>
-                  <button 
-                    className={`sidebar-menu-item ${selectedCategory === 'Case' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('Case')}
-                  >
-                    <Icon name="hard-drive" size={16} /> کەیس (Case)
-                  </button>
-                  <button 
-                    className={`sidebar-menu-item ${selectedCategory === 'Headset' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('Headset')}
-                  >
-                    <Icon name="headphones" size={16} /> هێتسێت (Headset)
-                  </button>
-                  <button 
-                    className={`sidebar-menu-item ${selectedCategory === 'Console' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('Console')}
-                  >
-                    <Icon name="gamepad-2" size={16} /> کونسوڵ (Console)
-                  </button>
-                </div>
-              </div>
-
-              <div style={{ marginTop: 'auto', background: 'var(--glass-bg-strong)', padding: '1rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--glass-border)' }}>
-                <h4 style={{ fontSize: '0.85rem', marginBottom: '0.4rem', color: 'var(--neutral-0)' }}>پشتیوانی ڕاستەوخۆ</h4>
-                <p style={{ fontSize: '0.75rem', color: 'var(--neutral-400)', marginBottom: '0.6rem' }}>بۆ هەر پرسیارێک لە خزمەتتداین.</p>
-                <button className="btn btn-primary" style={{ width: '100%', fontSize: '0.75rem', padding: '0.4rem' }} onClick={() => alert('پەیوەندیکردن بە پشتیوانیەوە')}>
-                  پەیوەندی بکە
-                </button>
-              </div>
-            </aside>
 
           </div>
         </>
