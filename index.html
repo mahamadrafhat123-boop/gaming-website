@@ -13,7 +13,7 @@
       --accent-50: #e6fffa; --accent-100: #b2f5e0; --accent-200: #81e6c9; --accent-300: #4fd1b5; --accent-400: #2bc7a5; --accent-500: #14a88f; --accent-600: #0d8773; --accent-700: #0a6b5c;
       --warning-400: #fbbf24; --warning-500: #f59e0b; --error-400: #f87171; --error-500: #ef4444; --success-400: #34d399; --success-500: #10b981;
       --font-display: 'Shrikhand', 'Space Grotesk', 'Cairo', sans-serif;
-      --font-body: 'Inter', 'Cairo', sans-serif;
+      --font-body: 'Shrikhand', 'Inter', 'Cairo', sans-serif;
       --glass-blur: 20px;
       --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2rem; --space-5: 2.5rem; --space-6: 3rem; --space-8: 4rem;
       --radius-sm: 0.5rem; --radius-md: 1rem; --radius-lg: 1.5rem; --radius-xl: 2rem; --radius-2xl: 2.5rem; --radius-full: 9999px;
@@ -68,14 +68,14 @@
     .glass-strong { background: var(--glass-bg-strong); backdrop-filter: blur(var(--glass-blur)); -webkit-backdrop-filter: blur(var(--glass-blur)); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); }
     .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
     
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-1); padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); font-weight: 500; font-size: 1rem; transition: all var(--transition-base); white-space: nowrap; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-1); padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); font-weight: 500; font-size: 1rem; transition: all var(--transition-base); white-space: nowrap; font-family: 'Shrikhand', sans-serif; }
     .btn-primary { background: linear-gradient(135deg, var(--success-500), var(--accent-500)); color: white; box-shadow: var(--shadow-glow); }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(16, 185, 129, 0.5), var(--shadow-md); }
     .btn-glass { background: var(--glass-bg); backdrop-filter: blur(var(--glass-blur)); border: 1px solid var(--glass-border); color: var(--neutral-100); }
     .btn-glass:hover { background: var(--glass-bg-strong); transform: translateY(-2px); }
     
     .lang-switcher { display: flex; gap: 0.15rem; padding: 0.15rem; border-radius: var(--radius-full); background: var(--glass-bg); backdrop-filter: blur(var(--glass-blur)); border: 1px solid var(--glass-border); }
-    .lang-btn { padding: 0.25rem 0.45rem; border-radius: var(--radius-full); font-size: 0.7rem; font-weight: 600; color: var(--neutral-300); transition: all var(--transition-fast); }
+    .lang-btn { padding: 0.25rem 0.45rem; border-radius: var(--radius-full); font-size: 0.7rem; font-weight: 600; color: var(--neutral-300); transition: all var(--transition-fast); font-family: 'Shrikhand', sans-serif; }
     .lang-btn.active { background: var(--success-500); color: white; box-shadow: var(--shadow-sm); }
     .lang-btn:hover:not(.active) { color: var(--neutral-0); background: rgba(255, 255, 255, 0.05); }
 
@@ -121,10 +121,11 @@
       color: var(--neutral-400);
       user-select: none;
       z-index: 1;
+      font-family: 'Shrikhand', sans-serif;
     }
 
-    .section-title { font-size: clamp(1.75rem, 4vw, 3.5rem); font-weight: 700; text-align: center; margin-bottom: var(--space-2); background: linear-gradient(135deg, var(--neutral-0), var(--neutral-300)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .section-subtitle { text-align: center; color: var(--neutral-400); font-size: 1rem; max-width: 600px; margin: 0 auto var(--space-6); line-height: 1.6; padding: 0 1rem; }
+    .section-title { font-size: clamp(1.75rem, 4vw, 3.5rem); font-weight: 700; text-align: center; margin-bottom: var(--space-2); background: linear-gradient(135deg, var(--neutral-0), var(--neutral-300)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family: 'Shrikhand', sans-serif; }
+    .section-subtitle { text-align: center; color: var(--neutral-400); font-size: 1rem; max-width: 600px; margin: 0 auto var(--space-6); line-height: 1.6; padding: 0 1rem; font-family: 'Shrikhand', sans-serif; }
     
     /* NAVBAR - دوو بەش (سەرەوە و خوارەوە) */
     .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.4rem 0.5rem; transition: all var(--transition-base); }
@@ -137,7 +138,7 @@
     .navbar-row-bottom { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 0.5rem; border-top: 1px solid var(--glass-border); padding-top: 0.35rem; }
 
     .brand { display: flex; align-items: center; gap: 0.3rem; text-decoration: none; flex-shrink: 0; }
-    .brand-logo { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--success-500), var(--accent-500)); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); color: white; font-weight: 700; font-size: 0.8rem; }
+    .brand-logo { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--success-500), var(--accent-500)); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); color: white; font-weight: 700; font-size: 0.8rem; font-family: 'Shrikhand', sans-serif; }
     .brand-name { font-family: 'Shrikhand', sans-serif; font-weight: 700; font-size: 1rem; color: var(--neutral-0); white-space: nowrap; }
     
     .nav-desktop-links { display: flex; gap: 0.75rem; align-items: center; }
@@ -155,7 +156,7 @@
       100% { background-position: 0% 50%; }
     }
     .search-inner-box { position: relative; width: 100%; border-radius: var(--radius-full); background: var(--neutral-900); display: flex; align-items: center; }
-    .search-input { width: 100%; padding: 0.3rem 0.6rem 0.3rem 1.8rem; border-radius: var(--radius-full); background: transparent; border: none; color: var(--neutral-0); font-size: 0.75rem; outline: none; }
+    .search-input { width: 100%; padding: 0.3rem 0.6rem 0.3rem 1.8rem; border-radius: var(--radius-full); background: transparent; border: none; color: var(--neutral-0); font-size: 0.75rem; outline: none; font-family: 'Shrikhand', sans-serif; }
     .search-icon { position: absolute; top: 50%; transform: translateY(-50%); inset-inline-start: 0.5rem; color: var(--neutral-400); pointer-events: none; }
 
     /* HERO SECTION */
@@ -303,7 +304,7 @@
     .product-image-wrapper { position: relative; overflow: hidden; aspect-ratio: 16 / 10; background: var(--neutral-900); width: 100%; }
     .product-image { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); cursor: pointer; }
     .product-card:hover .product-image { transform: scale(1.05); }
-    .product-badge { position: absolute; top: 0.75rem; inset-inline-start: 0.75rem; padding: 0.25rem 0.6rem; border-radius: var(--radius-full); font-size: 0.7rem; font-weight: 600; color: white; z-index: 2; }
+    .product-badge { position: absolute; top: 0.75rem; inset-inline-start: 0.75rem; padding: 0.25rem 0.6rem; border-radius: var(--radius-full); font-size: 0.7rem; font-weight: 600; color: white; z-index: 2; font-family: 'Shrikhand', sans-serif; }
     
     .slider-arrow {
       position: absolute;
@@ -330,28 +331,28 @@
 
     .product-content { padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; position: relative; z-index: 1; }
     .product-rating { display: flex; align-items: center; gap: 0.3rem; }
-    .product-rating-number { color: var(--neutral-200); font-size: 0.8rem; }
+    .product-rating-number { color: var(--neutral-200); font-size: 0.8rem; font-family: 'Shrikhand', sans-serif; }
     .product-name { font-family: 'Shrikhand', sans-serif; font-size: 1.1rem; font-weight: 600; color: var(--neutral-0); cursor: pointer; transition: color 0.2s; }
     .product-name:hover { color: var(--success-400); }
     .product-specs { display: flex; flex-wrap: wrap; gap: 0.3rem; }
-    .product-spec { padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.7rem; color: var(--neutral-300); background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .product-spec { padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.7rem; color: var(--neutral-300); background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.08); font-family: 'Shrikhand', sans-serif; }
     .product-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 0.5rem; }
     .product-prices { display: flex; align-items: baseline; gap: 0.4rem; }
-    .product-price { font-size: 1.25rem; font-weight: 700; color: var(--neutral-0); }
-    .product-old-price { font-size: 0.9rem; font-weight: 500; color: var(--neutral-400); text-decoration: line-through; }
+    .product-price { font-size: 1.25rem; font-weight: 700; color: var(--neutral-0); font-family: 'Shrikhand', sans-serif; }
+    .product-old-price { font-size: 0.9rem; font-weight: 500; color: var(--neutral-400); text-decoration: line-through; font-family: 'Shrikhand', sans-serif; }
     
     /* MODALS */
     .modal-overlay { position: fixed; inset: 0; background: rgba(2, 44, 34, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 0.5rem; overflow-y: auto; }
 
-    .modal-content { background: var(--neutral-900); border: 1px solid var(--glass-border); padding: 1.5rem; border-radius: var(--radius-xl); width: 100%; max-width: 480px; box-shadow: var(--shadow-lg); position: relative; color: var(--neutral-100); max-height: 90vh; overflow-y: auto; }
+    .modal-content { background: var(--neutral-900); border: 1px solid var(--glass-border); padding: 1.5rem; border-radius: var(--radius-xl); width: 100%; max-width: 480px; box-shadow: var(--shadow-lg); position: relative; color: var(--neutral-100); max-height: 90vh; overflow-y: auto; font-family: 'Shrikhand', sans-serif; }
     .admin-form { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; }
-    .admin-input { padding: 0.7rem 0.9rem; border-radius: var(--radius-md); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--neutral-0); font-family: inherit; font-size: 0.9rem; width: 100%; }
+    .admin-input { padding: 0.7rem 0.9rem; border-radius: var(--radius-md); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--neutral-0); font-family: 'Shrikhand', sans-serif; font-size: 0.9rem; width: 100%; }
     .admin-input:focus { border-color: var(--success-400); outline: none; }
     .close-modal { position: absolute; top: 1rem; inset-inline-end: 1rem; color: var(--neutral-400); cursor: pointer; font-size: 1.1rem; z-index: 10; }
 
     .footer { padding: 3rem 0 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.06); width: 100%; }
     .footer-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2rem; }
-    .footer-bottom { display: flex; justify-content: center; align-items: center; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.06); text-align: center; }
+    .footer-bottom { display: flex; justify-content: center; align-items: center; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.06); text-align: center; font-family: 'Shrikhand', sans-serif; }
     
     @media (max-width: 900px) {
       .hero-carousel-section { padding-top: 7.5rem; }
@@ -702,20 +703,28 @@
             <div className="container">
               <div className="glass navbar-inner">
                 
-                {/* نیوەی سەرەوە: لۆگۆ، ناو، دوگمەی تاریک/ڕووناک، زمان و سەبەتە */}
+                {/* نیوەی سەرەوە: لۆگۆ، ناو، زمانەکان، دوگمەی تاریک/ڕووناک و سەبەتە (گۆڕاوی شوێن بەپێی داواکاری) */}
                 <div className="navbar-row-top">
-                  <a href="#" className="brand">
-                    <div className="brand-logo"><span>G</span></div>
-                    <span className="brand-name">گەیمینگ</span>
-                  </a>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <a href="#" className="brand">
+                      <div className="brand-logo"><span>G</span></div>
+                      <span className="brand-name">گەیمینگ</span>
+                    </a>
 
-                  <div className="nav-desktop-links">
-                    <button className="nav-link" onClick={() => setIsAdminOpen(true)}>
-                      <Icon name="lock" size={14} />{t.navAdmin}
-                    </button>
+                    <div className="nav-desktop-links">
+                      <button className="nav-link" onClick={() => setIsAdminOpen(true)}>
+                        <Icon name="lock" size={14} />{t.navAdmin}
+                      </button>
+                    </div>
                   </div>
 
                   <div className="navbar-actions">
+                    <div className="lang-switcher">
+                      <button className={`lang-btn ${lang === 'ku' ? 'active' : ''}`} onClick={() => setLang('ku')}>کوردی</button>
+                      <button className={`lang-btn ${lang === 'ar' ? 'active' : ''}`} onClick={() => setLang('ar')}>عربي</button>
+                      <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</button>
+                    </div>
+
                     <div 
                       className={`glass-toggle ${theme === 'dark' ? 'dark-mode' : 'light-mode'}`}
                       onClick={toggleTheme}
@@ -728,12 +737,6 @@
                         <span>تاریک</span>
                         <span>ڕووناک</span>
                       </div>
-                    </div>
-
-                    <div className="lang-switcher">
-                      <button className={`lang-btn ${lang === 'ku' ? 'active' : ''}`} onClick={() => setLang('ku')}>کوردی</button>
-                      <button className={`lang-btn ${lang === 'ar' ? 'active' : ''}`} onClick={() => setLang('ar')}>عربي</button>
-                      <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</button>
                     </div>
                     
                     <button className="nav-link" onClick={() => setIsAdminOpen(true)} style={{ display: window.innerWidth <= 900 ? 'flex' : 'none', padding: '0.2rem' }} title={t.navAdmin}>
