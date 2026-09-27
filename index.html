@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -43,8 +43,8 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); overflow-x: hidden; line-height: 1.5; -webkit-font-smoothing: antialiased; transition: background 0.3s, color 0.3s; }
+    html { scroll-behavior: smooth; width: 100%; overflow-x: hidden; }
+    body { font-family: var(--font-body); width: 100%; overflow-x: hidden; line-height: 1.5; -webkit-font-smoothing: antialiased; transition: background 0.3s, color 0.3s; }
     h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; }
     a { color: inherit; text-decoration: none; }
     button { font-family: inherit; cursor: pointer; border: none; background: none; }
@@ -68,7 +68,7 @@
     }
 
     .glass-strong { background: var(--glass-bg-strong); backdrop-filter: blur(var(--glass-blur)); -webkit-backdrop-filter: blur(var(--glass-blur)); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); }
-    .container { max-width: 1280px; margin: 0 auto; padding: 0 var(--space-4); }
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
     
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-1); padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); font-weight: 500; font-size: 1rem; transition: all var(--transition-base); white-space: nowrap; }
     .btn-primary { background: linear-gradient(135deg, var(--success-500), var(--accent-500)); color: white; box-shadow: var(--shadow-glow); }
@@ -77,7 +77,7 @@
     .btn-glass:hover { background: var(--glass-bg-strong); transform: translateY(-2px); }
     
     .lang-switcher { display: flex; gap: 0.25rem; padding: 0.25rem; border-radius: var(--radius-full); background: var(--glass-bg); backdrop-filter: blur(var(--glass-blur)); border: 1px solid var(--glass-border); }
-    .lang-btn { padding: 0.35rem 0.75rem; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 600; color: var(--neutral-300); transition: all var(--transition-fast); }
+    .lang-btn { padding: 0.35rem 0.6rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600; color: var(--neutral-300); transition: all var(--transition-fast); }
     .lang-btn.active { background: var(--success-500); color: white; box-shadow: var(--shadow-sm); }
     .lang-btn:hover:not(.active) { color: var(--neutral-0); background: rgba(255, 255, 255, 0.05); }
 
@@ -93,14 +93,14 @@
       padding: 4px;
       cursor: pointer;
       position: relative;
-      width: 100px;
-      height: 42px;
+      width: 85px;
+      height: 38px;
       transition: all var(--transition-base);
     }
     .glass-toggle-thumb {
       position: absolute;
-      width: 34px;
-      height: 34px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       background: var(--glass-bg-strong);
       border: 1px solid var(--glass-border);
@@ -113,7 +113,7 @@
       z-index: 2;
     }
     .glass-toggle.dark-mode .glass-toggle-thumb {
-      transform: translateX(58px);
+      transform: translateX(47px);
     }
     .glass-toggle.light-mode .glass-toggle-thumb {
       transform: translateX(0px);
@@ -122,30 +122,30 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-      padding: 0 8px;
-      font-size: 0.75rem;
+      padding: 0 4px;
+      font-size: 0.65rem;
       font-weight: 600;
       color: var(--neutral-400);
       user-select: none;
       z-index: 1;
     }
 
-    .section-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; text-align: center; margin-bottom: var(--space-2); background: linear-gradient(135deg, var(--neutral-0), var(--neutral-300)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .section-subtitle { text-align: center; color: var(--neutral-400); font-size: 1.125rem; max-width: 600px; margin: 0 auto var(--space-8); line-height: 1.6; }
+    .section-title { font-size: clamp(1.75rem, 4vw, 3.5rem); font-weight: 700; text-align: center; margin-bottom: var(--space-2); background: linear-gradient(135deg, var(--neutral-0), var(--neutral-300)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .section-subtitle { text-align: center; color: var(--neutral-400); font-size: 1rem; max-width: 600px; margin: 0 auto var(--space-6); line-height: 1.6; padding: 0 1rem; }
     
     /* NAVBAR */
-    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.5rem 0; transition: all var(--transition-base); }
-    .navbar-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.5rem; border-radius: var(--radius-full); }
-    .brand { display: flex; align-items: center; gap: 0.5rem; }
-    .brand-logo { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--success-500), var(--accent-500)); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); color: white; font-weight: 700; }
-    .brand-name { font-weight: 700; font-size: 1.25rem; color: var(--neutral-0); }
-    .nav-desktop-links { display: flex; gap: 1.5rem; align-items: center; }
-    .nav-link { color: var(--neutral-300); font-size: 0.9rem; font-weight: 500; display: flex; align-items: center; gap: 0.4rem; transition: color var(--transition-fast); cursor: pointer; }
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.75rem 0.5rem; transition: all var(--transition-base); }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 1rem; border-radius: var(--radius-full); width: 100%; gap: 0.5rem; }
+    .brand { display: flex; align-items: center; gap: 0.4rem; text-decoration: none; flex-shrink: 0; }
+    .brand-logo { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--success-500), var(--accent-500)); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); color: white; font-weight: 700; font-size: 0.9rem; }
+    .brand-name { font-weight: 700; font-size: 1.1rem; color: var(--neutral-0); white-space: nowrap; }
+    .nav-desktop-links { display: flex; gap: 1rem; align-items: center; }
+    .nav-link { color: var(--neutral-300); font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; gap: 0.3rem; transition: color var(--transition-fast); cursor: pointer; white-space: nowrap; }
     .nav-link:hover, .nav-link.active { color: var(--success-400); }
-    .navbar-actions { display: flex; gap: 1rem; align-items: center; }
+    .navbar-actions { display: flex; gap: 0.5rem; align-items: center; }
 
     /* SEARCH BAR */
-    .search-container { display: flex; justify-content: center; align-items: center; flex: 1; max-width: 400px; margin: 0 1.5rem; }
+    .search-container { display: flex; justify-content: center; align-items: center; flex: 1; max-width: 350px; margin: 0 0.5rem; }
     .search-input-wrapper { position: relative; width: 100%; border-radius: var(--radius-full); padding: 2px; background: linear-gradient(0deg, #10b981, #34d399, #10b981); background-size: 200% 200%; animation: rotateLed 3s linear infinite; }
     @keyframes rotateLed {
       0% { background-position: 0% 50%; }
@@ -153,16 +153,17 @@
       100% { background-position: 0% 50%; }
     }
     .search-inner-box { position: relative; width: 100%; border-radius: var(--radius-full); background: var(--neutral-900); display: flex; align-items: center; }
-    .search-input { width: 100%; padding: 0.5rem 1rem 0.5rem 2.5rem; border-radius: var(--radius-full); background: transparent; border: none; color: var(--neutral-0); font-size: 0.9rem; outline: none; }
-    .search-icon { position: absolute; top: 50%; transform: translateY(-50%); inset-inline-start: 0.8rem; color: var(--neutral-400); pointer-events: none; }
+    .search-input { width: 100%; padding: 0.4rem 0.8rem 0.4rem 2.2rem; border-radius: var(--radius-full); background: transparent; border: none; color: var(--neutral-0); font-size: 0.85rem; outline: none; }
+    .search-icon { position: absolute; top: 50%; transform: translateY(-50%); inset-inline-start: 0.6rem; color: var(--neutral-400); pointer-events: none; }
 
     /* HERO SECTION */
-    .hero-carousel-section { padding: 9rem 0 3rem; perspective: 1000px; overflow: hidden; position: relative; }
+    .hero-carousel-section { padding: 7rem 0 2rem; perspective: 1000px; overflow: hidden; position: relative; width: 100%; }
     
     .gaming-glass-hero {
+      width: 100%;
       max-width: 1100px;
-      margin: 0 auto 3rem auto;
-      padding: 3rem 2rem;
+      margin: 0 auto 2rem auto;
+      padding: 2rem 1rem;
       background: var(--glass-bg);
       backdrop-filter: blur(var(--glass-blur));
       -webkit-backdrop-filter: blur(var(--glass-blur));
@@ -183,10 +184,10 @@
     }
 
     .gaming-main-title {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-size: clamp(1.8rem, 5vw, 4.2rem);
       font-weight: 800;
       letter-spacing: -0.03em;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       background: linear-gradient(135deg, var(--neutral-0) 30%, var(--success-400) 100%);
       -webkit-background-clip: text;
       background-clip: text;
@@ -198,7 +199,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.75rem;
+      gap: 0.5rem;
       max-width: 800px;
       margin: 0 auto;
       position: relative;
@@ -206,13 +207,13 @@
     }
 
     .gear-chip {
-      padding: 0.5rem 1.25rem;
+      padding: 0.4rem 1rem;
       border-radius: var(--radius-full);
       background: var(--glass-bg-strong);
       border: 1px solid var(--glass-border);
       color: var(--neutral-100);
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       backdrop-filter: blur(10px);
       transition: all 0.3s ease;
       box-shadow: var(--shadow-sm);
@@ -225,15 +226,15 @@
       box-shadow: var(--shadow-glow);
     }
 
-    .carousel-3d-container { display: flex; justify-content: center; align-items: center; height: 300px; position: relative; transform-style: preserve-3d; animation: carouselRotate 25s linear infinite; }
+    .carousel-3d-container { display: flex; justify-content: center; align-items: center; height: 220px; position: relative; transform-style: preserve-3d; animation: carouselRotate 25s linear infinite; width: 100%; }
     @keyframes carouselRotate {
       0% { transform: rotateY(0deg); }
       100% { transform: rotateY(360deg); }
     }
     .carousel-3d-item {
       position: absolute;
-      width: 240px;
-      height: 160px;
+      width: 180px;
+      height: 120px;
       border-radius: var(--radius-lg);
       overflow: hidden;
       border: 1px solid var(--glass-border);
@@ -243,29 +244,30 @@
     }
     .carousel-3d-item img { width: 100%; height: 100%; object-fit: cover; }
     
-    .carousel-3d-item:nth-child(1) { transform: rotateY(0deg) translateZ(280px); }
-    .carousel-3d-item:nth-child(2) { transform: rotateY(60deg) translateZ(280px); }
-    .carousel-3d-item:nth-child(3) { transform: rotateY(120deg) translateZ(280px); }
-    .carousel-3d-item:nth-child(4) { transform: rotateY(180deg) translateZ(280px); }
-    .carousel-3d-item:nth-child(5) { transform: rotateY(240deg) translateZ(280px); }
-    .carousel-3d-item:nth-child(6) { transform: rotateY(300deg) translateZ(280px); }
+    .carousel-3d-item:nth-child(1) { transform: rotateY(0deg) translateZ(200px); }
+    .carousel-3d-item:nth-child(2) { transform: rotateY(60deg) translateZ(200px); }
+    .carousel-3d-item:nth-child(3) { transform: rotateY(120deg) translateZ(200px); }
+    .carousel-3d-item:nth-child(4) { transform: rotateY(180deg) translateZ(200px); }
+    .carousel-3d-item:nth-child(5) { transform: rotateY(240deg) translateZ(200px); }
+    .carousel-3d-item:nth-child(6) { transform: rotateY(300deg) translateZ(200px); }
 
     /* PRODUCTS SECTION */
-    .products-section { padding: 3rem 0 5rem; }
+    .products-section { padding: 2rem 0 4rem; width: 100%; }
     .products-glass-container {
       background: var(--glass-bg);
       backdrop-filter: blur(var(--glass-blur));
       -webkit-backdrop-filter: blur(var(--glass-blur));
       border: 1px solid var(--glass-border);
       border-radius: var(--radius-2xl);
-      padding: 3rem 2rem;
+      padding: 2rem 1rem;
       box-shadow: var(--shadow-lg);
       position: relative;
+      width: 100%;
     }
     
-    .section-icon-wrapper { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 1rem; }
-    .section-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .section-icon-wrapper { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+    .section-icon { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; width: 100%; }
     
     @keyframes spinInTop {
       0% { opacity: 0; transform: translateY(-50px) rotate(-10deg) scale(0.8); }
@@ -279,6 +281,7 @@
       flex-direction: column; 
       background: var(--glass-bg-strong); 
       position: relative;
+      width: 100%;
     }
     
     .product-card.clicked-led {
@@ -291,12 +294,12 @@
       border-color: var(--success-400);
       box-shadow: var(--shadow-glow);
     }
-    .product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: rgba(16, 185, 129, 0.3); }
+    .product-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: rgba(16, 185, 129, 0.3); }
     
-    .product-image-wrapper { position: relative; overflow: hidden; aspect-ratio: 16 / 10; background: var(--neutral-900); }
+    .product-image-wrapper { position: relative; overflow: hidden; aspect-ratio: 16 / 10; background: var(--neutral-900); width: 100%; }
     .product-image { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); cursor: pointer; }
-    .product-card:hover .product-image { transform: scale(1.08); }
-    .product-badge { position: absolute; top: 1rem; inset-inline-start: 1rem; padding: 0.35rem 0.875rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600; color: white; z-index: 2; }
+    .product-card:hover .product-image { transform: scale(1.05); }
+    .product-badge { position: absolute; top: 0.75rem; inset-inline-start: 0.75rem; padding: 0.25rem 0.6rem; border-radius: var(--radius-full); font-size: 0.7rem; font-weight: 600; color: white; z-index: 2; }
     
     .slider-arrow {
       position: absolute;
@@ -305,8 +308,8 @@
       background: rgba(0, 0, 0, 0.6);
       color: white;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -318,40 +321,49 @@
     }
     .product-image-wrapper:hover .slider-arrow { opacity: 1; }
     .slider-arrow:hover { background: var(--success-500); }
-    .slider-arrow.prev { left: 8px; }
-    .slider-arrow.next { right: 8px; }
+    .slider-arrow.prev { left: 6px; }
+    .slider-arrow.next { right: 6px; }
 
-    .product-content { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; flex: 1; position: relative; z-index: 1; }
-    .product-rating { display: flex; align-items: center; gap: 0.4rem; }
-    .product-rating-number { color: var(--neutral-200); font-size: 0.875rem; }
-    .product-name { font-size: 1.25rem; font-weight: 600; color: var(--neutral-0); cursor: pointer; transition: color 0.2s; }
+    .product-content { padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; position: relative; z-index: 1; }
+    .product-rating { display: flex; align-items: center; gap: 0.3rem; }
+    .product-rating-number { color: var(--neutral-200); font-size: 0.8rem; }
+    .product-name { font-size: 1.1rem; font-weight: 600; color: var(--neutral-0); cursor: pointer; transition: color 0.2s; }
     .product-name:hover { color: var(--success-400); }
-    .product-specs { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .product-spec { padding: 0.25rem 0.625rem; border-radius: var(--radius-sm); font-size: 0.75rem; color: var(--neutral-300); background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.08); }
-    .product-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 0.75rem; }
-    .product-prices { display: flex; align-items: baseline; gap: 0.5rem; }
-    .product-price { font-size: 1.5rem; font-weight: 700; color: var(--neutral-0); }
-    .product-old-price { font-size: 1rem; font-weight: 500; color: var(--neutral-400); text-decoration: line-through; }
+    .product-specs { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .product-spec { padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.7rem; color: var(--neutral-300); background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .product-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 0.5rem; }
+    .product-prices { display: flex; align-items: baseline; gap: 0.4rem; }
+    .product-price { font-size: 1.25rem; font-weight: 700; color: var(--neutral-0); }
+    .product-old-price { font-size: 0.9rem; font-weight: 500; color: var(--neutral-400); text-decoration: line-through; }
     
     /* MODALS */
-    .modal-overlay { position: fixed; inset: 0; background: rgba(2, 44, 34, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+    .modal-overlay { position: fixed; inset: 0; background: rgba(2, 44, 34, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 0.5rem; overflow-y: auto; }
 
-    .modal-content { background: var(--neutral-900); border: 1px solid var(--glass-border); padding: 2.5rem; border-radius: var(--radius-xl); width: 100%; max-width: 500px; box-shadow: var(--shadow-lg); position: relative; color: var(--neutral-100); }
-    .admin-form { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
-    .admin-input { padding: 0.8rem 1rem; border-radius: var(--radius-md); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--neutral-0); font-family: inherit; font-size: 0.95rem; }
+    .modal-content { background: var(--neutral-900); border: 1px solid var(--glass-border); padding: 1.5rem; border-radius: var(--radius-xl); width: 100%; max-width: 480px; box-shadow: var(--shadow-lg); position: relative; color: var(--neutral-100); max-height: 90vh; overflow-y: auto; }
+    .admin-form { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; }
+    .admin-input { padding: 0.7rem 0.9rem; border-radius: var(--radius-md); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--neutral-0); font-family: inherit; font-size: 0.9rem; width: 100%; }
     .admin-input:focus { border-color: var(--success-400); outline: none; }
-    .close-modal { position: absolute; top: 1.2rem; inset-inline-end: 1.2rem; color: var(--neutral-400); cursor: pointer; font-size: 1.2rem; z-index: 10; }
+    .close-modal { position: absolute; top: 1rem; inset-inline-end: 1rem; color: var(--neutral-400); cursor: pointer; font-size: 1.1rem; z-index: 10; }
 
-    .footer { padding: 4rem 0 2rem; border-top: 1px solid rgba(255, 255, 255, 0.06); }
-    .footer-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 3rem; margin-bottom: 3rem; }
-    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+    .footer { padding: 3rem 0 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.06); width: 100%; }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2rem; }
+    .footer-bottom { display: flex; justify-content: center; align-items: center; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.06); text-align: center; }
     
     @media (max-width: 900px) {
       .nav-desktop-links { display: none; }
-      .search-container { max-width: 100%; margin: 0.5rem 0; order: 3; width: 100%; }
-      .navbar-inner { flex-wrap: wrap; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .products-glass-container { padding: 1.5rem 1rem; }
+      .search-container { max-width: 100%; margin: 0.25rem 0; order: 3; width: 100%; }
+      .navbar-inner { flex-wrap: wrap; padding: 0.5rem; }
+      .navbar-actions { width: 100%; justify-content: space-between; margin-top: 0.25rem; }
+      .products-glass-container { padding: 1rem 0.5rem; }
+      .hero-carousel-section { padding-top: 8.5rem; }
+      .carousel-3d-container { height: 160px; }
+      .carousel-3d-item { width: 130px; height: 90px; }
+      .carousel-3d-item:nth-child(1) { transform: rotateY(0deg) translateZ(130px); }
+      .carousel-3d-item:nth-child(2) { transform: rotateY(60deg) translateZ(130px); }
+      .carousel-3d-item:nth-child(3) { transform: rotateY(120deg) translateZ(130px); }
+      .carousel-3d-item:nth-child(4) { transform: rotateY(180deg) translateZ(130px); }
+      .carousel-3d-item:nth-child(5) { transform: rotateY(240deg) translateZ(130px); }
+      .carousel-3d-item:nth-child(6) { transform: rotateY(300deg) translateZ(130px); }
     }
   </style>
 </head>
@@ -374,7 +386,7 @@
     const translations = {
       ku: {
         navAdmin: 'پانێڵی بەڕێوەبەر',
-        shopNow: 'سەبەتەی کڕین',
+        shopNow: 'سەبەتە',
         searchPlaceholder: 'بگەڕێ بەدوای باشترین ئامێر و کەلوپەل...',
         adminModalTitle: 'چوونەژوورەوەی تایبەتی بەڕێوەبەر',
         adminPasswordLabel: 'تکایە وشەی تێپەڕی بەڕێوەبەر بنووسە',
@@ -404,12 +416,12 @@
         categoryLabel: 'پۆلێنبەندی',
         addToCart: 'زیادکردن بۆ سەبەتە',
         heroSub: 'کیبۆردی میکانیکی • ماوسی دایمۆند • لاپتۆپی پرو • کەیسی ئاڕ جی بی • گەیمینگ • کونسوڵی نوێ • هێتسێتی زیرەک',
-        themeDark: 'دیمەنی تاریک',
-        themeLight: 'دیمەنی ڕووناک'
+        themeDark: 'تاریک',
+        themeLight: 'ڕووناک'
       },
       ar: {
         navAdmin: 'لوحة الإدارة',
-        shopNow: 'سلة المشتريات',
+        shopNow: 'السلة',
         searchPlaceholder: 'ابحث عن أرقى الأجهزة والمعدات...',
         adminModalTitle: 'تسجيل دخول المدير الآمن',
         adminPasswordLabel: 'الرجاء إدخال كلمة مرور المدير',
@@ -439,13 +451,13 @@
         categoryLabel: 'التصنيف',
         addToCart: 'أضف إلى السلة',
         heroSub: 'كيبورد ميكانيكي • ماوس احترافي • لابتوب قوي • كيس إضاءة • ألعاب • كونسول • سماعة محيطية',
-        themeDark: 'الوضع الداكن',
-        themeLight: 'الوضع الفاتح'
+        themeDark: 'داكن',
+        themeLight: 'فاتح'
       },
       en: {
-        navAdmin: 'Admin Panel',
-        shopNow: 'Shopping Cart',
-        searchPlaceholder: 'Search for high-end gear and laptops...',
+        navAdmin: 'Admin',
+        shopNow: 'Cart',
+        searchPlaceholder: 'Search high-end gear...',
         adminModalTitle: 'Secure Administrator Login',
         adminPasswordLabel: 'Enter Admin Secret Password',
         loginBtn: 'Access Dashboard',
@@ -474,12 +486,12 @@
         categoryLabel: 'Category',
         addToCart: 'Add to Cart',
         heroSub: 'Mechanical Keyboard • Precision Mouse • Pro Laptop • Gaming Case • Console • Surround Headset',
-        themeDark: 'Dark Theme',
-        themeLight: 'Light Theme'
+        themeDark: 'Dark',
+        themeLight: 'Light'
       }
     };
 
-    function Icon({ name, size = 20, strokeWidth = 2 }) {
+    function Icon({ name, size = 18, strokeWidth = 2 }) {
       useEffect(() => { if (window.lucide) { window.lucide.createIcons(); } });
       return <i data-lucide={name} style={{ width: size, height: size, strokeWidth: strokeWidth }} />;
     }
@@ -698,7 +710,7 @@
                 <div className="search-container">
                   <div className="search-input-wrapper">
                     <div className="search-inner-box">
-                      <span className="search-icon"><Icon name="search" size={16} /></span>
+                      <span className="search-icon"><Icon name="search" size={14} /></span>
                       <input 
                         type="text" 
                         className="search-input" 
@@ -712,7 +724,7 @@
 
                 <div className="nav-desktop-links">
                   <button className="nav-link" onClick={() => setIsAdminOpen(true)}>
-                    <Icon name="lock" size={16} />{t.navAdmin}
+                    <Icon name="lock" size={15} />{t.navAdmin}
                   </button>
                 </div>
 
@@ -723,7 +735,7 @@
                     title="Toggle Theme"
                   >
                     <div className="glass-toggle-thumb">
-                      <Icon name={theme === 'dark' ? 'moon' : 'sun'} size={16} />
+                      <Icon name={theme === 'dark' ? 'moon' : 'sun'} size={14} />
                     </div>
                     <div className="glass-toggle-labels">
                       <span>تاریک</span>
@@ -736,8 +748,13 @@
                     <button className={`lang-btn ${lang === 'ar' ? 'active' : ''}`} onClick={() => setLang('ar')}>عربي</button>
                     <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</button>
                   </div>
-                  <button className="btn btn-primary" style={{ padding: '0.5rem 1.2rem', fontSize: '0.9rem' }} onClick={() => setIsCartOpen(true)}>
-                    <Icon name="shopping-cart" size={18} /> {t.shopNow} ({totalCartItemsCount})
+                  
+                  <button className="nav-link" onClick={() => setIsAdminOpen(true)} style={{ display: window.innerWidth <= 900 ? 'flex' : 'none', padding: '0.3rem' }} title={t.navAdmin}>
+                    <Icon name="lock" size={16} />
+                  </button>
+
+                  <button className="btn btn-primary" style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem' }} onClick={() => setIsCartOpen(true)}>
+                    <Icon name="shopping-cart" size={16} /> {t.shopNow} ({totalCartItemsCount})
                   </button>
                 </div>
               </div>
@@ -747,11 +764,11 @@
           {/* PRODUCT SPECS GLASS MODAL */}
           {selectedProductDetails && (
             <div className="modal-overlay" onClick={() => setSelectedProductDetails(null)}>
-              <div className="modal-content glass" style={{ background: 'var(--neutral-900)', border: '1px solid var(--glass-border)' }} onClick={e => e.stopPropagation()}>
+              <div className="modal-content glass" onClick={e => e.stopPropagation()}>
                 <span className="close-modal" onClick={() => setSelectedProductDetails(null)}>✕</span>
                 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                  <div style={{ width: '100%', height: '200px', borderRadius: 'var(--radius-md)', overflow: 'hidden', background: '#000', position: 'relative' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <div style={{ width: '100%', height: '170px', borderRadius: 'var(--radius-md)', overflow: 'hidden', background: '#000', position: 'relative' }}>
                     <img src={selectedProductDetails.images[activeImageIndices[selectedProductDetails.id] || 0]} alt={selectedProductDetails.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     
                     {selectedProductDetails.images.length > 1 && (
@@ -763,30 +780,30 @@
                   </div>
 
                   <div>
-                    <span style={{ fontSize: '0.8rem', padding: '0.2rem 0.6rem', borderRadius: '4px', background: 'var(--success-500)', color: '#fff', fontWeight: '600' }}>
+                    <span style={{ fontSize: '0.75rem', padding: '0.2rem 0.5rem', borderRadius: '4px', background: 'var(--success-500)', color: '#fff', fontWeight: '600' }}>
                       {selectedProductDetails.category}
                     </span>
-                    <h2 style={{ fontSize: '1.5rem', marginTop: '0.5rem', color: 'var(--neutral-0)' }}>{selectedProductDetails.name}</h2>
+                    <h2 style={{ fontSize: '1.25rem', marginTop: '0.4rem', color: 'var(--neutral-0)' }}>{selectedProductDetails.name}</h2>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.75rem' }}>
-                      <span style={{ fontSize: '1.75rem', fontWeight: '700', color: 'var(--neutral-0)' }}>${selectedProductDetails.price.toLocaleString()}</span>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem' }}>
+                      <span style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--neutral-0)' }}>${selectedProductDetails.price.toLocaleString()}</span>
                       {selectedProductDetails.oldPrice && (
-                        <span style={{ fontSize: '1rem', color: 'var(--neutral-400)', textDecoration: 'line-through' }}>${selectedProductDetails.oldPrice.toLocaleString()}</span>
+                        <span style={{ fontSize: '0.9rem', color: 'var(--neutral-400)', textDecoration: 'line-through' }}>${selectedProductDetails.oldPrice.toLocaleString()}</span>
                       )}
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--warning-400)' }}>
-                      <Icon name="star" size={16} />
-                      <span style={{ fontWeight: '600', color: 'var(--neutral-200)' }}>{selectedProductDetails.rating}</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', color: 'var(--warning-400)' }}>
+                      <Icon name="star" size={14} />
+                      <span style={{ fontWeight: '600', color: 'var(--neutral-200)', fontSize: '0.85rem' }}>{selectedProductDetails.rating}</span>
                     </div>
                   </div>
 
-                  <div style={{ borderTop: '1px solid var(--glass-border)', paddingTop: '1rem' }}>
-                    <h4 style={{ fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--neutral-300)' }}>{t.specsTitle}:</h4>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <div style={{ borderTop: '1px solid var(--glass-border)', paddingTop: '0.75rem' }}>
+                    <h4 style={{ fontSize: '0.9rem', marginBottom: '0.5rem', color: 'var(--neutral-300)' }}>{t.specsTitle}:</h4>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
                       {selectedProductDetails.specs.map((spec, idx) => (
-                        <span key={idx} style={{ padding: '0.4rem 0.8rem', borderRadius: 'var(--radius-sm)', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid var(--glass-border)', fontSize: '0.85rem', color: 'var(--neutral-200)' }}>
+                        <span key={idx} style={{ padding: '0.3rem 0.6rem', borderRadius: 'var(--radius-sm)', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid var(--glass-border)', fontSize: '0.8rem', color: 'var(--neutral-200)' }}>
                           ✓ {spec}
                         </span>
                       ))}
@@ -795,13 +812,13 @@
 
                   <button 
                     className="btn btn-primary" 
-                    style={{ width: '100%', marginTop: '0.5rem', padding: '0.75rem' }} 
+                    style={{ width: '100%', marginTop: '0.25rem', padding: '0.6rem' }} 
                     onClick={() => {
                       handleAddToCart(selectedProductDetails);
                       setSelectedProductDetails(null);
                     }}
                   >
-                    <Icon name="shopping-cart" size={18} /> {t.addToCart}
+                    <Icon name="shopping-cart" size={16} /> {t.addToCart}
                   </button>
                 </div>
               </div>
@@ -813,36 +830,36 @@
             <div className="modal-overlay" onClick={() => setIsCartOpen(false)}>
               <div className="modal-content" onClick={e => e.stopPropagation()}>
                 <span className="close-modal" onClick={() => setIsCartOpen(false)}>✕</span>
-                <h2 style={{ marginBottom: '1rem', color: 'var(--neutral-0)' }}>{t.cartTitle}</h2>
+                <h2 style={{ marginBottom: '0.75rem', color: 'var(--neutral-0)', fontSize: '1.25rem' }}>{t.cartTitle}</h2>
                 
                 {cartItems.length === 0 ? (
-                  <p style={{ color: 'var(--neutral-400)', padding: '1rem 0' }}>{t.emptyCart}</p>
+                  <p style={{ color: 'var(--neutral-400)', padding: '1rem 0', fontSize: '0.9rem' }}>{t.emptyCart}</p>
                 ) : (
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                    <div style={{ maxHeight: '200px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.5rem', paddingRight: '4px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                    <div style={{ maxHeight: '160px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.4rem', paddingRight: '4px' }}>
                       {cartItems.map((item) => (
-                        <div key={item.product.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--glass-bg)', padding: '0.5rem 1rem', borderRadius: '8px' }}>
+                        <div key={item.product.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--glass-bg)', padding: '0.4rem 0.75rem', borderRadius: '6px' }}>
                           <div style={{ display: 'flex', flexDirection: 'column' }}>
-                            <span style={{ fontWeight: '600', fontSize: '0.9rem' }}>{item.product.name}</span>
-                            <span style={{ fontSize: '0.8rem', color: 'var(--neutral-400)' }}>${item.product.price} x {item.quantity}</span>
+                            <span style={{ fontWeight: '600', fontSize: '0.85rem' }}>{item.product.name}</span>
+                            <span style={{ fontSize: '0.75rem', color: 'var(--neutral-400)' }}>${item.product.price} x {item.quantity}</span>
                           </div>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <button onClick={() => handleDecreaseQty(item.product.id)} className="btn btn-glass" style={{ padding: '0.2rem 0.5rem', fontSize: '0.8rem' }}>-</button>
-                            <span style={{ fontWeight: 'bold', minWidth: '20px', textAlign: 'center' }}>{item.quantity}</span>
-                            <button onClick={() => handleIncreaseQty(item.product.id)} className="btn btn-glass" style={{ padding: '0.2rem 0.5rem', fontSize: '0.8rem' }}>+</button>
-                            <button onClick={() => handleRemoveFromCart(item.product.id)} className="btn btn-glass" style={{ padding: '0.2rem 0.5rem', color: 'var(--error-500)', borderColor: 'var(--error-500)' }} title="Delete">
-                              <Icon name="trash-2" size={14} />
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                            <button onClick={() => handleDecreaseQty(item.product.id)} className="btn btn-glass" style={{ padding: '0.15rem 0.4rem', fontSize: '0.75rem' }}>-</button>
+                            <span style={{ fontWeight: 'bold', minWidth: '16px', textAlign: 'center', fontSize: '0.85rem' }}>{item.quantity}</span>
+                            <button onClick={() => handleIncreaseQty(item.product.id)} className="btn btn-glass" style={{ padding: '0.15rem 0.4rem', fontSize: '0.75rem' }}>+</button>
+                            <button onClick={() => handleRemoveFromCart(item.product.id)} className="btn btn-glass" style={{ padding: '0.15rem 0.4rem', color: 'var(--error-500)', borderColor: 'var(--error-500)' }} title="Delete">
+                              <Icon name="trash-2" size={12} />
                             </button>
                           </div>
                         </div>
                       ))}
                     </div>
 
-                    <form onSubmit={handleCheckout} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '0.5rem' }}>
+                    <form onSubmit={handleCheckout} style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginTop: '0.25rem' }}>
                       <input type="text" placeholder={t.fullNameLabel} value={fullName} onChange={e => setFullName(e.target.value)} className="admin-input" required />
                       <input type="text" placeholder={t.addressLabel} value={address} onChange={e => setAddress(e.target.value)} className="admin-input" required />
                       <input type="tel" placeholder={t.phoneLabel} value={phone} onChange={e => setPhone(e.target.value)} className="admin-input" required />
-                      <button type="submit" className="btn btn-primary" style={{ marginTop: '0.5rem' }}>{t.confirmOrder}</button>
+                      <button type="submit" className="btn btn-primary" style={{ marginTop: '0.25rem', padding: '0.6rem' }}>{t.confirmOrder}</button>
                     </form>
                   </div>
                 )}
@@ -853,24 +870,24 @@
           {/* ADMIN MODAL */}
           {isAdminOpen && (
             <div className="modal-overlay" onClick={() => setIsAdminOpen(false)}>
-              <div className="modal-content" onClick={e => e.stopPropagation()} style={{ maxWidth: '600px', maxHeight: '90vh', overflowY: 'auto' }}>
+              <div className="modal-content" onClick={e => e.stopPropagation()}>
                 <span className="close-modal" onClick={() => setIsAdminOpen(false)}>✕</span>
                 
                 {!isAdminLoggedIn ? (
                   <div>
-                    <h2 style={{ marginBottom: '1rem', color: 'var(--neutral-0)' }}>{t.adminModalTitle}</h2>
-                    <form onSubmit={handleAdminLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                      <label style={{ color: 'var(--neutral-300)', fontSize: '0.9rem' }}>{t.adminPasswordLabel} (تکایە 1234 بنووسە):</label>
+                    <h2 style={{ marginBottom: '0.75rem', color: 'var(--neutral-0)', fontSize: '1.25rem' }}>{t.adminModalTitle}</h2>
+                    <form onSubmit={handleAdminLogin} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                      <label style={{ color: 'var(--neutral-300)', fontSize: '0.85rem' }}>{t.adminPasswordLabel} (تکایە 1234 بنووسە):</label>
                       <input type="password" value={passwordInput} onChange={e => setPasswordInput(e.target.value)} className="admin-input" placeholder="••••" required />
-                      <button type="submit" className="btn btn-primary">{t.loginBtn}</button>
+                      <button type="submit" className="btn btn-primary" style={{ padding: '0.6rem' }}>{t.loginBtn}</button>
                     </form>
                   </div>
                 ) : (
                   <div>
-                    <h2 style={{ marginBottom: '1rem', color: 'var(--neutral-0)' }}>{t.adminDashboardTitle}</h2>
+                    <h2 style={{ marginBottom: '0.75rem', color: 'var(--neutral-0)', fontSize: '1.25rem' }}>{t.adminDashboardTitle}</h2>
                     <form onSubmit={handleAddProductSubmit} className="admin-form">
                       <input type="text" placeholder={t.productNamePlaceholder} value={newTitle} onChange={e => setNewTitle(e.target.value)} className="admin-input" required />
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem' }}>
                         <input type="number" placeholder={t.productPricePlaceholder} value={newPrice} onChange={e => setNewPrice(e.target.value)} className="admin-input" required />
                         <input type="number" placeholder={t.productOldPricePlaceholder} value={newOldPrice} onChange={e => setNewOldPrice(e.target.value)} className="admin-input" />
                       </div>
@@ -884,8 +901,8 @@
                         <option value="Console">کونسوڵ (Console)</option>
                       </select>
                       
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
-                        <label style={{ fontSize: '0.85rem', color: 'var(--neutral-300)' }}>{t.positionLabel}</label>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+                        <label style={{ fontSize: '0.8rem', color: 'var(--neutral-300)' }}>{t.positionLabel}</label>
                         <select value={newPosition} onChange={e => setNewPosition(e.target.value)} className="admin-input">
                           <option value="normal">{t.posNormal}</option>
                           <option value="top">{t.posTop}</option>
@@ -893,20 +910,20 @@
                       </div>
 
                       <input type="text" placeholder={t.productSpecsPlaceholder} value={newSpecs} onChange={e => setNewSpecs(e.target.value)} className="admin-input" />
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                        <label style={{ fontSize: '0.85rem', color: 'var(--neutral-300)' }}>{t.uploadImagesLabel}</label>
-                        <input type="file" accept="image/*" multiple onChange={handleImageUpload} className="admin-input" style={{ padding: '0.5rem' }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                        <label style={{ fontSize: '0.8rem', color: 'var(--neutral-300)' }}>{t.uploadImagesLabel}</label>
+                        <input type="file" accept="image/*" multiple onChange={handleImageUpload} className="admin-input" style={{ padding: '0.4rem' }} />
                       </div>
-                      <button type="submit" className="btn btn-primary" style={{ marginTop: '0.5rem' }}>{t.addProductBtn}</button>
+                      <button type="submit" className="btn btn-primary" style={{ marginTop: '0.25rem', padding: '0.6rem' }}>{t.addProductBtn}</button>
                     </form>
 
-                    <div style={{ marginTop: '2rem', borderTop: '1px solid var(--glass-border)', paddingTop: '1rem' }}>
-                      <h3 style={{ marginBottom: '1rem', fontSize: '1.1rem' }}>بەڕێوەبردن و سڕینەوەی کاڵا تۆمارکراوەکان</h3>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', maxHeight: '200px', overflowY: 'auto' }}>
+                    <div style={{ marginTop: '1.25rem', borderTop: '1px solid var(--glass-border)', paddingTop: '0.75rem' }}>
+                      <h3 style={{ marginBottom: '0.5rem', fontSize: '0.95rem' }}>بەڕێوەبردن و سڕینەوەی کاڵا تۆمارکراوەکان</h3>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', maxHeight: '150px', overflowY: 'auto' }}>
                         {products.map(p => (
-                          <div key={p.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--glass-bg)', padding: '0.5rem 1rem', borderRadius: '8px' }}>
-                            <span style={{ fontSize: '0.9rem' }}>{p.name} (${p.price})</span>
-                            <button onClick={() => handleDeleteProduct(p.id)} className="btn btn-glass" style={{ padding: '0.2rem 0.6rem', color: 'var(--error-500)', fontSize: '0.85rem' }}>
+                          <div key={p.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--glass-bg)', padding: '0.4rem 0.75rem', borderRadius: '6px' }}>
+                            <span style={{ fontSize: '0.85rem' }}>{p.name} (${p.price})</span>
+                            <button onClick={() => handleDeleteProduct(p.id)} className="btn btn-glass" style={{ padding: '0.15rem 0.5rem', color: 'var(--error-500)', fontSize: '0.75rem' }}>
                               {t.deleteProduct}
                             </button>
                           </div>
@@ -948,7 +965,7 @@
             <section className="products-section">
               <div className="container">
                 <div className="products-glass-container">
-                  <div className="section-icon-wrapper"><div className="glass section-icon"><Icon name="grid" size={24} /></div></div>
+                  <div className="section-icon-wrapper"><div className="glass section-icon"><Icon name="grid" size={20} /></div></div>
                   <h2 className="section-title">نوێترین و بەهێزترین بەرهەمەکان</h2>
                   <p className="section-subtitle">باشترین هەڵبژاردە بۆ یاریزانان و دیزاینەران، بە کوالێتی بەرز و نرخی گونجاو</p>
                   <div className="products-grid">
@@ -975,7 +992,7 @@
                           </div>
 
                           <div className="product-content">
-                            <div className="product-rating"><Icon name="star" size={16} /><span className="product-rating-number">{p.rating}</span></div>
+                            <div className="product-rating"><Icon name="star" size={14} /><span className="product-rating-number">{p.rating}</span></div>
                             <h3 className="product-name">{p.name}</h3>
                             <div className="product-specs">{p.specs.map(s => <span key={s} className="product-spec">{s}</span>)}</div>
                             <div className="product-bottom">
@@ -983,7 +1000,7 @@
                                 <span className="product-price">${p.price.toLocaleString()}</span>
                                 {p.oldPrice && <span className="product-old-price">${p.oldPrice.toLocaleString()}</span>}
                               </div>
-                              <button className="btn btn-primary" style={{ padding: '0.5rem' }} onClick={(e) => { e.stopPropagation(); handleAddToCart(p); }}><Icon name="shopping-cart" size={16} /></button>
+                              <button className="btn btn-primary" style={{ padding: '0.4rem' }} onClick={(e) => { e.stopPropagation(); handleAddToCart(p); }}><Icon name="shopping-cart" size={14} /></button>
                             </div>
                           </div>
                         </div>
@@ -1000,12 +1017,12 @@
             <div className="container">
               <div className="footer-grid">
                 <div>
-                  <div className="brand" style={{ marginBottom: '1rem' }}><div className="brand-logo"><span>G</span></div><span className="brand-name">گەیمینگ ستۆر</span></div>
-                  <p style={{ color: 'var(--neutral-400)', fontSize: '0.95rem', maxWidth: '360px' }}>{t.footerDesc}</p>
+                  <div className="brand" style={{ marginBottom: '0.75rem' }}><div className="brand-logo"><span>G</span></div><span className="brand-name">گەیمینگ ستۆر</span></div>
+                  <p style={{ color: 'var(--neutral-400)', fontSize: '0.85rem', maxWidth: '360px' }}>{t.footerDesc}</p>
                 </div>
               </div>
               <div className="footer-bottom">
-                <p style={{ color: 'var(--neutral-500)', fontSize: '0.85rem' }}>{t.rights}</p>
+                <p style={{ color: 'var(--neutral-500)', fontSize: '0.8rem' }}>{t.rights}</p>
               </div>
             </div>
           </footer>
