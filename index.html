@@ -22,9 +22,9 @@
 
     body.dark {
       --neutral-0: #ffffff; --neutral-50: #f8fafc; --neutral-100: #f1f5f9; --neutral-200: #e2e8f0; --neutral-300: #cbd5e1; --neutral-400: #94a3b8; --neutral-500: #64748b; --neutral-600: #475569; --neutral-700: #334155; --neutral-800: #1e293b; --neutral-900: #0f172a; --neutral-950: #022c22;
-      --glass-bg: rgba(6, 78, 59, 0.35);
-      --glass-bg-strong: rgba(6, 78, 59, 0.55);
-      --glass-border: rgba(52, 211, 153, 0.3);
+      --glass-bg: rgba(6, 78, 59, 0.25);
+      --glass-bg-strong: rgba(6, 78, 59, 0.4);
+      --glass-border: rgba(52, 211, 153, 0.2);
       --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12); --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.18); --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.25); --shadow-glow: 0 0 40px rgba(16, 185, 129, 0.3);
       background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #022c22 100%);
       color: var(--neutral-100);
@@ -32,9 +32,9 @@
 
     body.light {
       --neutral-0: #0f172a; --neutral-50: #1e293b; --neutral-100: #1e293b; --neutral-200: #334155; --neutral-300: #475569; --neutral-400: #64748b; --neutral-500: #94a3b8; --neutral-600: #cbd5e1; --neutral-700: #e2e8f0; --neutral-800: #f1f5f9; --neutral-900: #f8fafc; --neutral-950: #ecfdf5;
-      --glass-bg: rgba(209, 250, 229, 0.5);
-      --glass-bg-strong: rgba(167, 243, 208, 0.75);
-      --glass-border: rgba(16, 185, 129, 0.35);
+      --glass-bg: rgba(209, 250, 229, 0.4);
+      --glass-bg-strong: rgba(167, 243, 208, 0.6);
+      --glass-border: rgba(16, 185, 129, 0.25);
       --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06); --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08); --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12); --shadow-glow: 0 0 40px rgba(16, 185, 129, 0.15);
       background: linear-gradient(135deg, #f0fdf4 100%, #dcfce7 50%, #f0fdf4 0%);
       color: var(--neutral-100);
@@ -43,7 +43,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; width: 100%; overflow-x: hidden; }
     body { font-family: var(--font-body); width: 100%; overflow-x: hidden; line-height: 1.5; -webkit-font-smoothing: antialiased; transition: background 0.3s, color 0.3s; }
-    h1, h2, h3, h4, h5, h6 { font-family: 'Shrikhand', var(--font-display); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; }
     a { color: inherit; text-decoration: none; }
     button { font-family: inherit; cursor: pointer; border: none; background: none; }
     img { max-width: 100%; display: block; }
@@ -74,8 +74,8 @@
     .btn-glass { background: var(--glass-bg); backdrop-filter: blur(var(--glass-blur)); border: 1px solid var(--glass-border); color: var(--neutral-100); }
     .btn-glass:hover { background: var(--glass-bg-strong); transform: translateY(-2px); }
     
-    .lang-switcher { display: flex; gap: 0.2rem; padding: 0.2rem; border-radius: var(--radius-full); background: var(--glass-bg); backdrop-filter: blur(var(--glass-blur)); border: 1px solid var(--glass-border); }
-    .lang-btn { padding: 0.3rem 0.6rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600; color: var(--neutral-300); transition: all var(--transition-fast); }
+    .lang-switcher { display: flex; gap: 0.15rem; padding: 0.15rem; border-radius: var(--radius-full); background: var(--glass-bg); backdrop-filter: blur(var(--glass-blur)); border: 1px solid var(--glass-border); }
+    .lang-btn { padding: 0.25rem 0.45rem; border-radius: var(--radius-full); font-size: 0.7rem; font-weight: 600; color: var(--neutral-300); transition: all var(--transition-fast); }
     .lang-btn.active { background: var(--success-500); color: white; box-shadow: var(--shadow-sm); }
     .lang-btn:hover:not(.active) { color: var(--neutral-0); background: rgba(255, 255, 255, 0.05); }
 
@@ -90,14 +90,14 @@
       padding: 2px;
       cursor: pointer;
       position: relative;
-      width: 70px;
-      height: 32px;
+      width: 65px;
+      height: 30px;
       transition: all var(--transition-base);
     }
     .glass-toggle-thumb {
       position: absolute;
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       background: var(--glass-bg-strong);
       border: 1px solid var(--glass-border);
@@ -109,62 +109,63 @@
       color: var(--neutral-0);
       z-index: 2;
     }
-    .glass-toggle.dark-mode .glass-toggle-thumb { transform: translateX(38px); }
+    .glass-toggle.dark-mode .glass-toggle-thumb { transform: translateX(35px); }
     .glass-toggle.light-mode .glass-toggle-thumb { transform: translateX(0px); }
     .glass-toggle-labels {
       display: flex;
       justify-content: space-between;
       width: 100%;
-      padding: 0 4px;
-      font-size: 0.6rem;
+      padding: 0 2px;
+      font-size: 0.55rem;
       font-weight: 600;
-      color: var(--neutral-300);
+      color: var(--neutral-400);
       user-select: none;
       z-index: 1;
     }
 
-    .section-title { 
-      font-family: 'Shrikhand', sans-serif; 
-      font-size: clamp(1.75rem, 4vw, 3.5rem); 
-      font-weight: 700; 
-      text-align: center; 
-      margin-bottom: var(--space-2); 
-      background: linear-gradient(135deg, var(--neutral-0), var(--success-400)); 
-      -webkit-background-clip: text; 
-      background-clip: text; 
-      -webkit-text-fill-color: transparent; 
-    }
-    .section-subtitle { text-align: center; color: var(--neutral-300); font-size: 1rem; max-width: 600px; margin: 0 auto var(--space-6); line-height: 1.6; padding: 0 1rem; }
+    .section-title { font-size: clamp(1.75rem, 4vw, 3.5rem); font-weight: 700; text-align: center; margin-bottom: var(--space-2); background: linear-gradient(135deg, var(--neutral-0), var(--neutral-300)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .section-subtitle { text-align: center; color: var(--neutral-400); font-size: 1rem; max-width: 600px; margin: 0 auto var(--space-6); line-height: 1.6; padding: 0 1rem; }
     
-    /* NAVBAR - Expanded and Fully Visible */
-    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.6rem 0.4rem; transition: all var(--transition-base); }
-    .navbar-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 1rem; border-radius: var(--radius-full); width: 100%; gap: 0.5rem; flex-wrap: nowrap; }
-    .brand { display: flex; align-items: center; gap: 0.4rem; text-decoration: none; flex-shrink: 0; }
-    .brand-logo { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--success-500), var(--accent-500)); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); color: white; font-weight: 700; font-size: 0.9rem; }
-    .brand-name { font-family: 'Shrikhand', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--neutral-0); white-space: nowrap; }
-    .nav-desktop-links { display: flex; gap: 1rem; align-items: center; }
-    .nav-link { font-family: 'Shrikhand', sans-serif; color: var(--neutral-200); font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; gap: 0.3rem; transition: color var(--transition-fast); cursor: pointer; white-space: nowrap; }
-    .nav-link:hover, .nav-link.active { color: var(--success-400); }
-    .navbar-actions { display: flex; gap: 0.5rem; align-items: center; }
+    /* NAVBAR - دوو بەش (سەرەوە و خوارەوە) */
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.4rem 0.5rem; transition: all var(--transition-base); }
+    .navbar-inner { display: flex; flex-direction: column; padding: 0.4rem 0.75rem; border-radius: var(--radius-xl); width: 100%; gap: 0.4rem; }
+    
+    /* نیوەی سەرەوەی ناوڤار */
+    .navbar-row-top { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 0.5rem; }
+    
+    /* نیوەی خوارەوەی ناوڤار */
+    .navbar-row-bottom { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 0.5rem; border-top: 1px solid var(--glass-border); padding-top: 0.35rem; }
 
-    .search-container { display: flex; justify-content: center; align-items: center; flex: 1; max-width: 320px; margin: 0 0.5rem; }
-    .search-input-wrapper { position: relative; width: 100%; border-radius: var(--radius-full); padding: 2px; background: linear-gradient(0deg, #10b981, #34d399, #10b981); background-size: 200% 200%; animation: rotateLed 3s linear infinite; }
+    .brand { display: flex; align-items: center; gap: 0.3rem; text-decoration: none; flex-shrink: 0; }
+    .brand-logo { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--success-500), var(--accent-500)); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); color: white; font-weight: 700; font-size: 0.8rem; }
+    .brand-name { font-family: 'Shrikhand', sans-serif; font-weight: 700; font-size: 1rem; color: var(--neutral-0); white-space: nowrap; }
+    
+    .nav-desktop-links { display: flex; gap: 0.75rem; align-items: center; }
+    .nav-link { font-family: 'Shrikhand', sans-serif; color: var(--neutral-300); font-size: 0.8rem; font-weight: 500; display: flex; align-items: center; gap: 0.25rem; transition: color var(--transition-fast); cursor: pointer; white-space: nowrap; }
+    .nav-link:hover, .nav-link.active { color: var(--success-400); }
+    
+    .navbar-actions { display: flex; gap: 0.35rem; align-items: center; }
+
+    /* SEARCH BAR */
+    .search-container { display: flex; justify-content: center; align-items: center; flex: 1; max-width: 100%; }
+    .search-input-wrapper { position: relative; width: 100%; border-radius: var(--radius-full); padding: 1.5px; background: linear-gradient(0deg, #10b981, #34d399, #10b981); background-size: 200% 200%; animation: rotateLed 3s linear infinite; }
     @keyframes rotateLed {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
     .search-inner-box { position: relative; width: 100%; border-radius: var(--radius-full); background: var(--neutral-900); display: flex; align-items: center; }
-    .search-input { width: 100%; padding: 0.4rem 0.8rem 0.4rem 2rem; border-radius: var(--radius-full); background: transparent; border: none; color: var(--neutral-0); font-size: 0.8rem; outline: none; }
-    .search-icon { position: absolute; top: 50%; transform: translateY(-50%); inset-inline-start: 0.6rem; color: var(--neutral-400); pointer-events: none; }
+    .search-input { width: 100%; padding: 0.3rem 0.6rem 0.3rem 1.8rem; border-radius: var(--radius-full); background: transparent; border: none; color: var(--neutral-0); font-size: 0.75rem; outline: none; }
+    .search-icon { position: absolute; top: 50%; transform: translateY(-50%); inset-inline-start: 0.5rem; color: var(--neutral-400); pointer-events: none; }
 
+    /* HERO SECTION */
     .hero-carousel-section { padding: 7rem 0 2rem; perspective: 1000px; overflow: hidden; position: relative; width: 100%; }
     
     .gaming-glass-hero {
       width: 100%;
       max-width: 1100px;
       margin: 0 auto 2rem auto;
-      padding: 2.5rem 1.5rem;
+      padding: 2rem 1rem;
       background: var(--glass-bg);
       backdrop-filter: blur(var(--glass-blur));
       -webkit-backdrop-filter: blur(var(--glass-blur));
@@ -180,17 +181,17 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center, rgba(16, 185, 129, 0.2), transparent 70%);
+      background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15), transparent 70%);
       pointer-events: none;
     }
 
     .gaming-main-title {
       font-family: 'Shrikhand', sans-serif;
-      font-size: clamp(2rem, 5vw, 4.2rem);
+      font-size: clamp(1.8rem, 5vw, 4.2rem);
       font-weight: 800;
       letter-spacing: -0.03em;
-      margin-bottom: 1.2rem;
-      background: linear-gradient(135deg, var(--neutral-0) 20%, var(--success-400) 100%);
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--neutral-0) 30%, var(--success-400) 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -201,8 +202,8 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.6rem;
-      max-width: 850px;
+      gap: 0.5rem;
+      max-width: 800px;
       margin: 0 auto;
       position: relative;
       z-index: 2;
@@ -210,13 +211,13 @@
 
     .gear-chip {
       font-family: 'Shrikhand', sans-serif;
-      padding: 0.5rem 1.2rem;
+      padding: 0.4rem 1rem;
       border-radius: var(--radius-full);
       background: var(--glass-bg-strong);
       border: 1px solid var(--glass-border);
       color: var(--neutral-100);
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       backdrop-filter: blur(10px);
       transition: all 0.3s ease;
       box-shadow: var(--shadow-sm);
@@ -254,6 +255,7 @@
     .carousel-3d-item:nth-child(5) { transform: rotateY(240deg) translateZ(200px); }
     .carousel-3d-item:nth-child(6) { transform: rotateY(300deg) translateZ(200px); }
 
+    /* PRODUCTS SECTION */
     .products-section { padding: 2rem 0 4rem; width: 100%; }
     .products-glass-container {
       background: var(--glass-bg);
@@ -261,15 +263,15 @@
       -webkit-backdrop-filter: blur(var(--glass-blur));
       border: 1px solid var(--glass-border);
       border-radius: var(--radius-2xl);
-      padding: 2.5rem 1.5rem;
+      padding: 2rem 1rem;
       box-shadow: var(--shadow-lg);
       position: relative;
       width: 100%;
     }
     
     .section-icon-wrapper { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 0.75rem; }
-    .section-icon { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.2rem; width: 100%; }
+    .section-icon { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; width: 100%; }
     
     @keyframes spinInTop {
       0% { opacity: 0; transform: translateY(-50px) rotate(-10deg) scale(0.8); }
@@ -278,21 +280,17 @@
     .product-card { 
       border-radius: var(--radius-lg); 
       overflow: hidden; 
-      transition: all 0.3s ease; 
+      transition: all var(--transition-base); 
       display: flex; 
       flex-direction: column; 
       background: var(--glass-bg-strong); 
       position: relative;
       width: 100%;
-      cursor: pointer;
     }
     
-    /* Strong click LED effect for laptop/products with 0.3s transition */
     .product-card.clicked-led {
       border-color: #34d399 !important;
-      box-shadow: 0 0 35px rgba(52, 211, 153, 0.9), inset 0 0 20px rgba(52, 211, 153, 0.5);
-      transform: scale(1.02);
-      transition: all 0.3s ease;
+      box-shadow: 0 0 25px rgba(52, 211, 153, 0.7), inset 0 0 15px rgba(52, 211, 153, 0.4);
     }
 
     .product-card.just-added {
@@ -300,10 +298,10 @@
       border-color: var(--success-400);
       box-shadow: var(--shadow-glow);
     }
-    .product-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: rgba(16, 185, 129, 0.4); }
+    .product-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: rgba(16, 185, 129, 0.3); }
     
     .product-image-wrapper { position: relative; overflow: hidden; aspect-ratio: 16 / 10; background: var(--neutral-900); width: 100%; }
-    .product-image { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
+    .product-image { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); cursor: pointer; }
     .product-card:hover .product-image { transform: scale(1.05); }
     .product-badge { position: absolute; top: 0.75rem; inset-inline-start: 0.75rem; padding: 0.25rem 0.6rem; border-radius: var(--radius-full); font-size: 0.7rem; font-weight: 600; color: white; z-index: 2; }
     
@@ -314,8 +312,8 @@
       background: rgba(0, 0, 0, 0.6);
       color: white;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      width: 30px;
-      height: 30px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -327,31 +325,45 @@
     }
     .product-image-wrapper:hover .slider-arrow { opacity: 1; }
     .slider-arrow:hover { background: var(--success-500); }
-    .slider-arrow.prev { left: 8px; }
-    .slider-arrow.next { right: 8px; }
+    .slider-arrow.prev { left: 6px; }
+    .slider-arrow.next { right: 6px; }
 
-    .product-content { padding: 1.2rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; position: relative; z-index: 1; }
+    .product-content { padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; position: relative; z-index: 1; }
     .product-rating { display: flex; align-items: center; gap: 0.3rem; }
-    .product-rating-number { color: var(--neutral-200); font-size: 0.85rem; }
-    .product-name { font-family: 'Shrikhand', sans-serif; font-size: 1.15rem; font-weight: 600; color: var(--neutral-0); transition: color 0.2s; }
+    .product-rating-number { color: var(--neutral-200); font-size: 0.8rem; }
+    .product-name { font-family: 'Shrikhand', sans-serif; font-size: 1.1rem; font-weight: 600; color: var(--neutral-0); cursor: pointer; transition: color 0.2s; }
     .product-name:hover { color: var(--success-400); }
-    .product-specs { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-    .product-spec { padding: 0.2rem 0.6rem; border-radius: var(--radius-sm); font-size: 0.75rem; color: var(--neutral-200); background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.1); }
-    .product-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 0.6rem; }
-    .product-prices { display: flex; align-items: baseline; gap: 0.5rem; }
-    .product-price { font-size: 1.3rem; font-weight: 700; color: var(--neutral-0); }
-    .product-old-price { font-size: 0.95rem; font-weight: 500; color: var(--neutral-400); text-decoration: line-through; }
+    .product-specs { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .product-spec { padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.7rem; color: var(--neutral-300); background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .product-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 0.5rem; }
+    .product-prices { display: flex; align-items: baseline; gap: 0.4rem; }
+    .product-price { font-size: 1.25rem; font-weight: 700; color: var(--neutral-0); }
+    .product-old-price { font-size: 0.9rem; font-weight: 500; color: var(--neutral-400); text-decoration: line-through; }
     
-    .modal-overlay { position: fixed; inset: 0; background: rgba(2, 44, 34, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 1rem; overflow-y: auto; }
-    .modal-content { background: var(--neutral-900); border: 1px solid var(--glass-border); padding: 2rem; border-radius: var(--radius-xl); width: 100%; max-width: 500px; box-shadow: var(--shadow-lg); position: relative; color: var(--neutral-100); max-height: 90vh; overflow-y: auto; }
-    .admin-form { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1rem; }
-    .admin-input { padding: 0.75rem 1rem; border-radius: var(--radius-md); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--neutral-0); font-family: inherit; font-size: 0.95rem; width: 100%; }
-    .admin-input:focus { border-color: var(--success-400); outline: none; }
-    .close-modal { position: absolute; top: 1.2rem; inset-inline-end: 1.2rem; color: var(--neutral-300); cursor: pointer; font-size: 1.2rem; z-index: 10; }
+    /* MODALS */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(2, 44, 34, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 0.5rem; overflow-y: auto; }
 
-    .footer { padding: 3rem 0 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08); width: 100%; }
+    .modal-content { background: var(--neutral-900); border: 1px solid var(--glass-border); padding: 1.5rem; border-radius: var(--radius-xl); width: 100%; max-width: 480px; box-shadow: var(--shadow-lg); position: relative; color: var(--neutral-100); max-height: 90vh; overflow-y: auto; }
+    .admin-form { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; }
+    .admin-input { padding: 0.7rem 0.9rem; border-radius: var(--radius-md); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--neutral-0); font-family: inherit; font-size: 0.9rem; width: 100%; }
+    .admin-input:focus { border-color: var(--success-400); outline: none; }
+    .close-modal { position: absolute; top: 1rem; inset-inline-end: 1rem; color: var(--neutral-400); cursor: pointer; font-size: 1.1rem; z-index: 10; }
+
+    .footer { padding: 3rem 0 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.06); width: 100%; }
     .footer-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2rem; }
-    .footer-bottom { display: flex; justify-content: center; align-items: center; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08); text-align: center; }
+    .footer-bottom { display: flex; justify-content: center; align-items: center; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.06); text-align: center; }
+    
+    @media (max-width: 900px) {
+      .hero-carousel-section { padding-top: 7.5rem; }
+      .carousel-3d-container { height: 160px; }
+      .carousel-3d-item { width: 130px; height: 90px; }
+      .carousel-3d-item:nth-child(1) { transform: rotateY(0deg) translateZ(130px); }
+      .carousel-3d-item:nth-child(2) { transform: rotateY(60deg) translateZ(130px); }
+      .carousel-3d-item:nth-child(3) { transform: rotateY(120deg) translateZ(130px); }
+      .carousel-3d-item:nth-child(4) { transform: rotateY(180deg) translateZ(130px); }
+      .carousel-3d-item:nth-child(5) { transform: rotateY(240deg) translateZ(130px); }
+      .carousel-3d-item:nth-child(6) { transform: rotateY(300deg) translateZ(130px); }
+    }
   </style>
 </head>
 <body class="dark">
@@ -402,6 +414,7 @@
         specsTitle: 'تایبەتمەندییە سەرەکییەکان و مواسەفات',
         categoryLabel: 'پۆلێنبەندی',
         addToCart: 'زیادکردن بۆ سەبەتە',
+        heroSub: 'کیبۆردی میکانیکی • ماوسی دایمۆند • لاپتۆپی پرو • کەیسی ئاڕ جی بی • گەیمینگ • کونسوڵی نوێ • هێتسێتی زیرەک',
         themeDark: 'تاریک',
         themeLight: 'ڕووناک'
       },
@@ -419,7 +432,7 @@
         productSpecsPlaceholder: 'المواصفات (مفصولة بفاصلة مثل: 32GB RAM, RGB)',
         uploadImagesLabel: 'رفع صور المنتجات (حتى 5 صور)',
         positionLabel: 'موقع ظهور المنتج في المتجر:',
-        posTop: 'القسم الرئيسي العلوي (الواجهة)',
+        posTop: 'القسم الرئيسي العلوي (الوافة)',
         posNormal: 'قائمة المنتجات العامة بالأسفل',
         addProductBtn: 'إضافة ونشر المنتج',
         wrongPassword: 'كلمة المرور غير صحيحة! يرجى المحاولة مرة أخرى.',
@@ -436,6 +449,7 @@
         specsTitle: 'المواصفات الفنية والتفاصيل الدقيقة',
         categoryLabel: 'التصنيف',
         addToCart: 'أضف إلى السلة',
+        heroSub: 'كيبورد ميكانيكي • ماوس احترافي • لابتوب قوي • كيس إضاءة • ألعاب • كونسول • سماعة محيطية',
         themeDark: 'داكن',
         themeLight: 'فاتح'
       },
@@ -470,6 +484,7 @@
         specsTitle: 'Technical Specifications & Features',
         categoryLabel: 'Category',
         addToCart: 'Add to Cart',
+        heroSub: 'Mechanical Keyboard • Precision Mouse • Pro Laptop • Gaming Case • Console • Surround Headset',
         themeDark: 'Dark',
         themeLight: 'Light'
       }
@@ -531,13 +546,9 @@
 
       const [activeImageIndices, setActiveImageIndices] = useState({});
 
-      // Handle click with 0.3s delay before opening product modal to show strong LED effect
       const handleProductClick = (prod) => {
         setClickedProductId(prod.id);
-        setTimeout(() => {
-          setSelectedProductDetails(prod);
-          setClickedProductId(null);
-        }, 300);
+        setSelectedProductDetails(prod);
       };
 
       const handleNextImage = (e, prod) => {
@@ -686,73 +697,85 @@
 
       return (
         <>
-          {/* EXPANDED TOP NAVBAR */}
+          {/* NAVBAR - دابەشبوو بۆ دوو بەش (نیوەی سەرەوە و نیوەی خوارەوە) */}
           <nav className="navbar">
             <div className="container">
               <div className="glass navbar-inner">
-                <a href="#" className="brand">
-                  <div className="brand-logo"><span>G</span></div>
-                  <span className="brand-name">گەیمینگ</span>
-                </a>
+                
+                {/* نیوەی سەرەوە: لۆگۆ، ناو، دوگمەی تاریک/ڕووناک، زمان و سەبەتە */}
+                <div className="navbar-row-top">
+                  <a href="#" className="brand">
+                    <div className="brand-logo"><span>G</span></div>
+                    <span className="brand-name">گەیمینگ</span>
+                  </a>
 
-                <div className="search-container">
-                  <div className="search-input-wrapper">
-                    <div className="search-inner-box">
-                      <span className="search-icon"><Icon name="search" size={14} /></span>
-                      <input 
-                        type="text" 
-                        className="search-input" 
-                        placeholder={t.searchPlaceholder} 
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                      />
+                  <div className="nav-desktop-links">
+                    <button className="nav-link" onClick={() => setIsAdminOpen(true)}>
+                      <Icon name="lock" size={14} />{t.navAdmin}
+                    </button>
+                  </div>
+
+                  <div className="navbar-actions">
+                    <div 
+                      className={`glass-toggle ${theme === 'dark' ? 'dark-mode' : 'light-mode'}`}
+                      onClick={toggleTheme}
+                      title="Toggle Theme"
+                    >
+                      <div className="glass-toggle-thumb">
+                        <Icon name={theme === 'dark' ? 'moon' : 'sun'} size={12} />
+                      </div>
+                      <div className="glass-toggle-labels">
+                        <span>تاریک</span>
+                        <span>ڕووناک</span>
+                      </div>
+                    </div>
+
+                    <div className="lang-switcher">
+                      <button className={`lang-btn ${lang === 'ku' ? 'active' : ''}`} onClick={() => setLang('ku')}>کوردی</button>
+                      <button className={`lang-btn ${lang === 'ar' ? 'active' : ''}`} onClick={() => setLang('ar')}>عربي</button>
+                      <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</button>
+                    </div>
+                    
+                    <button className="nav-link" onClick={() => setIsAdminOpen(true)} style={{ display: window.innerWidth <= 900 ? 'flex' : 'none', padding: '0.2rem' }} title={t.navAdmin}>
+                      <Icon name="lock" size={14} />
+                    </button>
+
+                    <button className="btn btn-primary" style={{ padding: '0.3rem 0.6rem', fontSize: '0.75rem' }} onClick={() => setIsCartOpen(true)}>
+                      <Icon name="shopping-cart" size={14} /> {t.shopNow} ({totalCartItemsCount})
+                    </button>
+                  </div>
+                </div>
+
+                {/* نیوەی خوارەوە: خانەی گەڕان (Search Box) */}
+                <div className="navbar-row-bottom">
+                  <div className="search-container">
+                    <div className="search-input-wrapper">
+                      <div className="search-inner-box">
+                        <span className="search-icon"><Icon name="search" size={13} /></span>
+                        <input 
+                          type="text" 
+                          className="search-input" 
+                          placeholder={t.searchPlaceholder} 
+                          value={searchQuery}
+                          onChange={(e) => setSearchQuery(e.target.value)}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="nav-desktop-links">
-                  <button className="nav-link" onClick={() => setIsAdminOpen(true)}>
-                    <Icon name="lock" size={15} />{t.navAdmin}
-                  </button>
-                </div>
-
-                <div className="navbar-actions">
-                  <div 
-                    className={`glass-toggle ${theme === 'dark' ? 'dark-mode' : 'light-mode'}`}
-                    onClick={toggleTheme}
-                    title="Toggle Theme"
-                  >
-                    <div className="glass-toggle-thumb">
-                      <Icon name={theme === 'dark' ? 'moon' : 'sun'} size={13} />
-                    </div>
-                    <div className="glass-toggle-labels">
-                      <span>تاریک</span>
-                      <span>ڕووناک</span>
-                    </div>
-                  </div>
-
-                  <div className="lang-switcher">
-                    <button className={`lang-btn ${lang === 'ku' ? 'active' : ''}`} onClick={() => setLang('ku')}>کوردی</button>
-                    <button className={`lang-btn ${lang === 'ar' ? 'active' : ''}`} onClick={() => setLang('ar')}>عربي</button>
-                    <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</button>
-                  </div>
-                  
-                  <button className="btn btn-primary" style={{ padding: '0.4rem 0.8rem', fontSize: '0.8rem' }} onClick={() => setIsCartOpen(true)}>
-                    <Icon name="shopping-cart" size={15} /> {t.shopNow} ({totalCartItemsCount})
-                  </button>
-                </div>
               </div>
             </div>
           </nav>
 
-          {/* PRODUCT SPECS MODAL */}
+          {/* PRODUCT SPECS GLASS MODAL */}
           {selectedProductDetails && (
             <div className="modal-overlay" onClick={() => setSelectedProductDetails(null)}>
               <div className="modal-content glass" onClick={e => e.stopPropagation()}>
                 <span className="close-modal" onClick={() => setSelectedProductDetails(null)}>✕</span>
                 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  <div style={{ width: '100%', height: '180px', borderRadius: 'var(--radius-md)', overflow: 'hidden', background: '#000', position: 'relative' }}>
+                  <div style={{ width: '100%', height: '170px', borderRadius: 'var(--radius-md)', overflow: 'hidden', background: '#000', position: 'relative' }}>
                     <img src={selectedProductDetails.images[activeImageIndices[selectedProductDetails.id] || 0]} alt={selectedProductDetails.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     
                     {selectedProductDetails.images.length > 1 && (
@@ -764,27 +787,27 @@
                   </div>
 
                   <div>
-                    <span style={{ fontSize: '0.75rem', padding: '0.2rem 0.6rem', borderRadius: '4px', background: 'var(--success-500)', color: '#fff', fontWeight: '600' }}>
+                    <span style={{ fontSize: '0.75rem', padding: '0.2rem 0.5rem', borderRadius: '4px', background: 'var(--success-500)', color: '#fff', fontWeight: '600' }}>
                       {selectedProductDetails.category}
                     </span>
-                    <h2 style={{ fontSize: '1.35rem', marginTop: '0.4rem', color: 'var(--neutral-0)', fontFamily: 'Shrikhand' }}>{selectedProductDetails.name}</h2>
+                    <h2 style={{ fontSize: '1.25rem', marginTop: '0.4rem', color: 'var(--neutral-0)' }}>{selectedProductDetails.name}</h2>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem' }}>
-                      <span style={{ fontSize: '1.6rem', fontWeight: '700', color: 'var(--neutral-0)' }}>${selectedProductDetails.price.toLocaleString()}</span>
+                      <span style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--neutral-0)' }}>${selectedProductDetails.price.toLocaleString()}</span>
                       {selectedProductDetails.oldPrice && (
-                        <span style={{ fontSize: '0.95rem', color: 'var(--neutral-400)', textDecoration: 'line-through' }}>${selectedProductDetails.oldPrice.toLocaleString()}</span>
+                        <span style={{ fontSize: '0.9rem', color: 'var(--neutral-400)', textDecoration: 'line-through' }}>${selectedProductDetails.oldPrice.toLocaleString()}</span>
                       )}
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', color: 'var(--warning-400)' }}>
-                      <Icon name="star" size={15} />
-                      <span style={{ fontWeight: '600', color: 'var(--neutral-200)', fontSize: '0.9rem' }}>{selectedProductDetails.rating}</span>
+                      <Icon name="star" size={14} />
+                      <span style={{ fontWeight: '600', color: 'var(--neutral-200)', fontSize: '0.85rem' }}>{selectedProductDetails.rating}</span>
                     </div>
                   </div>
 
-                  <div style={{ borderTop: '1px solid var(--glass-border)', paddingTop: '0.8rem' }}>
-                    <h4 style={{ fontSize: '0.95rem', marginBottom: '0.5rem', color: 'var(--neutral-200)' }}>{t.specsTitle}:</h4>
+                  <div style={{ borderTop: '1px solid var(--glass-border)', paddingTop: '0.75rem' }}>
+                    <h4 style={{ fontSize: '0.9rem', marginBottom: '0.5rem', color: 'var(--neutral-300)' }}>{t.specsTitle}:</h4>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
                       {selectedProductDetails.specs.map((spec, idx) => (
                         <span key={idx} style={{ padding: '0.3rem 0.6rem', borderRadius: 'var(--radius-sm)', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid var(--glass-border)', fontSize: '0.8rem', color: 'var(--neutral-200)' }}>
@@ -796,7 +819,7 @@
 
                   <button 
                     className="btn btn-primary" 
-                    style={{ width: '100%', marginTop: '0.5rem', padding: '0.7rem' }} 
+                    style={{ width: '100%', marginTop: '0.25rem', padding: '0.6rem' }} 
                     onClick={() => {
                       handleAddToCart(selectedProductDetails);
                       setSelectedProductDetails(null);
@@ -809,41 +832,41 @@
             </div>
           )}
 
-          {/* CART MODAL */}
+          {/* CART & CHECKOUT MODAL */}
           {isCartOpen && (
             <div className="modal-overlay" onClick={() => setIsCartOpen(false)}>
               <div className="modal-content" onClick={e => e.stopPropagation()}>
                 <span className="close-modal" onClick={() => setIsCartOpen(false)}>✕</span>
-                <h2 style={{ marginBottom: '1rem', color: 'var(--neutral-0)', fontSize: '1.35rem', fontFamily: 'Shrikhand' }}>{t.cartTitle}</h2>
+                <h2 style={{ marginBottom: '0.75rem', color: 'var(--neutral-0)', fontSize: '1.25rem' }}>{t.cartTitle}</h2>
                 
                 {cartItems.length === 0 ? (
-                  <p style={{ color: 'var(--neutral-400)', padding: '1.5rem 0', fontSize: '0.95rem', textAlign: 'center' }}>{t.emptyCart}</p>
+                  <p style={{ color: 'var(--neutral-400)', padding: '1rem 0', fontSize: '0.9rem' }}>{t.emptyCart}</p>
                 ) : (
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                    <div style={{ maxHeight: '180px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.5rem', paddingRight: '4px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                    <div style={{ maxHeight: '160px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.4rem', paddingRight: '4px' }}>
                       {cartItems.map((item) => (
-                        <div key={item.product.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--glass-bg)', padding: '0.5rem 0.8rem', borderRadius: '8px' }}>
+                        <div key={item.product.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--glass-bg)', padding: '0.4rem 0.75rem', borderRadius: '6px' }}>
                           <div style={{ display: 'flex', flexDirection: 'column' }}>
-                            <span style={{ fontWeight: '600', fontSize: '0.9rem' }}>{item.product.name}</span>
-                            <span style={{ fontSize: '0.8rem', color: 'var(--neutral-300)' }}>${item.product.price} x {item.quantity}</span>
+                            <span style={{ fontWeight: '600', fontSize: '0.85rem' }}>{item.product.name}</span>
+                            <span style={{ fontSize: '0.75rem', color: 'var(--neutral-400)' }}>${item.product.price} x {item.quantity}</span>
                           </div>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <button onClick={() => handleDecreaseQty(item.product.id)} className="btn btn-glass" style={{ padding: '0.2rem 0.5rem', fontSize: '0.8rem' }}>-</button>
-                            <span style={{ fontWeight: 'bold', minWidth: '18px', textAlign: 'center', fontSize: '0.9rem' }}>{item.quantity}</span>
-                            <button onClick={() => handleIncreaseQty(item.product.id)} className="btn btn-glass" style={{ padding: '0.2rem 0.5rem', fontSize: '0.8rem' }}>+</button>
-                            <button onClick={() => handleRemoveFromCart(item.product.id)} className="btn btn-glass" style={{ padding: '0.2rem 0.5rem', color: 'var(--error-500)', borderColor: 'var(--error-500)' }} title="Delete">
-                              <Icon name="trash-2" size={14} />
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                            <button onClick={() => handleDecreaseQty(item.product.id)} className="btn btn-glass" style={{ padding: '0.15rem 0.4rem', fontSize: '0.75rem' }}>-</button>
+                            <span style={{ fontWeight: 'bold', minWidth: '16px', textAlign: 'center', fontSize: '0.85rem' }}>{item.quantity}</span>
+                            <button onClick={() => handleIncreaseQty(item.product.id)} className="btn btn-glass" style={{ padding: '0.15rem 0.4rem', fontSize: '0.75rem' }}>+</button>
+                            <button onClick={() => handleRemoveFromCart(item.product.id)} className="btn btn-glass" style={{ padding: '0.15rem 0.4rem', color: 'var(--error-500)', borderColor: 'var(--error-500)' }} title="Delete">
+                              <Icon name="trash-2" size={12} />
                             </button>
                           </div>
                         </div>
                       ))}
                     </div>
 
-                    <form onSubmit={handleCheckout} style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem', marginTop: '0.5rem' }}>
+                    <form onSubmit={handleCheckout} style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginTop: '0.25rem' }}>
                       <input type="text" placeholder={t.fullNameLabel} value={fullName} onChange={e => setFullName(e.target.value)} className="admin-input" required />
                       <input type="text" placeholder={t.addressLabel} value={address} onChange={e => setAddress(e.target.value)} className="admin-input" required />
                       <input type="tel" placeholder={t.phoneLabel} value={phone} onChange={e => setPhone(e.target.value)} className="admin-input" required />
-                      <button type="submit" className="btn btn-primary" style={{ marginTop: '0.5rem', padding: '0.7rem' }}>{t.confirmOrder}</button>
+                      <button type="submit" className="btn btn-primary" style={{ marginTop: '0.25rem', padding: '0.6rem' }}>{t.confirmOrder}</button>
                     </form>
                   </div>
                 )}
@@ -859,19 +882,19 @@
                 
                 {!isAdminLoggedIn ? (
                   <div>
-                    <h2 style={{ marginBottom: '1rem', color: 'var(--neutral-0)', fontSize: '1.35rem', fontFamily: 'Shrikhand' }}>{t.adminModalTitle}</h2>
-                    <form onSubmit={handleAdminLogin} style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                      <label style={{ color: 'var(--neutral-300)', fontSize: '0.9rem' }}>{t.adminPasswordLabel} (تکایە 1234 بنووسە):</label>
+                    <h2 style={{ marginBottom: '0.75rem', color: 'var(--neutral-0)', fontSize: '1.25rem' }}>{t.adminModalTitle}</h2>
+                    <form onSubmit={handleAdminLogin} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                      <label style={{ color: 'var(--neutral-300)', fontSize: '0.85rem' }}>{t.adminPasswordLabel} (تکایە 1234 بنووسە):</label>
                       <input type="password" value={passwordInput} onChange={e => setPasswordInput(e.target.value)} className="admin-input" placeholder="••••" required />
-                      <button type="submit" className="btn btn-primary" style={{ padding: '0.7rem' }}>{t.loginBtn}</button>
+                      <button type="submit" className="btn btn-primary" style={{ padding: '0.6rem' }}>{t.loginBtn}</button>
                     </form>
                   </div>
                 ) : (
                   <div>
-                    <h2 style={{ marginBottom: '1rem', color: 'var(--neutral-0)', fontSize: '1.35rem', fontFamily: 'Shrikhand' }}>{t.adminDashboardTitle}</h2>
+                    <h2 style={{ marginBottom: '0.75rem', color: 'var(--neutral-0)', fontSize: '1.25rem' }}>{t.adminDashboardTitle}</h2>
                     <form onSubmit={handleAddProductSubmit} className="admin-form">
                       <input type="text" placeholder={t.productNamePlaceholder} value={newTitle} onChange={e => setNewTitle(e.target.value)} className="admin-input" required />
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem' }}>
                         <input type="number" placeholder={t.productPricePlaceholder} value={newPrice} onChange={e => setNewPrice(e.target.value)} className="admin-input" required />
                         <input type="number" placeholder={t.productOldPricePlaceholder} value={newOldPrice} onChange={e => setNewOldPrice(e.target.value)} className="admin-input" />
                       </div>
@@ -885,8 +908,8 @@
                         <option value="Console">کونسوڵ (Console)</option>
                       </select>
                       
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
-                        <label style={{ fontSize: '0.85rem', color: 'var(--neutral-300)' }}>{t.positionLabel}</label>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+                        <label style={{ fontSize: '0.8rem', color: 'var(--neutral-300)' }}>{t.positionLabel}</label>
                         <select value={newPosition} onChange={e => setNewPosition(e.target.value)} className="admin-input">
                           <option value="normal">{t.posNormal}</option>
                           <option value="top">{t.posTop}</option>
@@ -894,20 +917,20 @@
                       </div>
 
                       <input type="text" placeholder={t.productSpecsPlaceholder} value={newSpecs} onChange={e => setNewSpecs(e.target.value)} className="admin-input" />
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                        <label style={{ fontSize: '0.85rem', color: 'var(--neutral-300)' }}>{t.uploadImagesLabel}</label>
-                        <input type="file" accept="image/*" multiple onChange={handleImageUpload} className="admin-input" style={{ padding: '0.5rem' }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                        <label style={{ fontSize: '0.8rem', color: 'var(--neutral-300)' }}>{t.uploadImagesLabel}</label>
+                        <input type="file" accept="image/*" multiple onChange={handleImageUpload} className="admin-input" style={{ padding: '0.4rem' }} />
                       </div>
-                      <button type="submit" className="btn btn-primary" style={{ marginTop: '0.5rem', padding: '0.7rem' }}>{t.addProductBtn}</button>
+                      <button type="submit" className="btn btn-primary" style={{ marginTop: '0.25rem', padding: '0.6rem' }}>{t.addProductBtn}</button>
                     </form>
 
-                    <div style={{ marginTop: '1.5rem', borderTop: '1px solid var(--glass-border)', paddingTop: '1rem' }}>
-                      <h3 style={{ marginBottom: '0.8rem', fontSize: '1rem', fontFamily: 'Shrikhand' }}>بەڕێوەبردن و سڕینەوەی کاڵا تۆمارکراوەکان</h3>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', maxHeight: '160px', overflowY: 'auto' }}>
+                    <div style={{ marginTop: '1.25rem', borderTop: '1px solid var(--glass-border)', paddingTop: '0.75rem' }}>
+                      <h3 style={{ marginBottom: '0.5rem', fontSize: '0.95rem' }}>بەڕێوەبردن و سڕینەوەی کاڵا تۆمارکراوەکان</h3>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', maxHeight: '150px', overflowY: 'auto' }}>
                         {products.map(p => (
-                          <div key={p.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--glass-bg)', padding: '0.5rem 0.8rem', borderRadius: '8px' }}>
-                            <span style={{ fontSize: '0.9rem' }}>{p.name} (${p.price})</span>
-                            <button onClick={() => handleDeleteProduct(p.id)} className="btn btn-glass" style={{ padding: '0.2rem 0.6rem', color: 'var(--error-500)', fontSize: '0.8rem' }}>
+                          <div key={p.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--glass-bg)', padding: '0.4rem 0.75rem', borderRadius: '6px' }}>
+                            <span style={{ fontSize: '0.85rem' }}>{p.name} (${p.price})</span>
+                            <button onClick={() => handleDeleteProduct(p.id)} className="btn btn-glass" style={{ padding: '0.15rem 0.5rem', color: 'var(--error-500)', fontSize: '0.75rem' }}>
                               {t.deleteProduct}
                             </button>
                           </div>
@@ -921,6 +944,7 @@
           )}
 
           <main>
+            {/* HERO 3D CAROUSEL & GAMING GLASS CONTAINER */}
             <section className="hero-carousel-section">
               <div className="container">
                 <div className="gaming-glass-hero">
@@ -944,13 +968,13 @@
               </div>
             </section>
 
+            {/* PRODUCTS SECTION IN GLASS CONTAINER */}
             <section className="products-section">
               <div className="container">
                 <div className="products-glass-container">
-                  <div className="section-icon-wrapper"><div className="glass section-icon"><Icon name="grid" size={22} /></div></div>
+                  <div className="section-icon-wrapper"><div className="glass section-icon"><Icon name="grid" size={20} /></div></div>
                   <h2 className="section-title">نوێترین و بەهێزترین بەرهەمەکان</h2>
                   <p className="section-subtitle">باشترین هەڵبژاردە بۆ یاریزانان و دیزاینەران، بە کوالێتی بەرز و نرخی گونجاو</p>
-                  
                   <div className="products-grid">
                     {filteredProducts.map(p => {
                       const currentIndex = activeImageIndices[p.id] || 0;
@@ -975,7 +999,7 @@
                           </div>
 
                           <div className="product-content">
-                            <div className="product-rating"><Icon name="star" size={15} /><span className="product-rating-number">{p.rating}</span></div>
+                            <div className="product-rating"><Icon name="star" size={14} /><span className="product-rating-number">{p.rating}</span></div>
                             <h3 className="product-name">{p.name}</h3>
                             <div className="product-specs">{p.specs.map(s => <span key={s} className="product-spec">{s}</span>)}</div>
                             <div className="product-bottom">
@@ -983,7 +1007,7 @@
                                 <span className="product-price">${p.price.toLocaleString()}</span>
                                 {p.oldPrice && <span className="product-old-price">${p.oldPrice.toLocaleString()}</span>}
                               </div>
-                              <button className="btn btn-primary" style={{ padding: '0.45rem' }} onClick={(e) => { e.stopPropagation(); handleAddToCart(p); }}><Icon name="shopping-cart" size={15} /></button>
+                              <button className="btn btn-primary" style={{ padding: '0.4rem' }} onClick={(e) => { e.stopPropagation(); handleAddToCart(p); }}><Icon name="shopping-cart" size={14} /></button>
                             </div>
                           </div>
                         </div>
@@ -995,16 +1019,17 @@
             </section>
           </main>
 
+          {/* FOOTER */}
           <footer className="footer">
             <div className="container">
               <div className="footer-grid">
                 <div>
-                  <div className="brand" style={{ marginBottom: '0.8rem' }}><div className="brand-logo"><span>G</span></div><span className="brand-name">گەیمینگ ستۆر</span></div>
-                  <p style={{ color: 'var(--neutral-300)', fontSize: '0.9rem', maxWidth: '380px' }}>{t.footerDesc}</p>
+                  <div className="brand" style={{ marginBottom: '0.75rem' }}><div className="brand-logo"><span>G</span></div><span className="brand-name">گەیمینگ ستۆر</span></div>
+                  <p style={{ color: 'var(--neutral-400)', fontSize: '0.85rem', maxWidth: '360px' }}>{t.footerDesc}</p>
                 </div>
               </div>
               <div className="footer-bottom">
-                <p style={{ color: 'var(--neutral-400)', fontSize: '0.85rem' }}>{t.rights}</p>
+                <p style={{ color: 'var(--neutral-500)', fontSize: '0.8rem' }}>{t.rights}</p>
               </div>
             </div>
           </footer>
