@@ -195,7 +195,7 @@
       border-color: var(--success-400);
     }
     
-    /* NAVBAR - درێژتر و بارکترکراوە */
+    /* NAVBAR */
     .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.25rem 0.5rem; transition: all var(--transition-base); }
     .navbar-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.3rem 1rem; border-radius: var(--radius-full); width: 100%; gap: 1rem; }
     .navbar-left { display: flex; align-items: center; gap: 1rem; }
@@ -266,10 +266,12 @@
     .section-icon { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
     .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; width: 100%; }
     
-    @keyframes spinInTop {
-      0% { opacity: 0; transform: translateY(-50px) rotate(-10deg) scale(0.8); }
-      100% { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+    /* ئەنیمەیشنی RISE کە بە هێواشی (slow) لە خوارەوە دەردەکەون */
+    @keyframes rise {
+      0% { opacity: 0; transform: translateY(40px) scale(0.95); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
     }
+
     .product-card { 
       border-radius: var(--radius-lg); 
       overflow: hidden; 
@@ -279,6 +281,7 @@
       background: var(--glass-bg-strong); 
       position: relative;
       width: 100%;
+      animation: rise 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
     
     .product-card.clicked-led {
@@ -287,7 +290,7 @@
     }
 
     .product-card.just-added {
-      animation: spinInTop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      animation: rise 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       border-color: var(--success-400);
       box-shadow: var(--shadow-glow);
     }
@@ -696,7 +699,6 @@
 
       return (
         <>
-          {/* NAVBAR - بارک و درێژکراوە لە یەک ریزی جواندا */}
           <nav className="navbar">
             <div className="container">
               <div className="glass navbar-inner">
@@ -758,7 +760,6 @@
             </div>
           </nav>
 
-          {/* PRODUCT SPECS GLASS MODAL */}
           {selectedProductDetails && (
             <div className="modal-overlay" onClick={() => setSelectedProductDetails(null)}>
               <div className="modal-content glass" onClick={e => e.stopPropagation()}>
@@ -822,7 +823,6 @@
             </div>
           )}
 
-          {/* CART & CHECKOUT MODAL */}
           {isCartOpen && (
             <div className="modal-overlay" onClick={() => setIsCartOpen(false)}>
               <div className="modal-content" onClick={e => e.stopPropagation()}>
@@ -864,7 +864,6 @@
             </div>
           )}
 
-          {/* ADMIN MODAL */}
           {isAdminOpen && (
             <div className="modal-overlay" onClick={() => setIsAdminOpen(false)}>
               <div className="modal-content" onClick={e => e.stopPropagation()}>
@@ -933,10 +932,8 @@
             </div>
           )}
 
-          {/* MAIN LAYOUT WITH RIGHT SIDEBAR */}
           <div className="main-layout">
             
-            {/* SIDEBAR */}
             <aside className="sidebar-right">
               <div>
                 <h3 className="sidebar-section-title">{t.categoriesTitle}</h3>
@@ -1001,10 +998,8 @@
               </div>
             </aside>
 
-            {/* MAIN CONTENT */}
             <div className="content-area">
               <main>
-                {/* HERO 3D CAROUSEL SECTION (بەشی دەستنیشانکراو لادرا و تەنها کارۆسێلی ٣ ڕەهەندی هێڵراوەتەوە) */}
                 <section className="hero-carousel-section">
                   <div className="carousel-3d-container">
                     {carouselImages.slice(0, 6).map((imgUrl, idx) => (
@@ -1013,7 +1008,6 @@
                   </div>
                 </section>
 
-                {/* PRODUCTS SECTION IN GLASS CONTAINER */}
                 <section className="products-section">
                   <div className="container">
                     <div className="products-glass-container">
@@ -1064,7 +1058,6 @@
                 </section>
               </main>
 
-              {/* FOOTER */}
               <footer className="footer">
                 <div className="container">
                   <div className="footer-grid">
