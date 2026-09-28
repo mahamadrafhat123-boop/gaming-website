@@ -6,7 +6,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />  
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />  
   <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />  
-  <title>ناوەندی سەکۆی گەیمینگ و تەکنەلۆژیای پێشکەوتوو</title>    <style>  
+  <title>ناوەندی سەکۆی گەیمینگ و تەکنەلۆژیای پێشکەوتوو</title>  
+  <style>  
     :root {  
       --primary-50: #eef4ff;  
       --primary-100: #d9e6ff;  
@@ -263,7 +264,7 @@
       width: 100%;  
       max-width: 1400px;  
       margin: 0 auto;  
-      padding: 0 1.5rem;  
+      padding: 0 1rem;  
     }  
   
     .btn {  
@@ -347,15 +348,16 @@
       padding: 2px;  
       cursor: pointer;  
       position: relative;  
-      width: 80px;  
-      height: 36px;  
+      width: 70px;  
+      height: 32px;  
       transition: all var(--transition-base);  
+      flex-shrink: 0;
     }  
   
     .glass-toggle-thumb {  
       position: absolute;  
-      width: 30px;  
-      height: 30px;  
+      width: 26px;  
+      height: 26px;  
       border-radius: 50%;  
       background: var(--glass-bg-strong);  
       border: 1px solid var(--glass-border);  
@@ -371,7 +373,7 @@
     }  
   
     .glass-toggle.dark-mode .glass-toggle-thumb {  
-      transform: translateX(-44px);  
+      transform: translateX(-38px);  
     }  
   
     .glass-toggle.light-mode .glass-toggle-thumb {  
@@ -382,8 +384,8 @@
       display: flex;  
       justify-content: space-between;  
       width: 100%;  
-      padding: 0 6px;  
-      font-size: 0.7rem;  
+      padding: 0 4px;  
+      font-size: 0.65rem;  
       font-weight: 600;  
       color: var(--neutral-400);  
       user-select: none;  
@@ -392,7 +394,7 @@
     }  
   
     .section-title {  
-      font-size: clamp(1.75rem, 4vw, 3.5rem);  
+      font-size: clamp(1.5rem, 4vw, 3.5rem);  
       font-weight: 700;  
       text-align: center;  
       margin-bottom: var(--space-2);  
@@ -406,7 +408,7 @@
     .section-subtitle {  
       text-align: center;  
       color: var(--neutral-400);  
-      font-size: 1rem;  
+      font-size: 0.95rem;  
       max-width: 600px;  
       margin: 0 auto var(--space-6);  
       line-height: 1.6;  
@@ -424,14 +426,14 @@
   
     .content-area {  
       flex: 1;  
-      padding: 1.5rem;  
+      padding: 1rem;  
       overflow-x: hidden;  
       min-width: 0;  
     }  
   
     .sidebar-right {  
-      width: 300px;  
-      flex: 0 0 300px;  
+      width: 280px;  
+      flex: 0 0 280px;  
       background: var(--glass-bg);  
       backdrop-filter: blur(var(--glass-blur));  
       -webkit-backdrop-filter: blur(var(--glass-blur));  
@@ -473,7 +475,7 @@
       align-items: center;  
       gap: 0.75rem;  
       padding: 0.75rem 1rem;  
-      min-height: 48px;  
+      min-height: 44px;  
       border-radius: var(--radius-md);  
       background: rgba(255, 255, 255, 0.04);  
       border: 1px solid var(--glass-border);  
@@ -501,9 +503,9 @@
       background: var(--glass-bg);  
       border: 1px solid var(--glass-border);  
       color: var(--neutral-0);  
-      padding: 0.5rem 0.75rem;  
-      min-width: 46px;  
-      min-height: 46px;  
+      padding: 0.5rem;  
+      min-width: 40px;  
+      min-height: 40px;  
       border-radius: var(--radius-md);  
       cursor: pointer;  
       transition: background 0.2s, transform 0.2s;  
@@ -524,7 +526,7 @@
       left: 0;  
       right: 0;  
       z-index: 100;  
-      padding: 0.5rem 1rem;  
+      padding: 0.4rem 0.5rem;  
       transition: all var(--transition-base);  
     }  
   
@@ -532,46 +534,43 @@
       display: flex;  
       align-items: center;  
       justify-content: space-between;  
-      padding: 0.75rem 1.5rem;  
+      padding: 0.5rem 1rem;  
       border-radius: var(--radius-full);  
       width: 100%;  
-      gap: 1.25rem;  
+      gap: 0.75rem;  
       flex-wrap: nowrap;  
     }  
   
     .navbar-left {  
       display: flex;  
       align-items: center;  
-      gap: 1rem;  
+      gap: 0.5rem;  
       flex-shrink: 0;  
     }  
   
     .navbar-center {  
-      display: flex;  
-      align-items: center;  
+      display: none; /* لە موبایلدا بۆشاییەکە دەشارینەوە و لە خوارەوە یان بەشێوازێکی تر دەیخەینە ڕوو ئەگەر پێویست بکات، یان بچووکتر دەکرێتەوە */  
       flex: 1;  
-      min-width: 250px;  
-      max-width: 500px;  
     }  
   
     .navbar-right-actions {  
       display: flex;  
       align-items: center;  
-      gap: 0.75rem;  
+      gap: 0.5rem;  
       flex-shrink: 0;  
     }  
   
     .brand {  
       display: flex;  
       align-items: center;  
-      gap: 0.6rem;  
+      gap: 0.4rem;  
       text-decoration: none;  
       flex-shrink: 0;  
     }  
   
     .brand-logo {  
-      width: 36px;  
-      height: 36px;  
+      width: 32px;  
+      height: 32px;  
       border-radius: 50%;  
       background: linear-gradient(135deg, var(--success-500), var(--accent-500));  
       display: flex;  
@@ -580,34 +579,39 @@
       box-shadow: var(--shadow-glow);  
       color: white;  
       font-weight: 700;  
-      font-size: 1rem;  
+      font-size: 0.9rem;  
       font-family: 'Shrikhand', sans-serif;  
     }  
   
     .brand-name {  
       font-family: 'Shrikhand', sans-serif;  
       font-weight: 700;  
-      font-size: 1.1rem;  
+      font-size: 0.95rem;  
       color: var(--neutral-0);  
       white-space: nowrap;  
+      display: none; /* لە شاشەی بچووکدا ناوی براندەکە دەشارینەوە بۆ ئەوەی جێگا ببێتەوە */  
     }  
   
     .nav-link {  
       font-family: 'Shrikhand', sans-serif;  
       color: var(--neutral-200);  
-      font-size: 0.85rem;  
+      font-size: 0.8rem;  
       font-weight: 500;  
       display: flex;  
       align-items: center;  
-      gap: 0.4rem;  
-      padding: 0.5rem 1rem;  
-      min-height: 44px;  
+      gap: 0.3rem;  
+      padding: 0.4rem 0.7rem;  
+      min-height: 38px;  
       border-radius: var(--radius-full);  
       background: rgba(255, 255, 255, 0.06);  
       border: 1px solid var(--glass-border);  
       transition: all var(--transition-fast);  
       cursor: pointer;  
       white-space: nowrap;  
+    }  
+  
+    .nav-link span {  
+      display: none; /* لە موبایلدا تەنها ئایکۆنەکە نیشان دەدەین */  
     }  
   
     .nav-link:hover,  
@@ -622,6 +626,7 @@
       justify-content: center;  
       align-items: center;  
       width: 100%;  
+      margin-bottom: 1rem;  
     }  
   
     .search-input-wrapper {  
@@ -652,12 +657,12 @@
     .search-input {  
       width: 100%;  
       padding: 0.5rem 1rem 0.5rem 2.5rem;  
-      min-height: 44px;  
+      min-height: 40px;  
       border-radius: var(--radius-full);  
       background: transparent;  
       border: none;  
       color: var(--neutral-0);  
-      font-size: 0.9rem;  
+      font-size: 0.85rem;  
       outline: none;  
       font-family: 'Shrikhand', sans-serif;  
     }  
@@ -671,9 +676,9 @@
       pointer-events: none;  
     }  
   
+    /* چارەسەری کاروسێل بۆ موبایل بە شێوازێکی زۆر پاک و ڕێک */  
     .hero-carousel-section {  
-      padding: 1rem 0 2rem;  
-      perspective: 1000px;  
+      padding: 0.5rem 0 1.5rem;  
       overflow: hidden;  
       position: relative;  
       width: 100%;  
@@ -681,30 +686,28 @@
   
     .carousel-3d-container {  
       display: flex;  
-      justify-content: center;  
-      align-items: center;  
-      height: 240px;  
-      position: relative;  
-      transform-style: preserve-3d;  
-      animation: carouselRotate 25s linear infinite;  
-      width: 100%;  
+      gap: 1rem;  
+      overflow-x: auto;  
+      padding: 0.5rem 1rem;  
+      scroll-snap-type: x mandatory;  
+      scrollbar-width: none;  
+      animation: none; /* لە موبایلدا سوڕانەوەی سێ لایەنی دەوەستێنین بۆ ئەوەی تێک نەچێت و بە پەنجە ڕاکێشرێت */  
     }  
-  
-    @keyframes carouselRotate {  
-      0% { transform: rotateY(0deg); }  
-      100% { transform: rotateY(360deg); }  
+
+    .carousel-3d-container::-webkit-scrollbar {  
+      display: none;  
     }  
   
     .carousel-3d-item {  
-      position: absolute;  
-      width: 200px;  
-      height: 130px;  
-      border-radius: var(--radius-lg);  
+      flex: 0 0 240px;  
+      height: 140px;  
+      border-radius: var(--radius-md);  
       overflow: hidden;  
       border: 1px solid var(--glass-border);  
-      box-shadow: var(--shadow-lg);  
+      box-shadow: var(--shadow-md);  
       background: var(--neutral-900);  
-      transform-style: preserve-3d;  
+      scroll-snap-align: center;  
+      transform: none !important; /* لابردنی زۆری تڕانسفۆرمی 3D لەسەر موبایل */  
     }  
   
     .carousel-3d-item img {  
@@ -713,15 +716,8 @@
       object-fit: cover;  
     }  
   
-    .carousel-3d-item:nth-child(1) { transform: rotateY(0deg) translateZ(220px); }  
-    .carousel-3d-item:nth-child(2) { transform: rotateY(60deg) translateZ(220px); }  
-    .carousel-3d-item:nth-child(3) { transform: rotateY(120deg) translateZ(220px); }  
-    .carousel-3d-item:nth-child(4) { transform: rotateY(180deg) translateZ(220px); }  
-    .carousel-3d-item:nth-child(5) { transform: rotateY(240deg) translateZ(220px); }  
-    .carousel-3d-item:nth-child(6) { transform: rotateY(300deg) translateZ(220px); }  
-  
     .products-section {  
-      padding: 1.5rem 0 4rem;  
+      padding: 1rem 0 3rem;  
       width: 100%;  
     }  
   
@@ -730,8 +726,8 @@
       backdrop-filter: blur(var(--glass-blur));  
       -webkit-backdrop-filter: blur(var(--glass-blur));  
       border: 1px solid var(--glass-border);  
-      border-radius: var(--radius-2xl);  
-      padding: 2.5rem 1.5rem;  
+      border-radius: var(--radius-xl);  
+      padding: 1.25rem 0.75rem;  
       box-shadow: var(--shadow-lg);  
       position: relative;  
       width: 100%;  
@@ -741,13 +737,13 @@
       display: flex;  
       align-items: center;  
       justify-content: center;  
-      gap: 0.75rem;  
-      margin-bottom: 1rem;  
+      gap: 0.5rem;  
+      margin-bottom: 0.75rem;  
     }  
   
     .section-icon {  
-      width: 48px;  
-      height: 48px;  
+      width: 40px;  
+      height: 40px;  
       border-radius: 50%;  
       display: flex;  
       align-items: center;  
@@ -756,13 +752,13 @@
   
     .products-grid {  
       display: grid;  
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));  
-      gap: 1.5rem;  
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));  
+      gap: 0.75rem;  
       width: 100%;  
     }  
   
     @keyframes smoothAppear {  
-      0% { opacity: 0; transform: translateY(30px) scale(0.95); }  
+      0% { opacity: 0; transform: translateY(20px) scale(0.95); }  
       100% { opacity: 1; transform: translateY(0) scale(1); }  
     }  
 
@@ -773,7 +769,7 @@
     }
   
     .product-card {  
-      border-radius: var(--radius-lg);  
+      border-radius: var(--radius-md);  
       overflow: hidden;  
       transition: all var(--transition-base);  
       display: flex;  
@@ -786,19 +782,13 @@
   
     .product-card.clicked-led {  
       border-color: #34d399 !important;  
-      box-shadow: 0 0 25px rgba(52, 211, 153, 0.7), inset 0 0 15px rgba(52, 211, 153, 0.4);  
-    }  
-  
-    .product-card:hover {  
-      transform: translateY(-5px);  
-      box-shadow: var(--shadow-lg);  
-      border-color: rgba(16, 185, 129, 0.3);  
+      box-shadow: 0 0 15px rgba(52, 211, 153, 0.7);  
     }  
   
     .product-image-wrapper {  
       position: relative;  
       overflow: hidden;  
-      aspect-ratio: 16 / 10;  
+      aspect-ratio: 4 / 3;  
       background: var(--neutral-900);  
       width: 100%;  
     }  
@@ -807,22 +797,17 @@
       width: 100%;  
       height: 100%;  
       object-fit: cover;  
-      animation: panAnimation 8s ease-in-out infinite;
       transition: transform var(--transition-slow);  
       cursor: pointer;  
     }  
   
-    .product-card:hover .product-image {  
-      transform: scale(1.05);  
-    }  
-  
     .product-badge {  
       position: absolute;  
-      top: 0.75rem;  
-      inset-inline-start: 0.75rem;  
-      padding: 0.25rem 0.6rem;  
+      top: 0.4rem;  
+      inset-inline-start: 0.4rem;  
+      padding: 0.15rem 0.4rem;  
       border-radius: var(--radius-full);  
-      font-size: 0.75rem;  
+      font-size: 0.65rem;  
       font-weight: 600;  
       color: white;  
       z-index: 2;  
@@ -836,71 +821,64 @@
       background: rgba(0, 0, 0, 0.6);  
       color: white;  
       border: 1px solid rgba(255, 255, 255, 0.2);  
-      width: 32px;  
-      height: 32px;  
+      width: 26px;  
+      height: 26px;  
       border-radius: 50%;  
       display: flex;  
       align-items: center;  
       justify-content: center;  
       cursor: pointer;  
       z-index: 10;  
-      opacity: 0;  
-      transition: opacity 0.2s, background 0.2s;  
+      opacity: 0.8;  
     }  
   
-    .product-image-wrapper:hover .slider-arrow {  
-      opacity: 1;  
-    }  
-  
-    .slider-arrow:hover {  
-      background: var(--success-500);  
-    }  
-    .slider-arrow.prev { left: 8px; }  
-    .slider-arrow.next { right: 8px; }  
+    .slider-arrow.prev { left: 4px; }  
+    .slider-arrow.next { right: 4px; }  
   
     .product-content {  
-      padding: 1.25rem;  
+      padding: 0.75rem;  
       display: flex;  
       flex-direction: column;  
-      gap: 0.75rem;  
+      gap: 0.4rem;  
       flex: 1;  
     }  
   
     .product-rating {  
       display: flex;  
       align-items: center;  
-      gap: 0.3rem;  
+      gap: 0.2rem;  
     }  
   
     .product-rating-number {  
       color: var(--neutral-200);  
-      font-size: 0.85rem;  
+      font-size: 0.75rem;  
       font-family: 'Shrikhand', sans-serif;  
     }  
   
     .product-name {  
       font-family: 'Shrikhand', sans-serif;  
-      font-size: 1.2rem;  
+      font-size: 0.95rem;  
       font-weight: 600;  
       color: var(--neutral-0);  
       cursor: pointer;  
-      transition: color 0.2s;  
-    }  
-  
-    .product-name:hover {  
-      color: var(--success-400);  
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }  
   
     .product-specs {  
       display: flex;  
       flex-wrap: wrap;  
-      gap: 0.4rem;  
+      gap: 0.2rem;  
+      max-height: 38px;
+      overflow: hidden;
     }  
   
     .product-spec {  
-      padding: 0.25rem 0.6rem;  
+      padding: 0.1rem 0.4rem;  
       border-radius: var(--radius-sm);  
-      font-size: 0.75rem;  
+      font-size: 0.65rem;  
       color: var(--neutral-300);  
       background: rgba(255, 255, 255, 0.06);  
       border: 1px solid rgba(255, 255, 255, 0.08);  
@@ -912,24 +890,24 @@
       align-items: center;  
       justify-content: space-between;  
       margin-top: auto;  
-      padding-top: 0.75rem;  
+      padding-top: 0.4rem;  
     }  
   
     .product-prices {  
       display: flex;  
       align-items: baseline;  
-      gap: 0.5rem;  
+      gap: 0.3rem;  
     }  
   
     .product-price {  
-      font-size: 1.35rem;  
+      font-size: 1rem;  
       font-weight: 700;  
       color: var(--neutral-0);  
       font-family: 'Shrikhand', sans-serif;  
     }  
   
     .product-old-price {  
-      font-size: 0.95rem;  
+      font-size: 0.75rem;  
       font-weight: 500;  
       color: var(--neutral-400);  
       text-decoration: line-through;  
@@ -939,9 +917,9 @@
     .modal-overlay {  
       position: fixed;  
       inset: 0;  
-      background: rgba(2, 44, 34, 0.75);  
-      backdrop-filter: blur(12px);  
-      -webkit-backdrop-filter: blur(12px);  
+      background: rgba(2, 44, 34, 0.85);  
+      backdrop-filter: blur(10px);  
+      -webkit-backdrop-filter: blur(10px);  
       z-index: 1000;  
       display: flex;  
       align-items: center;  
@@ -953,10 +931,10 @@
     .modal-content {  
       background: var(--neutral-900);  
       border: 1px solid var(--glass-border);  
-      padding: 2rem;  
-      border-radius: var(--radius-xl);  
+      padding: 1.5rem;  
+      border-radius: var(--radius-lg);  
       width: 100%;  
-      max-width: 500px;  
+      max-width: 450px;  
       box-shadow: var(--shadow-lg);  
       position: relative;  
       color: var(--neutral-100);  
@@ -968,18 +946,18 @@
     .admin-form {  
       display: flex;  
       flex-direction: column;  
-      gap: 1rem;  
-      margin-top: 1rem;  
+      gap: 0.75rem;  
+      margin-top: 0.75rem;  
     }  
   
     .admin-input {  
-      padding: 0.85rem 1rem;  
+      padding: 0.7rem 0.9rem;  
       border-radius: var(--radius-md);  
       background: var(--glass-bg);  
       border: 1px solid var(--glass-border);  
       color: var(--neutral-0);  
       font-family: 'Shrikhand', sans-serif;  
-      font-size: 0.95rem;  
+      font-size: 0.9rem;  
       width: 100%;  
     }  
   
@@ -990,11 +968,11 @@
   
     .close-modal {  
       position: absolute;  
-      top: 1.25rem;  
-      inset-inline-end: 1.25rem;  
+      top: 1rem;  
+      inset-inline-end: 1rem;  
       color: var(--neutral-400);  
       cursor: pointer;  
-      font-size: 1.25rem;  
+      font-size: 1.1rem;  
       z-index: 10;  
     }  
   
@@ -1003,12 +981,12 @@
       backdrop-filter: blur(25px);  
       -webkit-backdrop-filter: blur(25px);  
       border: 1px solid rgba(255, 255, 255, 0.15);  
-      border-radius: 2rem;  
-      padding: 2.5rem;  
+      border-radius: 1.5rem;  
+      padding: 1.75rem;  
       color: #fff;  
       box-shadow: 0 20px 40px rgba(0,0,0,0.3);  
       width: 100%;  
-      max-width: 420px;  
+      max-width: 380px;  
       position: relative;  
     }  
   
@@ -1016,11 +994,11 @@
       display: flex;  
       justify-content: space-between;  
       align-items: center;  
-      margin-bottom: 1.5rem;  
+      margin-bottom: 1rem;  
     }  
   
     .login-title {  
-      font-size: 2rem;  
+      font-size: 1.5rem;  
       font-weight: 700;  
       font-family: 'Space Grotesk', sans-serif;  
     }  
@@ -1030,10 +1008,10 @@
       background: rgba(255, 255, 255, 0.08);  
       border: 1px solid rgba(255, 255, 255, 0.12);  
       border-radius: 9999px;  
-      margin-bottom: 1rem;  
+      margin-bottom: 0.75rem;  
       display: flex;  
       align-items: center;  
-      padding: 0.85rem 1.25rem;  
+      padding: 0.7rem 1rem;  
     }  
   
     .login-field input {  
@@ -1042,18 +1020,14 @@
       outline: none;  
       color: #fff;  
       width: 100%;  
-      font-size: 1rem;  
+      font-size: 0.9rem;  
       font-family: inherit;  
-      padding-right: 1.5rem;  
-    }  
-  
-    .login-field input::placeholder {  
-      color: #94a3b8;  
+      padding-right: 1.2rem;  
     }  
   
     .login-field .field-icon-left {  
       position: absolute;  
-      left: 1.25rem;  
+      left: 1rem;  
       color: #94a3b8;  
       cursor: pointer;  
     }  
@@ -1064,24 +1038,20 @@
       color: #fff;  
       border: none;  
       border-radius: 9999px;  
-      padding: 1rem;  
-      font-size: 1rem;  
+      padding: 0.85rem;  
+      font-size: 0.95rem;  
       font-weight: 600;  
       cursor: pointer;  
       box-shadow: 0 10px 20px rgba(0,0,0,0.4);  
-      margin-bottom: 1.5rem;  
+      margin-bottom: 1rem;  
       transition: transform 0.2s;  
-    }  
-  
-    .login-submit-btn:hover {  
-      transform: scale(1.02);  
     }  
   
     .divider-text {  
       text-align: center;  
       color: #64748b;  
-      font-size: 0.8rem;  
-      margin-bottom: 1.25rem;  
+      font-size: 0.75rem;  
+      margin-bottom: 1rem;  
       position: relative;  
     }  
   
@@ -1090,24 +1060,20 @@
       background: rgba(255, 255, 255, 0.06);  
       border: 1px solid rgba(255, 255, 255, 0.12);  
       border-radius: 9999px;  
-      padding: 0.85rem;  
+      padding: 0.7rem;  
       display: flex;  
       align-items: center;  
       justify-content: center;  
-      gap: 0.75rem;  
+      gap: 0.5rem;  
       color: #fff;  
-      font-size: 1rem;  
+      font-size: 0.9rem;  
       cursor: pointer;  
-      margin-bottom: 0.75rem;  
+      margin-bottom: 0.5rem;  
       transition: background 0.2s;  
     }  
   
-    .social-login-btn:hover {  
-      background: rgba(255, 255, 255, 0.12);  
-    }  
-  
     .footer {  
-      padding: 3rem 0 1.5rem;  
+      padding: 2rem 0 1rem;  
       border-top: 1px solid rgba(255, 255, 255, 0.06);  
       width: 100%;  
     }  
@@ -1116,24 +1082,65 @@
       display: flex;  
       justify-content: center;  
       align-items: center;  
-      padding-top: 1.5rem;  
-      border-top: 1px solid rgba(255, 255, 255, 0.06);  
+      padding-top: 1rem;  
       text-align: center;  
       font-family: 'Shrikhand', sans-serif;  
+      font-size: 0.85rem;  
     }  
   
+    @media (min-width: 900px) {  
+      .navbar-center {  
+        display: flex; /* لە شاشەی گەورەدا گەڕانەکە دەردەکەوێتەوە */  
+      }  
+      .brand-name {  
+        display: block;  
+      }  
+      .nav-link span {  
+        display: inline;  
+      }  
+      .products-grid {  
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  
+        gap: 1.5rem;  
+      }  
+      .carousel-3d-container {  
+        display: flex;  
+        justify-content: center;  
+        align-items: center;  
+        height: 240px;  
+        transform-style: preserve-3d;  
+        animation: carouselRotate 25s linear infinite;  
+        overflow: visible;  
+      }  
+      .carousel-3d-item {  
+        position: absolute;  
+        width: 200px;  
+        height: 130px;  
+        flex: unset;  
+      }  
+      @keyframes carouselRotate {  
+        0% { transform: rotateY(0deg); }  
+        100% { transform: rotateY(360deg); }  
+      }  
+      .carousel-3d-item:nth-child(1) { transform: rotateY(0deg) translateZ(220px); }  
+      .carousel-3d-item:nth-child(2) { transform: rotateY(60deg) translateZ(220px); }  
+      .carousel-3d-item:nth-child(3) { transform: rotateY(120deg) translateZ(220px); }  
+      .carousel-3d-item:nth-child(4) { transform: rotateY(180deg) translateZ(220px); }  
+      .carousel-3d-item:nth-child(5) { transform: rotateY(240deg) translateZ(220px); }  
+      .carousel-3d-item:nth-child(6) { transform: rotateY(300deg) translateZ(220px); }  
+    }  
+
     @media (max-width: 900px) {  
       .main-layout {  
         flex-direction: column;  
-        padding-top: 6.2rem;  
+        padding-top: 4.5rem;  
       }  
       .sidebar-right {  
         position: fixed;  
         top: 0;  
         right: 0;  
-        width: min(85vw, 340px);  
+        width: min(85vw, 300px);  
         height: 100dvh;  
-        padding: 5.5rem 1rem 1rem;  
+        padding: 5rem 1rem 1rem;  
         background: rgba(2, 44, 34, 0.95);  
         backdrop-filter: blur(25px);  
         z-index: 500;  
@@ -1153,9 +1160,6 @@
         inset: 0;  
         background: rgba(0, 0, 0, 0.5);  
         z-index: 490;  
-      }  
-      .navbar-inner {  
-        padding: 0.5rem 0.75rem;  
       }  
     }  
   </style>  
@@ -1524,10 +1528,6 @@
         setNewPosition('normal');  
       };  
   
-      const handleDeleteProduct = (id) => {  
-        setProducts(products.filter(p => p.id !== id));  
-      };  
-  
       const handleAddToCart = (prod) => {  
         setCartItems(prev => {  
           const existingIndex = prev.findIndex(item => item.product.id === prod.id);  
@@ -1554,7 +1554,6 @@
         setCartItems(prev => prev.filter(item => item.product.id !== prodId));  
       };  
   
-      // دابینکردنی تایبەتمەندی کردنەوەی فەیسبووک و جیمێڵ و گەڕانەوەی ئۆتۆماتیکی پاش 2 چرکە
       const handleSocialAuth = (url) => {  
         const newWindow = window.open(url, '_blank');  
         setTimeout(() => {  
@@ -1582,7 +1581,7 @@
               <div className="navbar-inner glass">  
                 <div className="navbar-left">  
                   <button className="menu-toggle-btn" onClick={() => setIsSidebarOpen(!isSidebarOpen)} title="مێنۆ">  
-                    <Icon name="menu" size={22} />  
+                    <Icon name="menu" size={20} />  
                   </button>  
                   <a href="#" className="brand">  
                     <div className="brand-logo">گ</div>  
@@ -1591,11 +1590,11 @@
                 </div>  
   
                 <div className="navbar-center">  
-                  <div className="search-container">  
+                  <div className="search-container" style={{ margin: 0 }}>  
                     <div className="search-input-wrapper">  
                       <div className="search-inner-box">  
                         <span className="search-icon">  
-                          <Icon name="search" size={18} />  
+                          <Icon name="search" size={16} />  
                         </span>  
                         <input  
                           type="text"  
@@ -1610,12 +1609,12 @@
                 </div>  
   
                 <div className="navbar-right-actions">  
-                  <button className="nav-link" onClick={() => setIsAdminOpen(true)}>  
-                    <Icon name="shield-check" size={18} />  
+                  <button className="nav-link" onClick={() => setIsAdminOpen(true)} title={t.navAdmin}>  
+                    <Icon name="shield-check" size={16} />  
                     <span>{t.navAdmin}</span>  
                   </button>  
-                  <button className="nav-link" onClick={() => setIsLoginOpen(true)}>  
-                    <Icon name="user" size={18} />  
+                  <button className="nav-link" onClick={() => setIsLoginOpen(true)} title={t.navLogin}>  
+                    <Icon name="user" size={16} />  
                     <span>{t.navLogin}</span>  
                   </button>  
   
@@ -1631,15 +1630,15 @@
                       <span>☀️</span>  
                     </div>  
                     <div className="glass-toggle-thumb">  
-                      <Icon name={theme === 'dark' ? 'moon' : 'sun'} size={16} />  
+                      <Icon name={theme === 'dark' ? 'moon' : 'sun'} size={14} />  
                     </div>  
                   </div>  
   
-                  <button className="btn btn-primary" onClick={() => setIsCartOpen(true)}>  
-                    <Icon name="shopping-cart" size={18} />  
+                  <button className="btn btn-primary" style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem' }} onClick={() => setIsCartOpen(true)}>  
+                    <Icon name="shopping-cart" size={16} />  
                     <span>{t.shopNow}</span>  
                     {cartItems.length > 0 && (  
-                      <span style={{ background: '#fff', color: '#000', borderRadius: '50%', padding: '0.1rem 0.5rem', fontSize: '0.75rem', fontWeight: 'bold' }}>  
+                      <span style={{ background: '#fff', color: '#000', borderRadius: '50%', padding: '0.1rem 0.4rem', fontSize: '0.7rem', fontWeight: 'bold' }}>  
                         {cartItems.reduce((acc, item) => acc + item.quantity, 0)}  
                       </span>  
                     )}  
@@ -1648,20 +1647,40 @@
               </div>  
             </div>  
           </header>  
+
+          {/* گەڕانی تایبەت بە موبایل لە ژێر هێدەرەکەدا بۆ ئەوەی بە ئاسانی بەکاربێت */}
+          <div className="container" style={{ paddingTop: '4.5rem', display: 'block' }}>  
+            <div className="search-container" style={{ display: 'block' }}>  
+              <div className="search-input-wrapper">  
+                <div className="search-inner-box">  
+                  <span className="search-icon">  
+                    <Icon name="search" size={18} />  
+                  </span>  
+                  <input  
+                    type="text"  
+                    className="search-input"  
+                    placeholder={t.searchPlaceholder}  
+                    value={searchQuery}  
+                    onChange={(e) => setSearchQuery(e.target.value)}  
+                  />  
+                </div>  
+              </div>  
+            </div>  
+          </div>  
   
-          <div className="main-layout container">  
+          <div className="main-layout container" style={{ paddingTop: '0.5rem' }}>  
             {isSidebarOpen && <div className="sidebar-backdrop" onClick={() => setIsSidebarOpen(false)}></div>}  
   
             <aside className={`sidebar-right ${isSidebarOpen ? 'is-open' : ''}`}>  
               <div className="green-glass-container">  
                 <h3 className="sidebar-section-title">{t.categoriesTitle}</h3>  
                 <div className="sidebar-menu-list">  
-                  <button className={`sidebar-menu-item ${selectedCategory === 'All' ? 'active' : ''}`} onClick={() => setSelectedCategory('All')}>  
+                  <button className={`sidebar-menu-item ${selectedCategory === 'All' ? 'active' : ''}`} onClick={() => { setSelectedCategory('All'); setIsSidebarOpen(false); }}>  
                     <Icon name="grid" size={18} />  
                     <span>{t.allCategories}</span>  
                   </button>  
                   {categoriesList.filter(c => c !== 'All').map(cat => (  
-                    <button key={cat} className={`sidebar-menu-item ${selectedCategory === cat ? 'active' : ''}`} onClick={() => setSelectedCategory(cat)}>  
+                    <button key={cat} className={`sidebar-menu-item ${selectedCategory === cat ? 'active' : ''}`} onClick={() => { setSelectedCategory(cat); setIsSidebarOpen(false); }}>  
                       <Icon name="tag" size={18} />  
                       <span>{cat}</span>  
                     </button>  
@@ -1683,10 +1702,10 @@
   
               <section className="products-section">  
                 <div className="products-glass-container">  
-                  <div className="container">  
+                  <div className="container" style={{ padding: 0 }}>  
                     <div className="section-icon-wrapper">  
                       <div className="section-icon glass">  
-                        <Icon name="cpu" size={24} />  
+                        <Icon name="cpu" size={20} />  
                       </div>  
                     </div>  
                     <h2 className="section-title">داهێنانی تەکنەلۆژیا و یاری</h2>  
@@ -1714,7 +1733,7 @@
                             </div>  
                             <div className="product-content">  
                               <div className="product-rating">  
-                                <Icon name="star" size={14} style={{ fill: '#fbbf24', color: '#fbbf24' }} />  
+                                <Icon name="star" size={12} style={{ fill: '#fbbf24', color: '#fbbf24' }} />  
                                 <span className="product-rating-number">{prod.rating}</span>  
                               </div>  
                               <h3 className="product-name">{prod.name}</h3>  
@@ -1726,8 +1745,8 @@
                                   <span className="product-price">${prod.price}</span>  
                                   {prod.oldPrice && <span className="product-old-price">${prod.oldPrice}</span>}  
                                 </div>  
-                                <button className="btn btn-primary" title={t.addToCart} onClick={(e) => { e.stopPropagation(); handleAddToCart(prod); }}>  
-                                  <Icon name="shopping-cart" size={18} />  
+                                <button className="btn btn-primary" style={{ padding: '0.3rem 0.6rem' }} title={t.addToCart} onClick={(e) => { e.stopPropagation(); handleAddToCart(prod); }}>  
+                                  <Icon name="shopping-cart" size={14} />  
                                 </button>  
                               </div>  
                             </div>  
@@ -1754,7 +1773,7 @@
                 {!isAdminLoggedIn ? (  
                   <form onSubmit={handleAdminLogin} className="admin-form">  
                     <h2>{t.adminModalTitle}</h2>  
-                    <p style={{ color: 'var(--neutral-400)', fontSize: '0.9rem' }}>{t.adminPasswordLabel}</p>  
+                    <p style={{ color: 'var(--neutral-400)', fontSize: '0.85rem' }}>{t.adminPasswordLabel}</p>  
                     <input type="password" className="admin-input" placeholder="••••" value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} />  
                     <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>{t.loginBtn}</button>  
                   </form>  
@@ -1775,9 +1794,9 @@
                         <option value="Headset">Headset</option>  
                         <option value="Console">Console</option>  
                       </select>  
-                      <label style={{ fontSize: '0.85rem', color: 'var(--neutral-300)' }}>{t.uploadImagesLabel}</label>  
+                      <label style={{ fontSize: '0.8rem', color: 'var(--neutral-300)' }}>{t.uploadImagesLabel}</label>  
                       <input type="file" multiple accept="image/*" className="admin-input" onChange={handleImageUpload} />  
-                      <label style={{ fontSize: '0.85rem', color: 'var(--neutral-300)' }}>{t.positionLabel}</label>  
+                      <label style={{ fontSize: '0.8rem', color: 'var(--neutral-300)' }}>{t.positionLabel}</label>  
                       <select className="admin-input" value={newPosition} onChange={(e) => setNewPosition(e.target.value)}>  
                         <option value="normal">{t.posNormal}</option>  
                         <option value="top">{t.posTop}</option>  
@@ -1803,22 +1822,20 @@
                 <div className="login-field">  
                   <input type={showPassword ? "text" : "password"} placeholder="وشەی تێپەڕ" value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} />  
                   <span className="field-icon-left" onClick={() => setShowPassword(!showPassword)}>  
-                    <Icon name={showPassword ? "eye-off" : "eye"} size={18} />  
+                    <Icon name={showPassword ? "eye-off" : "eye"} size={16} />  
                   </span>  
                 </div>  
                 <button className="login-submit-btn" onClick={() => { alert('داواکاری چوونەژوورەوە بە ئیمەیڵ نێردرا!'); setIsLoginOpen(false); }}>{t.loginBtn}</button>  
 
                 <div className="divider-text">یان داخڵ بە بەم ئەکاونتانە</div>  
 
-                {/* دوگمەی فەیسبووک بە تەنها وشەی متابع کە بە 2 چرکە دەگەڕێتەوە */}
                 <button className="social-login-btn" onClick={() => handleSocialAuth('https://www.facebook.com/login.php')}>  
-                  <Icon name="facebook" size={20} />  
+                  <Icon name="facebook" size={18} />  
                   <span>متابع</span>  
                 </button>  
 
-                {/* دوگمەی جیمێڵ بە تەنها وشەی متابع کە بە 2 چرکە دەگەڕێتەوە */}
                 <button className="social-login-btn" onClick={() => handleSocialAuth('https://accounts.google.com/signin')}>  
-                  <Icon name="mail" size={20} />  
+                  <Icon name="mail" size={18} />  
                   <span>متابع</span>  
                 </button>  
               </div>  
@@ -1833,24 +1850,24 @@
                 {cartItems.length === 0 ? (  
                   <p style={{ color: 'var(--neutral-400)', marginTop: '1rem', textAlign: 'center' }}>{t.emptyCart}</p>  
                 ) : (  
-                  <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>  
-                    <div style={{ maxHeight: '200px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>  
+                  <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>  
+                    <div style={{ maxHeight: '180px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>  
                       {cartItems.map(item => (  
                         <div key={item.product.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(255,255,255,0.05)', padding: '0.5rem', borderRadius: '8px' }}>  
                           <div>  
-                            <div style={{ fontSize: '0.95rem', fontWeight: 'bold' }}>{item.product.name}</div>  
-                            <div style={{ fontSize: '0.85rem', color: 'var(--neutral-400)' }}>${item.product.price}</div>  
+                            <div style={{ fontSize: '0.85rem', fontWeight: 'bold' }}>{item.product.name}</div>  
+                            <div style={{ fontSize: '0.75rem', color: 'var(--neutral-400)' }}>${item.product.price}</div>  
                           </div>  
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>  
-                            <button onClick={() => handleDecreaseQty(item.product.id)} className="btn-glass" style={{ padding: '0.2rem 0.5rem', borderRadius: '4px' }}>-</button>  
-                            <span>{item.quantity}</span>  
-                            <button onClick={() => handleIncreaseQty(item.product.id)} className="btn-glass" style={{ padding: '0.2rem 0.5rem', borderRadius: '4px' }}>+</button>  
-                            <button onClick={() => handleRemoveCartItem(item.product.id)} style={{ color: '#ef4444', background: 'none', border: 'none', cursor: 'pointer', marginLeft: '0.5rem' }}>✕</button>  
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>  
+                            <button onClick={() => handleDecreaseQty(item.product.id)} className="btn-glass" style={{ padding: '0.1rem 0.4rem', fontSize: '0.8rem', borderRadius: '4px' }}>-</button>  
+                            <span style={{ fontSize: '0.85rem' }}>{item.quantity}</span>  
+                            <button onClick={() => handleIncreaseQty(item.product.id)} className="btn-glass" style={{ padding: '0.1rem 0.4rem', fontSize: '0.8rem', borderRadius: '4px' }}>+</button>  
+                            <button onClick={() => handleRemoveCartItem(item.product.id)} style={{ color: '#ef4444', background: 'none', border: 'none', cursor: 'pointer', marginLeft: '0.4rem' }}>✕</button>  
                           </div>  
                         </div>  
                       ))}  
                     </div>  
-                    <div style={{ borderTop: '1px solid var(--glass-border)', paddingTop: '0.75rem', display: 'flex', justifyContent: 'space-between', fontWeight: 'bold' }}>  
+                    <div style={{ borderTop: '1px solid var(--glass-border)', paddingTop: '0.5rem', display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', fontSize: '0.9rem' }}>  
                       <span>کۆی گشتی:</span>  
                       <span>${cartItems.reduce((acc, item) => acc + (item.product.price * item.quantity), 0)}</span>  
                     </div>  
@@ -1873,13 +1890,13 @@
               <div className="modal-content" onClick={(e) => e.stopPropagation()}>  
                 <span className="close-modal" onClick={() => setSelectedProductDetails(null)}>✕</span>  
                 <h2>{selectedProductDetails.name}</h2>  
-                <img src={selectedProductDetails.images[0]} alt={selectedProductDetails.name} style={{ width: '100%', borderRadius: '12px', margin: '1rem 0', maxHeight: '200px', objectFit: 'cover' }} />  
-                <p style={{ color: 'var(--neutral-300)', marginBottom: '0.5rem' }}>{t.specsTitle}:</p>  
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1rem' }}>  
+                <img src={selectedProductDetails.images[0]} alt={selectedProductDetails.name} style={{ width: '100%', borderRadius: '8px', margin: '0.75rem 0', maxHeight: '160px', objectFit: 'cover' }} />  
+                <p style={{ color: 'var(--neutral-300)', marginBottom: '0.4rem', fontSize: '0.85rem' }}>{t.specsTitle}:</p>  
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem', marginBottom: '0.75rem' }}>  
                   {selectedProductDetails.specs.map((s, idx) => <span key={idx} className="product-spec">{s}</span>)}  
                 </div>  
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>  
-                  <span style={{ fontSize: '1.35rem', fontWeight: 'bold' }}>${selectedProductDetails.price}</span>  
+                  <span style={{ fontSize: '1.15rem', fontWeight: 'bold' }}>${selectedProductDetails.price}</span>  
                   <button className="btn btn-primary" onClick={() => { handleAddToCart(selectedProductDetails); setSelectedProductDetails(null); }}>  
                     {t.addToCart}  
                   </button>  
