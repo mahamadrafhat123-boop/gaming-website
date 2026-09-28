@@ -113,6 +113,22 @@
       background: linear-gradient(135deg, #f0fdf4 100%, #dcfce7 50%, #f0fdf4 0%);  
       color: var(--neutral-100);  
     }  
+
+    /* Fade Animation Medium */
+    @keyframes fadeInMedium {
+      from {
+        opacity: 0;
+        transform: scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .fade-medium {
+      animation: fadeInMedium 0.4s ease-in-out forwards;
+    }
   
     * {  
       margin: 0;  
@@ -416,10 +432,6 @@
       min-width: 0;  
     }  
   
-    /* =========================  
-       RIGHT SIDEBAR  
-       ========================= */  
-  
     .sidebar-right {  
       width: 280px;  
       flex: 0 0 280px;  
@@ -490,7 +502,6 @@
       box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);  
     }  
   
-    /* 3-line menu button */  
     .menu-toggle-btn {  
       display: flex;  
       align-items: center;  
@@ -516,14 +527,9 @@
       transform: scale(0.95);  
     }  
   
-    /* Mobile backdrop */  
     .sidebar-backdrop {  
       display: none;  
     }  
-  
-    /* =========================  
-       NAVBAR  
-       ========================= */  
   
     .navbar {  
       position: fixed;  
@@ -626,8 +632,6 @@
       border-color: var(--success-400);  
     }  
   
-    /* SEARCH BAR */  
-  
     .search-container {  
       display: flex;  
       justify-content: center;  
@@ -689,8 +693,6 @@
       color: var(--neutral-400);  
       pointer-events: none;  
     }  
-  
-    /* HERO */  
   
     .hero-carousel-section {  
       padding: 0.5rem 0 1.5rem;  
@@ -763,8 +765,6 @@
       transform: rotateY(300deg) translateZ(180px);  
     }  
   
-    /* PRODUCTS */  
-  
     .products-section {  
       padding: 1rem 0 3rem;  
       width: 100%;  
@@ -818,7 +818,6 @@
       }  
     }  
 
-    /* Animation Pan Slow */
     @keyframes panAnimation {
       0% {
         object-position: 0% 50%;
@@ -1014,8 +1013,6 @@
       font-family: 'Shrikhand', sans-serif;  
     }  
   
-    /* MODALS */  
-  
     .modal-overlay {  
       position: fixed;  
       inset: 0;  
@@ -1105,12 +1102,6 @@
       font-family: 'Space Grotesk', sans-serif;  
     }  
   
-    .login-switch-tab {  
-      color: #94a3b8;  
-      font-size: 0.9rem;  
-      cursor: pointer;  
-    }  
-  
     .login-field {  
       position: relative;  
       background: rgba(255, 255, 255, 0.08);  
@@ -1137,28 +1128,11 @@
       color: #94a3b8;  
     }  
   
-    .login-field .field-icon {  
-      position: absolute;  
-      right: 1.25rem;  
-      color: #94a3b8;  
-      display: flex;  
-      align-items: center;  
-    }  
-  
     .login-field .field-icon-left {  
       position: absolute;  
       left: 1.25rem;  
       color: #94a3b8;  
       cursor: pointer;  
-    }  
-  
-    .forgot-pass {  
-      text-align: right;  
-      font-size: 0.8rem;  
-      color: #94a3b8;  
-      margin-bottom: 1.5rem;  
-      cursor: pointer;  
-      display: block;  
     }  
   
     .login-submit-btn {  
@@ -1232,12 +1206,7 @@
       font-family: 'Shrikhand', sans-serif;  
     }  
   
-    /* =========================  
-       TABLET + MOBILE  
-       ========================= */  
-  
     @media (max-width: 900px) {  
-  
       .main-layout {  
         flex-direction: column;  
         padding-top: 5.8rem;  
@@ -1541,10 +1510,7 @@
       }  
     }  
   
-    /* مۆبایلی بچووک */  
-  
     @media (max-width: 520px) {  
-  
       .main-layout {  
         padding-top: 5.6rem;  
       }  
@@ -1664,7 +1630,6 @@
     }  
   
     @media (max-width: 360px) {  
-  
       .brand-name {  
         display: none;  
       }  
@@ -1704,7 +1669,6 @@
     const { useEffect, useState } = React;  
   
     const translations = {  
-  
       ku: {  
         navAdmin: 'بەڕێوەبەر',  
         navLogin: 'چوونەژوورەوە',  
@@ -1742,7 +1706,6 @@
         categoriesTitle: 'پۆلەکان',  
         allCategories: 'سەرجەم بەرهەمەکان'  
       },  
-  
       ar: {  
         navAdmin: 'الإدارة',  
         navLogin: 'دخول',  
@@ -1780,7 +1743,6 @@
         categoriesTitle: 'التصنيفات',  
         allCategories: 'جميع المنتجات'  
       },  
-  
       en: {  
         navAdmin: 'Admin',  
         navLogin: 'Login',  
@@ -1818,7 +1780,6 @@
         categoriesTitle: 'Categories',  
         allCategories: 'All Products'  
       }  
-  
     };  
   
     function Icon({ name, size = 18, strokeWidth = 2 }) {  
@@ -1841,7 +1802,6 @@
     }  
   
     function App() {  
-  
       const [lang, setLang] = useState('ku');  
       const [theme, setTheme] = useState('dark');  
   
@@ -1908,7 +1868,6 @@
           ],  
           justAdded: false  
         },  
-  
         {  
           id: 2,  
           name: 'AirSlim 14 Pro',  
@@ -1928,7 +1887,6 @@
           ],  
           justAdded: false  
         },  
-  
         {  
           id: 3,  
           name: 'RGB Battle Station Elite',  
@@ -1948,7 +1906,6 @@
           ],  
           justAdded: false  
         },  
-  
         {  
           id: 4,  
           name: 'Pro Wireless Precision Mouse',  
@@ -1967,7 +1924,6 @@
           ],  
           justAdded: false  
         },  
-  
         {  
           id: 5,  
           name: 'Mechanic RGB Keyboard V3',  
@@ -1987,7 +1943,6 @@
           ],  
           justAdded: false  
         },  
-  
         {  
           id: 6,  
           name: 'Cyberpunk Gaming Case X',  
@@ -2007,7 +1962,6 @@
           ],  
           justAdded: false  
         },  
-  
         {  
           id: 7,  
           name: 'Immersive Headset 7.1 Pro',  
@@ -2026,7 +1980,6 @@
           ],  
           justAdded: false  
         },  
-  
         {  
           id: 8,  
           name: 'NextGen Console Xtreme',  
@@ -2056,12 +2009,8 @@
   
       const handleNextImage = (e, prod) => {  
         e.stopPropagation();  
-  
         const currentIndex = activeImageIndices[prod.id] || 0;  
-  
-        const nextIndex =  
-          (currentIndex + 1) % prod.images.length;  
-  
+        const nextIndex = (currentIndex + 1) % prod.images.length;  
         setActiveImageIndices(prev => ({  
           ...prev,  
           [prod.id]: nextIndex  
@@ -2070,14 +2019,8 @@
   
       const handlePrevImage = (e, prod) => {  
         e.stopPropagation();  
-  
-        const currentIndex =  
-          activeImageIndices[prod.id] || 0;  
-  
-        const prevIndex =  
-          (currentIndex - 1 + prod.images.length) %  
-          prod.images.length;  
-  
+        const currentIndex = activeImageIndices[prod.id] || 0;  
+        const prevIndex = (currentIndex - 1 + prod.images.length) % prod.images.length;  
         setActiveImageIndices(prev => ({  
           ...prev,  
           [prod.id]: prevIndex  
@@ -2085,246 +2028,131 @@
       };  
   
       useEffect(() => {  
-  
-        document.documentElement.setAttribute(  
-          'dir',  
-          lang === 'en' ? 'ltr' : 'rtl'  
-        );  
-  
-        document.documentElement.setAttribute(  
-          'lang',  
-          lang  
-        );  
-  
+        document.documentElement.setAttribute('dir', lang === 'en' ? 'ltr' : 'rtl');  
+        document.documentElement.setAttribute('lang', lang);  
         document.body.className = theme;  
-  
         if (window.lucide) {  
           window.lucide.createIcons();  
         }  
-  
       }, [lang, theme]);  
   
       const toggleTheme = () => {  
-        setTheme(prev =>  
-          prev === 'dark' ? 'light' : 'dark'  
-        );  
+        setTheme(prev => prev === 'dark' ? 'light' : 'dark');  
       };  
   
       const handleAdminLogin = (e) => {  
-  
         e.preventDefault();  
-  
         if (passwordInput === '1234' || passwordInput !== '') {  
           setIsAdminLoggedIn(true);  
         } else {  
           alert(t.wrongPassword);  
         }  
-  
       };  
   
       const handleImageUpload = (e) => {  
-  
         const files = Array.from(e.target.files);  
-  
         const readers = files.map(file => {  
-  
           return new Promise((resolve) => {  
-  
             const reader = new FileReader();  
-  
-            reader.onload = (uploadEvent) =>  
-              resolve(uploadEvent.target.result);  
-  
+            reader.onload = (uploadEvent) => resolve(uploadEvent.target.result);  
             reader.readAsDataURL(file);  
-  
           });  
-  
         });  
-  
         Promise.all(readers).then(imagesBase64 => {  
           setNewImages(imagesBase64);  
         });  
-  
       };  
   
       const handleAddProductSubmit = (e) => {  
-  
         e.preventDefault();  
-  
-        if (!newTitle || !newPrice || newImages.length === 0)  
-          return;  
+        if (!newTitle || !newPrice || newImages.length === 0) return;  
   
         const parsedSpecs = newSpecs  
-          ? newSpecs  
-              .split(',')  
-              .map(s => s.trim())  
-              .filter(Boolean)  
+          ? newSpecs.split(',').map(s => s.trim()).filter(Boolean)  
           : [newCategory, 'High Performance'];  
   
         const newProdObj = {  
-  
           id: Date.now(),  
-  
           name: newTitle,  
-  
           category: newCategory,  
-  
           price: Number(newPrice),  
-  
-          oldPrice: newOldPrice  
-            ? Number(newOldPrice)  
-            : Number(newPrice) + 150,  
-  
+          oldPrice: newOldPrice ? Number(newOldPrice) : Number(newPrice) + 150,  
           images: newImages,  
-  
           rating: 5.0,  
-  
-          badge:  
-            newPosition === 'top'  
-              ? 'سەرەکی'  
-              : 'نوێ',  
-  
+          badge: newPosition === 'top' ? 'سەرەکی' : 'نوێ',  
           specs: parsedSpecs,  
-  
           justAdded: true  
         };  
   
         if (newPosition === 'top') {  
-  
-          setCarouselImages(prev => [  
-            newImages[0],  
-            ...prev  
-          ]);  
-  
+          setCarouselImages(prev => [newImages[0], ...prev]);  
         }  
   
-        setProducts([  
-          newProdObj,  
-          ...products  
-        ]);  
-  
+        setProducts([newProdObj, ...products]);  
         setNewTitle('');  
         setNewPrice('');  
         setNewOldPrice('');  
         setNewSpecs('');  
         setNewImages([]);  
         setNewPosition('normal');  
-  
       };  
   
       const handleDeleteProduct = (id) => {  
-  
-        setProducts(  
-          products.filter(p => p.id !== id)  
-        );  
-  
+        setProducts(products.filter(p => p.id !== id));  
       };  
   
       const handleAddToCart = (prod) => {  
-  
         setCartItems(prev => {  
-  
-          const existingIndex =  
-            prev.findIndex(  
-              item => item.product.id === prod.id  
-            );  
-  
+          const existingIndex = prev.findIndex(item => item.product.id === prod.id);  
           if (existingIndex > -1) {  
-  
             const updated = [...prev];  
-  
             updated[existingIndex].quantity += 1;  
-  
             return updated;  
-  
           } else {  
-  
-            return [  
-              ...prev,  
-              {  
-                product: prod,  
-                quantity: 1  
-              }  
-            ];  
-  
+            return [...prev, { product: prod, quantity: 1 }];  
           }  
-  
         });  
-  
         setIsCartOpen(true);  
-  
       };  
   
       const handleIncreaseQty = (prodId) => {  
-  
         setCartItems(prev =>  
           prev.map(item => {  
-  
             if (item.product.id === prodId) {  
-  
-              return {  
-                ...item,  
-                quantity: item.quantity + 1  
-              };  
-  
+              return { ...item, quantity: item.quantity + 1 };  
             }  
-  
             return item;  
-  
           })  
         );  
-  
       };  
   
       const handleDecreaseQty = (prodId) => {  
-  
         setCartItems(prev =>  
-          prev  
-            .map(item => {  
-  
-              if (item.product.id === prodId) {  
-  
-                return {  
-                  ...item,  
-                  quantity: item.quantity - 1  
-                };  
-  
-              }  
-  
-              return item;  
-  
-            })  
-            .filter(item => item.quantity > 0)  
+          prev.map(item => {  
+            if (item.product.id === prodId) {  
+              return { ...item, quantity: item.quantity - 1 };  
+            }  
+            return item;  
+          }).filter(item => item.quantity > 0)  
         );  
-  
       };  
   
       const handleRemoveCartItem = (prodId) => {  
-  
-        setCartItems(prev =>  
-          prev.filter(item => item.product.id !== prodId)  
-        );  
-  
+        setCartItems(prev => prev.filter(item => item.product.id !== prodId));  
       };  
   
       const filteredProducts = products.filter(prod => {  
-  
         const matchesSearch =  
           prod.name.toLowerCase().includes(searchQuery.toLowerCase()) ||  
           prod.specs.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()));  
-  
-        const matchesCategory =  
-          selectedCategory === 'All' ||  
-          prod.category === selectedCategory;  
-  
+        const matchesCategory = selectedCategory === 'All' || prod.category === selectedCategory;  
         return matchesSearch && matchesCategory;  
-  
       });  
   
       const categoriesList = ['All', ...new Set(products.map(p => p.category))];  
   
       return (  
-        <div>  
+        <div className="fade-medium">  
           <header className="navbar">  
             <div className="container">  
               <div className="navbar-inner glass">  
@@ -2709,7 +2537,7 @@
           )}  
   
           {isLoginOpen && (  
-            <div className="modal-overlay" onClick={() => setIsLoginOpen(false)}>  
+            <div className="modal-overlay fade-medium" onClick={() => setIsLoginOpen(false)}>  
               <div className="login-card" onClick={(e) => e.stopPropagation()}>  
                 <span className="close-modal" onClick={() => setIsLoginOpen(false)}>✕</span>  
                 <div className="login-header">  
@@ -2724,7 +2552,19 @@
                     <Icon name={showPassword ? "eye-off" : "eye"} size={16} />  
                   </span>  
                 </div>  
-                <button className="login-submit-btn" onClick={() => setIsLoginOpen(false)}>{t.loginBtn}</button>  
+                <button className="login-submit-btn" onClick={() => { alert('داواکاری چوونەژوورەوە بە ئیمەیڵ نێردرا!'); setIsLoginOpen(false); }}>{t.loginBtn}</button>  
+
+                <div className="divider-text">یان داخڵ بە بەم ئەکاونتانە</div>  
+
+                <button className="social-login-btn" onClick={() => alert('تکایە هەژماری فەیسبووکی خۆت هەڵبژێرە بۆ چونەژوورەوە.')}>  
+                  <Icon name="facebook" size={18} />  
+                  <span>Login with Facebook</span>  
+                </button>  
+
+                <button className="social-login-btn" onClick={() => alert('تکایە هەژماری ئەپڵی خۆت (Apple ID) بنوسە بۆ چونەژوورەوە.')}>  
+                  <Icon name="apple" size={18} />  
+                  <span>Login with Apple</span>  
+                </button>  
               </div>  
             </div>  
           )}  
