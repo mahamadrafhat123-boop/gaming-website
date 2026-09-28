@@ -1344,14 +1344,17 @@
         height: 17px !important;  
       }  
   
-      .lang-switcher {  
-        display: none;  
-      }  
-  
+      /* چارەسەری دیاربوونی دوگمەی گۆڕینی دۆخی تاریک و ڕووناک لە مۆبایلدا */
       .glass-toggle {  
-        display: none;  
+        display: flex !important;  
+        width: 60px;
+        height: 28px;
       }  
-  
+
+      .glass-toggle.dark-mode .glass-toggle-thumb {  
+        transform: translateX(-32px);  
+      }
+
       .navbar-right-actions .btn-primary {  
         min-width: 42px;  
         min-height: 42px;  
@@ -2556,14 +2559,16 @@
 
                 <div className="divider-text">یان داخڵ بە بەم ئەکاونتانە</div>  
 
-                <button className="social-login-btn" onClick={() => alert('تکایە هەژماری فەیسبووکی خۆت هەڵبژێرە بۆ چونەژوورەوە.')}>  
+                {/* چالاککردنی دوگمەی فەیسبووک بۆ کردنەوەی پەنجەرەی فەیسبووک */}
+                <button className="social-login-btn" onClick={() => window.open('https://www.facebook.com/login.php', '_blank')}>  
                   <Icon name="facebook" size={18} />  
                   <span>Login with Facebook</span>  
                 </button>  
 
-                <button className="social-login-btn" onClick={() => alert('تکایە هەژماری ئەپڵی خۆت (Apple ID) بنوسە بۆ چونەژوورەوە.')}>  
-                  <Icon name="apple" size={18} />  
-                  <span>Login with Apple</span>  
+                {/* چالاککردنی دوگمەی جیمێڵ (گوگڵ) بۆ کردنەوەی پەنجەرەی چوونەژوورەوەی گوگڵ */}
+                <button className="social-login-btn" onClick={() => window.open('https://accounts.google.com/signin', '_blank')}>  
+                  <Icon name="mail" size={18} />  
+                  <span>Login with Google (Gmail)</span>  
                 </button>  
               </div>  
             </div>  
