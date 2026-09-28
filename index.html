@@ -66,6 +66,19 @@
     }
 
     .glass-strong { background: var(--glass-bg-strong); backdrop-filter: blur(var(--glass-blur)); -webkit-backdrop-filter: blur(var(--glass-blur)); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); }
+    
+    /* لۆگۆی شوشەیی سەوزی داواکراو بۆ بەشی پۆلەکان */
+    .green-glass-container {
+      background: rgba(6, 78, 59, 0.35);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+      border-radius: var(--radius-xl);
+      padding: 1.25rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(52, 211, 153, 0.15);
+      margin-bottom: 1.5rem;
+    }
+
     .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
     
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-1); padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); font-weight: 500; font-size: 1rem; transition: all var(--transition-base); white-space: nowrap; font-family: 'Shrikhand', sans-serif; }
@@ -132,7 +145,7 @@
       min-height: 100vh;
       position: relative;
       padding-top: 4.2rem;
-      flex-direction: row; /* گۆڕدرا بۆ لای چەپ */
+      flex-direction: row;
     }
 
     .content-area {
@@ -142,11 +155,11 @@
     }
 
     .sidebar-right {
-      width: 280px;
+      width: 300px;
       background: var(--glass-bg);
       backdrop-filter: blur(var(--glass-blur));
       -webkit-backdrop-filter: blur(var(--glass-blur));
-      border-left: 1px solid var(--glass-border); /* گۆڕدرا بۆ چەپ */
+      border-left: 1px solid var(--glass-border);
       padding: 1.5rem 1rem;
       display: flex;
       flex-direction: column;
@@ -156,7 +169,7 @@
       height: calc(100vh - 4.2rem);
       overflow-y: auto;
       z-index: 90;
-      order: 2; /* گواسترایەوە بۆ لای چەپ */
+      order: 2;
     }
 
     .sidebar-section-title {
@@ -172,34 +185,39 @@
     .sidebar-menu-list {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
 
     .sidebar-menu-item {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 0.75rem;
+      gap: 0.6rem;
+      padding: 0.65rem 0.85rem;
       border-radius: var(--radius-md);
-      background: var(--glass-bg-strong);
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--glass-border);
       color: var(--neutral-200);
       font-size: 0.85rem;
       cursor: pointer;
       transition: all var(--transition-fast);
       font-family: 'Shrikhand', sans-serif;
+      width: 100%;
+      text-align: right;
     }
 
     .sidebar-menu-item:hover, .sidebar-menu-item.active {
       background: var(--success-500);
       color: #fff;
       border-color: var(--success-400);
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
     }
     
     /* NAVBAR */
     .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.25rem 0.5rem; transition: all var(--transition-base); }
     .navbar-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.3rem 1rem; border-radius: var(--radius-full); width: 100%; gap: 1rem; }
-    .navbar-left { display: flex; align-items: center; gap: 1rem; }
+    
+    /* چاککردنی بەشی چوونەژوورەوە و بەڕێوەبەر بۆ ئەوەی تێکەڵ نەبن */
+    .navbar-left { display: flex; align-items: center; gap: 0.75rem; flex-wrap: nowrap; }
     .navbar-center { display: flex; align-items: center; flex: 1; max-width: 450px; }
     .navbar-right-actions { display: flex; align-items: center; gap: 0.5rem; }
 
@@ -207,8 +225,23 @@
     .brand-logo { width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--success-500), var(--accent-500)); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); color: white; font-weight: 700; font-size: 0.75rem; font-family: 'Shrikhand', sans-serif; }
     .brand-name { font-family: 'Shrikhand', sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--neutral-0); white-space: nowrap; }
     
-    .nav-link { font-family: 'Shrikhand', sans-serif; color: var(--neutral-300); font-size: 0.75rem; font-weight: 500; display: flex; align-items: center; gap: 0.25rem; transition: color var(--transition-fast); cursor: pointer; white-space: nowrap; }
-    .nav-link:hover, .nav-link.active { color: var(--success-400); }
+    .nav-link { 
+      font-family: 'Shrikhand', sans-serif; 
+      color: var(--neutral-200); 
+      font-size: 0.7rem; 
+      font-weight: 500; 
+      display: flex; 
+      align-items: center; 
+      gap: 0.25rem; 
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--glass-border);
+      transition: all var(--transition-fast); 
+      cursor: pointer; 
+      white-space: nowrap; 
+    }
+    .nav-link:hover, .nav-link.active { color: var(--neutral-0); background: var(--success-500); border-color: var(--success-400); }
 
     /* SEARCH BAR */
     .search-container { display: flex; justify-content: center; align-items: center; width: 100%; }
@@ -267,7 +300,6 @@
     .section-icon { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
     .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; width: 100%; }
     
-    /* ئەنیمەیشنی RISE کە بە هێواشی (slow) لە خوارەوە دەردەکەون */
     @keyframes rise {
       0% { opacity: 0; transform: translateY(50px) scale(0.92); }
       100% { opacity: 1; transform: translateY(0) scale(1); }
@@ -282,7 +314,7 @@
       background: var(--glass-bg-strong); 
       position: relative;
       width: 100%;
-      animation: rise 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; /* خێرایی هێواش slow */
+      animation: rise 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
     
     .product-card.clicked-led {
@@ -346,7 +378,6 @@
     .admin-input:focus { border-color: var(--success-400); outline: none; }
     .close-modal { position: absolute; top: 1rem; inset-inline-end: 1rem; color: var(--neutral-400); cursor: pointer; font-size: 1.1rem; z-index: 10; }
 
-    /* دیزاینی نوێی Login (وەکو وێنەکە) */
     .login-card {
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(25px);
@@ -664,7 +695,6 @@
 
       const handleAdminLogin = (e) => {
         e.preventDefault();
-        // ئەگەر وشەی تێپەڕ 1234 بوو یان هەر داتایەک، دەچێتە داشبۆردی بەڕێوەبەر
         if (passwordInput === '1234' || passwordInput !== '') {
           setIsAdminLoggedIn(true);
         } else {
@@ -1060,7 +1090,8 @@
           <div className="main-layout">
             
             <aside className="sidebar-right">
-              <div>
+              {/* لۆگۆی شوشەیی سەوز کە بەشی پۆلەکانی دەورە داوە */}
+              <div className="green-glass-container">
                 <h3 className="sidebar-section-title">{t.categoriesTitle}</h3>
                 <div className="sidebar-menu-list">
                   <button 
