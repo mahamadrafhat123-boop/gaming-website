@@ -114,7 +114,6 @@
       color: var(--neutral-100);  
     }  
 
-    /* Fade Animation Medium */
     @keyframes fadeInMedium {
       from {
         opacity: 0;
@@ -221,11 +220,9 @@
       0%, 100% {  
         transform: translate(0, 0) scale(1);  
       }  
-  
       33% {  
         transform: translate(30px, -40px) scale(1.05);  
       }  
-  
       66% {  
         transform: translate(-20px, 30px) scale(0.95);  
       }  
@@ -264,9 +261,9 @@
   
     .container {  
       width: 100%;  
-      max-width: 1280px;  
+      max-width: 1400px;  
       margin: 0 auto;  
-      padding: 0 1rem;  
+      padding: 0 1.5rem;  
     }  
   
     .btn {  
@@ -310,8 +307,8 @@
   
     .lang-switcher {  
       display: flex;  
-      gap: 0.15rem;  
-      padding: 0.15rem;  
+      gap: 0.25rem;  
+      padding: 0.25rem;  
       border-radius: var(--radius-full);  
       background: var(--glass-bg);  
       backdrop-filter: blur(var(--glass-blur));  
@@ -319,9 +316,9 @@
     }  
   
     .lang-btn {  
-      padding: 0.25rem 0.45rem;  
+      padding: 0.35rem 0.65rem;  
       border-radius: var(--radius-full);  
-      font-size: 0.7rem;  
+      font-size: 0.8rem;  
       font-weight: 600;  
       color: var(--neutral-300);  
       transition: all var(--transition-fast);  
@@ -350,15 +347,15 @@
       padding: 2px;  
       cursor: pointer;  
       position: relative;  
-      width: 75px;  
-      height: 32px;  
+      width: 80px;  
+      height: 36px;  
       transition: all var(--transition-base);  
     }  
   
     .glass-toggle-thumb {  
       position: absolute;  
-      width: 26px;  
-      height: 26px;  
+      width: 30px;  
+      height: 30px;  
       border-radius: 50%;  
       background: var(--glass-bg-strong);  
       border: 1px solid var(--glass-border);  
@@ -374,7 +371,7 @@
     }  
   
     .glass-toggle.dark-mode .glass-toggle-thumb {  
-      transform: translateX(-43px);  
+      transform: translateX(-44px);  
     }  
   
     .glass-toggle.light-mode .glass-toggle-thumb {  
@@ -385,8 +382,8 @@
       display: flex;  
       justify-content: space-between;  
       width: 100%;  
-      padding: 0 4px;  
-      font-size: 0.6rem;  
+      padding: 0 6px;  
+      font-size: 0.7rem;  
       font-weight: 600;  
       color: var(--neutral-400);  
       user-select: none;  
@@ -421,38 +418,34 @@
       display: flex;  
       min-height: 100vh;  
       position: relative;  
-      padding-top: 4.2rem;  
+      padding-top: 5rem;  
       flex-direction: row;  
     }  
   
     .content-area {  
       flex: 1;  
-      padding: 1rem;  
+      padding: 1.5rem;  
       overflow-x: hidden;  
       min-width: 0;  
     }  
   
     .sidebar-right {  
-      width: 280px;  
-      flex: 0 0 280px;  
+      width: 300px;  
+      flex: 0 0 300px;  
       background: var(--glass-bg);  
       backdrop-filter: blur(var(--glass-blur));  
       -webkit-backdrop-filter: blur(var(--glass-blur));  
       border-left: 1px solid var(--glass-border);  
-      padding: 1rem;  
+      padding: 1.25rem;  
       display: flex;  
       flex-direction: column;  
       gap: 1rem;  
       position: sticky;  
-      top: 4.2rem;  
-      height: calc(100vh - 4.2rem);  
+      top: 5rem;  
+      height: calc(100vh - 5rem);  
       overflow-y: auto;  
       z-index: 90;  
       order: 2;  
-      transition:  
-        transform 0.3s ease,  
-        opacity 0.3s ease,  
-        visibility 0.3s ease;  
     }  
   
     .sidebar-right:not(.is-open) {  
@@ -460,7 +453,7 @@
     }  
   
     .sidebar-section-title {  
-      font-size: 0.95rem;  
+      font-size: 1rem;  
       font-weight: 700;  
       color: var(--neutral-0);  
       margin-bottom: 0.75rem;  
@@ -478,20 +471,19 @@
     .sidebar-menu-item {  
       display: flex;  
       align-items: center;  
-      gap: 0.6rem;  
-      padding: 0.65rem 0.85rem;  
-      min-height: 44px;  
+      gap: 0.75rem;  
+      padding: 0.75rem 1rem;  
+      min-height: 48px;  
       border-radius: var(--radius-md);  
       background: rgba(255, 255, 255, 0.04);  
       border: 1px solid var(--glass-border);  
       color: var(--neutral-200);  
-      font-size: 0.85rem;  
+      font-size: 0.9rem;  
       cursor: pointer;  
       transition: all var(--transition-fast);  
       font-family: 'Shrikhand', sans-serif;  
       width: 100%;  
       text-align: right;  
-      touch-action: manipulation;  
     }  
   
     .sidebar-menu-item:hover,  
@@ -509,22 +501,17 @@
       background: var(--glass-bg);  
       border: 1px solid var(--glass-border);  
       color: var(--neutral-0);  
-      padding: 0.4rem 0.6rem;  
-      min-width: 42px;  
-      min-height: 42px;  
+      padding: 0.5rem 0.75rem;  
+      min-width: 46px;  
+      min-height: 46px;  
       border-radius: var(--radius-md);  
       cursor: pointer;  
       transition: background 0.2s, transform 0.2s;  
-      touch-action: manipulation;  
       flex-shrink: 0;  
     }  
   
     .menu-toggle-btn:hover {  
       background: var(--success-500);  
-    }  
-  
-    .menu-toggle-btn:active {  
-      transform: scale(0.95);  
     }  
   
     .sidebar-backdrop {  
@@ -537,7 +524,7 @@
       left: 0;  
       right: 0;  
       z-index: 100;  
-      padding: 0.25rem 0.5rem;  
+      padding: 0.5rem 1rem;  
       transition: all var(--transition-base);  
     }  
   
@@ -545,17 +532,17 @@
       display: flex;  
       align-items: center;  
       justify-content: space-between;  
-      padding: 0.4rem 1rem;  
+      padding: 0.75rem 1.5rem;  
       border-radius: var(--radius-full);  
       width: 100%;  
-      gap: 0.75rem;  
-      flex-wrap: wrap;  
+      gap: 1.25rem;  
+      flex-wrap: nowrap;  
     }  
   
     .navbar-left {  
       display: flex;  
       align-items: center;  
-      gap: 0.5rem;  
+      gap: 1rem;  
       flex-shrink: 0;  
     }  
   
@@ -563,29 +550,28 @@
       display: flex;  
       align-items: center;  
       flex: 1;  
-      min-width: 180px;  
-      max-width: 350px;  
+      min-width: 250px;  
+      max-width: 500px;  
     }  
   
     .navbar-right-actions {  
       display: flex;  
       align-items: center;  
-      gap: 0.4rem;  
+      gap: 0.75rem;  
       flex-shrink: 0;  
-      flex-wrap: wrap;  
     }  
   
     .brand {  
       display: flex;  
       align-items: center;  
-      gap: 0.4rem;  
+      gap: 0.6rem;  
       text-decoration: none;  
       flex-shrink: 0;  
     }  
   
     .brand-logo {  
-      width: 26px;  
-      height: 26px;  
+      width: 36px;  
+      height: 36px;  
       border-radius: 50%;  
       background: linear-gradient(135deg, var(--success-500), var(--accent-500));  
       display: flex;  
@@ -594,14 +580,14 @@
       box-shadow: var(--shadow-glow);  
       color: white;  
       font-weight: 700;  
-      font-size: 0.75rem;  
+      font-size: 1rem;  
       font-family: 'Shrikhand', sans-serif;  
     }  
   
     .brand-name {  
       font-family: 'Shrikhand', sans-serif;  
       font-weight: 700;  
-      font-size: 0.9rem;  
+      font-size: 1.1rem;  
       color: var(--neutral-0);  
       white-space: nowrap;  
     }  
@@ -609,20 +595,19 @@
     .nav-link {  
       font-family: 'Shrikhand', sans-serif;  
       color: var(--neutral-200);  
-      font-size: 0.7rem;  
+      font-size: 0.85rem;  
       font-weight: 500;  
       display: flex;  
       align-items: center;  
-      gap: 0.25rem;  
-      padding: 0.3rem 0.6rem;  
-      min-height: 38px;  
+      gap: 0.4rem;  
+      padding: 0.5rem 1rem;  
+      min-height: 44px;  
       border-radius: var(--radius-full);  
       background: rgba(255, 255, 255, 0.06);  
       border: 1px solid var(--glass-border);  
       transition: all var(--transition-fast);  
       cursor: pointer;  
       white-space: nowrap;  
-      touch-action: manipulation;  
     }  
   
     .nav-link:hover,  
@@ -650,17 +635,9 @@
     }  
   
     @keyframes rotateLed {  
-      0% {  
-        background-position: 0% 50%;  
-      }  
-  
-      50% {  
-        background-position: 100% 50%;  
-      }  
-  
-      100% {  
-        background-position: 0% 50%;  
-      }  
+      0% { background-position: 0% 50%; }  
+      50% { background-position: 100% 50%; }  
+      100% { background-position: 0% 50%; }  
     }  
   
     .search-inner-box {  
@@ -674,13 +651,13 @@
   
     .search-input {  
       width: 100%;  
-      padding: 0.25rem 0.5rem 0.25rem 1.6rem;  
-      min-height: 36px;  
+      padding: 0.5rem 1rem 0.5rem 2.5rem;  
+      min-height: 44px;  
       border-radius: var(--radius-full);  
       background: transparent;  
       border: none;  
       color: var(--neutral-0);  
-      font-size: 0.7rem;  
+      font-size: 0.9rem;  
       outline: none;  
       font-family: 'Shrikhand', sans-serif;  
     }  
@@ -689,13 +666,13 @@
       position: absolute;  
       top: 50%;  
       transform: translateY(-50%);  
-      inset-inline-start: 0.4rem;  
+      inset-inline-start: 0.75rem;  
       color: var(--neutral-400);  
       pointer-events: none;  
     }  
   
     .hero-carousel-section {  
-      padding: 0.5rem 0 1.5rem;  
+      padding: 1rem 0 2rem;  
       perspective: 1000px;  
       overflow: hidden;  
       position: relative;  
@@ -706,7 +683,7 @@
       display: flex;  
       justify-content: center;  
       align-items: center;  
-      height: 200px;  
+      height: 240px;  
       position: relative;  
       transform-style: preserve-3d;  
       animation: carouselRotate 25s linear infinite;  
@@ -714,19 +691,14 @@
     }  
   
     @keyframes carouselRotate {  
-      0% {  
-        transform: rotateY(0deg);  
-      }  
-  
-      100% {  
-        transform: rotateY(360deg);  
-      }  
+      0% { transform: rotateY(0deg); }  
+      100% { transform: rotateY(360deg); }  
     }  
   
     .carousel-3d-item {  
       position: absolute;  
-      width: 160px;  
-      height: 110px;  
+      width: 200px;  
+      height: 130px;  
       border-radius: var(--radius-lg);  
       overflow: hidden;  
       border: 1px solid var(--glass-border);  
@@ -741,32 +713,15 @@
       object-fit: cover;  
     }  
   
-    .carousel-3d-item:nth-child(1) {  
-      transform: rotateY(0deg) translateZ(180px);  
-    }  
-  
-    .carousel-3d-item:nth-child(2) {  
-      transform: rotateY(60deg) translateZ(180px);  
-    }  
-  
-    .carousel-3d-item:nth-child(3) {  
-      transform: rotateY(120deg) translateZ(180px);  
-    }  
-  
-    .carousel-3d-item:nth-child(4) {  
-      transform: rotateY(180deg) translateZ(180px);  
-    }  
-  
-    .carousel-3d-item:nth-child(5) {  
-      transform: rotateY(240deg) translateZ(180px);  
-    }  
-  
-    .carousel-3d-item:nth-child(6) {  
-      transform: rotateY(300deg) translateZ(180px);  
-    }  
+    .carousel-3d-item:nth-child(1) { transform: rotateY(0deg) translateZ(220px); }  
+    .carousel-3d-item:nth-child(2) { transform: rotateY(60deg) translateZ(220px); }  
+    .carousel-3d-item:nth-child(3) { transform: rotateY(120deg) translateZ(220px); }  
+    .carousel-3d-item:nth-child(4) { transform: rotateY(180deg) translateZ(220px); }  
+    .carousel-3d-item:nth-child(5) { transform: rotateY(240deg) translateZ(220px); }  
+    .carousel-3d-item:nth-child(6) { transform: rotateY(300deg) translateZ(220px); }  
   
     .products-section {  
-      padding: 1rem 0 3rem;  
+      padding: 1.5rem 0 4rem;  
       width: 100%;  
     }  
   
@@ -776,7 +731,7 @@
       -webkit-backdrop-filter: blur(var(--glass-blur));  
       border: 1px solid var(--glass-border);  
       border-radius: var(--radius-2xl);  
-      padding: 2rem 1rem;  
+      padding: 2.5rem 1.5rem;  
       box-shadow: var(--shadow-lg);  
       position: relative;  
       width: 100%;  
@@ -787,12 +742,12 @@
       align-items: center;  
       justify-content: center;  
       gap: 0.75rem;  
-      margin-bottom: 0.75rem;  
+      margin-bottom: 1rem;  
     }  
   
     .section-icon {  
-      width: 42px;  
-      height: 42px;  
+      width: 48px;  
+      height: 48px;  
       border-radius: 50%;  
       display: flex;  
       align-items: center;  
@@ -801,33 +756,20 @@
   
     .products-grid {  
       display: grid;  
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));  
-      gap: 1rem;  
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));  
+      gap: 1.5rem;  
       width: 100%;  
     }  
   
     @keyframes smoothAppear {  
-      0% {  
-        opacity: 0;  
-        transform: translateY(30px) scale(0.95);  
-      }  
-  
-      100% {  
-        opacity: 1;  
-        transform: translateY(0) scale(1);  
-      }  
+      0% { opacity: 0; transform: translateY(30px) scale(0.95); }  
+      100% { opacity: 1; transform: translateY(0) scale(1); }  
     }  
 
     @keyframes panAnimation {
-      0% {
-        object-position: 0% 50%;
-      }
-      50% {
-        object-position: 100% 50%;
-      }
-      100% {
-        object-position: 0% 50%;
-      }
+      0% { object-position: 0% 50%; }
+      50% { object-position: 100% 50%; }
+      100% { object-position: 0% 50%; }
     }
   
     .product-card {  
@@ -840,20 +782,11 @@
       position: relative;  
       width: 100%;  
       animation: smoothAppear 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;  
-      min-width: 0;  
     }  
   
     .product-card.clicked-led {  
       border-color: #34d399 !important;  
-      box-shadow:  
-        0 0 25px rgba(52, 211, 153, 0.7),  
-        inset 0 0 15px rgba(52, 211, 153, 0.4);  
-    }  
-  
-    .product-card.just-added {  
-      animation: smoothAppear 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;  
-      border-color: var(--success-400);  
-      box-shadow: var(--shadow-glow);  
+      box-shadow: 0 0 25px rgba(52, 211, 153, 0.7), inset 0 0 15px rgba(52, 211, 153, 0.4);  
     }  
   
     .product-card:hover {  
@@ -881,7 +814,6 @@
   
     .product-card:hover .product-image {  
       transform: scale(1.05);  
-      animation-duration: 4s;
     }  
   
     .product-badge {  
@@ -890,7 +822,7 @@
       inset-inline-start: 0.75rem;  
       padding: 0.25rem 0.6rem;  
       border-radius: var(--radius-full);  
-      font-size: 0.7rem;  
+      font-size: 0.75rem;  
       font-weight: 600;  
       color: white;  
       z-index: 2;  
@@ -904,8 +836,8 @@
       background: rgba(0, 0, 0, 0.6);  
       color: white;  
       border: 1px solid rgba(255, 255, 255, 0.2);  
-      width: 28px;  
-      height: 28px;  
+      width: 32px;  
+      height: 32px;  
       border-radius: 50%;  
       display: flex;  
       align-items: center;  
@@ -923,23 +855,15 @@
     .slider-arrow:hover {  
       background: var(--success-500);  
     }  
-  
-    .slider-arrow.prev {  
-      left: 6px;  
-    }  
-  
-    .slider-arrow.next {  
-      right: 6px;  
-    }  
+    .slider-arrow.prev { left: 8px; }  
+    .slider-arrow.next { right: 8px; }  
   
     .product-content {  
-      padding: 1rem;  
+      padding: 1.25rem;  
       display: flex;  
       flex-direction: column;  
-      gap: 0.5rem;  
+      gap: 0.75rem;  
       flex: 1;  
-      position: relative;  
-      z-index: 1;  
     }  
   
     .product-rating {  
@@ -950,13 +874,13 @@
   
     .product-rating-number {  
       color: var(--neutral-200);  
-      font-size: 0.8rem;  
+      font-size: 0.85rem;  
       font-family: 'Shrikhand', sans-serif;  
     }  
   
     .product-name {  
       font-family: 'Shrikhand', sans-serif;  
-      font-size: 1.1rem;  
+      font-size: 1.2rem;  
       font-weight: 600;  
       color: var(--neutral-0);  
       cursor: pointer;  
@@ -970,13 +894,13 @@
     .product-specs {  
       display: flex;  
       flex-wrap: wrap;  
-      gap: 0.3rem;  
+      gap: 0.4rem;  
     }  
   
     .product-spec {  
-      padding: 0.2rem 0.5rem;  
+      padding: 0.25rem 0.6rem;  
       border-radius: var(--radius-sm);  
-      font-size: 0.7rem;  
+      font-size: 0.75rem;  
       color: var(--neutral-300);  
       background: rgba(255, 255, 255, 0.06);  
       border: 1px solid rgba(255, 255, 255, 0.08);  
@@ -988,25 +912,24 @@
       align-items: center;  
       justify-content: space-between;  
       margin-top: auto;  
-      padding-top: 0.5rem;  
+      padding-top: 0.75rem;  
     }  
   
     .product-prices {  
       display: flex;  
       align-items: baseline;  
-      gap: 0.4rem;  
-      min-width: 0;  
+      gap: 0.5rem;  
     }  
   
     .product-price {  
-      font-size: 1.25rem;  
+      font-size: 1.35rem;  
       font-weight: 700;  
       color: var(--neutral-0);  
       font-family: 'Shrikhand', sans-serif;  
     }  
   
     .product-old-price {  
-      font-size: 0.9rem;  
+      font-size: 0.95rem;  
       font-weight: 500;  
       color: var(--neutral-400);  
       text-decoration: line-through;  
@@ -1023,17 +946,17 @@
       display: flex;  
       align-items: center;  
       justify-content: center;  
-      padding: 0.5rem;  
+      padding: 1rem;  
       overflow-y: auto;  
     }  
   
     .modal-content {  
       background: var(--neutral-900);  
       border: 1px solid var(--glass-border);  
-      padding: 1.5rem;  
+      padding: 2rem;  
       border-radius: var(--radius-xl);  
       width: 100%;  
-      max-width: 480px;  
+      max-width: 500px;  
       box-shadow: var(--shadow-lg);  
       position: relative;  
       color: var(--neutral-100);  
@@ -1045,18 +968,18 @@
     .admin-form {  
       display: flex;  
       flex-direction: column;  
-      gap: 0.75rem;  
+      gap: 1rem;  
       margin-top: 1rem;  
     }  
   
     .admin-input {  
-      padding: 0.7rem 0.9rem;  
+      padding: 0.85rem 1rem;  
       border-radius: var(--radius-md);  
       background: var(--glass-bg);  
       border: 1px solid var(--glass-border);  
       color: var(--neutral-0);  
       font-family: 'Shrikhand', sans-serif;  
-      font-size: 0.9rem;  
+      font-size: 0.95rem;  
       width: 100%;  
     }  
   
@@ -1067,11 +990,11 @@
   
     .close-modal {  
       position: absolute;  
-      top: 1rem;  
-      inset-inline-end: 1rem;  
+      top: 1.25rem;  
+      inset-inline-end: 1.25rem;  
       color: var(--neutral-400);  
       cursor: pointer;  
-      font-size: 1.1rem;  
+      font-size: 1.25rem;  
       z-index: 10;  
     }  
   
@@ -1081,11 +1004,11 @@
       -webkit-backdrop-filter: blur(25px);  
       border: 1px solid rgba(255, 255, 255, 0.15);  
       border-radius: 2rem;  
-      padding: 2rem;  
+      padding: 2.5rem;  
       color: #fff;  
       box-shadow: 0 20px 40px rgba(0,0,0,0.3);  
       width: 100%;  
-      max-width: 400px;  
+      max-width: 420px;  
       position: relative;  
     }  
   
@@ -1110,7 +1033,7 @@
       margin-bottom: 1rem;  
       display: flex;  
       align-items: center;  
-      padding: 0.75rem 1.25rem;  
+      padding: 0.85rem 1.25rem;  
     }  
   
     .login-field input {  
@@ -1119,7 +1042,7 @@
       outline: none;  
       color: #fff;  
       width: 100%;  
-      font-size: 0.95rem;  
+      font-size: 1rem;  
       font-family: inherit;  
       padding-right: 1.5rem;  
     }  
@@ -1141,7 +1064,7 @@
       color: #fff;  
       border: none;  
       border-radius: 9999px;  
-      padding: 0.85rem;  
+      padding: 1rem;  
       font-size: 1rem;  
       font-weight: 600;  
       cursor: pointer;  
@@ -1157,7 +1080,7 @@
     .divider-text {  
       text-align: center;  
       color: #64748b;  
-      font-size: 0.75rem;  
+      font-size: 0.8rem;  
       margin-bottom: 1.25rem;  
       position: relative;  
     }  
@@ -1167,13 +1090,13 @@
       background: rgba(255, 255, 255, 0.06);  
       border: 1px solid rgba(255, 255, 255, 0.12);  
       border-radius: 9999px;  
-      padding: 0.75rem;  
+      padding: 0.85rem;  
       display: flex;  
       align-items: center;  
       justify-content: center;  
       gap: 0.75rem;  
       color: #fff;  
-      font-size: 0.9rem;  
+      font-size: 1rem;  
       cursor: pointer;  
       margin-bottom: 0.75rem;  
       transition: background 0.2s;  
@@ -1189,13 +1112,6 @@
       width: 100%;  
     }  
   
-    .footer-grid {  
-      display: grid;  
-      grid-template-columns: 1fr;  
-      gap: 2rem;  
-      margin-bottom: 2rem;  
-    }  
-  
     .footer-bottom {  
       display: flex;  
       justify-content: center;  
@@ -1209,465 +1125,53 @@
     @media (max-width: 900px) {  
       .main-layout {  
         flex-direction: column;  
-        padding-top: 5.8rem;  
+        padding-top: 6.2rem;  
       }  
-  
-      .content-area {  
-        order: 1;  
-        width: 100%;  
-        padding: 0.6rem;  
-      }  
-  
       .sidebar-right {  
         position: fixed;  
         top: 0;  
         right: 0;  
-        width: min(84vw, 330px);  
-        max-width: 330px;  
+        width: min(85vw, 340px);  
         height: 100dvh;  
-        min-height: 100vh;  
-        padding: 5.5rem 0.85rem 1rem;  
-        border-left: 1px solid var(--glass-border);  
-        border-bottom: none;  
-        background: rgba(2, 44, 34, 0.92);  
+        padding: 5.5rem 1rem 1rem;  
+        background: rgba(2, 44, 34, 0.95);  
         backdrop-filter: blur(25px);  
-        -webkit-backdrop-filter: blur(25px);  
-        box-shadow: -15px 0 50px rgba(0, 0, 0, 0.35);  
-        overflow-y: auto;  
-        overscroll-behavior: contain;  
         z-index: 500;  
-        order: unset;  
         transform: translateX(110%);  
         opacity: 0;  
         visibility: hidden;  
-        transition:  
-          transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),  
-          opacity 0.25s ease,  
-          visibility 0.3s ease;  
+        transition: transform 0.3s ease, opacity 0.25s ease;  
       }  
-  
       .sidebar-right.is-open {  
         transform: translateX(0);  
         opacity: 1;  
         visibility: visible;  
       }  
-  
-      .sidebar-right:not(.is-open) {  
-        display: none;  
-      }  
-  
       .sidebar-backdrop {  
         display: block;  
         position: fixed;  
         inset: 0;  
         background: rgba(0, 0, 0, 0.5);  
-        backdrop-filter: blur(2px);  
-        -webkit-backdrop-filter: blur(2px);  
         z-index: 490;  
       }  
-  
-      .green-glass-container {  
-        padding: 0.85rem;  
-        margin-bottom: 1rem;  
-      }  
-  
-      .sidebar-menu-list {  
-        gap: 0.5rem;  
-      }  
-  
-      .sidebar-menu-item {  
-        min-height: 46px;  
-        padding: 0.7rem 0.8rem;  
-        font-size: 0.84rem;  
-      }  
-  
-      .navbar {  
-        padding: 0.2rem 0.35rem;  
-      }  
-  
       .navbar-inner {  
-        display: grid;  
-        grid-template-columns: 1fr auto;  
-        grid-template-areas:  
-          "left actions"  
-          "search search";  
-        gap: 0.45rem;  
-        padding: 0.4rem 0.5rem;  
-        border-radius: var(--radius-lg);  
-      }  
-  
-      .navbar-left {  
-        grid-area: left;  
-        min-width: 0;  
-      }  
-  
-      .navbar-center {  
-        grid-area: search;  
-        max-width: none;  
-        width: 100%;  
-        min-width: 0;  
-      }  
-  
-      .navbar-right-actions {  
-        grid-area: actions;  
-        justify-content: flex-end;  
-        gap: 0.3rem;  
-        flex-wrap: nowrap;  
-      }  
-  
-      .navbar-left .nav-link {  
-        display: none;  
-      }  
-  
-      .brand-name {  
-        font-size: 0.82rem;  
-      }  
-  
-      .brand-logo {  
-        width: 28px;  
-        height: 28px;  
-      }  
-  
-      .navbar-right-actions .nav-link {  
-        min-width: 42px;  
-        min-height: 42px;  
-        padding: 0.4rem;  
-        justify-content: center;  
-      }  
-  
-      .navbar-right-actions .nav-link {  
-        font-size: 0;  
-      }  
-  
-      .navbar-right-actions .nav-link svg {  
-        width: 17px !important;  
-        height: 17px !important;  
-      }  
-  
-      /* چارەسەری دیاربوونی دوگمەی گۆڕینی دۆخی تاریک و ڕووناک لە مۆبایلدا */
-      .glass-toggle {  
-        display: flex !important;  
-        width: 60px;
-        height: 28px;
-      }  
-
-      .glass-toggle.dark-mode .glass-toggle-thumb {  
-        transform: translateX(-32px);  
-      }
-
-      .navbar-right-actions .btn-primary {  
-        min-width: 42px;  
-        min-height: 42px;  
-        padding: 0.4rem !important;  
-        font-size: 0 !important;  
-        border-radius: var(--radius-md);  
-      }  
-  
-      .navbar-right-actions .btn-primary svg {  
-        width: 17px !important;  
-        height: 17px !important;  
-      }  
-  
-      .menu-toggle-btn {  
-        min-width: 44px;  
-        min-height: 44px;  
-        padding: 0.5rem;  
-      }  
-  
-      .search-input {  
-        min-height: 42px;  
-        font-size: 0.78rem;  
-        padding-inline: 0.7rem 2rem;  
-      }  
-  
-      .search-icon {  
-        inset-inline-start: auto;  
-        inset-inline-end: 0.6rem;  
-      }  
-  
-      .carousel-3d-container {  
-        height: 150px;  
-      }  
-  
-      .carousel-3d-item {  
-        width: 120px;  
-        height: 80px;  
-      }  
-  
-      .carousel-3d-item:nth-child(1) {  
-        transform: rotateY(0deg) translateZ(120px);  
-      }  
-  
-      .carousel-3d-item:nth-child(2) {  
-        transform: rotateY(60deg) translateZ(120px);  
-      }  
-  
-      .carousel-3d-item:nth-child(3) {  
-        transform: rotateY(120deg) translateZ(120px);  
-      }  
-  
-      .carousel-3d-item:nth-child(4) {  
-        transform: rotateY(180deg) translateZ(120px);  
-      }  
-  
-      .carousel-3d-item:nth-child(5) {  
-        transform: rotateY(240deg) translateZ(120px);  
-      }  
-  
-      .carousel-3d-item:nth-child(6) {  
-        transform: rotateY(300deg) translateZ(120px);  
-      }  
-  
-      .products-section {  
-        padding-top: 0.5rem;  
-      }  
-  
-      .products-glass-container {  
-        padding: 1.2rem 0.55rem;  
-        border-radius: 1.35rem;  
-      }  
-  
-      .products-glass-container .container {  
-        padding: 0;  
-      }  
-  
-      .products-grid {  
-        grid-template-columns: repeat(2, minmax(0, 1fr));  
-        gap: 0.6rem;  
-      }  
-  
-      .product-card {  
-        border-radius: 1rem;  
-      }  
-  
-      .product-content {  
-        padding: 0.65rem;  
-        gap: 0.4rem;  
-      }  
-  
-      .product-name {  
-        font-size: 0.82rem;  
-        line-height: 1.35;  
-      }  
-  
-      .product-rating-number {  
-        font-size: 0.7rem;  
-      }  
-  
-      .product-specs {  
-        gap: 0.2rem;  
-        max-height: 48px;  
-        overflow: hidden;  
-      }  
-  
-      .product-spec {  
-        font-size: 0.58rem;  
-        padding: 0.18rem 0.35rem;  
-      }  
-  
-      .product-price {  
-        font-size: 0.92rem;  
-      }  
-  
-      .product-old-price {  
-        font-size: 0.65rem;  
-      }  
-  
-      .product-bottom .btn-primary {  
-        min-width: 40px;  
-        min-height: 40px;  
-        padding: 0.5rem !important;  
-      }  
-  
-      .product-badge {  
-        top: 0.4rem;  
-        inset-inline-start: 0.4rem;  
-        font-size: 0.58rem;  
-        padding: 0.2rem 0.4rem;  
-      }  
-  
-      .slider-arrow {  
-        width: 32px;  
-        height: 32px;  
-        opacity: 0.9;  
-      }  
-  
-      .section-title {  
-        font-size: clamp(1.25rem, 6vw, 2rem);  
-      }  
-  
-      .section-subtitle {  
-        font-size: 0.75rem;  
-        margin-bottom: 1.2rem;  
-        padding: 0 0.4rem;  
-      }  
-  
-      .section-icon {  
-        width: 38px;  
-        height: 38px;  
-      }  
-  
-      .container {  
-        max-width: 100%;  
-        padding: 0 0.45rem;  
+        padding: 0.5rem 0.75rem;  
       }  
     }  
-  
-    @media (max-width: 520px) {  
-      .main-layout {  
-        padding-top: 5.6rem;  
-      }  
-  
-      .content-area {  
-        padding: 0.35rem;  
-      }  
-  
-      .navbar-inner {  
-        padding: 0.35rem;  
-      }  
-  
-      .brand-name {  
-        font-size: 0.72rem;  
-      }  
-  
-      .brand-logo {  
-        width: 25px;  
-        height: 25px;  
-        font-size: 0.65rem;  
-      }  
-  
-      .navbar-right-actions {  
-        gap: 0.2rem;  
-      }  
-  
-      .navbar-right-actions .nav-link,  
-      .navbar-right-actions .btn-primary,  
-      .menu-toggle-btn {  
-        min-width: 40px;  
-        min-height: 40px;  
-      }  
-  
-      .search-input {  
-        min-height: 40px;  
-      }  
-  
-      .carousel-3d-container {  
-        height: 125px;  
-      }  
-  
-      .carousel-3d-item {  
-        width: 105px;  
-        height: 70px;  
-      }  
-  
-      .carousel-3d-item:nth-child(1) {  
-        transform: rotateY(0deg) translateZ(105px);  
-      }  
-  
-      .carousel-3d-item:nth-child(2) {  
-        transform: rotateY(60deg) translateZ(105px);  
-      }  
-  
-      .carousel-3d-item:nth-child(3) {  
-        transform: rotateY(120deg) translateZ(105px);  
-      }  
-  
-      .carousel-3d-item:nth-child(4) {  
-        transform: rotateY(180deg) translateZ(105px);  
-      }  
-  
-      .carousel-3d-item:nth-child(5) {  
-        transform: rotateY(240deg) translateZ(105px);  
-      }  
-  
-      .carousel-3d-item:nth-child(6) {  
-        transform: rotateY(300deg) translateZ(105px);  
-      }  
-  
-      .products-grid {  
-        gap: 0.45rem;  
-      }  
-  
-      .products-glass-container {  
-        padding: 1rem 0.4rem;  
-      }  
-  
-      .product-card {  
-        border-radius: 0.85rem;  
-      }  
-  
-      .product-content {  
-        padding: 0.55rem;  
-      }  
-  
-      .product-name {  
-        font-size: 0.74rem;  
-      }  
-  
-      .product-price {  
-        font-size: 0.82rem;  
-      }  
-  
-      .product-old-price {  
-        display: none;  
-      }  
-  
-      .product-spec {  
-        font-size: 0.53rem;  
-      }  
-  
-      .product-bottom .btn-primary {  
-        min-width: 36px;  
-        min-height: 36px;  
-      }  
-  
-      .modal-content {  
-        padding: 1rem;  
-        border-radius: 1.3rem;  
-      }  
-  
-      .login-card {  
-        padding: 1.3rem;  
-        border-radius: 1.5rem;  
-      }  
-    }  
-  
-    @media (max-width: 360px) {  
-      .brand-name {  
-        display: none;  
-      }  
-  
-      .navbar-right-actions .nav-link,  
-      .navbar-right-actions .btn-primary,  
-      .menu-toggle-btn {  
-        min-width: 38px;  
-        min-height: 38px;  
-      }  
-  
-      .products-grid {  
-        gap: 0.35rem;  
-      }  
-  
-      .product-content {  
-        padding: 0.45rem;  
-      }  
-  
-      .product-name {  
-        font-size: 0.68rem;  
-      }  
-  
-      .product-rating-number {  
-        font-size: 0.62rem;  
-      }  
-  
-      .product-price {  
-        font-size: 0.76rem;  
-      }  
-    }  
-  </style>  </head>  <body class="dark">    <div class="bg-animated"></div>    <div class="bg-blobs">  
+  </style>  
+</head>  
+<body class="dark">  
+  <div class="bg-animated"></div>  
+  <div class="bg-blobs">  
     <div class="bg-blob bg-blob-1"></div>  
     <div class="bg-blob bg-blob-2"></div>  
-  </div>    <div id="root"></div>    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>    <script src="https://unpkg.com/lucide@latest"></script>    <script type="text/babel">  
+  </div>  
+  <div id="root"></div>    
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>  
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>  
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>  
+  <script src="https://unpkg.com/lucide@latest"></script>  
+  <script type="text/babel">  
   
     const { useEffect, useState } = React;  
   
@@ -1791,46 +1295,29 @@
           window.lucide.createIcons();  
         }  
       });  
-  
-      return (  
-        <i  
-          data-lucide={name}  
-          style={{  
-            width: size,  
-            height: size,  
-            strokeWidth: strokeWidth  
-          }}  
-        />  
-      );  
+      return <i data-lucide={name} style={{ width: size, height: size, strokeWidth: strokeWidth }} />;  
     }  
   
     function App() {  
       const [lang, setLang] = useState('ku');  
       const [theme, setTheme] = useState('dark');  
-  
       const t = translations[lang];  
   
       const [searchQuery, setSearchQuery] = useState('');  
       const [selectedCategory, setSelectedCategory] = useState('All');  
       const [clickedProductId, setClickedProductId] = useState(null);  
-  
       const [isSidebarOpen, setIsSidebarOpen] = useState(false);  
-  
       const [isLoginOpen, setIsLoginOpen] = useState(false);  
       const [isAdminOpen, setIsAdminOpen] = useState(false);  
-  
       const [emailInput, setEmailInput] = useState('');  
       const [passwordInput, setPasswordInput] = useState('');  
       const [showPassword, setShowPassword] = useState(false);  
       const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);  
-  
       const [isCartOpen, setIsCartOpen] = useState(false);  
       const [cartItems, setCartItems] = useState([]);  
-  
       const [fullName, setFullName] = useState('');  
       const [address, setAddress] = useState('');  
       const [phone, setPhone] = useState('');  
-  
       const [selectedProductDetails, setSelectedProductDetails] = useState(null);  
   
       const [newTitle, setNewTitle] = useState('');  
@@ -1863,12 +1350,7 @@
           ],  
           rating: 4.9,  
           badge: 'پڕفرۆشترین',  
-          specs: [  
-            'Intel Core i9',  
-            '32GB RAM',  
-            '1TB SSD',  
-            '16" Retina'  
-          ],  
+          specs: ['Intel Core i9', '32GB RAM', '1TB SSD', '16" Retina'],  
           justAdded: false  
         },  
         {  
@@ -1877,17 +1359,10 @@
           category: 'Laptop',  
           price: 1299,  
           oldPrice: 1499,  
-          images: [  
-            'https://images.pexels.com/photos/943596/pexels-photo-943596.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'  
-          ],  
+          images: ['https://images.pexels.com/photos/943596/pexels-photo-943596.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],  
           rating: 4.7,  
           badge: 'تازه',  
-          specs: [  
-            'Apple M3',  
-            '16GB RAM',  
-            '512GB SSD',  
-            '14" Display'  
-          ],  
+          specs: ['Apple M3', '16GB RAM', '512GB SSD', '14" Display'],  
           justAdded: false  
         },  
         {  
@@ -1896,17 +1371,10 @@
           category: 'Gaming',  
           price: 3499,  
           oldPrice: 3999,  
-          images: [  
-            'https://images.pexels.com/photos/7858742/pexels-photo-7858742.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'  
-          ],  
+          images: ['https://images.pexels.com/photos/7858742/pexels-photo-7858742.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],  
           rating: 5.0,  
           badge: 'پلە بەرز',  
-          specs: [  
-            'Curved 34" Monitor',  
-            'RGB Keyboard',  
-            'Gaming Mouse',  
-            'LED Lighting'  
-          ],  
+          specs: ['Curved 34" Monitor', 'RGB Keyboard', 'Gaming Mouse', 'LED Lighting'],  
           justAdded: false  
         },  
         {  
@@ -1915,16 +1383,10 @@
           category: 'Mouse',  
           price: 89,  
           oldPrice: 119,  
-          images: [  
-            'https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'  
-          ],  
+          images: ['https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],  
           rating: 4.8,  
           badge: 'خوازراو',  
-          specs: [  
-            '25k DPI',  
-            'Ultra Lightweight',  
-            'Wireless'  
-          ],  
+          specs: ['25k DPI', 'Ultra Lightweight', 'Wireless'],  
           justAdded: false  
         },  
         {  
@@ -1933,17 +1395,10 @@
           category: 'Keyboard',  
           price: 129,  
           oldPrice: 159,  
-          images: [  
-            'https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'  
-          ],  
+          images: ['https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],  
           rating: 4.9,  
           badge: 'تایبەت',  
-          specs: [  
-            'Mechanical Switches',  
-            'RGB Backlight',  
-            'Aluminum Frame',  
-            'Hot-Swappable'  
-          ],  
+          specs: ['Mechanical Switches', 'RGB Backlight', 'Aluminum Frame', 'Hot-Swappable'],  
           justAdded: false  
         },  
         {  
@@ -1952,17 +1407,10 @@
           category: 'Case',  
           price: 199,  
           oldPrice: 249,  
-          images: [  
-            'https://images.pexels.com/photos/792345/pexels-photo-792345.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'  
-          ],  
+          images: ['https://images.pexels.com/photos/792345/pexels-photo-792345.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],  
           rating: 4.9,  
           badge: 'تازه',  
-          specs: [  
-            'Tempered Glass',  
-            'ARGB Fans Included',  
-            'E-ATX Support',  
-            'Vertical GPU Mount'  
-          ],  
+          specs: ['Tempered Glass', 'ARGB Fans Included', 'E-ATX Support', 'Vertical GPU Mount'],  
           justAdded: false  
         },  
         {  
@@ -1971,16 +1419,10 @@
           category: 'Headset',  
           price: 149,  
           oldPrice: 199,  
-          images: [  
-            'https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'  
-          ],  
+          images: ['https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],  
           rating: 4.9,  
           badge: 'دەنگی پوخت',  
-          specs: [  
-            '7.1 Surround',  
-            'Noise Canceling',  
-            'RGB Mic'  
-          ],  
+          specs: ['7.1 Surround', 'Noise Canceling', 'RGB Mic'],  
           justAdded: false  
         },  
         {  
@@ -1989,16 +1431,10 @@
           category: 'Console',  
           price: 499,  
           oldPrice: 599,  
-          images: [  
-            'https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'  
-          ],  
+          images: ['https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],  
           rating: 4.9,  
           badge: 'پڕخواز',  
-          specs: [  
-            '4K Gaming',  
-            '1TB SSD',  
-            'Ray Tracing'  
-          ],  
+          specs: ['4K Gaming', '1TB SSD', 'Ray Tracing'],  
           justAdded: false  
         }  
       ]);  
@@ -2014,20 +1450,14 @@
         e.stopPropagation();  
         const currentIndex = activeImageIndices[prod.id] || 0;  
         const nextIndex = (currentIndex + 1) % prod.images.length;  
-        setActiveImageIndices(prev => ({  
-          ...prev,  
-          [prod.id]: nextIndex  
-        }));  
+        setActiveImageIndices(prev => ({ ...prev, [prod.id]: nextIndex }));  
       };  
   
       const handlePrevImage = (e, prod) => {  
         e.stopPropagation();  
         const currentIndex = activeImageIndices[prod.id] || 0;  
         const prevIndex = (currentIndex - 1 + prod.images.length) % prod.images.length;  
-        setActiveImageIndices(prev => ({  
-          ...prev,  
-          [prod.id]: prevIndex  
-        }));  
+        setActiveImageIndices(prev => ({ ...prev, [prod.id]: prevIndex }));  
       };  
   
       useEffect(() => {  
@@ -2069,11 +1499,7 @@
       const handleAddProductSubmit = (e) => {  
         e.preventDefault();  
         if (!newTitle || !newPrice || newImages.length === 0) return;  
-  
-        const parsedSpecs = newSpecs  
-          ? newSpecs.split(',').map(s => s.trim()).filter(Boolean)  
-          : [newCategory, 'High Performance'];  
-  
+        const parsedSpecs = newSpecs ? newSpecs.split(',').map(s => s.trim()).filter(Boolean) : [newCategory, 'High Performance'];  
         const newProdObj = {  
           id: Date.now(),  
           name: newTitle,  
@@ -2086,11 +1512,9 @@
           specs: parsedSpecs,  
           justAdded: true  
         };  
-  
         if (newPosition === 'top') {  
           setCarouselImages(prev => [newImages[0], ...prev]);  
         }  
-  
         setProducts([newProdObj, ...products]);  
         setNewTitle('');  
         setNewPrice('');  
@@ -2119,34 +1543,31 @@
       };  
   
       const handleIncreaseQty = (prodId) => {  
-        setCartItems(prev =>  
-          prev.map(item => {  
-            if (item.product.id === prodId) {  
-              return { ...item, quantity: item.quantity + 1 };  
-            }  
-            return item;  
-          })  
-        );  
+        setCartItems(prev => prev.map(item => item.product.id === prodId ? { ...item, quantity: item.quantity + 1 } : item));  
       };  
   
       const handleDecreaseQty = (prodId) => {  
-        setCartItems(prev =>  
-          prev.map(item => {  
-            if (item.product.id === prodId) {  
-              return { ...item, quantity: item.quantity - 1 };  
-            }  
-            return item;  
-          }).filter(item => item.quantity > 0)  
-        );  
+        setCartItems(prev => prev.map(item => item.product.id === prodId ? { ...item, quantity: item.quantity - 1 } : item).filter(item => item.quantity > 0));  
       };  
   
       const handleRemoveCartItem = (prodId) => {  
         setCartItems(prev => prev.filter(item => item.product.id !== prodId));  
       };  
   
+      // دابینکردنی تایبەتمەندی کردنەوەی فەیسبووک و جیمێڵ و گەڕانەوەی ئۆتۆماتیکی پاش 2 چرکە
+      const handleSocialAuth = (url) => {  
+        const newWindow = window.open(url, '_blank');  
+        setTimeout(() => {  
+          if (newWindow) {  
+            try { newWindow.close(); } catch(e) {}  
+          }  
+          setIsLoginOpen(false);  
+          alert('بە سەرکەوتوویی هەژمارەکەت بەستراوە و گەڕایتەوە بۆ سایتەکە!');  
+        }, 2000);  
+      };  
+  
       const filteredProducts = products.filter(prod => {  
-        const matchesSearch =  
-          prod.name.toLowerCase().includes(searchQuery.toLowerCase()) ||  
+        const matchesSearch = prod.name.toLowerCase().includes(searchQuery.toLowerCase()) ||  
           prod.specs.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()));  
         const matchesCategory = selectedCategory === 'All' || prod.category === selectedCategory;  
         return matchesSearch && matchesCategory;  
@@ -2160,14 +1581,9 @@
             <div className="container">  
               <div className="navbar-inner glass">  
                 <div className="navbar-left">  
-                  <button  
-                    className="menu-toggle-btn"  
-                    onClick={() => setIsSidebarOpen(!isSidebarOpen)}  
-                    title="مێنۆ"  
-                  >  
-                    <Icon name="menu" size={20} />  
+                  <button className="menu-toggle-btn" onClick={() => setIsSidebarOpen(!isSidebarOpen)} title="مێنۆ">  
+                    <Icon name="menu" size={22} />  
                   </button>  
-  
                   <a href="#" className="brand">  
                     <div className="brand-logo">گ</div>  
                     <span className="brand-name">گەیمینگ سنیدەر</span>  
@@ -2179,7 +1595,7 @@
                     <div className="search-input-wrapper">  
                       <div className="search-inner-box">  
                         <span className="search-icon">  
-                          <Icon name="search" size={16} />  
+                          <Icon name="search" size={18} />  
                         </span>  
                         <input  
                           type="text"  
@@ -2194,71 +1610,36 @@
                 </div>  
   
                 <div className="navbar-right-actions">  
-                  <button  
-                    className="nav-link"  
-                    onClick={() => setIsAdminOpen(true)}  
-                  >  
-                    <Icon name="shield-check" size={16} />  
+                  <button className="nav-link" onClick={() => setIsAdminOpen(true)}>  
+                    <Icon name="shield-check" size={18} />  
                     <span>{t.navAdmin}</span>  
                   </button>  
-  
-                  <button  
-                    className="nav-link"  
-                    onClick={() => setIsLoginOpen(true)}  
-                  >  
-                    <Icon name="user" size={16} />  
+                  <button className="nav-link" onClick={() => setIsLoginOpen(true)}>  
+                    <Icon name="user" size={18} />  
                     <span>{t.navLogin}</span>  
                   </button>  
   
                   <div className="lang-switcher">  
-                    <button  
-                      className={`lang-btn ${lang === 'ku' ? 'active' : ''}`}  
-                      onClick={() => setLang('ku')}  
-                    >  
-                      کوردی  
-                    </button>  
-                    <button  
-                      className={`lang-btn ${lang === 'ar' ? 'active' : ''}`}  
-                      onClick={() => setLang('ar')}  
-                    >  
-                      عربي  
-                    </button>  
-                    <button  
-                      className={`lang-btn ${lang === 'en' ? 'active' : ''}`}  
-                      onClick={() => setLang('en')}  
-                    >  
-                      EN  
-                    </button>  
+                    <button className={`lang-btn ${lang === 'ku' ? 'active' : ''}`} onClick={() => setLang('ku')}>کوردی</button>  
+                    <button className={`lang-btn ${lang === 'ar' ? 'active' : ''}`} onClick={() => setLang('ar')}>عربي</button>  
+                    <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</button>  
                   </div>  
   
-                  <div  
-                    className={`glass-toggle ${theme === 'dark' ? 'dark-mode' : 'light-mode'}`}  
-                    onClick={toggleTheme}  
-                  >  
+                  <div className={`glass-toggle ${theme === 'dark' ? 'dark-mode' : 'light-mode'}`} onClick={toggleTheme}>  
                     <div className="glass-toggle-labels">  
                       <span>🌙</span>  
                       <span>☀️</span>  
                     </div>  
                     <div className="glass-toggle-thumb">  
-                      <Icon name={theme === 'dark' ? 'moon' : 'sun'} size={14} />  
+                      <Icon name={theme === 'dark' ? 'moon' : 'sun'} size={16} />  
                     </div>  
                   </div>  
   
-                  <button  
-                    className="btn btn-primary"  
-                    onClick={() => setIsCartOpen(true)}  
-                  >  
-                    <Icon name="shopping-cart" size={16} />  
+                  <button className="btn btn-primary" onClick={() => setIsCartOpen(true)}>  
+                    <Icon name="shopping-cart" size={18} />  
                     <span>{t.shopNow}</span>  
                     {cartItems.length > 0 && (  
-                      <span style={{  
-                        background: '#fff',  
-                        color: '#000',  
-                        borderRadius: '50%',  
-                        padding: '0.1rem 0.4rem',  
-                        fontSize: '0.7rem',  
-                        fontWeight: 'bold'  
-                      }}>  
+                      <span style={{ background: '#fff', color: '#000', borderRadius: '50%', padding: '0.1rem 0.5rem', fontSize: '0.75rem', fontWeight: 'bold' }}>  
                         {cartItems.reduce((acc, item) => acc + item.quantity, 0)}  
                       </span>  
                     )}  
@@ -2269,62 +1650,22 @@
           </header>  
   
           <div className="main-layout container">  
-            {isSidebarOpen && (  
-              <div  
-                className="sidebar-backdrop"  
-                onClick={() => setIsSidebarOpen(false)}  
-              ></div>  
-            )}  
+            {isSidebarOpen && <div className="sidebar-backdrop" onClick={() => setIsSidebarOpen(false)}></div>}  
   
             <aside className={`sidebar-right ${isSidebarOpen ? 'is-open' : ''}`}>  
               <div className="green-glass-container">  
-                <h3 className="sidebar-section-title">  
-                  {t.categoriesTitle}  
-                </h3>  
+                <h3 className="sidebar-section-title">{t.categoriesTitle}</h3>  
                 <div className="sidebar-menu-list">  
-                  <button  
-                    className={`sidebar-menu-item ${selectedCategory === 'All' ? 'active' : ''}`}  
-                    onClick={() => setSelectedCategory('All')}  
-                  >  
-                    <Icon name="grid" size={16} />  
+                  <button className={`sidebar-menu-item ${selectedCategory === 'All' ? 'active' : ''}`} onClick={() => setSelectedCategory('All')}>  
+                    <Icon name="grid" size={18} />  
                     <span>{t.allCategories}</span>  
                   </button>  
                   {categoriesList.filter(c => c !== 'All').map(cat => (  
-                    <button  
-                      key={cat}  
-                      className={`sidebar-menu-item ${selectedCategory === cat ? 'active' : ''}`}  
-                      onClick={() => setSelectedCategory(cat)}  
-                    >  
-                      <Icon name="tag" size={16} />  
+                    <button key={cat} className={`sidebar-menu-item ${selectedCategory === cat ? 'active' : ''}`} onClick={() => setSelectedCategory(cat)}>  
+                      <Icon name="tag" size={18} />  
                       <span>{cat}</span>  
                     </button>  
                   ))}  
-                </div>  
-              </div>  
-  
-              <div className="green-glass-container">  
-                <h3 className="sidebar-section-title">بەشی بەڕێوەبەر</h3>  
-                <div className="sidebar-menu-list">  
-                  <button  
-                    className="sidebar-menu-item"  
-                    onClick={() => {  
-                      setIsAdminOpen(true);  
-                      setIsSidebarOpen(false);  
-                    }}  
-                  >  
-                    <Icon name="shield-check" size={16} />  
-                    <span>{t.navAdmin}</span>  
-                  </button>  
-                  <button  
-                    className="sidebar-menu-item"  
-                    onClick={() => {  
-                      setIsLoginOpen(true);  
-                      setIsSidebarOpen(false);  
-                    }}  
-                  >  
-                    <Icon name="user" size={16} />  
-                    <span>{t.navLogin}</span>  
-                  </button>  
                 </div>  
               </div>  
             </aside>  
@@ -2345,7 +1686,7 @@
                   <div className="container">  
                     <div className="section-icon-wrapper">  
                       <div className="section-icon glass">  
-                        <Icon name="cpu" size={22} />  
+                        <Icon name="cpu" size={24} />  
                       </div>  
                     </div>  
                     <h2 className="section-title">داهێنانی تەکنەلۆژیا و یاری</h2>  
@@ -2355,40 +1696,22 @@
                       {filteredProducts.map(prod => {  
                         const currentImgIndex = activeImageIndices[prod.id] || 0;  
                         const activeImage = prod.images[currentImgIndex] || prod.images[0];  
-  
                         return (  
                           <div  
                             key={prod.id}  
-                            className={`product-card ${clickedProductId === prod.id ? 'clicked-led' : ''} ${prod.justAdded ? 'just-added' : ''}`}  
+                            className={`product-card ${clickedProductId === prod.id ? 'clicked-led' : ''}`}  
                             onClick={() => handleProductClick(prod)}  
                           >  
                             <div className="product-image-wrapper">  
-                              <span className="product-badge" style={{ background: 'var(--success-500)' }}>  
-                                {prod.badge}  
-                              </span>  
-                              <img  
-                                src={activeImage}  
-                                alt={prod.name}  
-                                className="product-image"  
-                              />  
+                              <span className="product-badge" style={{ background: 'var(--success-500)' }}>{prod.badge}</span>  
+                              <img src={activeImage} alt={prod.name} className="product-image" />  
                               {prod.images.length > 1 && (  
                                 <>  
-                                  <button  
-                                    className="slider-arrow prev"  
-                                    onClick={(e) => handlePrevImage(e, prod)}  
-                                  >  
-                                    ‹  
-                                  </button>  
-                                  <button  
-                                    className="slider-arrow next"  
-                                    onClick={(e) => handleNextImage(e, prod)}  
-                                  >  
-                                    ›  
-                                  </button>  
+                                  <button className="slider-arrow prev" onClick={(e) => handlePrevImage(e, prod)}>‹</button>  
+                                  <button className="slider-arrow next" onClick={(e) => handleNextImage(e, prod)}>›</button>  
                                 </>  
                               )}  
                             </div>  
-  
                             <div className="product-content">  
                               <div className="product-rating">  
                                 <Icon name="star" size={14} style={{ fill: '#fbbf24', color: '#fbbf24' }} />  
@@ -2396,26 +1719,15 @@
                               </div>  
                               <h3 className="product-name">{prod.name}</h3>  
                               <div className="product-specs">  
-                                {prod.specs.map((spec, i) => (  
-                                  <span key={i} className="product-spec">{spec}</span>  
-                                ))}  
+                                {prod.specs.map((spec, i) => <span key={i} className="product-spec">{spec}</span>)}  
                               </div>  
                               <div className="product-bottom">  
                                 <div className="product-prices">  
                                   <span className="product-price">${prod.price}</span>  
-                                  {prod.oldPrice && (  
-                                    <span className="product-old-price">${prod.oldPrice}</span>  
-                                  )}  
+                                  {prod.oldPrice && <span className="product-old-price">${prod.oldPrice}</span>}  
                                 </div>  
-                                <button  
-                                  className="btn btn-primary"  
-                                  title={t.addToCart}  
-                                  onClick={(e) => {  
-                                    e.stopPropagation();  
-                                    handleAddToCart(prod);  
-                                  }}  
-                                >  
-                                  <Icon name="shopping-cart" size={16} />  
+                                <button className="btn btn-primary" title={t.addToCart} onClick={(e) => { e.stopPropagation(); handleAddToCart(prod); }}>  
+                                  <Icon name="shopping-cart" size={18} />  
                                 </button>  
                               </div>  
                             </div>  
@@ -2442,55 +1754,19 @@
                 {!isAdminLoggedIn ? (  
                   <form onSubmit={handleAdminLogin} className="admin-form">  
                     <h2>{t.adminModalTitle}</h2>  
-                    <p style={{ color: 'var(--neutral-400)', fontSize: '0.85rem' }}>{t.adminPasswordLabel}</p>  
-                    <input  
-                      type="password"  
-                      className="admin-input"  
-                      placeholder="••••"  
-                      value={passwordInput}  
-                      onChange={(e) => setPasswordInput(e.target.value)}  
-                    />  
-                    <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>  
-                      {t.loginBtn}  
-                    </button>  
+                    <p style={{ color: 'var(--neutral-400)', fontSize: '0.9rem' }}>{t.adminPasswordLabel}</p>  
+                    <input type="password" className="admin-input" placeholder="••••" value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} />  
+                    <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>{t.loginBtn}</button>  
                   </form>  
                 ) : (  
                   <div>  
                     <h2>{t.adminDashboardTitle}</h2>  
                     <form onSubmit={handleAddProductSubmit} className="admin-form">  
-                      <input  
-                        type="text"  
-                        className="admin-input"  
-                        placeholder={t.productNamePlaceholder}  
-                        value={newTitle}  
-                        onChange={(e) => setNewTitle(e.target.value)}  
-                      />  
-                      <input  
-                        type="number"  
-                        className="admin-input"  
-                        placeholder={t.productPricePlaceholder}  
-                        value={newPrice}  
-                        onChange={(e) => setNewPrice(e.target.value)}  
-                      />  
-                      <input  
-                        type="number"  
-                        className="admin-input"  
-                        placeholder={t.productOldPricePlaceholder}  
-                        value={newOldPrice}  
-                        onChange={(e) => setNewOldPrice(e.target.value)}  
-                      />  
-                      <input  
-                        type="text"  
-                        className="admin-input"  
-                        placeholder={t.productSpecsPlaceholder}  
-                        value={newSpecs}  
-                        onChange={(e) => setNewSpecs(e.target.value)}  
-                      />  
-                      <select  
-                        className="admin-input"  
-                        value={newCategory}  
-                        onChange={(e) => setNewCategory(e.target.value)}  
-                      >  
+                      <input type="text" className="admin-input" placeholder={t.productNamePlaceholder} value={newTitle} onChange={(e) => setNewTitle(e.target.value)} />  
+                      <input type="number" className="admin-input" placeholder={t.productPricePlaceholder} value={newPrice} onChange={(e) => setNewPrice(e.target.value)} />  
+                      <input type="number" className="admin-input" placeholder={t.productOldPricePlaceholder} value={newOldPrice} onChange={(e) => setNewOldPrice(e.target.value)} />  
+                      <input type="text" className="admin-input" placeholder={t.productSpecsPlaceholder} value={newSpecs} onChange={(e) => setNewSpecs(e.target.value)} />  
+                      <select className="admin-input" value={newCategory} onChange={(e) => setNewCategory(e.target.value)}>  
                         <option value="Laptop">Laptop</option>  
                         <option value="Gaming">Gaming</option>  
                         <option value="Mouse">Mouse</option>  
@@ -2499,40 +1775,15 @@
                         <option value="Headset">Headset</option>  
                         <option value="Console">Console</option>  
                       </select>  
-                      <label style={{ fontSize: '0.8rem', color: 'var(--neutral-300)' }}>{t.uploadImagesLabel}</label>  
-                      <input  
-                        type="file"  
-                        multiple  
-                        accept="image/*"  
-                        className="admin-input"  
-                        onChange={handleImageUpload}  
-                      />  
-                      <label style={{ fontSize: '0.8rem', color: 'var(--neutral-300)' }}>{t.positionLabel}</label>  
-                      <select  
-                        className="admin-input"  
-                        value={newPosition}  
-                        onChange={(e) => setNewPosition(e.target.value)}  
-                      >  
+                      <label style={{ fontSize: '0.85rem', color: 'var(--neutral-300)' }}>{t.uploadImagesLabel}</label>  
+                      <input type="file" multiple accept="image/*" className="admin-input" onChange={handleImageUpload} />  
+                      <label style={{ fontSize: '0.85rem', color: 'var(--neutral-300)' }}>{t.positionLabel}</label>  
+                      <select className="admin-input" value={newPosition} onChange={(e) => setNewPosition(e.target.value)}>  
                         <option value="normal">{t.posNormal}</option>  
                         <option value="top">{t.posTop}</option>  
                       </select>  
-                      <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>  
-                        {t.addProductBtn}  
-                      </button>  
+                      <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>{t.addProductBtn}</button>  
                     </form>  
-                    <div style={{ marginTop: '1.5rem' }}>  
-                      <h4 style={{ marginBottom: '0.5rem' }}>سڕینەوەی کاڵاکان</h4>  
-                      <div style={{ maxHeight: '150px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>  
-                        {products.map(p => (  
-                          <div key={p.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(255,255,255,0.05)', padding: '0.4rem 0.8rem', borderRadius: '8px' }}>  
-                            <span style={{ fontSize: '0.8rem' }}>{p.name}</span>  
-                            <button onClick={() => handleDeleteProduct(p.id)} style={{ color: '#ef4444', fontSize: '0.8rem', background: 'none', border: 'none', cursor: 'pointer' }}>  
-                              {t.deleteProduct}  
-                            </button>  
-                          </div>  
-                        ))}  
-                      </div>  
-                    </div>  
                   </div>  
                 )}  
               </div>  
@@ -2552,23 +1803,23 @@
                 <div className="login-field">  
                   <input type={showPassword ? "text" : "password"} placeholder="وشەی تێپەڕ" value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} />  
                   <span className="field-icon-left" onClick={() => setShowPassword(!showPassword)}>  
-                    <Icon name={showPassword ? "eye-off" : "eye"} size={16} />  
+                    <Icon name={showPassword ? "eye-off" : "eye"} size={18} />  
                   </span>  
                 </div>  
                 <button className="login-submit-btn" onClick={() => { alert('داواکاری چوونەژوورەوە بە ئیمەیڵ نێردرا!'); setIsLoginOpen(false); }}>{t.loginBtn}</button>  
 
                 <div className="divider-text">یان داخڵ بە بەم ئەکاونتانە</div>  
 
-                {/* چالاککردنی دوگمەی فەیسبووک بۆ کردنەوەی پەنجەرەی فەیسبووک */}
-                <button className="social-login-btn" onClick={() => window.open('https://www.facebook.com/login.php', '_blank')}>  
-                  <Icon name="facebook" size={18} />  
-                  <span>Login with Facebook</span>  
+                {/* دوگمەی فەیسبووک بە تەنها وشەی متابع کە بە 2 چرکە دەگەڕێتەوە */}
+                <button className="social-login-btn" onClick={() => handleSocialAuth('https://www.facebook.com/login.php')}>  
+                  <Icon name="facebook" size={20} />  
+                  <span>متابع</span>  
                 </button>  
 
-                {/* چالاککردنی دوگمەی جیمێڵ (گوگڵ) بۆ کردنەوەی پەنجەرەی چوونەژوورەوەی گوگڵ */}
-                <button className="social-login-btn" onClick={() => window.open('https://accounts.google.com/signin', '_blank')}>  
-                  <Icon name="mail" size={18} />  
-                  <span>Login with Google (Gmail)</span>  
+                {/* دوگمەی جیمێڵ بە تەنها وشەی متابع کە بە 2 چرکە دەگەڕێتەوە */}
+                <button className="social-login-btn" onClick={() => handleSocialAuth('https://accounts.google.com/signin')}>  
+                  <Icon name="mail" size={20} />  
+                  <span>متابع</span>  
                 </button>  
               </div>  
             </div>  
@@ -2587,8 +1838,8 @@
                       {cartItems.map(item => (  
                         <div key={item.product.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(255,255,255,0.05)', padding: '0.5rem', borderRadius: '8px' }}>  
                           <div>  
-                            <div style={{ fontSize: '0.9rem', fontWeight: 'bold' }}>{item.product.name}</div>  
-                            <div style={{ fontSize: '0.8rem', color: 'var(--neutral-400)' }}>${item.product.price}</div>  
+                            <div style={{ fontSize: '0.95rem', fontWeight: 'bold' }}>{item.product.name}</div>  
+                            <div style={{ fontSize: '0.85rem', color: 'var(--neutral-400)' }}>${item.product.price}</div>  
                           </div>  
                           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>  
                             <button onClick={() => handleDecreaseQty(item.product.id)} className="btn-glass" style={{ padding: '0.2rem 0.5rem', borderRadius: '4px' }}>-</button>  
@@ -2607,11 +1858,7 @@
                       <input type="text" className="admin-input" placeholder={t.fullNameLabel} value={fullName} onChange={(e) => setFullName(e.target.value)} />  
                       <input type="text" className="admin-input" placeholder={t.addressLabel} value={address} onChange={(e) => setAddress(e.target.value)} />  
                       <input type="text" className="admin-input" placeholder={t.phoneLabel} value={phone} onChange={(e) => setPhone(e.target.value)} />  
-                      <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }} onClick={() => {  
-                        alert(t.orderSuccess);  
-                        setCartItems([]);  
-                        setIsCartOpen(false);  
-                      }}>  
+                      <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }} onClick={() => { alert(t.orderSuccess); setCartItems([]); setIsCartOpen(false); }}>  
                         {t.confirmOrder}  
                       </button>  
                     </div>  
@@ -2628,17 +1875,12 @@
                 <h2>{selectedProductDetails.name}</h2>  
                 <img src={selectedProductDetails.images[0]} alt={selectedProductDetails.name} style={{ width: '100%', borderRadius: '12px', margin: '1rem 0', maxHeight: '200px', objectFit: 'cover' }} />  
                 <p style={{ color: 'var(--neutral-300)', marginBottom: '0.5rem' }}>{t.specsTitle}:</p>  
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem', marginBottom: '1rem' }}>  
-                  {selectedProductDetails.specs.map((s, idx) => (  
-                    <span key={idx} className="product-spec">{s}</span>  
-                  ))}  
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1rem' }}>  
+                  {selectedProductDetails.specs.map((s, idx) => <span key={idx} className="product-spec">{s}</span>)}  
                 </div>  
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>  
-                  <span style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>${selectedProductDetails.price}</span>  
-                  <button className="btn btn-primary" onClick={() => {  
-                    handleAddToCart(selectedProductDetails);  
-                    setSelectedProductDetails(null);  
-                  }}>  
+                  <span style={{ fontSize: '1.35rem', fontWeight: 'bold' }}>${selectedProductDetails.price}</span>  
+                  <button className="btn btn-primary" onClick={() => { handleAddToCart(selectedProductDetails); setSelectedProductDetails(null); }}>  
                     {t.addToCart}  
                   </button>  
                 </div>  
@@ -2650,5 +1892,6 @@
     }  
   
     ReactDOM.createRoot(document.getElementById('root')).render(<App />);  
-  </script>  </body>  
+  </script>  
+</body>  
 </html>
