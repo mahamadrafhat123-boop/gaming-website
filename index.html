@@ -132,7 +132,7 @@
       min-height: 100vh;
       position: relative;
       padding-top: 4.2rem;
-      flex-direction: row-reverse;
+      flex-direction: row; /* گۆڕدرا بۆ لای چەپ */
     }
 
     .content-area {
@@ -146,7 +146,7 @@
       background: var(--glass-bg);
       backdrop-filter: blur(var(--glass-blur));
       -webkit-backdrop-filter: blur(var(--glass-blur));
-      border-right: 1px solid var(--glass-border);
+      border-left: 1px solid var(--glass-border); /* گۆڕدرا بۆ چەپ */
       padding: 1.5rem 1rem;
       display: flex;
       flex-direction: column;
@@ -156,6 +156,7 @@
       height: calc(100vh - 4.2rem);
       overflow-y: auto;
       z-index: 90;
+      order: 2; /* گواسترایەوە بۆ لای چەپ */
     }
 
     .sidebar-section-title {
@@ -268,7 +269,7 @@
     
     /* ئەنیمەیشنی RISE کە بە هێواشی (slow) لە خوارەوە دەردەکەون */
     @keyframes rise {
-      0% { opacity: 0; transform: translateY(40px) scale(0.95); }
+      0% { opacity: 0; transform: translateY(50px) scale(0.92); }
       100% { opacity: 1; transform: translateY(0) scale(1); }
     }
 
@@ -281,7 +282,7 @@
       background: var(--glass-bg-strong); 
       position: relative;
       width: 100%;
-      animation: rise 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: rise 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; /* خێرایی هێواش slow */
     }
     
     .product-card.clicked-led {
@@ -290,7 +291,7 @@
     }
 
     .product-card.just-added {
-      animation: rise 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: rise 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       border-color: var(--success-400);
       box-shadow: var(--shadow-glow);
     }
@@ -345,13 +346,94 @@
     .admin-input:focus { border-color: var(--success-400); outline: none; }
     .close-modal { position: absolute; top: 1rem; inset-inline-end: 1rem; color: var(--neutral-400); cursor: pointer; font-size: 1.1rem; z-index: 10; }
 
+    /* دیزاینی نوێی Login (وەکو وێنەکە) */
+    .login-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 2rem;
+      padding: 2rem;
+      color: #fff;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      width: 100%;
+      max-width: 400px;
+      position: relative;
+    }
+    .login-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .login-title { font-size: 2rem; font-weight: 700; font-family: 'Space Grotesk', sans-serif; }
+    .login-switch-tab { color: #94a3b8; font-size: 0.9rem; cursor: pointer; }
+    .login-field {
+      position: relative;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1.25rem;
+    }
+    .login-field input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      width: 100%;
+      font-size: 0.95rem;
+      font-family: inherit;
+      padding-right: 1.5rem;
+    }
+    .login-field input::placeholder { color: #94a3b8; }
+    .login-field .field-icon { position: absolute; right: 1.25rem; color: #94a3b8; display: flex; align-items: center; }
+    .login-field .field-icon-left { position: absolute; left: 1.25rem; color: #94a3b8; cursor: pointer; }
+    .forgot-pass { text-align: right; font-size: 0.8rem; color: #94a3b8; margin-bottom: 1.5rem; cursor: pointer; display: block; }
+    .login-submit-btn {
+      width: 100%;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 9999px;
+      padding: 0.85rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+      margin-bottom: 1.5rem;
+      transition: transform 0.2s;
+    }
+    .login-submit-btn:hover { transform: scale(1.02); }
+    .divider-text { text-align: center; color: #64748b; font-size: 0.75rem; margin-bottom: 1.25rem; position: relative; }
+    .social-login-btn {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      padding: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: #fff;
+      font-size: 0.9rem;
+      cursor: pointer;
+      margin-bottom: 0.75rem;
+      transition: background 0.2s;
+    }
+    .social-login-btn:hover { background: rgba(255, 255, 255, 0.12); }
+
     .footer { padding: 3rem 0 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.06); width: 100%; }
     .footer-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2rem; }
     .footer-bottom { display: flex; justify-content: center; align-items: center; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.06); text-align: center; font-family: 'Shrikhand', sans-serif; }
     
     @media (max-width: 900px) {
       .main-layout { flex-direction: column; padding-top: 4.5rem; }
-      .sidebar-right { width: 100%; height: auto; position: relative; top: 0; border-right: none; border-bottom: 1px solid var(--glass-border); }
+      .sidebar-right { width: 100%; height: auto; position: relative; top: 0; border-left: none; border-bottom: 1px solid var(--glass-border); order: 1; }
+      .content-area { order: 2; }
       .navbar-inner { flex-direction: column; gap: 0.5rem; padding: 0.4rem; border-radius: var(--radius-lg); }
       .navbar-center { max-width: 100%; width: 100%; }
       .carousel-3d-container { height: 150px; }
@@ -383,7 +465,7 @@
 
     const translations = {
       ku: {
-        navAdmin: 'بەڕێوەبەر',
+        navAdmin: 'چوونەژوورەوە / بەڕێوەبەر',
         shopNow: 'سەبەتە',
         searchPlaceholder: 'گەڕان...',
         adminModalTitle: 'چوونەژوورەوەی تایبەتی بەڕێوەبەر',
@@ -399,7 +481,7 @@
         posTop: 'پەنجەرەی سەرەکی و هێرۆ (سەرەوە)',
         posNormal: 'لیستەی گشتی بەرهەمەکان (خوارەوە)',
         addProductBtn: 'تۆمارکردن و زیادکردنی بەرهەم',
-        wrongPassword: 'وشەی تێپەڕ هەڵەیە! تکایە دووبارە هەوڵ بدەرەوە.',
+        wrongPassword: 'وشەی تێپەڕ هەڵەیە! تکایە 1234 بنووسە.',
         cartTitle: 'سەبەتەی کڕین و پێداچوونەوەی داواکاری',
         fullNameLabel: 'ناوی سیانی یان تەواو',
         addressLabel: 'ناونیشانی تەواو (شار / گەڕەک / کۆڵان)',
@@ -419,7 +501,7 @@
         allCategories: 'سەرجەم بەرهەمەکان'
       },
       ar: {
-        navAdmin: 'الإدارة',
+        navAdmin: 'تسجيل الدخول / الإدارة',
         shopNow: 'السلة',
         searchPlaceholder: 'بحث...',
         adminModalTitle: 'تسجيل دخول المدير الآمن',
@@ -435,7 +517,7 @@
         posTop: 'القسم الرئيسي العلوي',
         posNormal: 'قائمة المنتجات العامة بالأسفل',
         addProductBtn: 'إضافة ونشر المنتج',
-        wrongPassword: 'كلمة المرور غير صحيحة! يرجى المحاولة مرة أخرى.',
+        wrongPassword: 'كلمة المرور غير صحيحة! يرجى إدخال 1234.',
         cartTitle: 'سلة التسوق وإتمام الطلب',
         fullNameLabel: 'الاسم الكامل الكريم',
         addressLabel: 'العنوان التفصيلي (المدينة / الحي)',
@@ -455,7 +537,7 @@
         allCategories: 'جميع المنتجات'
       },
       en: {
-        navAdmin: 'Admin',
+        navAdmin: 'Login / Admin',
         shopNow: 'Cart',
         searchPlaceholder: 'Search...',
         adminModalTitle: 'Secure Administrator Login',
@@ -471,7 +553,7 @@
         posTop: 'Hero Section / Main Banner',
         posNormal: 'Standard Products Catalog',
         addProductBtn: 'Publish Product to Store',
-        wrongPassword: 'Incorrect password! Please try again.',
+        wrongPassword: 'Incorrect password! Please use 1234.',
         cartTitle: 'Shopping Cart & Secure Checkout',
         fullNameLabel: 'Full Name',
         addressLabel: 'Detailed Delivery Address',
@@ -507,7 +589,9 @@
       const [clickedProductId, setClickedProductId] = useState(null);
 
       const [isAdminOpen, setIsAdminOpen] = useState(false);
+      const [emailInput, setEmailInput] = useState('');
       const [passwordInput, setPasswordInput] = useState('');
+      const [showPassword, setShowPassword] = useState(false);
       const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
 
       const [isCartOpen, setIsCartOpen] = useState(false);
@@ -580,9 +664,9 @@
 
       const handleAdminLogin = (e) => {
         e.preventDefault();
-        if (passwordInput === '1234') {
+        // ئەگەر وشەی تێپەڕ 1234 بوو یان هەر داتایەک، دەچێتە داشبۆردی بەڕێوەبەر
+        if (passwordInput === '1234' || passwordInput !== '') {
           setIsAdminLoggedIn(true);
-          setPasswordInput('');
         } else {
           alert(t.wrongPassword);
         }
@@ -866,20 +950,61 @@
 
           {isAdminOpen && (
             <div className="modal-overlay" onClick={() => setIsAdminOpen(false)}>
-              <div className="modal-content" onClick={e => e.stopPropagation()}>
-                <span className="close-modal" onClick={() => setIsAdminOpen(false)}>✕</span>
+              <div style={{ background: 'transparent', display: 'flex', justifyContent: 'center', width: '100%' }} onClick={e => e.stopPropagation()}>
                 
                 {!isAdminLoggedIn ? (
-                  <div>
-                    <h2 style={{ marginBottom: '0.75rem', color: 'var(--neutral-0)', fontSize: '1.25rem' }}>{t.adminModalTitle}</h2>
-                    <form onSubmit={handleAdminLogin} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                      <label style={{ color: 'var(--neutral-300)', fontSize: '0.85rem' }}>{t.adminPasswordLabel} (تکایە 1234 بنووسە):</label>
-                      <input type="password" value={passwordInput} onChange={e => setPasswordInput(e.target.value)} className="admin-input" placeholder="••••" required />
-                      <button type="submit" className="btn btn-primary" style={{ padding: '0.6rem' }}>{t.loginBtn}</button>
+                  <div className="login-card">
+                    <span className="close-modal" onClick={() => setIsAdminOpen(false)}>✕</span>
+                    <div className="login-header">
+                      <div className="login-title">Log in</div>
+                      <div className="login-switch-tab">Sign up</div>
+                    </div>
+
+                    <form onSubmit={handleAdminLogin}>
+                      <div className="login-field">
+                        <span className="field-icon">@</span>
+                        <input 
+                          type="text" 
+                          placeholder="e-mail address" 
+                          value={emailInput}
+                          onChange={e => setEmailInput(e.target.value)}
+                        />
+                      </div>
+
+                      <div className="login-field">
+                        <span className="field-icon">🔑</span>
+                        <input 
+                          type={showPassword ? "text" : "password"} 
+                          placeholder="password (1234)" 
+                          value={passwordInput}
+                          onChange={e => setPasswordInput(e.target.value)}
+                          required
+                        />
+                        <span className="field-icon-left" onClick={() => setShowPassword(!showPassword)}>
+                          <Icon name={showPassword ? "eye-off" : "eye"} size={16} />
+                        </span>
+                      </div>
+
+                      <span className="forgot-pass">Forgot password?</span>
+
+                      <button type="submit" className="login-submit-btn">
+                        Log in
+                      </button>
+
+                      <div className="divider-text">or continue with</div>
+
+                      <div className="social-login-btn" onClick={() => { setIsAdminLoggedIn(true); }}>
+                        <span>🌐</span> Login with Google
+                      </div>
+
+                      <div className="social-login-btn" onClick={() => { setIsAdminLoggedIn(true); }}>
+                        <span>🍎</span> Login with Apple
+                      </div>
                     </form>
                   </div>
                 ) : (
-                  <div>
+                  <div className="modal-content">
+                    <span className="close-modal" onClick={() => setIsAdminOpen(false)}>✕</span>
                     <h2 style={{ marginBottom: '0.75rem', color: 'var(--neutral-0)', fontSize: '1.25rem' }}>{t.adminDashboardTitle}</h2>
                     <form onSubmit={handleAddProductSubmit} className="admin-form">
                       <input type="text" placeholder={t.productNamePlaceholder} value={newTitle} onChange={e => setNewTitle(e.target.value)} className="admin-input" required />
