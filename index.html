@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="ku" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -67,7 +67,6 @@
 
     .glass-strong { background: var(--glass-bg-strong); backdrop-filter: blur(var(--glass-blur)); -webkit-backdrop-filter: blur(var(--glass-blur)); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); }
     
-    /* لۆگۆی شوشەیی سەوزی داواکراو بۆ بەشی پۆلەکان */
     .green-glass-container {
       background: rgba(6, 78, 59, 0.35);
       backdrop-filter: blur(25px);
@@ -214,12 +213,12 @@
     
     /* NAVBAR */
     .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.25rem 0.5rem; transition: all var(--transition-base); }
-    .navbar-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.3rem 1rem; border-radius: var(--radius-full); width: 100%; gap: 1rem; }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.4rem 1rem; border-radius: var(--radius-full); width: 100%; gap: 0.75rem; flex-wrap: wrap; }
     
-    /* چاککردنی بەشی چوونەژوورەوە و بەڕێوەبەر بۆ ئەوەی تێکەڵ نەبن */
-    .navbar-left { display: flex; align-items: center; gap: 0.75rem; flex-wrap: nowrap; }
-    .navbar-center { display: flex; align-items: center; flex: 1; max-width: 450px; }
-    .navbar-right-actions { display: flex; align-items: center; gap: 0.5rem; }
+    /* ڕێکخستنی بەشی سەرەوە بە شێوەیەک تێکەڵ نەبن */
+    .navbar-left { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+    .navbar-center { display: flex; align-items: center; flex: 1; min-width: 180px; max-width: 350px; }
+    .navbar-right-actions { display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0; flex-wrap: wrap; }
 
     .brand { display: flex; align-items: center; gap: 0.4rem; text-decoration: none; flex-shrink: 0; }
     .brand-logo { width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--success-500), var(--accent-500)); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); color: white; font-weight: 700; font-size: 0.75rem; font-family: 'Shrikhand', sans-serif; }
@@ -233,7 +232,7 @@
       display: flex; 
       align-items: center; 
       gap: 0.25rem; 
-      padding: 0.25rem 0.5rem;
+      padding: 0.3rem 0.6rem;
       border-radius: var(--radius-full);
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid var(--glass-border);
@@ -300,8 +299,9 @@
     .section-icon { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
     .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; width: 100%; }
     
-    @keyframes rise {
-      0% { opacity: 0; transform: translateY(50px) scale(0.92); }
+    /* ئەنیمەیشنی نەرم و جوان کاتێک بەرهەمەکان دەردەکەون یان پۆلێک دەگۆڕدرێت */
+    @keyframes smoothAppear {
+      0% { opacity: 0; transform: translateY(30px) scale(0.95); }
       100% { opacity: 1; transform: translateY(0) scale(1); }
     }
 
@@ -314,7 +314,7 @@
       background: var(--glass-bg-strong); 
       position: relative;
       width: 100%;
-      animation: rise 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: smoothAppear 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
     
     .product-card.clicked-led {
@@ -323,7 +323,7 @@
     }
 
     .product-card.just-added {
-      animation: rise 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: smoothAppear 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       border-color: var(--success-400);
       box-shadow: var(--shadow-glow);
     }
@@ -465,8 +465,8 @@
       .main-layout { flex-direction: column; padding-top: 4.5rem; }
       .sidebar-right { width: 100%; height: auto; position: relative; top: 0; border-left: none; border-bottom: 1px solid var(--glass-border); order: 1; }
       .content-area { order: 2; }
-      .navbar-inner { flex-direction: column; gap: 0.5rem; padding: 0.4rem; border-radius: var(--radius-lg); }
-      .navbar-center { max-width: 100%; width: 100%; }
+      .navbar-inner { flex-direction: row; gap: 0.4rem; padding: 0.3rem 0.5rem; border-radius: var(--radius-lg); }
+      .navbar-center { max-width: 100%; width: 100%; order: 3; }
       .carousel-3d-container { height: 150px; }
       .carousel-3d-item { width: 120px; height: 80px; }
       .carousel-3d-item:nth-child(1) { transform: rotateY(0deg) translateZ(120px); }
@@ -496,7 +496,7 @@
 
     const translations = {
       ku: {
-        navAdmin: 'چوونەژوورەوە / بەڕێوەبەر',
+        navAdmin: 'بەڕێوەبەر',
         shopNow: 'سەبەتە',
         searchPlaceholder: 'گەڕان...',
         adminModalTitle: 'چوونەژوورەوەی تایبەتی بەڕێوەبەر',
@@ -532,7 +532,7 @@
         allCategories: 'سەرجەم بەرهەمەکان'
       },
       ar: {
-        navAdmin: 'تسجيل الدخول / الإدارة',
+        navAdmin: 'الإدارة',
         shopNow: 'السلة',
         searchPlaceholder: 'بحث...',
         adminModalTitle: 'تسجيل دخول المدير الآمن',
@@ -568,7 +568,7 @@
         allCategories: 'جميع المنتجات'
       },
       en: {
-        navAdmin: 'Login / Admin',
+        navAdmin: 'Admin',
         shopNow: 'Cart',
         searchPlaceholder: 'Search...',
         adminModalTitle: 'Secure Administrator Login',
@@ -1090,7 +1090,6 @@
           <div className="main-layout">
             
             <aside className="sidebar-right">
-              {/* لۆگۆی شوشەیی سەوز کە بەشی پۆلەکانی دەورە داوە */}
               <div className="green-glass-container">
                 <h3 className="sidebar-section-title">{t.categoriesTitle}</h3>
                 <div className="sidebar-menu-list">
