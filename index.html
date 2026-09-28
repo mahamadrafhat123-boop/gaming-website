@@ -153,22 +153,24 @@
       overflow-x: hidden;
     }
 
+    /* لای راست: ٣ هێڵ و سایدباری بەشەکان */
     .sidebar-right {
-      width: 300px;
+      width: 280px;
       background: var(--glass-bg);
       backdrop-filter: blur(var(--glass-blur));
       -webkit-backdrop-filter: blur(var(--glass-blur));
       border-left: 1px solid var(--glass-border);
-      padding: 1.5rem 1rem;
+      padding: 1rem;
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1rem;
       position: sticky;
       top: 4.2rem;
       height: calc(100vh - 4.2rem);
       overflow-y: auto;
       z-index: 90;
       order: 2;
+      transition: transform 0.3s ease;
     }
 
     .sidebar-section-title {
@@ -210,12 +212,28 @@
       border-color: var(--success-400);
       box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
     }
+
+    /* دوگمەی ٣ هێڵ بۆ پیشاندان و شاردنەوەی سایدبار */
+    .menu-toggle-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      color: var(--neutral-0);
+      padding: 0.4rem 0.6rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .menu-toggle-btn:hover {
+      background: var(--success-500);
+    }
     
     /* NAVBAR */
     .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.25rem 0.5rem; transition: all var(--transition-base); }
     .navbar-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.4rem 1rem; border-radius: var(--radius-full); width: 100%; gap: 0.75rem; flex-wrap: wrap; }
     
-    /* ڕێکخستنی بەشی سەرەوە بە شێوەیەک تێکەڵ نەبن */
     .navbar-left { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
     .navbar-center { display: flex; align-items: center; flex: 1; min-width: 180px; max-width: 350px; }
     .navbar-right-actions { display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0; flex-wrap: wrap; }
@@ -299,7 +317,6 @@
     .section-icon { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
     .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; width: 100%; }
     
-    /* ئەنیمەیشنی نەرم و جوان کاتێک بەرهەمەکان دەردەکەون یان پۆلێک دەگۆڕدرێت */
     @keyframes smoothAppear {
       0% { opacity: 0; transform: translateY(30px) scale(0.95); }
       100% { opacity: 1; transform: translateY(0) scale(1); }
@@ -497,6 +514,7 @@
     const translations = {
       ku: {
         navAdmin: 'بەڕێوەبەر',
+        navLogin: 'چوونەژوورەوە',
         shopNow: 'سەبەتە',
         searchPlaceholder: 'گەڕان...',
         adminModalTitle: 'چوونەژوورەوەی تایبەتی بەڕێوەبەر',
@@ -528,11 +546,12 @@
         addToCart: 'زیادکردن بۆ سەبەتە',
         themeDark: 'تاریک',
         themeLight: 'ڕووناک',
-        categoriesTitle: 'پۆلەکان',
+        categoriesTitle: 'پۆلەکان (لای ڕاست)',
         allCategories: 'سەرجەم بەرهەمەکان'
       },
       ar: {
         navAdmin: 'الإدارة',
+        navLogin: 'دخول',
         shopNow: 'السلة',
         searchPlaceholder: 'بحث...',
         adminModalTitle: 'تسجيل دخول المدير الآمن',
@@ -569,6 +588,7 @@
       },
       en: {
         navAdmin: 'Admin',
+        navLogin: 'Login',
         shopNow: 'Cart',
         searchPlaceholder: 'Search...',
         adminModalTitle: 'Secure Administrator Login',
@@ -618,7 +638,9 @@
       const [searchQuery, setSearchQuery] = useState('');
       const [selectedCategory, setSelectedCategory] = useState('All');
       const [clickedProductId, setClickedProductId] = useState(null);
+      const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
+      const [isLoginOpen, setIsLoginOpen] = useState(false);
       const [isAdminOpen, setIsAdminOpen] = useState(false);
       const [emailInput, setEmailInput] = useState('');
       const [passwordInput, setPasswordInput] = useState('');
@@ -817,14 +839,15 @@
             <div className="container">
               <div className="glass navbar-inner">
                 
+                {/* لای چەپ: بەشی بەڕێوەبەر (Admin) */}
                 <div className="navbar-left">
+                  <button className="nav-link" onClick={() => setIsAdminOpen(true)}>
+                    <Icon name="lock" size={13} />{t.navAdmin}
+                  </button>
                   <a href="#" className="brand">
                     <div className="brand-logo"><span>G</span></div>
                     <span className="brand-name">گەیمینگ</span>
                   </a>
-                  <button className="nav-link" onClick={() => setIsAdminOpen(true)}>
-                    <Icon name="lock" size={13} />{t.navAdmin}
-                  </button>
                 </div>
 
                 <div className="navbar-center">
@@ -844,7 +867,12 @@
                   </div>
                 </div>
 
+                {/* لای ڕاست: ٣ هێڵ + لۆگین لەسەرەوە بە ڕاست + زمان و سەلەتە */}
                 <div className="navbar-right-actions">
+                  <button className="nav-link" onClick={() => setIsLoginOpen(true)}>
+                    <Icon name="user" size={13} />{t.navLogin}
+                  </button>
+
                   <div className="lang-switcher">
                     <button className={`lang-btn ${lang === 'ku' ? 'active' : ''}`} onClick={() => setLang('ku')}>کوردی</button>
                     <button className={`lang-btn ${lang === 'ar' ? 'active' : ''}`} onClick={() => setLang('ar')}>عربي</button>
@@ -868,12 +896,18 @@
                   <button className="btn btn-primary" style={{ padding: '0.25rem 0.5rem', fontSize: '0.7rem' }} onClick={() => setIsCartOpen(true)}>
                     <Icon name="shopping-cart" size={13} /> {t.shopNow} ({totalCartItemsCount})
                   </button>
+
+                  {/* دوگمەی ٣ هێڵ بۆ نیشاندان/شاردنەوەی بەشەکان */}
+                  <button className="menu-toggle-btn" onClick={() => setIsSidebarOpen(!isSidebarOpen)} title="Menu 3 Lines">
+                    <Icon name="menu" size={18} />
+                  </button>
                 </div>
 
               </div>
             </div>
           </nav>
 
+          {/* نیشاندانی دەبڵی مۆدالی زانیاری بەرهەم */}
           {selectedProductDetails && (
             <div className="modal-overlay" onClick={() => setSelectedProductDetails(null)}>
               <div className="modal-content glass" onClick={e => e.stopPropagation()}>
@@ -937,6 +971,7 @@
             </div>
           )}
 
+          {/* مۆدالی سەبەتە */}
           {isCartOpen && (
             <div className="modal-overlay" onClick={() => setIsCartOpen(false)}>
               <div className="modal-content" onClick={e => e.stopPropagation()}>
@@ -978,6 +1013,40 @@
             </div>
           )}
 
+          {/* مۆدالی چوونەژوورەوەی گشتی (لۆگین) */}
+          {isLoginOpen && (
+            <div className="modal-overlay" onClick={() => setIsLoginOpen(false)}>
+              <div style={{ background: 'transparent', display: 'flex', justifyContent: 'center', width: '100%' }} onClick={e => e.stopPropagation()}>
+                <div className="login-card">
+                  <span className="close-modal" onClick={() => setIsLoginOpen(false)}>✕</span>
+                  <div className="login-header">
+                    <div className="login-title">Log in</div>
+                    <div className="login-switch-tab">Sign up</div>
+                  </div>
+
+                  <form onSubmit={(e) => { e.preventDefault(); alert('سەرکەوتووانە چوونە ژوورەوە!'); setIsLoginOpen(false); }}>
+                    <div className="login-field">
+                      <span className="field-icon">@</span>
+                      <input type="text" placeholder="e-mail address" required />
+                    </div>
+
+                    <div className="login-field">
+                      <span className="field-icon">🔑</span>
+                      <input type={showPassword ? "text" : "password"} placeholder="password" required />
+                      <span className="field-icon-left" onClick={() => setShowPassword(!showPassword)}>
+                        <Icon name={showPassword ? "eye-off" : "eye"} size={16} />
+                      </span>
+                    </div>
+
+                    <span className="forgot-pass">Forgot password?</span>
+                    <button type="submit" className="login-submit-btn">Log in</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* مۆدالی بەڕێوەبەر (Admin) لە لای چەپ */}
           {isAdminOpen && (
             <div className="modal-overlay" onClick={() => setIsAdminOpen(false)}>
               <div style={{ background: 'transparent', display: 'flex', justifyContent: 'center', width: '100%' }} onClick={e => e.stopPropagation()}>
@@ -986,50 +1055,21 @@
                   <div className="login-card">
                     <span className="close-modal" onClick={() => setIsAdminOpen(false)}>✕</span>
                     <div className="login-header">
-                      <div className="login-title">Log in</div>
-                      <div className="login-switch-tab">Sign up</div>
+                      <div className="login-title">Admin Login</div>
                     </div>
 
                     <form onSubmit={handleAdminLogin}>
                       <div className="login-field">
-                        <span className="field-icon">@</span>
-                        <input 
-                          type="text" 
-                          placeholder="e-mail address" 
-                          value={emailInput}
-                          onChange={e => setEmailInput(e.target.value)}
-                        />
-                      </div>
-
-                      <div className="login-field">
                         <span className="field-icon">🔑</span>
                         <input 
-                          type={showPassword ? "text" : "password"} 
-                          placeholder="password (1234)" 
+                          type="password" 
+                          placeholder="Admin Password (1234)" 
                           value={passwordInput}
                           onChange={e => setPasswordInput(e.target.value)}
                           required
                         />
-                        <span className="field-icon-left" onClick={() => setShowPassword(!showPassword)}>
-                          <Icon name={showPassword ? "eye-off" : "eye"} size={16} />
-                        </span>
                       </div>
-
-                      <span className="forgot-pass">Forgot password?</span>
-
-                      <button type="submit" className="login-submit-btn">
-                        Log in
-                      </button>
-
-                      <div className="divider-text">or continue with</div>
-
-                      <div className="social-login-btn" onClick={() => { setIsAdminLoggedIn(true); }}>
-                        <span>🌐</span> Login with Google
-                      </div>
-
-                      <div className="social-login-btn" onClick={() => { setIsAdminLoggedIn(true); }}>
-                        <span>🍎</span> Login with Apple
-                      </div>
+                      <button type="submit" className="login-submit-btn">Log in as Admin</button>
                     </form>
                   </div>
                 ) : (
@@ -1089,69 +1129,72 @@
 
           <div className="main-layout">
             
-            <aside className="sidebar-right">
-              <div className="green-glass-container">
-                <h3 className="sidebar-section-title">{t.categoriesTitle}</h3>
-                <div className="sidebar-menu-list">
-                  <button 
-                    className={`sidebar-menu-item ${selectedCategory === 'All' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('All')}
-                  >
-                    <Icon name="layout-grid" size={16} /> {t.allCategories}
-                  </button>
-                  <button 
-                    className={`sidebar-menu-item ${selectedCategory === 'Laptop' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('Laptop')}
-                  >
-                    <Icon name="laptop" size={16} /> لاپتۆپ (Laptop)
-                  </button>
-                  <button 
-                    className={`sidebar-menu-item ${selectedCategory === 'Gaming' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('Gaming')}
-                  >
-                    <Icon name="monitor" size={16} /> گەیمینگ (Gaming)
-                  </button>
-                  <button 
-                    className={`sidebar-menu-item ${selectedCategory === 'Mouse' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('Mouse')}
-                  >
-                    <Icon name="mouse" size={16} /> ماوس (Mouse)
-                  </button>
-                  <button 
-                    className={`sidebar-menu-item ${selectedCategory === 'Keyboard' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('Keyboard')}
-                  >
-                    <Icon name="keyboard" size={16} /> کیبۆرد (Keyboard)
-                  </button>
-                  <button 
-                    className={`sidebar-menu-item ${selectedCategory === 'Case' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('Case')}
-                  >
-                    <Icon name="hard-drive" size={16} /> کەیس (Case)
-                  </button>
-                  <button 
-                    className={`sidebar-menu-item ${selectedCategory === 'Headset' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('Headset')}
-                  >
-                    <Icon name="headphones" size={16} /> هێتسێت (Headset)
-                  </button>
-                  <button 
-                    className={`sidebar-menu-item ${selectedCategory === 'Console' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('Console')}
-                  >
-                    <Icon name="gamepad-2" size={16} /> کونسوڵ (Console)
+            {/* لای ڕاست: ٣ هێڵ و سایدباری بەشەکان کە بە کلیک کردن دیار دەبن */}
+            {isSidebarOpen && (
+              <aside className="sidebar-right">
+                <div className="green-glass-container">
+                  <h3 className="sidebar-section-title">{t.categoriesTitle}</h3>
+                  <div className="sidebar-menu-list">
+                    <button 
+                      className={`sidebar-menu-item ${selectedCategory === 'All' ? 'active' : ''}`}
+                      onClick={() => setSelectedCategory('All')}
+                    >
+                      <Icon name="layout-grid" size={16} /> {t.allCategories}
+                    </button>
+                    <button 
+                      className={`sidebar-menu-item ${selectedCategory === 'Laptop' ? 'active' : ''}`}
+                      onClick={() => setSelectedCategory('Laptop')}
+                    >
+                      <Icon name="laptop" size={16} /> لاپتۆپ (Laptop)
+                    </button>
+                    <button 
+                      className={`sidebar-menu-item ${selectedCategory === 'Gaming' ? 'active' : ''}`}
+                      onClick={() => setSelectedCategory('Gaming')}
+                    >
+                      <Icon name="monitor" size={16} /> گەیمینگ (Gaming)
+                    </button>
+                    <button 
+                      className={`sidebar-menu-item ${selectedCategory === 'Mouse' ? 'active' : ''}`}
+                      onClick={() => setSelectedCategory('Mouse')}
+                    >
+                      <Icon name="mouse" size={16} /> ماوس (Mouse)
+                    </button>
+                    <button 
+                      className={`sidebar-menu-item ${selectedCategory === 'Keyboard' ? 'active' : ''}`}
+                      onClick={() => setSelectedCategory('Keyboard')}
+                    >
+                      <Icon name="keyboard" size={16} /> کیبۆرد (Keyboard)
+                    </button>
+                    <button 
+                      className={`sidebar-menu-item ${selectedCategory === 'Case' ? 'active' : ''}`}
+                      onClick={() => setSelectedCategory('Case')}
+                    >
+                      <Icon name="hard-drive" size={16} /> کەیس (Case)
+                    </button>
+                    <button 
+                      className={`sidebar-menu-item ${selectedCategory === 'Headset' ? 'active' : ''}`}
+                      onClick={() => setSelectedCategory('Headset')}
+                    >
+                      <Icon name="headphones" size={16} /> هێتسێت (Headset)
+                    </button>
+                    <button 
+                      className={`sidebar-menu-item ${selectedCategory === 'Console' ? 'active' : ''}`}
+                      onClick={() => setSelectedCategory('Console')}
+                    >
+                      <Icon name="gamepad-2" size={16} /> کونسوڵ (Console)
+                    </button>
+                  </div>
+                </div>
+
+                <div style={{ marginTop: 'auto', background: 'var(--glass-bg-strong)', padding: '1rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--glass-border)' }}>
+                  <h4 style={{ fontSize: '0.85rem', marginBottom: '0.4rem', color: 'var(--neutral-0)' }}>پشتیوانی ڕاستەوخۆ</h4>
+                  <p style={{ fontSize: '0.75rem', color: 'var(--neutral-400)', marginBottom: '0.6rem' }}>بۆ هەر پرسیارێک لە خزمەتتداین.</p>
+                  <button className="btn btn-primary" style={{ width: '100%', fontSize: '0.75rem', padding: '0.4rem' }} onClick={() => alert('پەیوەندیکردن بە پشتیوانیەوە')}>
+                    پەیوەندی بکە
                   </button>
                 </div>
-              </div>
-
-              <div style={{ marginTop: 'auto', background: 'var(--glass-bg-strong)', padding: '1rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--glass-border)' }}>
-                <h4 style={{ fontSize: '0.85rem', marginBottom: '0.4rem', color: 'var(--neutral-0)' }}>پشتیوانی ڕاستەوخۆ</h4>
-                <p style={{ fontSize: '0.75rem', color: 'var(--neutral-400)', marginBottom: '0.6rem' }}>بۆ هەر پرسیارێک لە خزمەتتداین.</p>
-                <button className="btn btn-primary" style={{ width: '100%', fontSize: '0.75rem', padding: '0.4rem' }} onClick={() => alert('پەیوەندیکردن بە پشتیوانیەوە')}>
-                  پەیوەندی بکە
-                </button>
-              </div>
-            </aside>
+              </aside>
+            )}
 
             <div className="content-area">
               <main>
