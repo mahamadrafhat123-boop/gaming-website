@@ -6,7 +6,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />  
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />  
   <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />  
-  <title>ناوەندی سەکۆی گەیمینگ و تەکنەلۆژیای پێشکەوتوو</title>    <style>  
+  <title>ناوەندی سەکۆی گەیمینگ و تەکنەلۆژیای پێشکەوتوو</title>  
+  <style>  
     :root {  
       --primary-50: #eef4ff;  
       --primary-100: #d9e6ff;  
@@ -57,7 +58,7 @@
   
       --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);  
       --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);  
-      --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);  
+      --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);  
     }  
   
     body.dark {  
@@ -72,19 +73,20 @@
       --neutral-700: #334155;  
       --neutral-800: #1e293b;  
       --neutral-900: #0f172a;  
-      --neutral-950: #022c22;  
+      --neutral-950: #062417;  
   
-      --glass-bg: rgba(6, 78, 59, 0.25);  
-      --glass-bg-strong: rgba(6, 78, 59, 0.4);  
-      --glass-border: rgba(52, 211, 153, 0.2);  
+      --glass-bg: rgba(45, 55, 72, 0.4);  
+      --glass-bg-strong: rgba(30, 34, 42, 0.65);  
+      --glass-border: rgba(255, 255, 255, 0.12);  
   
       --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12);  
       --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.18);  
       --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.25);  
       --shadow-glow: 0 0 40px rgba(16, 185, 129, 0.3);  
   
-      background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #022c22 100%);  
+      background: linear-gradient(135deg, #062417 0%, #0d3b25 50%, #03140d 100%);  
       color: var(--neutral-100);  
+      transition: background var(--transition-slow), color var(--transition-slow);  
     }  
   
     body.light {  
@@ -112,6 +114,7 @@
   
       background: linear-gradient(135deg, #f0fdf4 100%, #dcfce7 50%, #f0fdf4 0%);  
       color: var(--neutral-100);  
+      transition: background var(--transition-slow), color var(--transition-slow);  
     }  
   
     * {  
@@ -132,7 +135,7 @@
       overflow-x: hidden;  
       line-height: 1.5;  
       -webkit-font-smoothing: antialiased;  
-      transition: background 0.3s, color 0.3s;  
+      transition: background var(--transition-slow), color var(--transition-slow);  
     }  
   
     h1, h2, h3, h4, h5, h6 {  
@@ -164,9 +167,10 @@
       inset: 0;  
       z-index: -2;  
       background:  
-        radial-gradient(ellipse at 20% 0%, rgba(16, 185, 129, 0.2) 0%, transparent 50%),  
-        radial-gradient(ellipse at 80% 50%, rgba(52, 211, 153, 0.15) 0%, transparent 50%),  
+        radial-gradient(ellipse at 20% 0%, rgba(16, 185, 129, 0.18) 0%, transparent 50%),  
+        radial-gradient(ellipse at 80% 50%, rgba(5, 150, 105, 0.15) 0%, transparent 50%),  
         var(--neutral-950);  
+      transition: background var(--transition-slow);  
     }  
   
     .bg-blobs {  
@@ -181,14 +185,14 @@
       position: absolute;  
       border-radius: 50%;  
       filter: blur(80px);  
-      opacity: 0.4;  
+      opacity: 0.35;  
       animation: float 20s ease-in-out infinite;  
     }  
   
     .bg-blob-1 {  
       width: 500px;  
       height: 500px;  
-      background: radial-gradient(circle, var(--success-500), transparent 70%);  
+      background: radial-gradient(circle, #059669, transparent 70%);  
       top: -10%;  
       left: -5%;  
     }  
@@ -196,7 +200,7 @@
     .bg-blob-2 {  
       width: 600px;  
       height: 600px;  
-      background: radial-gradient(circle, var(--accent-500), transparent 70%);  
+      background: radial-gradient(circle, #047857, transparent 70%);  
       bottom: -15%;  
       right: -10%;  
     }  
@@ -205,11 +209,9 @@
       0%, 100% {  
         transform: translate(0, 0) scale(1);  
       }  
-  
       33% {  
         transform: translate(30px, -40px) scale(1.05);  
       }  
-  
       66% {  
         transform: translate(-20px, 30px) scale(0.95);  
       }  
@@ -223,6 +225,7 @@
       border-radius: var(--radius-lg);  
       position: relative;  
       overflow: hidden;  
+      transition: background var(--transition-slow), border var(--transition-slow);  
     }  
   
     .glass-strong {  
@@ -231,19 +234,21 @@
       -webkit-backdrop-filter: blur(var(--glass-blur));  
       border: 1px solid var(--glass-border);  
       border-radius: var(--radius-lg);  
+      transition: background var(--transition-slow), border var(--transition-slow);  
     }  
   
     .green-glass-container {  
-      background: rgba(6, 78, 59, 0.35);  
+      background: rgba(35, 39, 47, 0.45);  
       backdrop-filter: blur(25px);  
       -webkit-backdrop-filter: blur(25px);  
-      border: 1px solid rgba(52, 211, 153, 0.3);  
+      border: 1px solid rgba(255, 255, 255, 0.1);  
       border-radius: var(--radius-xl);  
       padding: 1.25rem;  
       box-shadow:  
-        0 15px 35px rgba(0, 0, 0, 0.2),  
-        inset 0 0 20px rgba(52, 211, 153, 0.15);  
+        0 15px 35px rgba(0, 0, 0, 0.3),  
+        inset 0 0 20px rgba(255, 255, 255, 0.03);  
       margin-bottom: 1.5rem;  
+      transition: background var(--transition-slow), border var(--transition-slow);  
     }  
   
     .container {  
@@ -326,56 +331,55 @@
     .glass-toggle {  
       display: flex;  
       align-items: center;  
-      background: var(--glass-bg);  
+      background: rgba(30, 35, 45, 0.6);  
       backdrop-filter: blur(var(--glass-blur));  
       -webkit-backdrop-filter: blur(var(--glass-blur));  
-      border: 1px solid var(--glass-border);  
+      border: 1px solid rgba(255, 255, 255, 0.15);  
       border-radius: var(--radius-full);  
-      padding: 2px;  
+      padding: 3px;  
       cursor: pointer;  
       position: relative;  
-      width: 75px;  
-      height: 32px;  
-      transition: all var(--transition-base);  
+      width: 78px;  
+      height: 34px;  
+      transition: background var(--transition-slow), border var(--transition-slow);  
     }  
   
     .glass-toggle-thumb {  
       position: absolute;  
-      width: 26px;  
-      height: 26px;  
+      width: 28px;  
+      height: 28px;  
       border-radius: 50%;  
-      background: var(--glass-bg-strong);  
-      border: 1px solid var(--glass-border);  
+      background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.08));  
+      border: 1px solid rgba(255, 255, 255, 0.3);  
       display: flex;  
       align-items: center;  
       justify-content: center;  
-      box-shadow: var(--shadow-sm);  
-      transition:  
-        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),  
-        background 0.3s;  
-      color: var(--neutral-0);  
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);  
+      transition: transform var(--transition-slow), background var(--transition-slow);  
+      color: #fbbf24;  
       z-index: 2;  
     }  
   
     .glass-toggle.dark-mode .glass-toggle-thumb {  
-      transform: translateX(-43px);  
+      transform: translateX(-44px);  
+      color: #94a3b8;  
     }  
   
     .glass-toggle.light-mode .glass-toggle-thumb {  
       transform: translateX(0px);  
+      color: #fbbf24;  
     }  
   
     .glass-toggle-labels {  
       display: flex;  
       justify-content: space-between;  
       width: 100%;  
-      padding: 0 4px;  
-      font-size: 0.6rem;  
+      padding: 0 6px;  
+      font-size: 0.65rem;  
       font-weight: 600;  
       color: var(--neutral-400);  
       user-select: none;  
       z-index: 1;  
-      font-family: 'Shrikhand', sans-serif;  
     }  
   
     .section-title {  
@@ -440,7 +444,8 @@
       transition:  
         transform 0.3s ease,  
         opacity 0.3s ease,  
-        visibility 0.3s ease;  
+        visibility 0.3s ease,  
+        background var(--transition-slow);  
     }  
   
     .sidebar-right:not(.is-open) {  
@@ -558,7 +563,7 @@
       align-items: center;  
       flex: 1;  
       min-width: 180px;  
-      max-width: 350px;  
+      max-width: 380px;  
     }  
   
     .navbar-right-actions {  
@@ -626,8 +631,9 @@
       border-color: var(--success-400);  
     }  
   
-    /* SEARCH BAR */  
-  
+    /* =========================  
+       NEW 3D GLASS SEARCH BAR  
+       ========================= */  
     .search-container {  
       display: flex;  
       justify-content: center;  
@@ -638,56 +644,70 @@
     .search-input-wrapper {  
       position: relative;  
       width: 100%;  
-      border-radius: var(--radius-full);  
-      padding: 1px;  
-      background: linear-gradient(0deg, #10b981, #34d399, #10b981);  
-      background-size: 200% 200%;  
-      animation: rotateLed 3s linear infinite;  
-    }  
-  
-    @keyframes rotateLed {  
-      0% {  
-        background-position: 0% 50%;  
-      }  
-  
-      50% {  
-        background-position: 100% 50%;  
-      }  
-  
-      100% {  
-        background-position: 0% 50%;  
-      }  
     }  
   
     .search-inner-box {  
       position: relative;  
       width: 100%;  
+      height: 42px;  
       border-radius: var(--radius-full);  
-      background: var(--neutral-900);  
+      /* شوشەی مۆدێرن بە ڕەنگی بنەوشەیی کاڵ/قووڵ و بڵەر */  
+      background: linear-gradient(135deg, rgba(140, 100, 220, 0.25), rgba(70, 40, 130, 0.4));  
+      backdrop-filter: blur(25px);  
+      -webkit-backdrop-filter: blur(25px);  
+      border: 1.5px solid rgba(220, 190, 255, 0.35);  
+      box-shadow:   
+        0 8px 32px 0 rgba(31, 10, 60, 0.37),  
+        inset 0 1px 2px rgba(255, 255, 255, 0.3),  
+        0 0 20px rgba(160, 100, 255, 0.15);  
       display: flex;  
       align-items: center;  
+      transition: all var(--transition-base);  
+    }  
+  
+    .search-inner-box:focus-within {  
+      border-color: rgba(220, 190, 255, 0.8);  
+      box-shadow:   
+        0 10px 40px 0 rgba(40, 10, 80, 0.5),  
+        inset 0 1px 3px rgba(255, 255, 255, 0.5),  
+        0 0 25px rgba(180, 120, 255, 0.35);  
     }  
   
     .search-input {  
       width: 100%;  
-      padding: 0.25rem 0.5rem 0.25rem 1.6rem;  
-      min-height: 36px;  
-      border-radius: var(--radius-full);  
+      padding: 0.25rem 2.8rem 0.25rem 1rem;  
       background: transparent;  
       border: none;  
-      color: var(--neutral-0);  
-      font-size: 0.7rem;  
+      color: #ffffff;  
+      font-size: 0.8rem;  
       outline: none;  
       font-family: 'Shrikhand', sans-serif;  
+    }  
+  
+    .search-input::placeholder {  
+      color: rgba(255, 255, 255, 0.65);  
+    }  
+  
+    .search-divider {  
+      position: absolute;  
+      right: 2.2rem;  
+      top: 25%;  
+      height: 50%;  
+      width: 1px;  
+      background: rgba(255, 255, 255, 0.25);  
     }  
   
     .search-icon {  
       position: absolute;  
       top: 50%;  
       transform: translateY(-50%);  
-      inset-inline-start: 0.4rem;  
-      color: var(--neutral-400);  
+      right: 0.75rem;  
+      color: #ffffff;  
       pointer-events: none;  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));  
     }  
   
     /* HERO */  
@@ -715,7 +735,6 @@
       0% {  
         transform: rotateY(0deg);  
       }  
-  
       100% {  
         transform: rotateY(360deg);  
       }  
@@ -742,23 +761,18 @@
     .carousel-3d-item:nth-child(1) {  
       transform: rotateY(0deg) translateZ(180px);  
     }  
-  
     .carousel-3d-item:nth-child(2) {  
       transform: rotateY(60deg) translateZ(180px);  
     }  
-  
     .carousel-3d-item:nth-child(3) {  
       transform: rotateY(120deg) translateZ(180px);  
     }  
-  
     .carousel-3d-item:nth-child(4) {  
       transform: rotateY(180deg) translateZ(180px);  
     }  
-  
     .carousel-3d-item:nth-child(5) {  
       transform: rotateY(240deg) translateZ(180px);  
     }  
-  
     .carousel-3d-item:nth-child(6) {  
       transform: rotateY(300deg) translateZ(180px);  
     }  
@@ -811,25 +825,23 @@
         opacity: 0;  
         transform: translateY(30px) scale(0.95);  
       }  
-  
       100% {  
         opacity: 1;  
         transform: translateY(0) scale(1);  
       }  
     }  
-
-    /* Animation Pan Slow */
-    @keyframes panAnimation {
-      0% {
-        object-position: 0% 50%;
-      }
-      50% {
-        object-position: 100% 50%;
-      }
-      100% {
-        object-position: 0% 50%;
-      }
-    }
+  
+    @keyframes panAnimation {  
+      0% {  
+        object-position: 0% 50%;  
+      }  
+      50% {  
+        object-position: 100% 50%;  
+      }  
+      100% {  
+        object-position: 0% 50%;  
+      }  
+    }  
   
     .product-card {  
       border-radius: var(--radius-lg);  
@@ -875,14 +887,14 @@
       width: 100%;  
       height: 100%;  
       object-fit: cover;  
-      animation: panAnimation 8s ease-in-out infinite;
+      animation: panAnimation 8s ease-in-out infinite;  
       transition: transform var(--transition-slow);  
       cursor: pointer;  
     }  
   
     .product-card:hover .product-image {  
       transform: scale(1.05);  
-      animation-duration: 4s;
+      animation-duration: 4s;  
     }  
   
     .product-badge {  
@@ -1078,137 +1090,6 @@
       z-index: 10;  
     }  
   
-    .login-card {  
-      background: rgba(255, 255, 255, 0.05);  
-      backdrop-filter: blur(25px);  
-      -webkit-backdrop-filter: blur(25px);  
-      border: 1px solid rgba(255, 255, 255, 0.15);  
-      border-radius: 2rem;  
-      padding: 2rem;  
-      color: #fff;  
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);  
-      width: 100%;  
-      max-width: 400px;  
-      position: relative;  
-    }  
-  
-    .login-header {  
-      display: flex;  
-      justify-content: space-between;  
-      align-items: center;  
-      margin-bottom: 1.5rem;  
-    }  
-  
-    .login-title {  
-      font-size: 2rem;  
-      font-weight: 700;  
-      font-family: 'Space Grotesk', sans-serif;  
-    }  
-  
-    .login-switch-tab {  
-      color: #94a3b8;  
-      font-size: 0.9rem;  
-      cursor: pointer;  
-    }  
-  
-    .login-field {  
-      position: relative;  
-      background: rgba(255, 255, 255, 0.08);  
-      border: 1px solid rgba(255, 255, 255, 0.12);  
-      border-radius: 9999px;  
-      margin-bottom: 1rem;  
-      display: flex;  
-      align-items: center;  
-      padding: 0.75rem 1.25rem;  
-    }  
-  
-    .login-field input {  
-      background: transparent;  
-      border: none;  
-      outline: none;  
-      color: #fff;  
-      width: 100%;  
-      font-size: 0.95rem;  
-      font-family: inherit;  
-      padding-right: 1.5rem;  
-    }  
-  
-    .login-field input::placeholder {  
-      color: #94a3b8;  
-    }  
-  
-    .login-field .field-icon {  
-      position: absolute;  
-      right: 1.25rem;  
-      color: #94a3b8;  
-      display: flex;  
-      align-items: center;  
-    }  
-  
-    .login-field .field-icon-left {  
-      position: absolute;  
-      left: 1.25rem;  
-      color: #94a3b8;  
-      cursor: pointer;  
-    }  
-  
-    .forgot-pass {  
-      text-align: right;  
-      font-size: 0.8rem;  
-      color: #94a3b8;  
-      margin-bottom: 1.5rem;  
-      cursor: pointer;  
-      display: block;  
-    }  
-  
-    .login-submit-btn {  
-      width: 100%;  
-      background: #111;  
-      color: #fff;  
-      border: none;  
-      border-radius: 9999px;  
-      padding: 0.85rem;  
-      font-size: 1rem;  
-      font-weight: 600;  
-      cursor: pointer;  
-      box-shadow: 0 10px 20px rgba(0,0,0,0.4);  
-      margin-bottom: 1.5rem;  
-      transition: transform 0.2s;  
-    }  
-  
-    .login-submit-btn:hover {  
-      transform: scale(1.02);  
-    }  
-  
-    .divider-text {  
-      text-align: center;  
-      color: #64748b;  
-      font-size: 0.75rem;  
-      margin-bottom: 1.25rem;  
-      position: relative;  
-    }  
-  
-    .social-login-btn {  
-      width: 100%;  
-      background: rgba(255, 255, 255, 0.06);  
-      border: 1px solid rgba(255, 255, 255, 0.12);  
-      border-radius: 9999px;  
-      padding: 0.75rem;  
-      display: flex;  
-      align-items: center;  
-      justify-content: center;  
-      gap: 0.75rem;  
-      color: #fff;  
-      font-size: 0.9rem;  
-      cursor: pointer;  
-      margin-bottom: 0.75rem;  
-      transition: background 0.2s;  
-    }  
-  
-    .social-login-btn:hover {  
-      background: rgba(255, 255, 255, 0.12);  
-    }  
-  
     .footer {  
       padding: 3rem 0 1.5rem;  
       border-top: 1px solid rgba(255, 255, 255, 0.06);  
@@ -1237,7 +1118,6 @@
        ========================= */  
   
     @media (max-width: 900px) {  
-  
       .main-layout {  
         flex-direction: column;  
         padding-top: 5.8rem;  
@@ -1260,7 +1140,7 @@
         padding: 5.5rem 0.85rem 1rem;  
         border-left: 1px solid var(--glass-border);  
         border-bottom: none;  
-        background: rgba(2, 44, 34, 0.92);  
+        background: rgba(30, 34, 42, 0.95);  
         backdrop-filter: blur(25px);  
         -webkit-backdrop-filter: blur(25px);  
         box-shadow: -15px 0 50px rgba(0, 0, 0, 0.35);  
@@ -1376,11 +1256,22 @@
       }  
   
       .lang-switcher {  
-        display: none;  
+        display: flex;  
       }  
   
       .glass-toggle {  
-        display: none;  
+        display: flex !important;  
+        width: 70px;  
+        height: 30px;  
+      }  
+      
+      .glass-toggle-thumb {  
+        width: 24px;  
+        height: 24px;  
+      }  
+  
+      .glass-toggle.dark-mode .glass-toggle-thumb {  
+        transform: translateX(-40px);  
       }  
   
       .navbar-right-actions .btn-primary {  
@@ -1403,14 +1294,13 @@
       }  
   
       .search-input {  
-        min-height: 42px;  
+        min-height: 38px;  
         font-size: 0.78rem;  
-        padding-inline: 0.7rem 2rem;  
+        padding-inline: 0.8rem 2.6rem;  
       }  
   
-      .search-icon {  
-        inset-inline-start: auto;  
-        inset-inline-end: 0.6rem;  
+      .search-inner-box {  
+        height: 38px;  
       }  
   
       .carousel-3d-container {  
@@ -1425,23 +1315,18 @@
       .carousel-3d-item:nth-child(1) {  
         transform: rotateY(0deg) translateZ(120px);  
       }  
-  
       .carousel-3d-item:nth-child(2) {  
         transform: rotateY(60deg) translateZ(120px);  
       }  
-  
       .carousel-3d-item:nth-child(3) {  
         transform: rotateY(120deg) translateZ(120px);  
       }  
-  
       .carousel-3d-item:nth-child(4) {  
         transform: rotateY(180deg) translateZ(120px);  
       }  
-  
       .carousel-3d-item:nth-child(5) {  
         transform: rotateY(240deg) translateZ(120px);  
       }  
-  
       .carousel-3d-item:nth-child(6) {  
         transform: rotateY(300deg) translateZ(120px);  
       }  
@@ -1544,7 +1429,6 @@
     /* مۆبایلی بچووک */  
   
     @media (max-width: 520px) {  
-  
       .main-layout {  
         padding-top: 5.6rem;  
       }  
@@ -1578,8 +1462,8 @@
         min-height: 40px;  
       }  
   
-      .search-input {  
-        min-height: 40px;  
+      .search-inner-box {  
+        height: 36px;  
       }  
   
       .carousel-3d-container {  
@@ -1594,23 +1478,18 @@
       .carousel-3d-item:nth-child(1) {  
         transform: rotateY(0deg) translateZ(105px);  
       }  
-  
       .carousel-3d-item:nth-child(2) {  
         transform: rotateY(60deg) translateZ(105px);  
       }  
-  
       .carousel-3d-item:nth-child(3) {  
         transform: rotateY(120deg) translateZ(105px);  
       }  
-  
       .carousel-3d-item:nth-child(4) {  
         transform: rotateY(180deg) translateZ(105px);  
       }  
-  
       .carousel-3d-item:nth-child(5) {  
         transform: rotateY(240deg) translateZ(105px);  
       }  
-  
       .carousel-3d-item:nth-child(6) {  
         transform: rotateY(300deg) translateZ(105px);  
       }  
@@ -1655,16 +1534,10 @@
       .modal-content {  
         padding: 1rem;  
         border-radius: 1.3rem;  
-      }  
-  
-      .login-card {  
-        padding: 1.3rem;  
-        border-radius: 1.5rem;  
-      }  
+      }   
     }  
   
     @media (max-width: 360px) {  
-  
       .brand-name {  
         display: none;  
       }  
@@ -1696,18 +1569,27 @@
         font-size: 0.76rem;  
       }  
     }  
-  </style>  </head>  <body class="dark">    <div class="bg-animated"></div>    <div class="bg-blobs">  
+  </style>  
+</head>  
+<body class="dark">    
+  <div class="bg-animated"></div>    
+  <div class="bg-blobs">  
     <div class="bg-blob bg-blob-1"></div>  
     <div class="bg-blob bg-blob-2"></div>  
-  </div>    <div id="root"></div>    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>    <script src="https://unpkg.com/lucide@latest"></script>    <script type="text/babel">  
+  </div>    
+  <div id="root"></div>    
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>    
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>    
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>    
+  <script src="https://unpkg.com/lucide@latest"></script>    
+  <script type="text/babel">  
   
     const { useEffect, useState } = React;  
   
     const translations = {  
-  
       ku: {  
         navAdmin: 'بەڕێوەبەر',  
-        navLogin: 'چوونەژوورەوە',  
         shopNow: 'سەبەتە',  
         searchPlaceholder: 'گەڕان...',  
         adminModalTitle: 'چوونەژوورەوەی تایبەتی بەڕێوەبەر',  
@@ -1742,10 +1624,8 @@
         categoriesTitle: 'پۆلەکان',  
         allCategories: 'سەرجەم بەرهەمەکان'  
       },  
-  
       ar: {  
         navAdmin: 'الإدارة',  
-        navLogin: 'دخول',  
         shopNow: 'السلة',  
         searchPlaceholder: 'بحث...',  
         adminModalTitle: 'تسجيل دخول المدير الآمن',  
@@ -1780,10 +1660,8 @@
         categoriesTitle: 'التصنيفات',  
         allCategories: 'جميع المنتجات'  
       },  
-  
       en: {  
         navAdmin: 'Admin',  
-        navLogin: 'Login',  
         shopNow: 'Cart',  
         searchPlaceholder: 'Search...',  
         adminModalTitle: 'Secure Administrator Login',  
@@ -1818,7 +1696,6 @@
         categoriesTitle: 'Categories',  
         allCategories: 'All Products'  
       }  
-  
     };  
   
     function Icon({ name, size = 18, strokeWidth = 2 }) {  
@@ -1841,7 +1718,6 @@
     }  
   
     function App() {  
-  
       const [lang, setLang] = useState('ku');  
       const [theme, setTheme] = useState('dark');  
   
@@ -1852,13 +1728,9 @@
       const [clickedProductId, setClickedProductId] = useState(null);  
   
       const [isSidebarOpen, setIsSidebarOpen] = useState(false);  
-  
-      const [isLoginOpen, setIsLoginOpen] = useState(false);  
       const [isAdminOpen, setIsAdminOpen] = useState(false);  
   
-      const [emailInput, setEmailInput] = useState('');  
       const [passwordInput, setPasswordInput] = useState('');  
-      const [showPassword, setShowPassword] = useState(false);  
       const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);  
   
       const [isCartOpen, setIsCartOpen] = useState(false);  
@@ -1900,15 +1772,9 @@
           ],  
           rating: 4.9,  
           badge: 'پڕفرۆشترین',  
-          specs: [  
-            'Intel Core i9',  
-            '32GB RAM',  
-            '1TB SSD',  
-            '16" Retina'  
-          ],  
+          specs: ['Intel Core i9', '32GB RAM', '1TB SSD', '16" Retina'],  
           justAdded: false  
         },  
-  
         {  
           id: 2,  
           name: 'AirSlim 14 Pro',  
@@ -1920,15 +1786,9 @@
           ],  
           rating: 4.7,  
           badge: 'تازه',  
-          specs: [  
-            'Apple M3',  
-            '16GB RAM',  
-            '512GB SSD',  
-            '14" Display'  
-          ],  
+          specs: ['Apple M3', '16GB RAM', '512GB SSD', '14" Display'],  
           justAdded: false  
         },  
-  
         {  
           id: 3,  
           name: 'RGB Battle Station Elite',  
@@ -1940,15 +1800,9 @@
           ],  
           rating: 5.0,  
           badge: 'پلە بەرز',  
-          specs: [  
-            'Curved 34" Monitor',  
-            'RGB Keyboard',  
-            'Gaming Mouse',  
-            'LED Lighting'  
-          ],  
+          specs: ['Curved 34" Monitor', 'RGB Keyboard', 'Gaming Mouse', 'LED Lighting'],  
           justAdded: false  
         },  
-  
         {  
           id: 4,  
           name: 'Pro Wireless Precision Mouse',  
@@ -1960,14 +1814,9 @@
           ],  
           rating: 4.8,  
           badge: 'خوازراو',  
-          specs: [  
-            '25k DPI',  
-            'Ultra Lightweight',  
-            'Wireless'  
-          ],  
+          specs: ['25k DPI', 'Ultra Lightweight', 'Wireless'],  
           justAdded: false  
         },  
-  
         {  
           id: 5,  
           name: 'Mechanic RGB Keyboard V3',  
@@ -1979,15 +1828,9 @@
           ],  
           rating: 4.9,  
           badge: 'تایبەت',  
-          specs: [  
-            'Mechanical Switches',  
-            'RGB Backlight',  
-            'Aluminum Frame',  
-            'Hot-Swappable'  
-          ],  
+          specs: ['Mechanical Switches', 'RGB Backlight', 'Aluminum Frame', 'Hot-Swappable'],  
           justAdded: false  
         },  
-  
         {  
           id: 6,  
           name: 'Cyberpunk Gaming Case X',  
@@ -1999,15 +1842,9 @@
           ],  
           rating: 4.9,  
           badge: 'تازه',  
-          specs: [  
-            'Tempered Glass',  
-            'ARGB Fans Included',  
-            'E-ATX Support',  
-            'Vertical GPU Mount'  
-          ],  
+          specs: ['Tempered Glass', 'ARGB Fans Included', 'E-ATX Support', 'Vertical GPU Mount'],  
           justAdded: false  
         },  
-  
         {  
           id: 7,  
           name: 'Immersive Headset 7.1 Pro',  
@@ -2019,14 +1856,9 @@
           ],  
           rating: 4.9,  
           badge: 'دەنگی پوخت',  
-          specs: [  
-            '7.1 Surround',  
-            'Noise Canceling',  
-            'RGB Mic'  
-          ],  
+          specs: ['7.1 Surround', 'Noise Canceling', 'RGB Mic'],  
           justAdded: false  
         },  
-  
         {  
           id: 8,  
           name: 'NextGen Console Xtreme',  
@@ -2038,11 +1870,7 @@
           ],  
           rating: 4.9,  
           badge: 'پڕخواز',  
-          specs: [  
-            '4K Gaming',  
-            '1TB SSD',  
-            'Ray Tracing'  
-          ],  
+          specs: ['4K Gaming', '1TB SSD', 'Ray Tracing'],  
           justAdded: false  
         }  
       ]);  
@@ -2056,272 +1884,144 @@
   
       const handleNextImage = (e, prod) => {  
         e.stopPropagation();  
-  
         const currentIndex = activeImageIndices[prod.id] || 0;  
-  
-        const nextIndex =  
-          (currentIndex + 1) % prod.images.length;  
-  
-        setActiveImageIndices(prev => ({  
-          ...prev,  
-          [prod.id]: nextIndex  
-        }));  
+        const nextIndex = (currentIndex + 1) % prod.images.length;  
+        setActiveImageIndices(prev => ({ ...prev, [prod.id]: nextIndex }));  
       };  
   
       const handlePrevImage = (e, prod) => {  
         e.stopPropagation();  
-  
-        const currentIndex =  
-          activeImageIndices[prod.id] || 0;  
-  
-        const prevIndex =  
-          (currentIndex - 1 + prod.images.length) %  
-          prod.images.length;  
-  
-        setActiveImageIndices(prev => ({  
-          ...prev,  
-          [prod.id]: prevIndex  
-        }));  
+        const currentIndex = activeImageIndices[prod.id] || 0;  
+        const prevIndex = (currentIndex - 1 + prod.images.length) % prod.images.length;  
+        setActiveImageIndices(prev => ({ ...prev, [prod.id]: prevIndex }));  
       };  
   
       useEffect(() => {  
-  
-        document.documentElement.setAttribute(  
-          'dir',  
-          lang === 'en' ? 'ltr' : 'rtl'  
-        );  
-  
-        document.documentElement.setAttribute(  
-          'lang',  
-          lang  
-        );  
-  
+        document.documentElement.setAttribute('dir', lang === 'en' ? 'ltr' : 'rtl');  
+        document.documentElement.setAttribute('lang', lang);  
         document.body.className = theme;  
-  
         if (window.lucide) {  
           window.lucide.createIcons();  
         }  
-  
       }, [lang, theme]);  
   
       const toggleTheme = () => {  
-        setTheme(prev =>  
-          prev === 'dark' ? 'light' : 'dark'  
-        );  
+        setTheme(prev => prev === 'dark' ? 'light' : 'dark');  
       };  
   
       const handleAdminLogin = (e) => {  
-  
         e.preventDefault();  
-  
         if (passwordInput === '1234' || passwordInput !== '') {  
           setIsAdminLoggedIn(true);  
         } else {  
           alert(t.wrongPassword);  
         }  
-  
       };  
   
       const handleImageUpload = (e) => {  
-  
         const files = Array.from(e.target.files);  
-  
         const readers = files.map(file => {  
-  
           return new Promise((resolve) => {  
-  
             const reader = new FileReader();  
-  
-            reader.onload = (uploadEvent) =>  
-              resolve(uploadEvent.target.result);  
-  
+            reader.onload = (uploadEvent) => resolve(uploadEvent.target.result);  
             reader.readAsDataURL(file);  
-  
           });  
-  
         });  
-  
         Promise.all(readers).then(imagesBase64 => {  
           setNewImages(imagesBase64);  
         });  
-  
       };  
   
       const handleAddProductSubmit = (e) => {  
-  
         e.preventDefault();  
-  
-        if (!newTitle || !newPrice || newImages.length === 0)  
-          return;  
+        if (!newTitle || !newPrice || newImages.length === 0) return;  
   
         const parsedSpecs = newSpecs  
-          ? newSpecs  
-              .split(',')  
-              .map(s => s.trim())  
-              .filter(Boolean)  
+          ? newSpecs.split(',').map(s => s.trim()).filter(Boolean)  
           : [newCategory, 'High Performance'];  
   
         const newProdObj = {  
-  
           id: Date.now(),  
-  
           name: newTitle,  
-  
           category: newCategory,  
-  
           price: Number(newPrice),  
-  
-          oldPrice: newOldPrice  
-            ? Number(newOldPrice)  
-            : Number(newPrice) + 150,  
-  
+          oldPrice: newOldPrice ? Number(newOldPrice) : Number(newPrice) + 150,  
           images: newImages,  
-  
           rating: 5.0,  
-  
-          badge:  
-            newPosition === 'top'  
-              ? 'سەرەکی'  
-              : 'نوێ',  
-  
+          badge: newPosition === 'top' ? 'سەرەکی' : 'نوێ',  
           specs: parsedSpecs,  
-  
           justAdded: true  
         };  
   
         if (newPosition === 'top') {  
-  
-          setCarouselImages(prev => [  
-            newImages[0],  
-            ...prev  
-          ]);  
-  
+          setCarouselImages(prev => [newImages[0], ...prev]);  
         }  
   
-        setProducts([  
-          newProdObj,  
-          ...products  
-        ]);  
-  
+        setProducts([newProdObj, ...products]);  
         setNewTitle('');  
         setNewPrice('');  
         setNewOldPrice('');  
         setNewSpecs('');  
         setNewImages([]);  
         setNewPosition('normal');  
-  
       };  
   
       const handleDeleteProduct = (id) => {  
-  
-        setProducts(  
-          products.filter(p => p.id !== id)  
-        );  
-  
+        setProducts(products.filter(p => p.id !== id));  
       };  
   
       const handleAddToCart = (prod) => {  
-  
         setCartItems(prev => {  
-  
-          const existingIndex =  
-            prev.findIndex(  
-              item => item.product.id === prod.id  
-            );  
-  
+          const existingIndex = prev.findIndex(item => item.product.id === prod.id);  
           if (existingIndex > -1) {  
-  
             const updated = [...prev];  
-  
             updated[existingIndex].quantity += 1;  
-  
             return updated;  
-  
           } else {  
-  
-            return [  
-              ...prev,  
-              {  
-                product: prod,  
-                quantity: 1  
-              }  
-            ];  
-  
+            return [...prev, { product: prod, quantity: 1 }];  
           }  
-  
         });  
-  
         setIsCartOpen(true);  
-  
       };  
   
       const handleIncreaseQty = (prodId) => {  
-  
         setCartItems(prev =>  
-          prev.map(item => {  
-  
-            if (item.product.id === prodId) {  
-  
-              return {  
-                ...item,  
-                quantity: item.quantity + 1  
-              };  
-  
-            }  
-  
-            return item;  
-  
-          })  
+          prev.map(item => item.product.id === prodId ? { ...item, quantity: item.quantity + 1 } : item)  
         );  
-  
       };  
   
       const handleDecreaseQty = (prodId) => {  
-  
         setCartItems(prev =>  
-          prev  
-            .map(item => {  
-  
-              if (item.product.id === prodId) {  
-  
-                return {  
-                  ...item,  
-                  quantity: item.quantity - 1  
-                };  
-  
-              }  
-  
-              return item;  
-  
-            })  
-            .filter(item => item.quantity > 0)  
+          prev.map(item => item.product.id === prodId ? { ...item, quantity: item.quantity - 1 } : item).filter(item => item.quantity > 0)  
         );  
-  
       };  
   
       const handleRemoveCartItem = (prodId) => {  
-  
-        setCartItems(prev =>  
-          prev.filter(item => item.product.id !== prodId)  
-        );  
-  
+        setCartItems(prev => prev.filter(item => item.product.id !== prodId));  
       };  
   
       const filteredProducts = products.filter(prod => {  
-  
         const matchesSearch =  
           prod.name.toLowerCase().includes(searchQuery.toLowerCase()) ||  
           prod.specs.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()));  
-  
-        const matchesCategory =  
-          selectedCategory === 'All' ||  
-          prod.category === selectedCategory;  
-  
+        const matchesCategory = selectedCategory === 'All' || prod.category === selectedCategory;  
         return matchesSearch && matchesCategory;  
-  
       });  
   
       const categoriesList = ['All', ...new Set(products.map(p => p.category))];  
+  
+      const getCategoryIcon = (cat) => {  
+        switch(cat.toLowerCase()) {  
+          case 'laptop': return 'laptop';  
+          case 'gaming': return 'gamepad-2';  
+          case 'mouse': return 'mouse';  
+          case 'keyboard': return 'keyboard';  
+          case 'case': return 'hard-drive';  
+          case 'headset': return 'headphones';  
+          case 'console': return 'joystick';  
+          default: return 'grid';  
+        }  
+      };  
   
       return (  
         <div>  
@@ -2343,13 +2043,11 @@
                   </a>  
                 </div>  
   
+                {/* دێسکتۆپی نوێکراوەی سێرچ بە دیزاینی شوشەیی */}  
                 <div className="navbar-center">  
                   <div className="search-container">  
                     <div className="search-input-wrapper">  
                       <div className="search-inner-box">  
-                        <span className="search-icon">  
-                          <Icon name="search" size={16} />  
-                        </span>  
                         <input  
                           type="text"  
                           className="search-input"  
@@ -2357,6 +2055,10 @@
                           value={searchQuery}  
                           onChange={(e) => setSearchQuery(e.target.value)}  
                         />  
+                        <div className="search-divider"></div>  
+                        <span className="search-icon">  
+                          <Icon name="search" size={16} />  
+                        </span>  
                       </div>  
                     </div>  
                   </div>  
@@ -2371,39 +2073,13 @@
                     <span>{t.navAdmin}</span>  
                   </button>  
   
-                  <button  
-                    className="nav-link"  
-                    onClick={() => setIsLoginOpen(true)}  
-                  >  
-                    <Icon name="user" size={16} />  
-                    <span>{t.navLogin}</span>  
-                  </button>  
-  
                   <div className="lang-switcher">  
-                    <button  
-                      className={`lang-btn ${lang === 'ku' ? 'active' : ''}`}  
-                      onClick={() => setLang('ku')}  
-                    >  
-                      کوردی  
-                    </button>  
-                    <button  
-                      className={`lang-btn ${lang === 'ar' ? 'active' : ''}`}  
-                      onClick={() => setLang('ar')}  
-                    >  
-                      عربي  
-                    </button>  
-                    <button  
-                      className={`lang-btn ${lang === 'en' ? 'active' : ''}`}  
-                      onClick={() => setLang('en')}  
-                    >  
-                      EN  
-                    </button>  
+                    <button className={`lang-btn ${lang === 'ku' ? 'active' : ''}`} onClick={() => setLang('ku')}>کوردی</button>  
+                    <button className={`lang-btn ${lang === 'ar' ? 'active' : ''}`} onClick={() => setLang('ar')}>عربي</button>  
+                    <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</button>  
                   </div>  
   
-                  <div  
-                    className={`glass-toggle ${theme === 'dark' ? 'dark-mode' : 'light-mode'}`}  
-                    onClick={toggleTheme}  
-                  >  
+                  <div className={`glass-toggle ${theme === 'dark' ? 'dark-mode' : 'light-mode'}`} onClick={toggleTheme}>  
                     <div className="glass-toggle-labels">  
                       <span>🌙</span>  
                       <span>☀️</span>  
@@ -2413,21 +2089,11 @@
                     </div>  
                   </div>  
   
-                  <button  
-                    className="btn btn-primary"  
-                    onClick={() => setIsCartOpen(true)}  
-                  >  
+                  <button className="btn btn-primary" onClick={() => setIsCartOpen(true)}>  
                     <Icon name="shopping-cart" size={16} />  
                     <span>{t.shopNow}</span>  
                     {cartItems.length > 0 && (  
-                      <span style={{  
-                        background: '#fff',  
-                        color: '#000',  
-                        borderRadius: '50%',  
-                        padding: '0.1rem 0.4rem',  
-                        fontSize: '0.7rem',  
-                        fontWeight: 'bold'  
-                      }}>  
+                      <span style={{ background: '#fff', color: '#000', borderRadius: '50%', padding: '0.1rem 0.4rem', fontSize: '0.7rem', fontWeight: 'bold' }}>  
                         {cartItems.reduce((acc, item) => acc + item.quantity, 0)}  
                       </span>  
                     )}  
@@ -2439,17 +2105,12 @@
   
           <div className="main-layout container">  
             {isSidebarOpen && (  
-              <div  
-                className="sidebar-backdrop"  
-                onClick={() => setIsSidebarOpen(false)}  
-              ></div>  
+              <div className="sidebar-backdrop" onClick={() => setIsSidebarOpen(false)}></div>  
             )}  
   
             <aside className={`sidebar-right ${isSidebarOpen ? 'is-open' : ''}`}>  
               <div className="green-glass-container">  
-                <h3 className="sidebar-section-title">  
-                  {t.categoriesTitle}  
-                </h3>  
+                <h3 className="sidebar-section-title">{t.categoriesTitle}</h3>  
                 <div className="sidebar-menu-list">  
                   <button  
                     className={`sidebar-menu-item ${selectedCategory === 'All' ? 'active' : ''}`}  
@@ -2464,7 +2125,7 @@
                       className={`sidebar-menu-item ${selectedCategory === cat ? 'active' : ''}`}  
                       onClick={() => setSelectedCategory(cat)}  
                     >  
-                      <Icon name="tag" size={16} />  
+                      <Icon name={getCategoryIcon(cat)} size={16} />  
                       <span>{cat}</span>  
                     </button>  
                   ))}  
@@ -2483,16 +2144,6 @@
                   >  
                     <Icon name="shield-check" size={16} />  
                     <span>{t.navAdmin}</span>  
-                  </button>  
-                  <button  
-                    className="sidebar-menu-item"  
-                    onClick={() => {  
-                      setIsLoginOpen(true);  
-                      setIsSidebarOpen(false);  
-                    }}  
-                  >  
-                    <Icon name="user" size={16} />  
-                    <span>{t.navLogin}</span>  
                   </button>  
                 </div>  
               </div>  
@@ -2535,25 +2186,11 @@
                               <span className="product-badge" style={{ background: 'var(--success-500)' }}>  
                                 {prod.badge}  
                               </span>  
-                              <img  
-                                src={activeImage}  
-                                alt={prod.name}  
-                                className="product-image"  
-                              />  
+                              <img src={activeImage} alt={prod.name} className="product-image" />  
                               {prod.images.length > 1 && (  
                                 <>  
-                                  <button  
-                                    className="slider-arrow prev"  
-                                    onClick={(e) => handlePrevImage(e, prod)}  
-                                  >  
-                                    ‹  
-                                  </button>  
-                                  <button  
-                                    className="slider-arrow next"  
-                                    onClick={(e) => handleNextImage(e, prod)}  
-                                  >  
-                                    ›  
-                                  </button>  
+                                  <button className="slider-arrow prev" onClick={(e) => handlePrevImage(e, prod)}>‹</button>  
+                                  <button className="slider-arrow next" onClick={(e) => handleNextImage(e, prod)}>›</button>  
                                 </>  
                               )}  
                             </div>  
@@ -2572,9 +2209,7 @@
                               <div className="product-bottom">  
                                 <div className="product-prices">  
                                   <span className="product-price">${prod.price}</span>  
-                                  {prod.oldPrice && (  
-                                    <span className="product-old-price">${prod.oldPrice}</span>  
-                                  )}  
+                                  {prod.oldPrice && <span className="product-old-price">${prod.oldPrice}</span>}  
                                 </div>  
                                 <button  
                                   className="btn btn-primary"  
@@ -2627,39 +2262,11 @@
                   <div>  
                     <h2>{t.adminDashboardTitle}</h2>  
                     <form onSubmit={handleAddProductSubmit} className="admin-form">  
-                      <input  
-                        type="text"  
-                        className="admin-input"  
-                        placeholder={t.productNamePlaceholder}  
-                        value={newTitle}  
-                        onChange={(e) => setNewTitle(e.target.value)}  
-                      />  
-                      <input  
-                        type="number"  
-                        className="admin-input"  
-                        placeholder={t.productPricePlaceholder}  
-                        value={newPrice}  
-                        onChange={(e) => setNewPrice(e.target.value)}  
-                      />  
-                      <input  
-                        type="number"  
-                        className="admin-input"  
-                        placeholder={t.productOldPricePlaceholder}  
-                        value={newOldPrice}  
-                        onChange={(e) => setNewOldPrice(e.target.value)}  
-                      />  
-                      <input  
-                        type="text"  
-                        className="admin-input"  
-                        placeholder={t.productSpecsPlaceholder}  
-                        value={newSpecs}  
-                        onChange={(e) => setNewSpecs(e.target.value)}  
-                      />  
-                      <select  
-                        className="admin-input"  
-                        value={newCategory}  
-                        onChange={(e) => setNewCategory(e.target.value)}  
-                      >  
+                      <input type="text" className="admin-input" placeholder={t.productNamePlaceholder} value={newTitle} onChange={(e) => setNewTitle(e.target.value)} />  
+                      <input type="number" className="admin-input" placeholder={t.productPricePlaceholder} value={newPrice} onChange={(e) => setNewPrice(e.target.value)} />  
+                      <input type="number" className="admin-input" placeholder={t.productOldPricePlaceholder} value={newOldPrice} onChange={(e) => setNewOldPrice(e.target.value)} />  
+                      <input type="text" className="admin-input" placeholder={t.productSpecsPlaceholder} value={newSpecs} onChange={(e) => setNewSpecs(e.target.value)} />  
+                      <select className="admin-input" value={newCategory} onChange={(e) => setNewCategory(e.target.value)}>  
                         <option value="Laptop">Laptop</option>  
                         <option value="Gaming">Gaming</option>  
                         <option value="Mouse">Mouse</option>  
@@ -2669,19 +2276,9 @@
                         <option value="Console">Console</option>  
                       </select>  
                       <label style={{ fontSize: '0.8rem', color: 'var(--neutral-300)' }}>{t.uploadImagesLabel}</label>  
-                      <input  
-                        type="file"  
-                        multiple  
-                        accept="image/*"  
-                        className="admin-input"  
-                        onChange={handleImageUpload}  
-                      />  
+                      <input type="file" multiple accept="image/*" className="admin-input" onChange={handleImageUpload} />  
                       <label style={{ fontSize: '0.8rem', color: 'var(--neutral-300)' }}>{t.positionLabel}</label>  
-                      <select  
-                        className="admin-input"  
-                        value={newPosition}  
-                        onChange={(e) => setNewPosition(e.target.value)}  
-                      >  
+                      <select className="admin-input" value={newPosition} onChange={(e) => setNewPosition(e.target.value)}>  
                         <option value="normal">{t.posNormal}</option>  
                         <option value="top">{t.posTop}</option>  
                       </select>  
@@ -2707,28 +2304,7 @@
               </div>  
             </div>  
           )}  
-  
-          {isLoginOpen && (  
-            <div className="modal-overlay" onClick={() => setIsLoginOpen(false)}>  
-              <div className="login-card" onClick={(e) => e.stopPropagation()}>  
-                <span className="close-modal" onClick={() => setIsLoginOpen(false)}>✕</span>  
-                <div className="login-header">  
-                  <div className="login-title">چوونەژوورەوە</div>  
-                </div>  
-                <div className="login-field">  
-                  <input type="email" placeholder="ئیمەیڵ یان ناو" value={emailInput} onChange={(e) => setEmailInput(e.target.value)} />  
-                </div>  
-                <div className="login-field">  
-                  <input type={showPassword ? "text" : "password"} placeholder="وشەی تێپەڕ" value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} />  
-                  <span className="field-icon-left" onClick={() => setShowPassword(!showPassword)}>  
-                    <Icon name={showPassword ? "eye-off" : "eye"} size={16} />  
-                  </span>  
-                </div>  
-                <button className="login-submit-btn" onClick={() => setIsLoginOpen(false)}>{t.loginBtn}</button>  
-              </div>  
-            </div>  
-          )}  
-  
+
           {isCartOpen && (  
             <div className="modal-overlay" onClick={() => setIsCartOpen(false)}>  
               <div className="modal-content" onClick={(e) => e.stopPropagation()}>  
@@ -2805,5 +2381,6 @@
     }  
   
     ReactDOM.createRoot(document.getElementById('root')).render(<App />);  
-  </script>  </body>  
+  </script>  
+</body>  
 </html>
