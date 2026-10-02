@@ -1923,11 +1923,9 @@
         setCartItems(prev => prev.filter(item => item.product.id !== prodId));  
       };  
   
-      // فراوانکردنی گەڕان (Search & Filtering) بە شێوازێکی زیرەک و گشتگیر  
       const filteredProducts = products.filter(prod => {  
         const query = searchQuery.trim().toLowerCase();  
           
-        // وردەکاری گەڕان: ناوی بەرهەم، پۆل، و هەموو مواسەفاتەکان دەپشکنێت  
         const matchesSearch = !query ||  
           prod.name.toLowerCase().includes(query) ||  
           prod.category.toLowerCase().includes(query) ||  
@@ -1994,28 +1992,10 @@
                 </div>  
   
                 <div className="navbar-right-actions">  
-                  <button  
-                    className="nav-link"  
-                    onClick={() => setIsAdminOpen(true)}  
-                  >  
-                    <Icon name="shield-check" size={16} />  
-                    <span>{t.navAdmin}</span>  
-                  </button>  
-  
                   <div className="lang-switcher">  
                     <button className={`lang-btn ${lang === 'ku' ? 'active' : ''}`} onClick={() => setLang('ku')}>کوردی</button>  
                     <button className={`lang-btn ${lang === 'ar' ? 'active' : ''}`} onClick={() => setLang('ar')}>عربي</button>  
                     <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</button>  
-                  </div>  
-  
-                  <div className={`glass-toggle ${theme === 'dark' ? 'dark-mode' : 'light-mode'}`} onClick={toggleTheme}>  
-                    <div className="glass-toggle-labels">  
-                      <span>🌙</span>  
-                      <span>☀</span>  
-                    </div>  
-                    <div className="glass-toggle-thumb">  
-                      <Icon name={theme === 'dark' ? 'moon' : 'sun'} size={14} />  
-                    </div>  
                   </div>  
   
                   <button className="btn btn-primary" onClick={() => setIsCartOpen(true)}>  
@@ -2062,7 +2042,7 @@
               </div>  
   
               <div className="green-glass-container">  
-                <h3 className="sidebar-section-title">بەشی بەڕێوەبەر</h3>  
+                <h3 className="sidebar-section-title">ڕێکخستنەکان و بەڕێوەبەر</h3>  
                 <div className="sidebar-menu-list">  
                   <button  
                     className="sidebar-menu-item"  
@@ -2074,6 +2054,19 @@
                     <Icon name="shield-check" size={16} />  
                     <span>{t.navAdmin}</span>  
                   </button>  
+                  
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.5rem 0.85rem', background: 'rgba(255, 255, 255, 0.04)', border: '1px solid var(--glass-border)', borderRadius: 'var(--radius-md)', marginTop: '0.5rem' }}>  
+                    <span style={{ fontSize: '0.85rem', fontFamily: 'Shrikhand', color: 'var(--neutral-200)' }}>دۆخی رووناک / تاریک</span>  
+                    <div className={`glass-toggle ${theme === 'dark' ? 'dark-mode' : 'light-mode'}`} onClick={toggleTheme}>  
+                      <div className="glass-toggle-labels">  
+                        <span>🌙</span>  
+                        <span>☀</span>  
+                      </div>  
+                      <div className="glass-toggle-thumb">  
+                        <Icon name={theme === 'dark' ? 'moon' : 'sun'} size={14} />  
+                      </div>  
+                    </div>  
+                  </div>  
                 </div>  
               </div>  
             </aside>  
