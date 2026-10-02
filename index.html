@@ -409,7 +409,7 @@
       display: flex;  
       min-height: 100vh;  
       position: relative;  
-      padding-top: 6.2rem; /* فضا بۆ بەشی سەرەوەی فراوانکراو */  
+      padding-top: 6.2rem;  
       flex-direction: row;  
     }  
   
@@ -419,10 +419,6 @@
       overflow-x: hidden;  
       min-width: 0;  
     }  
-  
-    /* =========================  
-       RIGHT SIDEBAR  
-       ========================= */  
   
     .sidebar-right {  
       width: 280px;  
@@ -524,17 +520,13 @@
       display: none;  
     }  
   
-    /* =========================  
-       NAVBAR (فراوانکراو و ڕێکخراو)  
-       ========================= */  
-  
     .navbar {  
       position: fixed;  
       top: 0;  
       left: 0;  
       right: 0;  
       z-index: 100;  
-      padding: 0.75rem 1rem; /* زیادکردنی پادینگ بۆ فەزای دەوربەری سەرەوە */  
+      padding: 0.75rem 1rem;  
       transition: all var(--transition-base);  
     }  
   
@@ -542,11 +534,11 @@
       display: flex;  
       align-items: center;  
       justify-content: space-between;  
-      padding: 1rem 1.5rem; /* فراوانترکردنی بەشی ناوەوەی سەرەوە */  
+      padding: 1rem 1.5rem;  
       border-radius: var(--radius-full);  
       width: 100%;  
       gap: 1.2rem;  
-      flex-wrap: nowrap; /* ڕێگریکردن لە تێکەڵبوونی بەشەکان بە هۆی تێپەڕاندنی هێڵەوە */  
+      flex-wrap: nowrap;  
     }  
   
     .navbar-left {  
@@ -581,7 +573,7 @@
     }  
   
     .brand-logo {  
-      width: 38px; /* گەورەکردنی لۆگۆ بە ڕێژەیەکی گونجاو لەگەڵ بەشی فراوان */  
+      width: 38px;  
       height: 38px;  
       border-radius: 50%;  
       background: linear-gradient(135deg, var(--success-500), var(--accent-500));  
@@ -629,9 +621,6 @@
       border-color: var(--success-400);  
     }  
   
-    /* =========================  
-       SEARCH BAR  
-       ========================= */  
     .search-container {  
       display: flex;  
       justify-content: center;  
@@ -647,7 +636,7 @@
     .search-inner-box {  
       position: relative;  
       width: 100%;  
-      height: 46px; /* بەرزترکردنەوەی باشتری سێرچ بۆ گونجان لەگەڵ سەرەوەی فراوان */  
+      height: 46px;  
       border-radius: var(--radius-full);  
       background: linear-gradient(135deg, rgba(140, 100, 220, 0.25), rgba(70, 40, 130, 0.4));  
       backdrop-filter: blur(25px);  
@@ -707,7 +696,6 @@
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));  
     }  
   
-    /* HERO */  
     .hero-carousel-section {  
       padding: 0.5rem 0 1.5rem;  
       perspective: 1000px;  
@@ -761,7 +749,6 @@
     .carousel-3d-item:nth-child(5) { transform: rotateY(240deg) translateZ(180px); }  
     .carousel-3d-item:nth-child(6) { transform: rotateY(300deg) translateZ(180px); }  
   
-    /* PRODUCTS */  
     .products-section {  
       padding: 1rem 0 3rem;  
       width: 100%;  
@@ -1004,7 +991,6 @@
       font-family: 'Shrikhand', sans-serif;  
     }  
   
-    /* MODALS */  
     .modal-overlay {  
       position: fixed;  
       inset: 0;  
@@ -1083,9 +1069,6 @@
       font-family: 'Shrikhand', sans-serif;  
     }  
   
-    /* =========================  
-       TABLET + MOBILE  
-       ========================= */  
     @media (max-width: 900px) {  
       .main-layout {  
         flex-direction: column;  
@@ -1213,9 +1196,6 @@
         min-height: 42px;  
         padding: 0.4rem;  
         justify-content: center;  
-      }  
-  
-      .navbar-right-actions .nav-link {  
         font-size: 0;  
       }  
   
@@ -1534,7 +1514,7 @@
       ku: {  
         navAdmin: 'بەڕێوەبەر',  
         shopNow: 'سەبەتە',  
-        searchPlaceholder: 'گەڕان...',  
+        searchPlaceholder: 'گەڕان بەدوای ناوی بەرهەم، مواسەفات، یان پۆل...',  
         adminModalTitle: 'چوونەژوورەوەی تایبەتی بەڕێوەبەر',  
         adminPasswordLabel: 'تکایە وشەی تێپەڕی بەڕێوەبەر بنووسە',  
         loginBtn: 'چوونەژوورەوە',  
@@ -1570,7 +1550,7 @@
       ar: {  
         navAdmin: 'الإدارة',  
         shopNow: 'السلة',  
-        searchPlaceholder: 'بحث...',  
+        searchPlaceholder: 'البحث عن منتج، مواصفات، أو قسم...',  
         adminModalTitle: 'تسجيل دخول المدير الآمن',  
         adminPasswordLabel: 'الرجاء إدخال كلمة مرور المدير',  
         loginBtn: 'تسجيل الدخول',  
@@ -1606,7 +1586,7 @@
       en: {  
         navAdmin: 'Admin',  
         shopNow: 'Cart',  
-        searchPlaceholder: 'Search...',  
+        searchPlaceholder: 'Search products, specs, categories...',  
         adminModalTitle: 'Secure Administrator Login',  
         adminPasswordLabel: 'Enter Admin Secret Password',  
         loginBtn: 'Access Dashboard',  
@@ -1943,10 +1923,17 @@
         setCartItems(prev => prev.filter(item => item.product.id !== prodId));  
       };  
   
+      // فراوانکردنی گەڕان (Search & Filtering) بە شێوازێکی زیرەک و گشتگیر  
       const filteredProducts = products.filter(prod => {  
-        const matchesSearch =  
-          prod.name.toLowerCase().includes(searchQuery.toLowerCase()) ||  
-          prod.specs.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()));  
+        const query = searchQuery.trim().toLowerCase();  
+          
+        // وردەکاری گەڕان: ناوی بەرهەم، پۆل، و هەموو مواسەفاتەکان دەپشکنێت  
+        const matchesSearch = !query ||  
+          prod.name.toLowerCase().includes(query) ||  
+          prod.category.toLowerCase().includes(query) ||  
+          (prod.badge && prod.badge.toLowerCase().includes(query)) ||  
+          prod.specs.some(s => s.toLowerCase().includes(query));  
+  
         const matchesCategory = selectedCategory === 'All' || prod.category === selectedCategory;  
         return matchesSearch && matchesCategory;  
       });  
@@ -2302,9 +2289,6 @@
                 <img src={selectedProductDetails.images[0]} alt={selectedProductDetails.name} style={{ width: '100%', borderRadius: '12px', margin: '1rem 0', maxHeight: '200px', objectFit: 'cover' }} />  
                 <p style={{ color: 'var(--neutral-300)', marginBottom: '0.5rem' }}>{t.specsTitle}:</p>  
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem', marginBottom: '1rem' }}>  
-                  {selectedProductDetails.specs.go?.map((s, idx) => (  
-                    <span key={idx} className="product-spec">{s}</span>  
-                  ))}  
                   {selectedProductDetails.specs.map((s, idx) => (  
                     <span key={idx} className="product-spec">{s}</span>  
                   ))}  
