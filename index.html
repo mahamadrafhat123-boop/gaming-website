@@ -5,50 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />  
   <link rel="preconnect" href="https://fonts.googleapis.com" />  
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />  
-  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />  
-  <title>ناوەندی سەکۆی گەیمینگ و تەکنەلۆژیای پێشکەوتوو</title>  
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />  
+  <title>hama tech - سەکۆی تەکنەلۆژیای پێشکەوتوو</title>  
   <style>  
     :root {  
-      --primary-50: #eef4ff;  
-      --primary-100: #d9e6ff;  
-      --primary-200: #bcd3ff;  
-      --primary-300: #8eb5ff;  
-      --primary-400: #598dff;  
-      --primary-500: #3366ff;  
-      --primary-600: #1a47e6;  
-      --primary-700: #1538b8;  
-      --primary-800: #142f8f;  
-      --primary-900: #142b72;  
-  
-      --accent-50: #e6fffa;  
-      --accent-100: #b2f5e0;  
-      --accent-200: #81e6c9;  
-      --accent-300: #4fd1b5;  
-      --accent-400: #2bc7a5;  
-      --accent-500: #14a88f;  
-      --accent-600: #0d8773;  
-      --accent-700: #0a6b5c;  
-  
-      --warning-400: #fbbf24;  
-      --warning-500: #f59e0b;  
-      --error-400: #f87171;  
-      --error-500: #ef4444;  
       --success-400: #34d399;  
       --success-500: #10b981;  
+      --accent-500: #14a88f;  
   
-      --font-display: 'Shrikhand', 'Space Grotesk', 'Cairo', sans-serif;  
-      --font-body: 'Shrikhand', 'Inter', 'Cairo', sans-serif;  
+      --font-display: 'Tajawal', 'Vazirmatn', sans-serif;  
+      --font-body: 'Vazirmatn', 'Tajawal', sans-serif;  
   
       --glass-blur: 20px;  
-  
-      --space-1: 0.5rem;  
-      --space-2: 1rem;  
-      --space-3: 1.5rem;  
-      --space-4: 2rem;  
-      --space-5: 2.5rem;  
-      --space-6: 3rem;  
-      --space-8: 4rem;  
-  
       --radius-sm: 0.5rem;  
       --radius-md: 1rem;  
       --radius-lg: 1.5rem;  
@@ -63,21 +31,16 @@
   
     body.dark {  
       --neutral-0: #ffffff;  
-      --neutral-50: #f8fafc;  
       --neutral-100: #f1f5f9;  
       --neutral-200: #e2e8f0;  
       --neutral-300: #cbd5e1;  
       --neutral-400: #94a3b8;  
-      --neutral-500: #64748b;  
-      --neutral-600: #475569;  
-      --neutral-700: #334155;  
-      --neutral-800: #1e293b;  
       --neutral-900: #0f172a;  
       --neutral-950: #062417;  
   
-      --glass-bg: rgba(45, 55, 72, 0.4);  
-      --glass-bg-strong: rgba(30, 34, 42, 0.65);  
-      --glass-border: rgba(255, 255, 255, 0.12);  
+      --glass-bg: rgba(20, 30, 25, 0.65);  
+      --glass-bg-strong: rgba(15, 23, 38, 0.85);  
+      --glass-border: rgba(52, 211, 153, 0.2);  
   
       --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12);  
       --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.18);  
@@ -91,21 +54,16 @@
   
     body.light {  
       --neutral-0: #0f172a;  
-      --neutral-50: #1e293b;  
       --neutral-100: #1e293b;  
       --neutral-200: #334155;  
       --neutral-300: #475569;  
       --neutral-400: #64748b;  
-      --neutral-500: #94a3b8;  
-      --neutral-600: #cbd5e1;  
-      --neutral-700: #e2e8f0;  
-      --neutral-800: #f1f5f9;  
       --neutral-900: #f8fafc;  
       --neutral-950: #ecfdf5;  
   
-      --glass-bg: rgba(209, 250, 229, 0.4);  
-      --glass-bg-strong: rgba(167, 243, 208, 0.6);  
-      --glass-border: rgba(16, 185, 129, 0.25);  
+      --glass-bg: rgba(209, 250, 229, 0.5);  
+      --glass-bg-strong: rgba(167, 243, 208, 0.75);  
+      --glass-border: rgba(16, 185, 129, 0.3);  
   
       --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);  
       --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08);  
@@ -117,1381 +75,266 @@
       transition: background var(--transition-slow), color var(--transition-slow);  
     }  
   
-    * {  
-      margin: 0;  
-      padding: 0;  
-      box-sizing: border-box;  
-    }  
-  
-    html {  
-      scroll-behavior: smooth;  
-      width: 100%;  
-      overflow-x: hidden;  
-    }  
-  
-    body {  
-      font-family: var(--font-body);  
-      width: 100%;  
-      overflow-x: hidden;  
-      line-height: 1.5;  
-      -webkit-font-smoothing: antialiased;  
-      transition: background var(--transition-slow), color var(--transition-slow);  
-    }  
-  
-    h1, h2, h3, h4, h5, h6 {  
-      font-family: var(--font-display);  
-      font-weight: 600;  
-      line-height: 1.2;  
-      letter-spacing: -0.02em;  
-    }  
-  
-    a {  
-      color: inherit;  
-      text-decoration: none;  
-    }  
-  
-    button {  
-      font-family: inherit;  
-      cursor: pointer;  
-      border: none;  
-      background: none;  
-    }  
-  
-    img {  
-      max-width: 100%;  
-      display: block;  
-    }  
+    * { margin: 0; padding: 0; box-sizing: border-box; }  
+    html { scroll-behavior: smooth; width: 100%; overflow-x: hidden; }  
+    body { font-family: var(--font-body); width: 100%; overflow-x: hidden; line-height: 1.6; }  
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; line-height: 1.25; }  
+    a { color: inherit; text-decoration: none; }  
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }  
+    img { max-width: 100%; display: block; }  
   
     .bg-animated {  
-      position: fixed;  
-      inset: 0;  
-      z-index: -2;  
-      background:  
-        radial-gradient(ellipse at 20% 0%, rgba(16, 185, 129, 0.18) 0%, transparent 50%),  
-        radial-gradient(ellipse at 80% 50%, rgba(5, 150, 105, 0.15) 0%, transparent 50%),  
-        var(--neutral-950);  
-      transition: background var(--transition-slow);  
+      position: fixed; inset: 0; z-index: -2;  
+      background: radial-gradient(ellipse at 20% 0%, rgba(16, 185, 129, 0.18) 0%, transparent 50%),  
+                  radial-gradient(ellipse at 80% 50%, rgba(5, 150, 105, 0.15) 0%, transparent 50%),  
+                  var(--neutral-950);  
     }  
-  
-    .bg-blobs {  
-      position: fixed;  
-      inset: 0;  
-      z-index: -1;  
-      overflow: hidden;  
-      pointer-events: none;  
-    }  
-  
-    .bg-blob {  
-      position: absolute;  
-      border-radius: 50%;  
-      filter: blur(80px);  
-      opacity: 0.35;  
-      animation: float 20s ease-in-out infinite;  
-    }  
-  
-    .bg-blob-1 {  
-      width: 500px;  
-      height: 500px;  
-      background: radial-gradient(circle, #059669, transparent 70%);  
-      top: -10%;  
-      left: -5%;  
-    }  
-  
-    .bg-blob-2 {  
-      width: 600px;  
-      height: 600px;  
-      background: radial-gradient(circle, #047857, transparent 70%);  
-      bottom: -15%;  
-      right: -10%;  
-    }  
+    .bg-blobs { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }  
+    .bg-blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.35; animation: float 20s ease-in-out infinite; }  
+    .bg-blob-1 { width: 500px; height: 500px; background: radial-gradient(circle, #059669, transparent 70%); top: -10%; left: -5%; }  
+    .bg-blob-2 { width: 600px; height: 600px; background: radial-gradient(circle, #047857, transparent 70%); bottom: -15%; right: -10%; }  
   
     @keyframes float {  
-      0%, 100% {  
-        transform: translate(0, 0) scale(1);  
-      }  
-      33% {  
-        transform: translate(30px, -40px) scale(1.05);  
-      }  
-      66% {  
-        transform: translate(-20px, 30px) scale(0.95);  
-      }  
+      0%, 100% { transform: translate(0, 0) scale(1); }  
+      33% { transform: translate(30px, -40px) scale(1.05); }  
+      66% { transform: translate(-20px, 30px) scale(0.95); }  
     }  
   
     .glass {  
-      background: var(--glass-bg);  
-      backdrop-filter: blur(var(--glass-blur));  
-      -webkit-backdrop-filter: blur(var(--glass-blur));  
-      border: 1px solid var(--glass-border);  
-      border-radius: var(--radius-lg);  
-      position: relative;  
-      overflow: hidden;  
-      transition: background var(--transition-slow), border var(--transition-slow);  
+      background: var(--glass-bg); backdrop-filter: blur(var(--glass-blur));  
+      border: 1px solid var(--glass-border); border-radius: var(--radius-lg); position: relative; overflow: hidden;  
     }  
-  
-    .glass-strong {  
-      background: var(--glass-bg-strong);  
-      backdrop-filter: blur(var(--glass-blur));  
-      -webkit-backdrop-filter: blur(var(--glass-blur));  
-      border: 1px solid var(--glass-border);  
-      border-radius: var(--radius-lg);  
-      transition: background var(--transition-slow), border var(--transition-slow);  
-    }  
-  
-    .green-glass-container {  
-      background: rgba(35, 39, 47, 0.45);  
-      backdrop-filter: blur(25px);  
-      -webkit-backdrop-filter: blur(25px);  
-      border: 1px solid rgba(255, 255, 255, 0.1);  
-      border-radius: var(--radius-xl);  
-      padding: 1.25rem;  
-      box-shadow:  
-        0 15px 35px rgba(0, 0, 0, 0.3),  
-        inset 0 0 20px rgba(255, 255, 255, 0.03);  
-      margin-bottom: 1.5rem;  
-      transition: background var(--transition-slow), border var(--transition-slow);  
-    }  
-  
-    .container {  
-      width: 100%;  
-      max-width: 1280px;  
-      margin: 0 auto;  
-      padding: 0 1rem;  
-    }  
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 1rem; }  
   
     .btn {  
-      display: inline-flex;  
-      align-items: center;  
-      justify-content: center;  
-      gap: var(--space-1);  
-      padding: var(--space-2) var(--space-4);  
-      border-radius: var(--radius-full);  
-      font-weight: 500;  
-      font-size: 1rem;  
-      transition: all var(--transition-base);  
-      white-space: nowrap;  
-      font-family: 'Shrikhand', sans-serif;  
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;  
+      padding: 0.75rem 1.5rem; border-radius: var(--radius-full); font-weight: 600; font-size: 0.95rem;  
+      transition: all var(--transition-base); white-space: nowrap; font-family: var(--font-display);  
     }  
-  
     .btn-primary {  
       background: linear-gradient(135deg, var(--success-500), var(--accent-500));  
-      color: white;  
-      box-shadow: var(--shadow-glow);  
-    }  
-  
-    .btn-primary:hover {  
-      transform: translateY(-2px);  
-      box-shadow:  
-        0 0 50px rgba(16, 185, 129, 0.5),  
-        var(--shadow-md);  
-    }  
-  
-    .btn-glass {  
-      background: var(--glass-bg);  
-      backdrop-filter: blur(var(--glass-blur));  
-      border: 1px solid var(--glass-border);  
-      color: var(--neutral-100);  
-    }  
-  
-    .btn-glass:hover {  
-      background: var(--glass-bg-strong);  
-      transform: translateY(-2px);  
-    }  
-  
-    .lang-switcher {  
-      display: flex;  
-      gap: 0.2rem;  
-      padding: 0.2rem;  
-      border-radius: var(--radius-full);  
-      background: var(--glass-bg);  
-      backdrop-filter: blur(var(--glass-blur));  
-      border: 1px solid var(--glass-border);  
-    }  
-  
-    .lang-btn {  
-      padding: 0.3rem 0.55rem;  
-      border-radius: var(--radius-full);  
-      font-size: 0.75rem;  
-      font-weight: 600;  
-      color: var(--neutral-300);  
-      transition: all var(--transition-fast);  
-      font-family: 'Shrikhand', sans-serif;  
-    }  
-  
-    .lang-btn.active {  
-      background: var(--success-500);  
-      color: white;  
-      box-shadow: var(--shadow-sm);  
-    }  
-  
-    .lang-btn:hover:not(.active) {  
-      color: var(--neutral-0);  
-      background: rgba(255, 255, 255, 0.05);  
-    }  
-  
-    .glass-toggle {  
-      display: flex;  
-      align-items: center;  
-      background: rgba(30, 35, 45, 0.6);  
-      backdrop-filter: blur(var(--glass-blur));  
-      -webkit-backdrop-filter: blur(var(--glass-blur));  
-      border: 1px solid rgba(255, 255, 255, 0.15);  
-      border-radius: var(--radius-full);  
-      padding: 4px;  
-      cursor: pointer;  
-      position: relative;  
-      width: 84px;  
-      height: 38px;  
-      transition: background var(--transition-slow), border var(--transition-slow);  
-    }  
-  
-    .glass-toggle-thumb {  
-      position: absolute;  
-      width: 30px;  
-      height: 30px;  
-      border-radius: 50%;  
-      background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.08));  
-      border: 1px solid rgba(255, 255, 255, 0.3);  
-      display: flex;  
-      align-items: center;  
-      justify-content: center;  
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);  
-      transition: transform var(--transition-slow), background var(--transition-slow);  
-      color: #fbbf24;  
-      z-index: 2;  
-    }  
-  
-    .glass-toggle.dark-mode .glass-toggle-thumb {  
-      transform: translateX(-46px);  
-      color: #94a3b8;  
-    }  
-  
-    .glass-toggle.light-mode .glass-toggle-thumb {  
-      transform: translateX(0px);  
-      color: #fbbf24;  
-    }  
-  
-    .glass-toggle-labels {  
-      display: flex;  
-      justify-content: space-between;  
-      width: 100%;  
-      padding: 0 8px;  
-      font-size: 0.7rem;  
-      font-weight: 600;  
-      color: var(--neutral-400);  
-      user-select: none;  
-      z-index: 1;  
-    }  
-  
-    .section-title {  
-      font-size: clamp(1.75rem, 4vw, 3.5rem);  
-      font-weight: 700;  
-      text-align: center;  
-      margin-bottom: var(--space-2);  
-      background: linear-gradient(135deg, var(--neutral-0), var(--neutral-300));  
-      -webkit-background-clip: text;  
-      background-clip: text;  
-      -webkit-text-fill-color: transparent;  
-      font-family: 'Shrikhand', sans-serif;  
-    }  
-  
-    .section-subtitle {  
-      text-align: center;  
-      color: var(--neutral-400);  
-      font-size: 1rem;  
-      max-width: 600px;  
-      margin: 0 auto var(--space-6);  
-      line-height: 1.6;  
-      padding: 0 1rem;  
-      font-family: 'Shrikhand', sans-serif;  
-    }  
-  
-    .main-layout {  
-      display: flex;  
-      min-height: 100vh;  
-      position: relative;  
-      padding-top: 6.2rem;  
-      flex-direction: row;  
-    }  
-  
-    .content-area {  
-      flex: 1;  
-      padding: 1rem;  
-      overflow-x: hidden;  
-      min-width: 0;  
-    }  
-  
-    .sidebar-right {  
-      width: 280px;  
-      flex: 0 0 280px;  
-      background: var(--glass-bg);  
-      backdrop-filter: blur(var(--glass-blur));  
-      -webkit-backdrop-filter: blur(var(--glass-blur));  
-      border-left: 1px solid var(--glass-border);  
-      padding: 1rem;  
-      display: flex;  
-      flex-direction: column;  
-      gap: 1rem;  
-      position: sticky;  
-      top: 6.2rem;  
-      height: calc(100vh - 6.2rem);  
-      overflow-y: auto;  
-      z-index: 90;  
-      order: 2;  
-      transition:  
-        transform 0.3s ease,  
-        opacity 0.3s ease,  
-        visibility 0.3s ease,  
-        background var(--transition-slow);  
-    }  
-  
-    .sidebar-right:not(.is-open) {  
-      display: none;  
-    }  
-  
-    .sidebar-section-title {  
-      font-size: 0.95rem;  
-      font-weight: 700;  
-      color: var(--neutral-0);  
-      margin-bottom: 0.75rem;  
-      font-family: 'Shrikhand', sans-serif;  
-      border-bottom: 1px solid var(--glass-border);  
-      padding-bottom: 0.4rem;  
-    }  
-  
-    .sidebar-menu-list {  
-      display: flex;  
-      flex-direction: column;  
-      gap: 0.6rem;  
-    }  
-  
-    .sidebar-menu-item {  
-      display: flex;  
-      align-items: center;  
-      gap: 0.6rem;  
-      padding: 0.65rem 0.85rem;  
-      min-height: 44px;  
-      border-radius: var(--radius-md);  
-      background: rgba(255, 255, 255, 0.04);  
-      border: 1px solid var(--glass-border);  
-      color: var(--neutral-200);  
-      font-size: 0.85rem;  
-      cursor: pointer;  
-      transition: all var(--transition-fast);  
-      font-family: 'Shrikhand', sans-serif;  
-      width: 100%;  
-      text-align: right;  
-      touch-action: manipulation;  
-    }  
-  
-    .sidebar-menu-item:hover,  
-    .sidebar-menu-item.active {  
-      background: var(--success-500);  
-      color: #fff;  
-      border-color: var(--success-400);  
-      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);  
-    }  
-  
-    .menu-toggle-btn {  
-      display: flex;  
-      align-items: center;  
-      justify-content: center;  
-      background: var(--glass-bg);  
-      border: 1px solid var(--glass-border);  
-      color: var(--neutral-0);  
-      padding: 0.5rem 0.7rem;  
-      min-width: 44px;  
-      min-height: 44px;  
-      border-radius: var(--radius-md);  
-      cursor: pointer;  
-      transition: background 0.2s, transform 0.2s;  
-      touch-action: manipulation;  
-      flex-shrink: 0;  
-    }  
-  
-    .menu-toggle-btn:hover {  
-      background: var(--success-500);  
-    }  
-  
-    .menu-toggle-btn:active {  
-      transform: scale(0.95);  
-    }  
-  
-    .sidebar-backdrop {  
-      display: none;  
-    }  
-  
-    .navbar {  
-      position: fixed;  
-      top: 0;  
-      left: 0;  
-      right: 0;  
-      z-index: 100;  
-      padding: 0.75rem 1rem;  
-      transition: all var(--transition-base);  
-    }  
-  
-    .navbar-inner {  
-      display: flex;  
-      align-items: center;  
-      justify-content: space-between;  
-      padding: 1rem 1.5rem;  
-      border-radius: var(--radius-full);  
-      width: 100%;  
-      gap: 1.2rem;  
-      flex-wrap: nowrap;  
-    }  
-  
-    .navbar-left {  
-      display: flex;  
-      align-items: center;  
-      gap: 0.8rem;  
-      flex-shrink: 0;  
-    }  
-  
-    .navbar-center {  
-      display: flex;  
-      align-items: center;  
-      flex: 1;  
-      min-width: 200px;  
-      max-width: 450px;  
-    }  
-  
-    .navbar-right-actions {  
-      display: flex;  
-      align-items: center;  
-      gap: 0.8rem;  
-      flex-shrink: 0;  
-      flex-wrap: nowrap;  
-    }  
-  
-    .brand {  
-      display: flex;  
-      align-items: center;  
-      gap: 0.6rem;  
-      text-decoration: none;  
-      flex-shrink: 0;  
-    }  
-  
-    .brand-logo {  
-      width: 38px;  
-      height: 38px;  
-      border-radius: 50%;  
-      background: linear-gradient(135deg, var(--success-500), var(--accent-500));  
-      display: flex;  
-      align-items: center;  
-      justify-content: center;  
-      box-shadow: var(--shadow-glow);  
-      color: white;  
-      font-weight: 700;  
-      font-size: 0.95rem;  
-      font-family: 'Shrikhand', sans-serif;  
-    }  
-  
-    .brand-name {  
-      font-family: 'Shrikhand', sans-serif;  
-      font-weight: 700;  
-      font-size: 1.1rem;  
-      color: var(--neutral-0);  
-      white-space: nowrap;  
-    }  
-  
-    .nav-link {  
-      font-family: 'Shrikhand', sans-serif;  
-      color: var(--neutral-200);  
-      font-size: 0.8rem;  
-      font-weight: 500;  
-      display: flex;  
-      align-items: center;  
-      gap: 0.4rem;  
-      padding: 0.5rem 0.9rem;  
-      min-height: 42px;  
-      border-radius: var(--radius-full);  
-      background: rgba(255, 255, 255, 0.06);  
-      border: 1px solid var(--glass-border);  
-      transition: all var(--transition-fast);  
-      cursor: pointer;  
-      white-space: nowrap;  
-      touch-action: manipulation;  
-    }  
-  
-    .nav-link:hover,  
-    .nav-link.active {  
-      color: var(--neutral-0);  
-      background: var(--success-500);  
-      border-color: var(--success-400);  
-    }  
-  
-    .search-container {  
-      display: flex;  
-      justify-content: center;  
-      align-items: center;  
-      width: 100%;  
-    }  
-  
-    .search-input-wrapper {  
-      position: relative;  
-      width: 100%;  
-    }  
-  
-    .search-inner-box {  
-      position: relative;  
-      width: 100%;  
-      height: 46px;  
-      border-radius: var(--radius-full);  
-      background: linear-gradient(135deg, rgba(140, 100, 220, 0.25), rgba(70, 40, 130, 0.4));  
-      backdrop-filter: blur(25px);  
-      -webkit-backdrop-filter: blur(25px);  
-      border: 1.5px solid rgba(220, 190, 255, 0.35);  
-      box-shadow:   
-        0 8px 32px 0 rgba(31, 10, 60, 0.37),  
-        inset 0 1px 2px rgba(255, 255, 255, 0.3),  
-        0 0 20px rgba(160, 100, 255, 0.15);  
-      display: flex;  
-      align-items: center;  
-      transition: all var(--transition-base);  
-    }  
-  
-    .search-inner-box:focus-within {  
-      border-color: rgba(220, 190, 255, 0.8);  
-      box-shadow:   
-        0 10px 40px 0 rgba(40, 10, 80, 0.5),  
-        inset 0 1px 3px rgba(255, 255, 255, 0.5),  
-        0 0 25px rgba(180, 120, 255, 0.35);  
-    }  
-  
-    .search-input {  
-      width: 100%;  
-      padding: 0.3rem 3rem 0.3rem 1.2rem;  
-      background: transparent;  
-      border: none;  
-      color: #ffffff;  
-      font-size: 0.85rem;  
-      outline: none;  
-      font-family: 'Shrikhand', sans-serif;  
-    }  
-  
-    .search-input::placeholder {  
-      color: rgba(255, 255, 255, 0.65);  
-    }  
-  
-    .search-divider {  
-      position: absolute;  
-      right: 2.5rem;  
-      top: 25%;  
-      height: 50%;  
-      width: 1px;  
-      background: rgba(255, 255, 255, 0.25);  
-    }  
-  
-    .search-icon {  
-      position: absolute;  
-      top: 50%;  
-      transform: translateY(-50%);  
-      right: 0.9rem;  
-      color: #ffffff;  
-      pointer-events: none;  
-      display: flex;  
-      align-items: center;  
-      justify-content: center;  
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));  
-    }  
-  
-    .hero-carousel-section {  
-      padding: 0.5rem 0 1.5rem;  
-      perspective: 1000px;  
-      overflow: hidden;  
-      position: relative;  
-      width: 100%;  
-    }  
-  
-    .carousel-3d-container {  
-      display: flex;  
-      justify-content: center;  
-      align-items: center;  
-      height: 200px;  
-      position: relative;  
-      transform-style: preserve-3d;  
-      animation: carouselRotate 25s linear infinite;  
-      width: 100%;  
-    }  
-  
-    @keyframes carouselRotate {  
-      0% {  
-        transform: rotateY(0deg);  
-      }  
-      100% {  
-        transform: rotateY(360deg);  
-      }  
-    }  
-  
-    .carousel-3d-item {  
-      position: absolute;  
-      width: 160px;  
-      height: 110px;  
-      border-radius: var(--radius-lg);  
-      overflow: hidden;  
-      border: 1px solid var(--glass-border);  
-      box-shadow: var(--shadow-lg);  
-      background: var(--neutral-900);  
-      transform-style: preserve-3d;  
-    }  
-  
-    .carousel-3d-item img {  
-      width: 100%;  
-      height: 100%;  
-      object-fit: cover;  
-    }  
-  
-    .carousel-3d-item:nth-child(1) { transform: rotateY(0deg) translateZ(180px); }  
-    .carousel-3d-item:nth-child(2) { transform: rotateY(60deg) translateZ(180px); }  
-    .carousel-3d-item:nth-child(3) { transform: rotateY(120deg) translateZ(180px); }  
-    .carousel-3d-item:nth-child(4) { transform: rotateY(180deg) translateZ(180px); }  
-    .carousel-3d-item:nth-child(5) { transform: rotateY(240deg) translateZ(180px); }  
-    .carousel-3d-item:nth-child(6) { transform: rotateY(300deg) translateZ(180px); }  
-  
-    .products-section {  
-      padding: 1rem 0 3rem;  
-      width: 100%;  
-    }  
-  
-    .products-glass-container {  
-      background: var(--glass-bg);  
-      backdrop-filter: blur(var(--glass-blur));  
-      -webkit-backdrop-filter: blur(var(--glass-blur));  
-      border: 1px solid var(--glass-border);  
-      border-radius: var(--radius-2xl);  
-      padding: 2rem 1rem;  
-      box-shadow: var(--shadow-lg);  
-      position: relative;  
-      width: 100%;  
-    }  
-  
-    .section-icon-wrapper {  
-      display: flex;  
-      align-items: center;  
-      justify-content: center;  
-      gap: 0.75rem;  
-      margin-bottom: 0.75rem;  
-    }  
-  
-    .section-icon {  
-      width: 42px;  
-      height: 42px;  
-      border-radius: 50%;  
-      display: flex;  
-      align-items: center;  
-      justify-content: center;  
-    }  
-  
-    .products-grid {  
-      display: grid;  
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));  
-      gap: 1rem;  
-      width: 100%;  
-    }  
-  
-    @keyframes smoothAppear {  
-      0% {  
-        opacity: 0;  
-        transform: translateY(30px) scale(0.95);  
-      }  
-      100% {  
-        opacity: 1;  
-        transform: translateY(0) scale(1);  
-      }  
-    }  
-  
-    @keyframes panAnimation {  
-      0% {  
-        object-position: 0% 50%;  
-      }  
-      50% {  
-        object-position: 100% 50%;  
-      }  
-      100% {  
-        object-position: 0% 50%;  
-      }  
-    }  
-  
-    .product-card {  
-      border-radius: var(--radius-lg);  
-      overflow: hidden;  
-      transition: all var(--transition-base);  
-      display: flex;  
-      flex-direction: column;  
-      background: var(--glass-bg-strong);  
-      position: relative;  
-      width: 100%;  
-      animation: smoothAppear 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;  
-      min-width: 0;  
-    }  
-  
-    .product-card.clicked-led {  
-      border-color: #34d399 !important;  
-      box-shadow:  
-        0 0 25px rgba(52, 211, 153, 0.7),  
-        inset 0 0 15px rgba(52, 211, 153, 0.4);  
-    }  
-  
-    .product-card.just-added {  
-      animation: smoothAppear 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;  
-      border-color: var(--success-400);  
-      box-shadow: var(--shadow-glow);  
-    }  
-  
-    .product-card:hover {  
-      transform: translateY(-5px);  
-      box-shadow: var(--shadow-lg);  
-      border-color: rgba(16, 185, 129, 0.3);  
-    }  
-  
-    .product-image-wrapper {  
-      position: relative;  
-      overflow: hidden;  
-      aspect-ratio: 16 / 10;  
-      background: var(--neutral-900);  
-      width: 100%;  
-    }  
-  
-    .product-image {  
-      width: 100%;  
-      height: 100%;  
-      object-fit: cover;  
-      animation: panAnimation 12s ease-in-out infinite;  
-      transition: transform var(--transition-slow);  
-      cursor: pointer;  
-    }  
-  
-    .product-card:hover .product-image {  
-      transform: scale(1.05);  
-      animation-duration: 6s;  
-    }  
-  
-    .product-badge {  
-      position: absolute;  
-      top: 0.75rem;  
-      inset-inline-start: 0.75rem;  
-      padding: 0.25rem 0.6rem;  
-      border-radius: var(--radius-full);  
-      font-size: 0.7rem;  
-      font-weight: 600;  
-      color: white;  
-      z-index: 2;  
-      font-family: 'Shrikhand', sans-serif;  
-    }  
-  
-    .slider-arrow {  
-      position: absolute;  
-      top: 50%;  
-      transform: translateY(-50%);  
-      background: rgba(0, 0, 0, 0.6);  
-      color: white;  
-      border: 1px solid rgba(255, 255, 255, 0.2);  
-      width: 28px;  
-      height: 28px;  
-      border-radius: 50%;  
-      display: flex;  
-      align-items: center;  
-      justify-content: center;  
-      cursor: pointer;  
-      z-index: 10;  
-      opacity: 0;  
-      transition: opacity 0.2s, background 0.2s;  
-    }  
-  
-    .product-image-wrapper:hover .slider-arrow {  
-      opacity: 1;  
-    }  
-  
-    .slider-arrow:hover {  
-      background: var(--success-500);  
-    }  
-  
-    .slider-arrow.prev { left: 6px; }  
-    .slider-arrow.next { right: 6px; }  
-  
-    .product-content {  
-      padding: 1rem;  
-      display: flex;  
-      flex-direction: column;  
-      gap: 0.5rem;  
-      flex: 1;  
-      position: relative;  
-      z-index: 1;  
-    }  
-  
-    .product-rating {  
-      display: flex;  
-      align-items: center;  
-      gap: 0.3rem;  
-    }  
-  
-    .product-rating-number {  
-      color: var(--neutral-200);  
-      font-size: 0.8rem;  
-      font-family: 'Shrikhand', sans-serif;  
-    }  
-  
-    .product-name {  
-      font-family: 'Shrikhand', sans-serif;  
-      font-size: 1.1rem;  
-      font-weight: 600;  
-      color: var(--neutral-0);  
-      cursor: pointer;  
-      transition: color 0.2s;  
-    }  
-  
-    .product-name:hover {  
-      color: var(--success-400);  
-    }  
-  
-    .product-specs {  
-      display: flex;  
-      flex-wrap: wrap;  
-      gap: 0.3rem;  
-    }  
-  
-    .product-spec {  
-      padding: 0.2rem 0.5rem;  
-      border-radius: var(--radius-sm);  
-      font-size: 0.7rem;  
-      color: var(--neutral-300);  
-      background: rgba(255, 255, 255, 0.06);  
-      border: 1px solid rgba(255, 255, 255, 0.08);  
-      font-family: 'Shrikhand', sans-serif;  
-    }  
-  
-    .product-bottom {  
-      display: flex;  
-      align-items: center;  
-      justify-content: space-between;  
-      margin-top: auto;  
-      padding-top: 0.5rem;  
-    }  
-  
-    .product-prices {  
-      display: flex;  
-      align-items: baseline;  
-      gap: 0.4rem;  
-      min-width: 0;  
-    }  
-  
-    .product-price {  
-      font-size: 1.25rem;  
-      font-weight: 700;  
-      color: var(--neutral-0);  
-      font-family: 'Shrikhand', sans-serif;  
-    }  
-  
-    .product-old-price {  
-      font-size: 0.9rem;  
-      font-weight: 500;  
-      color: var(--neutral-400);  
-      text-decoration: line-through;  
-      font-family: 'Shrikhand', sans-serif;  
-    }  
-  
-    .modal-overlay {  
-      position: fixed;  
-      inset: 0;  
-      background: rgba(2, 44, 34, 0.75);  
-      backdrop-filter: blur(12px);  
-      -webkit-backdrop-filter: blur(12px);  
-      z-index: 1000;  
-      display: flex;  
-      align-items: center;  
-      justify-content: center;  
-      padding: 0.5rem;  
-      overflow-y: auto;  
-    }  
-  
-    .modal-content {  
-      background: var(--neutral-900);  
-      border: 1px solid var(--glass-border);  
-      padding: 1.5rem;  
-      border-radius: var(--radius-xl);  
-      width: 100%;  
-      max-width: 480px;  
-      box-shadow: var(--shadow-lg);  
-      position: relative;  
-      color: var(--neutral-100);  
-      max-height: 90vh;  
-      overflow-y: auto;  
-      font-family: 'Shrikhand', sans-serif;  
-    }  
-  
-    .admin-form {  
-      display: flex;  
-      flex-direction: column;  
-      gap: 0.75rem;  
-      margin-top: 1rem;  
-    }  
-  
-    .admin-input {  
-      padding: 0.7rem 0.9rem;  
-      border-radius: var(--radius-md);  
-      background: var(--glass-bg);  
-      border: 1px solid var(--glass-border);  
-      color: var(--neutral-0);  
-      font-family: 'Shrikhand', sans-serif;  
-      font-size: 0.9rem;  
-      width: 100%;  
-    }  
-  
-    .admin-input:focus {  
-      border-color: var(--success-400);  
-      outline: none;  
-    }  
-  
-    .close-modal {  
-      position: absolute;  
-      top: 1rem;  
-      inset-inline-end: 1rem;  
-      color: var(--neutral-400);  
-      cursor: pointer;  
-      font-size: 1.1rem;  
-      z-index: 10;  
-    }  
-  
-    .footer {  
-      padding: 3rem 0 1.5rem;  
-      border-top: 1px solid rgba(255, 255, 255, 0.06);  
-      width: 100%;  
-    }  
-  
-    .footer-bottom {  
-      display: flex;  
-      justify-content: center;  
-      align-items: center;  
-      padding-top: 1.5rem;  
-      border-top: 1px solid rgba(255, 255, 255, 0.06);  
-      text-align: center;  
-      font-family: 'Shrikhand', sans-serif;  
-    }  
-  
-    @media (max-width: 900px) {  
-      .main-layout {  
-        flex-direction: column;  
-        padding-top: 7rem;  
-      }  
-  
-      .content-area {  
-        order: 1;  
-        width: 100%;  
-        padding: 0.6rem;  
-      }  
-  
-      .sidebar-right {  
-        position: fixed;  
-        top: 0;  
-        right: 0;  
-        width: min(84vw, 330px);  
-        max-width: 330px;  
-        height: 100dvh;  
-        min-height: 100vh;  
-        padding: 6rem 0.85rem 1rem;  
-        border-left: 1px solid var(--glass-border);  
-        border-bottom: none;  
-        background: rgba(30, 34, 42, 0.95);  
-        backdrop-filter: blur(25px);  
-        -webkit-backdrop-filter: blur(25px);  
-        box-shadow: -15px 0 50px rgba(0, 0, 0, 0.35);  
-        overflow-y: auto;  
-        overscroll-behavior: contain;  
-        z-index: 500;  
-        order: unset;  
-        transform: translateX(110%);  
-        opacity: 0;  
-        visibility: hidden;  
-        transition:  
-          transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),  
-          opacity 0.25s ease,  
-          visibility 0.3s ease;  
-      }  
-  
-      .sidebar-right.is-open {  
-        transform: translateX(0);  
-        opacity: 1;  
-        visibility: visible;  
-      }  
-  
-      .sidebar-right:not(.is-open) {  
-        display: none;  
-      }  
-  
-      .sidebar-backdrop {  
-        display: block;  
-        position: fixed;  
-        inset: 0;  
-        background: rgba(0, 0, 0, 0.5);  
-        backdrop-filter: blur(2px);  
-        -webkit-backdrop-filter: blur(2px);  
-        z-index: 490;  
-      }  
-  
-      .green-glass-container {  
-        padding: 0.85rem;  
-        margin-bottom: 1rem;  
-      }  
-  
-      .sidebar-menu-list {  
-        gap: 0.5rem;  
-      }  
-  
-      .sidebar-menu-item {  
-        min-height: 46px;  
-        padding: 0.7rem 0.8rem;  
-        font-size: 0.84rem;  
-      }  
-  
-      .navbar {  
-        padding: 0.4rem 0.5rem;  
-      }  
-  
-      .navbar-inner {  
-        display: grid;  
-        grid-template-columns: 1fr auto;  
-        grid-template-areas:  
-          "left actions"  
-          "search search";  
-        gap: 0.6rem;  
-        padding: 0.7rem 0.9rem;  
-        border-radius: var(--radius-lg);  
-      }  
-  
-      .navbar-left {  
-        grid-area: left;  
-        min-width: 0;  
-      }  
-  
-      .navbar-center {  
-        grid-area: search;  
-        max-width: none;  
-        width: 100%;  
-        min-width: 0;  
-      }  
-  
-      .navbar-right-actions {  
-        grid-area: actions;  
-        justify-content: flex-end;  
-        gap: 0.4rem;  
-        flex-wrap: nowrap;  
-      }  
-  
-      .navbar-left .nav-link {  
-        display: none;  
-      }  
-  
-      .brand-name {  
-        font-size: 0.85rem;  
-      }  
-  
-      .brand-logo {  
-        width: 32px;  
-        height: 32px;  
-      }  
-  
-      .navbar-right-actions .nav-link {  
-        min-width: 42px;  
-        min-height: 42px;  
-        padding: 0.4rem;  
-        justify-content: center;  
-        font-size: 0;  
-      }  
-  
-      .navbar-right-actions .nav-link svg {  
-        width: 17px !important;  
-        height: 17px !important;  
-      }  
-  
-      .lang-switcher {  
-        display: flex;  
-      }  
-  
-      .glass-toggle {  
-        display: flex !important;  
-        width: 74px;  
-        height: 32px;  
-      }  
-      
-      .glass-toggle-thumb {  
-        width: 26px;  
-        height: 26px;  
-      }  
-  
-      .glass-toggle.dark-mode .glass-toggle-thumb {  
-        transform: translateX(-42px);  
-      }  
-  
-      .navbar-right-actions .btn-primary {  
-        min-width: 42px;  
-        min-height: 42px;  
-        padding: 0.4rem !important;  
-        font-size: 0 !important;  
-        border-radius: var(--radius-md);  
-      }  
-  
-      .navbar-right-actions .btn-primary svg {  
-        width: 17px !important;  
-        height: 17px !important;  
-      }  
-  
-      .menu-toggle-btn {  
-        min-width: 44px;  
-        min-height: 44px;  
-        padding: 0.5rem;  
-      }  
-  
-      .search-input {  
-        min-height: 40px;  
-        font-size: 0.8rem;  
-        padding-inline: 0.9rem 2.8rem;  
-      }  
-  
-      .search-inner-box {  
-        height: 40px;  
-      }  
-  
-      .carousel-3d-container {  
-        height: 150px;  
-      }  
-  
-      .carousel-3d-item {  
-        width: 120px;  
-        height: 80px;  
-      }  
-  
-      .carousel-3d-item:nth-child(1) { transform: rotateY(0deg) translateZ(120px); }  
-      .carousel-3d-item:nth-child(2) { transform: rotateY(60deg) translateZ(120px); }  
-      .carousel-3d-item:nth-child(3) { transform: rotateY(120deg) translateZ(120px); }  
-      .carousel-3d-item:nth-child(4) { transform: rotateY(180deg) translateZ(120px); }  
-      .carousel-3d-item:nth-child(5) { transform: rotateY(240deg) translateZ(120px); }  
-      .carousel-3d-item:nth-child(6) { transform: rotateY(300deg) translateZ(120px); }  
-  
-      .products-section {  
-        padding-top: 0.5rem;  
-      }  
-  
-      .products-glass-container {  
-        padding: 1.2rem 0.55rem;  
-        border-radius: 1.35rem;  
-      }  
-  
-      .products-glass-container .container {  
-        padding: 0;  
-      }  
-  
-      .products-grid {  
-        grid-template-columns: repeat(2, minmax(0, 1fr));  
-        gap: 0.6rem;  
-      }  
-  
-      .product-card {  
-        border-radius: 1rem;  
-      }  
-  
-      .product-content {  
-        padding: 0.65rem;  
-        gap: 0.4rem;  
-      }  
-  
-      .product-name {  
-        font-size: 0.82rem;  
-        line-height: 1.35;  
-      }  
-  
-      .product-rating-number {  
-        font-size: 0.7rem;  
-      }  
-  
-      .product-specs {  
-        gap: 0.2rem;  
-        max-height: 48px;  
-        overflow: hidden;  
-      }  
-  
-      .product-spec {  
-        font-size: 0.58rem;  
-        padding: 0.18rem 0.35rem;  
-      }  
-  
-      .product-price {  
-        font-size: 0.92rem;  
-      }  
-  
-      .product-old-price {  
-        font-size: 0.65rem;  
-      }  
-  
-      .product-bottom .btn-primary {  
-        min-width: 40px;  
-        min-height: 40px;  
-        padding: 0.5rem !important;  
-      }  
-  
-      .product-badge {  
-        top: 0.4rem;  
-        inset-inline-start: 0.4rem;  
-        font-size: 0.58rem;  
-        padding: 0.2rem 0.4rem;  
-      }  
-  
-      .slider-arrow {  
-        width: 32px;  
-        height: 32px;  
-        opacity: 0.9;  
-      }  
-  
-      .section-title {  
-        font-size: clamp(1.25rem, 6vw, 2rem);  
-      }  
-  
-      .section-subtitle {  
-        font-size: 0.75rem;  
-        margin-bottom: 1.2rem;  
-        padding: 0 0.4rem;  
-      }  
-  
-      .section-icon {  
-        width: 38px;  
-        height: 38px;  
-      }  
-  
-      .container {  
-        max-width: 100%;  
-        padding: 0 0.45rem;  
-      }  
-    }  
-  
-    @media (max-width: 520px) {  
-      .main-layout {  
-        padding-top: 6.6rem;  
-      }  
-  
-      .content-area {  
-        padding: 0.35rem;  
-      }  
-  
-      .navbar-inner {  
-        padding: 0.55rem;  
-      }  
-  
-      .brand-name {  
-        font-size: 0.75rem;  
-      }  
-  
-      .brand-logo {  
-        width: 29px;  
-        height: 29px;  
-        font-size: 0.75rem;  
-      }  
-  
-      .navbar-right-actions {  
-        gap: 0.3rem;  
-      }  
-  
-      .navbar-right-actions .nav-link,  
-      .navbar-right-actions .btn-primary,  
-      .menu-toggle-btn {  
-        min-width: 40px;  
-        min-height: 40px;  
-      }  
-  
-      .search-inner-box {  
-        height: 38px;  
-      }  
-  
-      .carousel-3d-container {  
-        height: 125px;  
-      }  
-  
-      .carousel-3d-item {  
-        width: 105px;  
-        height: 70px;  
-      }  
-  
-      .carousel-3d-item:nth-child(1) { transform: rotateY(0deg) translateZ(105px); }  
-      .carousel-3d-item:nth-child(2) { transform: rotateY(60deg) translateZ(105px); }  
-      .carousel-3d-item:nth-child(3) { transform: rotateY(120deg) translateZ(105px); }  
-      .carousel-3d-item:nth-child(4) { transform: rotateY(180deg) translateZ(105px); }  
-      .carousel-3d-item:nth-child(5) { transform: rotateY(240deg) translateZ(105px); }  
-      .carousel-3d-item:nth-child(6) { transform: rotateY(300deg) translateZ(105px); }  
-  
-      .products-grid {  
-        gap: 0.45rem;  
-      }  
-  
-      .products-glass-container {  
-        padding: 1rem 0.4rem;  
-      }  
-  
-      .product-card {  
-        border-radius: 0.85rem;  
-      }  
-  
-      .product-content {  
-        padding: 0.55rem;  
-      }  
-  
-      .product-name {  
-        font-size: 0.74rem;  
-      }  
-  
-      .product-price {  
-        font-size: 0.82rem;  
-      }  
-  
-      .product-old-price {  
-        display: none;  
-      }  
-  
-      .product-spec {  
-        font-size: 0.53rem;  
-      }  
-  
-      .product-bottom .btn-primary {  
-        min-width: 36px;  
-        min-height: 36px;  
-      }  
-  
-      .modal-content {  
-        padding: 1rem;  
-        border-radius: 1.3rem;  
-      }   
-    }  
-  
-    @media (max-width: 360px) {  
-      .brand-name {  
-        display: none;  
-      }  
-  
-      .navbar-right-actions .nav-link,  
-      .navbar-right-actions .btn-primary,  
-      .menu-toggle-btn {  
-        min-width: 38px;  
-        min-height: 38px;  
-      }  
-  
-      .products-grid {  
-        gap: 0.35rem;  
-      }  
-  
-      .product-content {  
-        padding: 0.45rem;  
-      }  
-  
-      .product-name {  
-        font-size: 0.68rem;  
-      }  
-  
-      .product-rating-number {  
-        font-size: 0.62rem;  
-      }  
-  
-      .product-price {  
-        font-size: 0.76rem;  
-      }  
-    }  
+      color: white; box-shadow: var(--shadow-glow);  
+    }  
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 40px rgba(16, 185, 129, 0.5); }  
+
+    /* --- HERO SPLIT SECTION (Desert Background replacing Green Background behind Text) --- */
+    .hero-split-section {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      gap: 2rem;
+      padding: 3.5rem 2.5rem;
+      width: 100%;
+      background: linear-gradient(rgba(10, 20, 15, 0.55), rgba(4, 12, 8, 0.65)), 
+                  url('85149.png') no-repeat center center;
+      background-size: cover;
+      border-radius: var(--radius-2xl);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-main-title {
+      font-size: clamp(2.2rem, 3.8vw, 3.5rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.3;
+      text-shadow: 0 4px 25px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-carousel-wrapper {
+      position: relative;
+      width: 100%;
+      min-height: 380px;
+      perspective: 1200px;
+      z-index: 2;
+    }
+
+    .carousel-3d-stage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 320px;
+      position: relative;
+      transform-style: preserve-3d;
+      width: 100%;
+    }
+
+    .carousel-card-item {
+      position: absolute;
+      width: min(280px, 75vw);
+      height: 300px;
+      border-radius: 2rem;
+      overflow: hidden;
+      background: var(--glass-bg-strong);
+      border: 1.5px solid rgba(52, 211, 153, 0.35);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(15px);
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .carousel-card-item.active { transform: scale(1.05) translateZ(50px); z-index: 10; border-color: var(--success-400); box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6), 0 0 40px rgba(52, 211, 153, 0.3); }
+    .carousel-card-item.prev-1 { transform: translateX(-130px) scale(0.8) rotateY(15deg) translateZ(-80px); z-index: 5; opacity: 0.7; filter: brightness(0.8); }
+    .carousel-card-item.next-1 { transform: translateX(130px) scale(0.8) rotateY(-15deg) translateZ(-80px); z-index: 5; opacity: 0.7; filter: brightness(0.8); }
+    .carousel-card-item.prev-2, .carousel-card-item.next-2 { display: none; }
+
+    .carousel-card-image-wrap { position: relative; width: 100%; height: 200px; overflow: hidden; }
+    .carousel-card-image { width: 100%; height: 100%; object-fit: cover; animation: panAnimation 12s ease-in-out infinite; }
+    .carousel-card-body { padding: 0.85rem 1rem; display: flex; flex-direction: column; justify-content: space-between; flex: 1; }
+    .carousel-card-title { font-size: 1rem; font-weight: 700; color: var(--neutral-0); }
+    .carousel-card-subtitle { font-size: 0.75rem; color: var(--success-400); font-weight: 600; }
+
+    .carousel-thumbnails-bar {
+      display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+      margin-top: 1rem; padding: 0.5rem 1rem; background: var(--glass-bg);
+      backdrop-filter: blur(20px); border: 1px solid var(--glass-border);
+      border-radius: var(--radius-full); max-width: 450px; margin-inline: auto;
+    }
+    .carousel-thumb-btn { width: 36px; height: 36px; border-radius: 50%; overflow: hidden; border: 2px solid transparent; cursor: pointer; transition: all 0.3s; opacity: 0.6; padding: 0; background: none; }
+    .carousel-thumb-btn.active { border-color: var(--success-400); transform: scale(1.15); opacity: 1; box-shadow: 0 0 15px rgba(52, 211, 153, 0.6); }
+    .carousel-thumb-btn img { width: 100%; height: 100%; object-fit: cover; }
+    .carousel-arrow-btn { background: rgba(255, 255, 255, 0.1); color: white; border: 1px solid var(--glass-border); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+    .carousel-arrow-btn:hover { background: var(--success-500); }
+
+    /* --- BOTTOM UIVERSE DOCK (WHITE GLASSMORPHISM) --- */
+    .bottom-dock-wrapper { position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); z-index: 999; }
+    .button-container {
+      display: flex; background-color: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+      width: 440px; height: 70px; align-items: center; justify-content: space-around;
+      border-radius: 35px; border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25), inset 0 0 15px rgba(255, 255, 255, 0.3); padding: 0 10px;
+    }
+    .button {
+      outline: 0 !important; border: 0 !important; width: 42px; height: 42px;
+      border-radius: 50%; background-color: rgba(255, 255, 255, 0.3);
+      display: flex; align-items: center; justify-content: center; color: #0f172a;
+      transition: all ease-in-out 0.2s; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    body.dark .button { color: #ffffff; background-color: rgba(255, 255, 255, 0.1); }
+    .button:hover, .button.active-dock { transform: translateY(-3px); background-color: var(--success-500); color: #ffffff; }
+    .icon { font-size: 20px; }
+
+    /* --- FLOATING LANGUAGE MENU --- */
+    .floating-lang-menu { position: fixed; bottom: 30px; left: 30px; z-index: 9999; width: 60px; height: 60px; }
+    .button-menu { cursor: pointer; position: absolute; z-index: 1; background-color: #1e1e1e; border: 2px solid #34d399; color: #34d399; font-size: 20px; font-weight: 700; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5); transition: all 0.3s ease; }
+    .checkbox { width: 60px; height: 60px; opacity: 0; z-index: 10; cursor: pointer; position: absolute; }
+    .option { position: absolute; background-color: #1e1e1e; border: 2px solid #34d399; color: #34d399; z-index: -1; width: 52px; height: 52px; border-radius: 50%; cursor: pointer; font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4); }
+    .checkbox:hover ~ .button-menu, .checkbox:checked ~ .button-menu { background-color: #262626; border-color: #10b981; color: #ffffff; transform: scale(0.98); }
+    .checkbox:not(:checked) ~ .button-menu::before { content: "🌐"; }
+    .checkbox:checked ~ .button-menu::after { content: "✕"; color: #34d399; }
+    .option:hover { background-color: #34d399; color: #1e1e1e; border-color: #ffffff; transform: scale(1.05); }
+    .checkbox:checked ~ .option-a { transition-delay: 0.1s; transform: translateY(-85px); }
+    .checkbox:checked ~ .option-b { transition-delay: 0.2s; transform: translateY(-60px) translateX(60px); }
+    .checkbox:checked ~ .option-c { transition-delay: 0.3s; transform: translateX(85px); }
+
+    .glass-toggle {
+      display: flex; align-items: center; background: rgba(20, 30, 25, 0.6);
+      backdrop-filter: blur(var(--glass-blur)); border: 1px solid rgba(52, 211, 153, 0.2);
+      border-radius: var(--radius-full); padding: 4px; cursor: pointer; position: relative; width: 84px; height: 38px;
+    }
+    .glass-toggle-thumb {
+      position: absolute; width: 30px; height: 30px; border-radius: 50%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.08));
+      border: 1px solid rgba(255, 255, 255, 0.3); display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); transition: transform var(--transition-slow); color: #fbbf24; z-index: 2;
+    }
+    .glass-toggle.dark-mode .glass-toggle-thumb { transform: translateX(-46px); color: #94a3b8; }
+    .glass-toggle.light-mode .glass-toggle-thumb { transform: translateX(0px); color: #fbbf24; }
+    .glass-toggle-labels { display: flex; justify-content: space-between; width: 100%; padding: 0 8px; font-size: 0.7rem; font-weight: 600; color: var(--neutral-400); user-select: none; }
+
+    /* --- PRODUCTS SECTION --- */
+    .products-section { padding: 1rem 0 3rem; width: 100%; }
+    .products-glass-container {
+      background: var(--glass-bg); backdrop-filter: blur(var(--glass-blur));
+      border: 1px solid var(--glass-border); border-radius: var(--radius-2xl);
+      padding: 2.5rem 1.5rem; box-shadow: var(--shadow-lg); width: 100%;
+    }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; width: 100%; }
+  
+    @keyframes smoothAppear { 0% { opacity: 0; transform: translateY(20px) scale(0.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes panAnimation { 0% { object-position: 0% 50%; } 50% { object-position: 100% 50%; } 100% { object-position: 0% 50%; } }
+  
+    .product-card {
+      border-radius: var(--radius-lg); overflow: hidden; transition: all var(--transition-base);
+      display: flex; flex-direction: column; background: var(--glass-bg-strong);
+      border: 1px solid var(--glass-border); position: relative; width: 100%;
+      animation: smoothAppear 0.5s ease forwards;
+    }
+    .product-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: rgba(52, 211, 153, 0.4); }
+    .product-image-wrapper { position: relative; overflow: hidden; aspect-ratio: 16 / 10; background: var(--neutral-900); }
+    .product-image {
+      width: 100%; height: 100%; object-fit: cover; animation: panAnimation 12s ease-in-out infinite; transition: transform var(--transition-slow); cursor: pointer;
+    }
+    .product-card:hover .product-image { transform: scale(1.06); }
+    .product-badge {
+      position: absolute; top: 0.75rem; inset-inline-start: 0.75rem; padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-full); font-size: 0.7rem; font-weight: 700; color: white; background: var(--success-500); z-index: 2;
+    }
+  
+    .slider-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0, 0, 0, 0.6);
+      color: white; border: 1px solid rgba(255, 255, 255, 0.2); width: 30px; height: 30px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; opacity: 0; transition: opacity 0.2s;
+    }
+    .product-image-wrapper:hover .slider-arrow { opacity: 1; }
+    .slider-arrow:hover { background: var(--success-500); }
+    .slider-arrow.prev { left: 8px; }
+    .slider-arrow.next { right: 8px; }
+  
+    .product-content { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+    .product-rating { display: flex; align-items: center; gap: 0.3rem; color: #fbbf24; font-size: 0.85rem; font-weight: 700; }
+    .product-name { font-size: 1.15rem; font-weight: 700; color: var(--neutral-0); cursor: pointer; transition: color 0.2s; }
+    .product-name:hover { color: var(--success-400); }
+    .product-specs { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .product-spec {
+      padding: 0.2rem 0.55rem; border-radius: var(--radius-sm); font-size: 0.72rem;
+      color: var(--neutral-300); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .product-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 0.75rem; }
+    .product-prices { display: flex; align-items: baseline; gap: 0.5rem; }
+    .product-price { font-size: 1.3rem; font-weight: 800; color: var(--neutral-0); }
+    .product-old-price { font-size: 0.9rem; color: var(--neutral-400); text-decoration: line-through; }
+  
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(2, 44, 34, 0.75); backdrop-filter: blur(12px);
+      z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 1rem;
+    }
+    .modal-content {
+      background: var(--neutral-900); border: 1px solid var(--glass-border); padding: 2rem;
+      border-radius: var(--radius-xl); width: 100%; max-width: 500px; box-shadow: var(--shadow-lg);
+      position: relative; color: var(--neutral-100); max-height: 90vh; overflow-y: auto;
+    }
+    .admin-form { display: flex; flex-direction: column; gap: 0.85rem; margin-top: 1rem; }
+    .admin-input {
+      padding: 0.75rem 1rem; border-radius: var(--radius-md); background: var(--glass-bg);
+      border: 1px solid var(--glass-border); color: var(--neutral-0); font-family: var(--font-body); font-size: 0.95rem; width: 100%;
+    }
+    .admin-input:focus { border-color: var(--success-400); outline: none; }
+    .close-modal { position: absolute; top: 1.25rem; inset-inline-end: 1.25rem; color: var(--neutral-400); cursor: pointer; font-size: 1.2rem; }
+  
+    .footer { padding: 3rem 0 6rem; border-top: 1px solid var(--glass-border); width: 100%; }
+    .footer-bottom { display: flex; justify-content: center; align-items: center; text-align: center; color: var(--neutral-400); font-size: 0.9rem; }
+
+    @media (max-width: 900px) {
+      .hero-split-section { grid-template-columns: 1fr; text-align: center; }
+      .main-layout { flex-direction: column; padding-top: 7rem; }
+      .content-area { order: 1; width: 100%; padding: 0.6rem 0.6rem 6rem; }
+      .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+    }
   </style>  
 </head>  
 <body class="dark">    
@@ -1512,157 +355,119 @@
   
     const translations = {  
       ku: {  
-        navAdmin: 'بەڕێوەبەر',  
-        shopNow: 'سەبەتە',  
-        searchPlaceholder: 'گەڕان بەدوای ناوی بەرهەم، مواسەفات، یان پۆل...',  
-        adminModalTitle: 'چوونەژوورەوەی تایبەتی بەڕێوەبەر',  
-        adminPasswordLabel: 'تکایە وشەی تێپەڕی بەڕێوەبەر بنووسە',  
+        brandName: 'hama tech',  
+        searchPlaceholder: 'گەڕان بەدوای بەرهەم، مواسەفات، یان پۆل...',  
+        adminModalTitle: 'چوونەژوورەوەی بەڕێوەبەر',  
+        adminPasswordLabel: 'تکایە وشەی تێپەڕ بنووسە (1234)',  
         loginBtn: 'چوونەژوورەوە',  
-        adminDashboardTitle: 'داشبۆردی بەڕێوەبەر (بەڕێوەبردنی کاڵاکان)',  
+        adminDashboardTitle: 'داشبۆردی بەڕێوەبەر',  
         productNamePlaceholder: 'ناوی تەواوی بەرهەم',  
         productPricePlaceholder: 'نرخی نوێ ($)',  
-        productOldPricePlaceholder: 'نرخی پێشوو / داشکێنراو ($)',  
-        productSpecsPlaceholder: 'مۆسەفات (بە کۆما لێکجیان بکەرەوە وەکو: Core i9, 32GB RAM)',  
-        uploadImagesLabel: 'بارکردنی وێنەکانی بەرهەم (تاوەکو ٥ وێنە)',  
-        positionLabel: 'دیاریکردنی شوێنی بەرهەم لە ماڵپەڕدا:',  
-        posTop: 'پەنجەرەی سەرەکی و هێرۆ (سەرەوە)',  
-        posNormal: 'لیستەی گشتی بەرهەمەکان (خوارەوە)',  
-        addProductBtn: 'تۆمارکردن و زیادکردنی بەرهەم',  
-        wrongPassword: 'وشەی تێپەڕ هەڵەیە! تکایە 1234 بنووسە.',  
-        cartTitle: 'سەبەتەی کڕین و پێداچوونەوەی داواکاری',  
-        fullNameLabel: 'ناوی سیانی یان تەواو',  
-        addressLabel: 'ناونیشانی تەواو (شار / گەڕەک / کۆڵان)',  
-        phoneLabel: 'ژمارەی مۆبایلی پەیوەندیکردن',  
-        confirmOrder: 'ناردن و پەسەندکردنی داواکاری',  
-        orderSuccess: 'سوپاس بۆ متمانەکەت! داواکارییەکەت بە سەرکەوتوویی نێردرا.',  
+        productOldPricePlaceholder: 'نرخی پێشوو ($)',  
+        productSpecsPlaceholder: 'مۆسەفات (بە کۆما لێکجیان بکەرەوە)',  
+        uploadImagesLabel: 'بارکردنی وێنەکانی بەرهەم',  
+        addProductBtn: 'زیادکردنی بەرهەم',  
+        wrongPassword: 'وشەی تێپەڕ هەڵەیە! 1234 بنووسە.',  
+        cartTitle: 'سەبەتەی کڕین و داواکاری',  
+        fullNameLabel: 'ناوی تەواو',  
+        addressLabel: 'ناونیشانی تەواو (شار / گەڕەک)',  
+        phoneLabel: 'ژمارەی مۆبایل',  
+        confirmOrder: 'پەسەندکردنی داواکاری',  
+        orderSuccess: 'سوپاس! داواکارییەکەت بە سەرکەوتوویی نێردرا.',  
         emptyCart: 'سەبەتەکەت لە ئێستادا بەتاڵە',  
-        footerDesc: 'مەنزڵ و سەرچاوەی متمانەپێکراوی تۆ بۆ دەستکەوتنی پێشکەوتووترین لاپتۆپ و کەرەستەی ناوازەی یارییکردن.',  
-        rights: '© ٢٠٢٦ ناوندی گەیمینگ. هەموو مافەکان پارێزراون.',  
-        deleteProduct: 'سڕینەوەی کاڵا',  
-        specsTitle: 'تایبەتمەندییە سەرەکییەکان و مواسەفات',  
-        categoryLabel: 'پۆلێنبەندی',  
+        rights: '© ٢٠٢٦ hama tech. هەموو مافەکان پارێزراون.',  
+        specsTitle: 'تایبەتمەندییە سەرەکییەکان',  
         addToCart: 'زیادکردن بۆ سەبەتە',  
         themeDark: 'تاریک',  
         themeLight: 'ڕووناک',  
-        categoriesTitle: 'پۆلەکان',  
-        allCategories: 'سەرجەم بەرهەمەکان'  
+        allCategories: 'سەرجەم بەرهەمەکان',  
+        deleteProduct: 'سڕینەوە',  
+        heroMainTitle: 'بەخێربێن بۆ ناوەندی لاپتۆپ و بەشەکانی گەیمینگ'  
       },  
       ar: {  
-        navAdmin: 'الإدارة',  
-        shopNow: 'السلة',  
+        brandName: 'hama tech',  
         searchPlaceholder: 'البحث عن منتج، مواصفات، أو قسم...',  
-        adminModalTitle: 'تسجيل دخول المدير الآمن',  
-        adminPasswordLabel: 'الرجاء إدخال كلمة مرور المدير',  
-        loginBtn: 'تسجيل الدخول',  
-        adminDashboardTitle: 'لوحة التحكم (إدارة المنتجات باحترافية)',  
-        productNamePlaceholder: 'اسم المنتج الكامل',  
-        productPricePlaceholder: 'السعر الحالي ($)',  
-        productOldPricePlaceholder: 'السعر السابق / الوهمي ($)',  
-        productSpecsPlaceholder: 'المواصفات (مفصولة بفاصلة مثل: 32GB RAM, RGB)',  
-        uploadImagesLabel: 'رفع صور المنتجات (حتى 5 صور)',  
-        positionLabel: 'موقع ظهور المنتج في المتجر:',  
-        posTop: 'القسم الرئيسي العلوي',  
-        posNormal: 'قائمة المنتجات العامة بالأسفل',  
-        addProductBtn: 'إضافة ونشر المنتج',  
-        wrongPassword: 'كلمة المرور غير صحيحة! يرجى إدخال 1234.',  
-        cartTitle: 'سلة التسوق وإتمام الطلب',  
-        fullNameLabel: 'الاسم الكامل الكريم',  
-        addressLabel: 'العنوان التفصيلي (المدينة / الحي)',  
-        phoneLabel: 'رقم الهاتف للتواصل',  
-        confirmOrder: 'تأكيد إرسال الطلب',  
-        orderSuccess: 'شكراً لثقتك بنا! تم إرسال طلبك بنجاح.',  
-        emptyCart: 'سلة التسوق الخاصة بك فارغة حالياً',  
-        footerDesc: 'وجهتك الموثوقة والفريدة لأحدث أجهزة اللابتوب الفاخرة ومعدات الألعاب الاحترافية.',  
-        rights: '© 2026 مركز الألعاب. جميع الحقوق محفوظة.',  
-        deleteProduct: 'حذف المنتج',  
-        specsTitle: 'المواصفات الفنية والتفاصيل الدقيقة',  
-        categoryLabel: 'التصنيف',  
-        addToCart: 'أضف إلى السلة',  
+        adminModalTitle: 'تسجيل دخول المدير',  
+        adminPasswordLabel: 'كلمة المرور (1234)',  
+        loginBtn: 'دخول',  
+        adminDashboardTitle: 'لوحة التحكم',  
+        productNamePlaceholder: 'اسم المنتج',  
+        productPricePlaceholder: 'السعر ($)',  
+        productOldPricePlaceholder: 'السعر السابق ($)',  
+        productSpecsPlaceholder: 'المواصفات',  
+        uploadImagesLabel: 'رفع الصور',  
+        addProductBtn: 'نشر المنتج',  
+        wrongPassword: 'خطأ في كلمة المرور!',  
+        cartTitle: 'سلة التسوق',  
+        fullNameLabel: 'الاسم الكامل',  
+        addressLabel: 'العنوان',  
+        phoneLabel: 'الهاتف',  
+        confirmOrder: 'تأكيد الطلب',  
+        orderSuccess: 'تم إرسال طلبك بنجاح.',  
+        emptyCart: 'السلة فارغة',  
+        rights: '© 2026 hama tech. جميع الحقوق محفوظة.',  
+        specsTitle: 'المواصفات',  
+        addToCart: 'أضف للسلة',  
         themeDark: 'داكن',  
         themeLight: 'فاتح',  
-        categoriesTitle: 'التصنيفات',  
-        allCategories: 'جميع المنتجات'  
+        allCategories: 'جميع المنتجات',  
+        deleteProduct: 'حذف',  
+        heroMainTitle: 'مرحباً بكم في مركز أجهزة اللابتوب وأقسام الألعاب'  
       },  
       en: {  
-        navAdmin: 'Admin',  
-        shopNow: 'Cart',  
-        searchPlaceholder: 'Search products, specs, categories...',  
-        adminModalTitle: 'Secure Administrator Login',  
-        adminPasswordLabel: 'Enter Admin Secret Password',  
-        loginBtn: 'Access Dashboard',  
-        adminDashboardTitle: 'Admin Dashboard (Manage Store Inventory)',  
-        productNamePlaceholder: 'Full Product Name',  
-        productPricePlaceholder: 'Current Price ($)',  
-        productOldPricePlaceholder: 'Old / List Price ($)',  
-        productSpecsPlaceholder: 'Specs (comma separated, e.g., Core i9, 32GB RAM)',  
-        uploadImagesLabel: 'Upload Product Gallery (Up to 5 images)',  
-        positionLabel: 'Display Position on Website:',  
-        posTop: 'Hero Section / Main Banner',  
-        posNormal: 'Standard Products Catalog',  
-        addProductBtn: 'Publish Product to Store',  
-        wrongPassword: 'Incorrect password! Please use 1234.',  
-        cartTitle: 'Shopping Cart & Secure Checkout',  
+        brandName: 'hama tech',  
+        searchPlaceholder: 'Search products, specs...',  
+        adminModalTitle: 'Admin Login',  
+        adminPasswordLabel: 'Password (1234)',  
+        loginBtn: 'Login',  
+        adminDashboardTitle: 'Dashboard',  
+        productNamePlaceholder: 'Product Name',  
+        productPricePlaceholder: 'Price ($)',  
+        productOldPricePlaceholder: 'Old Price ($)',  
+        productSpecsPlaceholder: 'Specs',  
+        uploadImagesLabel: 'Upload Images',  
+        addProductBtn: 'Publish',  
+        wrongPassword: 'Wrong password!',  
+        cartTitle: 'Shopping Cart',  
         fullNameLabel: 'Full Name',  
-        addressLabel: 'Detailed Delivery Address',  
-        phoneLabel: 'Active Phone Number',  
-        confirmOrder: 'Confirm & Place Order',  
-        orderSuccess: 'Thank you for your order! Placed successfully.',  
-        emptyCart: 'Your shopping cart is currently empty',  
-        footerDesc: 'Your premier and trusted destination for high-performance laptops and ultimate gaming gear.',  
-        rights: '© 2026 Gaming Center. All rights reserved.',  
-        deleteProduct: 'Remove Product',  
-        specsTitle: 'Technical Specifications & Features',  
-        categoryLabel: 'Category',  
+        addressLabel: 'Address',  
+        phoneLabel: 'Phone',  
+        confirmOrder: 'Confirm Order',  
+        orderSuccess: 'Order placed successfully.',  
+        emptyCart: 'Cart is empty',  
+        rights: '© 2026 hama tech. All rights reserved.',  
+        specsTitle: 'Technical Specs',  
         addToCart: 'Add to Cart',  
         themeDark: 'Dark',  
         themeLight: 'Light',  
-        categoriesTitle: 'Categories',  
-        allCategories: 'All Products'  
+        allCategories: 'All Products',  
+        deleteProduct: 'Remove',  
+        heroMainTitle: 'Welcome to Laptop Center & Gaming Sections'  
       }  
     };  
   
     function Icon({ name, size = 18, strokeWidth = 2 }) {  
       useEffect(() => {  
-        if (window.lucide) {  
-          window.lucide.createIcons();  
-        }  
+        if (window.lucide) { window.lucide.createIcons(); }  
       });  
-  
-      return (  
-        <i  
-          data-lucide={name}  
-          style={{  
-            width: size,  
-            height: size,  
-            strokeWidth: strokeWidth  
-          }}  
-        />  
-      );  
+      return <i data-lucide={name} style={{ width: size, height: size, strokeWidth: strokeWidth }} />;  
     }  
   
     function App() {  
       const [lang, setLang] = useState('ku');  
       const [theme, setTheme] = useState('dark');  
-  
       const t = translations[lang];  
   
       const [searchQuery, setSearchQuery] = useState('');  
       const [selectedCategory, setSelectedCategory] = useState('All');  
-      const [clickedProductId, setClickedProductId] = useState(null);  
-  
-      const [isSidebarOpen, setIsSidebarOpen] = useState(false);  
+      const [isCartOpen, setIsCartOpen] = useState(false);  
       const [isAdminOpen, setIsAdminOpen] = useState(false);  
-  
       const [passwordInput, setPasswordInput] = useState('');  
       const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);  
-  
-      const [isCartOpen, setIsCartOpen] = useState(false);  
       const [cartItems, setCartItems] = useState([]);  
-  
       const [fullName, setFullName] = useState('');  
       const [address, setAddress] = useState('');  
       const [phone, setPhone] = useState('');  
-  
       const [selectedProductDetails, setSelectedProductDetails] = useState(null);  
   
       const [newTitle, setNewTitle] = useState('');  
@@ -1671,166 +476,39 @@
       const [newSpecs, setNewSpecs] = useState('');  
       const [newCategory, setNewCategory] = useState('Laptop');  
       const [newImages, setNewImages] = useState([]);  
-      const [newPosition, setNewPosition] = useState('normal');  
   
       const [carouselImages, setCarouselImages] = useState([  
-        'https://images.pexels.com/photos/8533587/pexels-photo-8533587.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',  
-        'https://images.pexels.com/photos/943596/pexels-photo-943596.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',  
-        'https://images.pexels.com/photos/7858742/pexels-photo-7858742.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',  
-        'https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',  
-        'https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',  
-        'https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'  
+        { id: 1, title: 'ProBook X1 Ultra (Laptop)', subtitle: 'Intel Core i9 • 32GB RAM', img: 'https://images.pexels.com/photos/8533587/pexels-photo-8533587.jpeg?auto=compress&cs=tinysrgb&h=650&w=940' },  
+        { id: 2, title: 'Polatin Pro Keyboard', subtitle: 'Mechanical RGB • Aluminum', img: 'https://images.pexels.com/photos/1772123/pexels-photo-1772123.jpeg?auto=compress&cs=tinysrgb&h=650&w=940' },  
+        { id: 3, title: 'Pro Wireless Mouse V2', subtitle: '25k DPI • Ultra Lightweight', img: 'https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg?auto=compress&cs=tinysrgb&h=650&w=940' }  
       ]);  
+      const [activeCarouselIndex, setActiveCarouselIndex] = useState(0);  
   
       const [products, setProducts] = useState([  
-        {  
-          id: 1,  
-          name: 'ProBook X1 Ultra',  
-          category: 'Laptop',  
-          price: 2499,  
-          oldPrice: 2899,  
-          images: [  
-            'https://images.pexels.com/photos/8533587/pexels-photo-8533587.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',  
-            'https://images.pexels.com/photos/943596/pexels-photo-943596.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'  
-          ],  
-          rating: 4.9,  
-          badge: 'پڕفرۆشترین',  
-          specs: ['Intel Core i9', '32GB RAM', '1TB SSD', '16" Retina'],  
-          justAdded: false  
-        },  
-        {  
-          id: 2,  
-          name: 'AirSlim 14 Pro',  
-          category: 'Laptop',  
-          price: 1299,  
-          oldPrice: 1499,  
-          images: [  
-            'https://images.pexels.com/photos/943596/pexels-photo-943596.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'  
-          ],  
-          rating: 4.7,  
-          badge: 'تازه',  
-          specs: ['Apple M3', '16GB RAM', '512GB SSD', '14" Display'],  
-          justAdded: false  
-        },  
-        {  
-          id: 3,  
-          name: 'RGB Battle Station Elite',  
-          category: 'Gaming',  
-          price: 3499,  
-          oldPrice: 3999,  
-          images: [  
-            'https://images.pexels.com/photos/7858742/pexels-photo-7858742.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'  
-          ],  
-          rating: 5.0,  
-          badge: 'پلە بەرز',  
-          specs: ['Curved 34" Monitor', 'RGB Keyboard', 'Gaming Mouse', 'LED Lighting'],  
-          justAdded: false  
-        },  
-        {  
-          id: 4,  
-          name: 'Pro Wireless Precision Mouse',  
-          category: 'Mouse',  
-          price: 89,  
-          oldPrice: 119,  
-          images: [  
-            'https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'  
-          ],  
-          rating: 4.8,  
-          badge: 'خوازراو',  
-          specs: ['25k DPI', 'Ultra Lightweight', 'Wireless'],  
-          justAdded: false  
-        },  
-        {  
-          id: 5,  
-          name: 'Mechanic RGB Keyboard V3',  
-          category: 'Keyboard',  
-          price: 129,  
-          oldPrice: 159,  
-          images: [  
-            'https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'  
-          ],  
-          rating: 4.9,  
-          badge: 'تایبەت',  
-          specs: ['Mechanical Switches', 'RGB Backlight', 'Aluminum Frame', 'Hot-Swappable'],  
-          justAdded: false  
-        },  
-        {  
-          id: 6,  
-          name: 'Cyberpunk Gaming Case X',  
-          category: 'Case',  
-          price: 199,  
-          oldPrice: 249,  
-          images: [  
-            'https://images.pexels.com/photos/792345/pexels-photo-792345.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'  
-          ],  
-          rating: 4.9,  
-          badge: 'تازه',  
-          specs: ['Tempered Glass', 'ARGB Fans Included', 'E-ATX Support', 'Vertical GPU Mount'],  
-          justAdded: false  
-        },  
-        {  
-          id: 7,  
-          name: 'Immersive Headset 7.1 Pro',  
-          category: 'Headset',  
-          price: 149,  
-          oldPrice: 199,  
-          images: [  
-            'https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'  
-          ],  
-          rating: 4.9,  
-          badge: 'دەنگی پوخت',  
-          specs: ['7.1 Surround', 'Noise Canceling', 'RGB Mic'],  
-          justAdded: false  
-        },  
-        {  
-          id: 8,  
-          name: 'NextGen Console Xtreme',  
-          category: 'Console',  
-          price: 499,  
-          oldPrice: 599,  
-          images: [  
-            'https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'  
-          ],  
-          rating: 4.9,  
-          badge: 'پڕخواز',  
-          specs: ['4K Gaming', '1TB SSD', 'Ray Tracing'],  
-          justAdded: false  
-        }  
+        { id: 1, name: 'ProBook X1 Ultra', category: 'Laptop', price: 2499, oldPrice: 2899, images: ['https://images.pexels.com/photos/8533587/pexels-photo-8533587.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 4.9, badge: 'Best Seller', specs: ['Intel Core i9', '32GB RAM', '1TB SSD', '16" Retina'] },  
+        { id: 2, name: 'AirSlim 14 Pro', category: 'Laptop', price: 1299, oldPrice: 1499, images: ['https://images.pexels.com/photos/943596/pexels-photo-943596.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 4.7, badge: 'New', specs: ['Apple M3', '16GB RAM', '512GB SSD', '14" Display'] },  
+        { id: 3, name: 'ROG Zephyrus G16 Pro', category: 'Laptop', price: 2899, oldPrice: 3199, images: ['https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 4.9, badge: 'Elite', specs: ['AMD Ryzen 9', 'RTX 4070', '32GB RAM', '165Hz'] },  
+        { id: 4, name: 'Pro Wireless Mouse V2', category: 'Mouse', price: 89, oldPrice: 119, images: ['https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 4.8, badge: 'Popular', specs: ['25k DPI', 'Ultra Lightweight', 'Wireless'] },  
+        { id: 5, name: 'Razer DeathAdder V3 Pro', category: 'Mouse', price: 149, oldPrice: 179, images: ['https://images.pexels.com/photos/5082579/pexels-photo-5082579.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 4.9, badge: 'New', specs: ['Focus Pro 30K', '63g Lightweight', '90hr Battery'] },  
+        { id: 6, name: 'Logitech G Pro X Superlight', category: 'Mouse', price: 159, oldPrice: 189, images: ['https://images.pexels.com/photos/3928497/pexels-photo-3928497.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 5.0, badge: 'Elite', specs: ['HERO 2 Sensor', '60g Weight', 'Zero Smoothing'] },  
+        { id: 7, name: 'Polatin Pro Mechanical RGB', category: 'Keyboard', price: 159, oldPrice: 199, images: ['https://images.pexels.com/photos/1772123/pexels-photo-1772123.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 4.9, badge: 'Best Seller', specs: ['Mechanical Switches', 'Per-Key RGB', 'Aluminum Frame'] },  
+        { id: 8, name: 'CyberMech 65% Wireless', category: 'Keyboard', price: 129, oldPrice: 159, images: ['https://images.pexels.com/photos/4792728/pexels-photo-4792728.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 4.8, badge: 'New', specs: ['Hot-Swappable', 'Tri-Mode', 'PBT Keycaps'] },  
+        { id: 9, name: 'Titanium Esports TKL', category: 'Keyboard', price: 179, oldPrice: 219, images: ['https://images.pexels.com/photos/3345882/pexels-photo-3345882.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 5.0, badge: 'Elite', specs: ['Magnetic Switches', 'Rapid Trigger', 'CNC Aluminum'] },  
+        { id: 10, name: 'RGB Battle Station Elite', category: 'Gaming', price: 3499, oldPrice: 3999, images: ['https://images.pexels.com/photos/7858742/pexels-photo-7858742.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 5.0, badge: 'Elite', specs: ['Curved 34" Monitor', 'RGB Keyboard', 'Gaming Mouse'] },  
+        { id: 11, name: 'Cyberpunk Gaming Rig X9', category: 'Gaming', price: 4199, oldPrice: 4599, images: ['https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 5.0, badge: 'Pro', specs: ['RTX 4090', 'Intel i9-14900K', '64GB RAM', 'Liquid Cooled'] },  
+        { id: 12, name: 'AeroSync Pro Wireless Headset', category: 'Headset', price: 199, oldPrice: 249, images: ['https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'], rating: 4.9, badge: 'Best Seller', specs: ['Spatial Audio', 'ANC', '50hr Battery'] }  
       ]);  
   
       const [activeImageIndices, setActiveImageIndices] = useState({});  
-  
-      const handleProductClick = (prod) => {  
-        setClickedProductId(prod.id);  
-        setSelectedProductDetails(prod);  
-      };  
-  
-      const handleNextImage = (e, prod) => {  
-        e.stopPropagation();  
-        const currentIndex = activeImageIndices[prod.id] || 0;  
-        const nextIndex = (currentIndex + 1) % prod.images.length;  
-        setActiveImageIndices(prev => ({ ...prev, [prod.id]: nextIndex }));  
-      };  
-  
-      const handlePrevImage = (e, prod) => {  
-        e.stopPropagation();  
-        const currentIndex = activeImageIndices[prod.id] || 0;  
-        const prevIndex = (currentIndex - 1 + prod.images.length) % prod.images.length;  
-        setActiveImageIndices(prev => ({ ...prev, [prod.id]: prevIndex }));  
-      };  
   
       useEffect(() => {  
         document.documentElement.setAttribute('dir', lang === 'en' ? 'ltr' : 'rtl');  
         document.documentElement.setAttribute('lang', lang);  
         document.body.className = theme;  
-        if (window.lucide) {  
-          window.lucide.createIcons();  
-        }  
+        if (window.lucide) { window.lucide.createIcons(); }  
       }, [lang, theme]);  
   
-      const toggleTheme = () => {  
-        setTheme(prev => prev === 'dark' ? 'light' : 'dark');  
-      };  
+      const toggleTheme = () => { setTheme(prev => prev === 'dark' ? 'light' : 'dark'); };  
   
       const handleAdminLogin = (e) => {  
         e.preventDefault();  
@@ -1846,47 +524,31 @@
         const readers = files.map(file => {  
           return new Promise((resolve) => {  
             const reader = new FileReader();  
-            reader.onload = (uploadEvent) => resolve(uploadEvent.target.result);  
+            reader.onload = (event) => resolve(event.target.result);  
             reader.readAsDataURL(file);  
           });  
         });  
-        Promise.all(readers).then(imagesBase64 => {  
-          setNewImages(imagesBase64);  
-        });  
+        Promise.all(readers).then(imagesBase64 => { setNewImages(imagesBase64); });  
       };  
   
       const handleAddProductSubmit = (e) => {  
         e.preventDefault();  
         if (!newTitle || !newPrice || newImages.length === 0) return;  
-  
-        const parsedSpecs = newSpecs  
-          ? newSpecs.split(',').map(s => s.trim()).filter(Boolean)  
-          : [newCategory, 'High Performance'];  
-  
+        const parsedSpecs = newSpecs ? newSpecs.split(',').map(s => s.trim()).filter(Boolean) : [newCategory, 'Pro'];  
         const newProdObj = {  
           id: Date.now(),  
           name: newTitle,  
           category: newCategory,  
           price: Number(newPrice),  
-          oldPrice: newOldPrice ? Number(newOldPrice) : Number(newPrice) + 150,  
+          oldPrice: newOldPrice ? Number(newOldPrice) : Number(newPrice) + 100,  
           images: newImages,  
           rating: 5.0,  
-          badge: newPosition === 'top' ? 'سەرەکی' : 'نوێ',  
-          specs: parsedSpecs,  
-          justAdded: true  
+          badge: 'New',  
+          specs: parsedSpecs  
         };  
-  
-        if (newPosition === 'top') {  
-          setCarouselImages(prev => [newImages[0], ...prev]);  
-        }  
-  
         setProducts([newProdObj, ...products]);  
-        setNewTitle('');  
-        setNewPrice('');  
-        setNewOldPrice('');  
-        setNewSpecs('');  
-        setNewImages([]);  
-        setNewPosition('normal');  
+        setNewTitle(''); setNewPrice(''); setNewOldPrice(''); setNewSpecs(''); setNewImages([]);  
+        alert('بە سەرکەوتوویی بەرهەم زیادکرا!');  
       };  
   
       const handleDeleteProduct = (id) => {  
@@ -1895,10 +557,10 @@
   
       const handleAddToCart = (prod) => {  
         setCartItems(prev => {  
-          const existingIndex = prev.findIndex(item => item.product.id === prod.id);  
-          if (existingIndex > -1) {  
+          const existing = prev.findIndex(item => item.product.id === prod.id);  
+          if (existing > -1) {  
             const updated = [...prev];  
-            updated[existingIndex].quantity += 1;  
+            updated[existing].quantity += 1;  
             return updated;  
           } else {  
             return [...prev, { product: prod, quantity: 1 }];  
@@ -1907,240 +569,136 @@
         setIsCartOpen(true);  
       };  
   
-      const handleIncreaseQty = (prodId) => {  
-        setCartItems(prev =>  
-          prev.map(item => item.product.id === prodId ? { ...item, quantity: item.quantity + 1 } : item)  
-        );  
-      };  
-  
-      const handleDecreaseQty = (prodId) => {  
-        setCartItems(prev =>  
-          prev.map(item => item.product.id === prodId ? { ...item, quantity: item.quantity - 1 } : item).filter(item => item.quantity > 0)  
-        );  
-      };  
-  
-      const handleRemoveCartItem = (prodId) => {  
-        setCartItems(prev => prev.filter(item => item.product.id !== prodId));  
-      };  
-  
       const filteredProducts = products.filter(prod => {  
         const query = searchQuery.trim().toLowerCase();  
-          
-        const matchesSearch = !query ||  
-          prod.name.toLowerCase().includes(query) ||  
-          prod.category.toLowerCase().includes(query) ||  
-          (prod.badge && prod.badge.toLowerCase().includes(query)) ||  
-          prod.specs.some(s => s.toLowerCase().includes(query));  
-  
+        const matchesSearch = !query || prod.name.toLowerCase().includes(query) || prod.category.toLowerCase().includes(query);  
         const matchesCategory = selectedCategory === 'All' || prod.category === selectedCategory;  
         return matchesSearch && matchesCategory;  
       });  
   
-      const categoriesList = ['All', ...new Set(products.map(p => p.category))];  
-  
-      const getCategoryIcon = (cat) => {  
-        switch(cat.toLowerCase()) {  
-          case 'laptop': return 'laptop';  
-          case 'gaming': return 'gamepad-2';  
-          case 'mouse': return 'mouse';  
-          case 'keyboard': return 'keyboard';  
-          case 'case': return 'hard-drive';  
-          case 'headset': return 'headphones';  
-          case 'console': return 'joystick';  
-          default: return 'grid';  
-        }  
-      };  
-  
       return (  
         <div>  
-          <header className="navbar">  
+          <header className="navbar" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, padding: '0.75rem 1rem' }}>  
             <div className="container">  
-              <div className="navbar-inner glass">  
-                <div className="navbar-left">  
-                  <button  
-                    className="menu-toggle-btn"  
-                    onClick={() => setIsSidebarOpen(!isSidebarOpen)}  
-                    title="مێنۆ"  
-                  >  
-                    <Icon name="menu" size={20} />  
-                  </button>  
+              <div className="navbar-inner glass" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem 1.5rem', borderRadius: 'var(--radius-full)' }}>  
+                <a href="#" className="brand" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>  
+                  <div className="brand-logo" style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'linear-gradient(135deg, var(--success-500), var(--accent-500))', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 800 }}>H</div>  
+                  <span className="brand-name" style={{ fontWeight: 800, fontSize: '1.25rem', color: 'var(--neutral-0)', textTransform: 'lowercase' }}>{t.brandName}</span>  
+                </a>  
   
-                  <a href="#" className="brand">  
-                    <div className="brand-logo">گ</div>  
-                    <span className="brand-name">گەیمینگ سنیدەر</span>  
-                  </a>  
-                </div>  
-  
-                <div className="navbar-center">  
-                  <div className="search-container">  
-                    <div className="search-input-wrapper">  
-                      <div className="search-inner-box">  
-                        <input  
-                          type="text"  
-                          className="search-input"  
-                          placeholder={t.searchPlaceholder}  
-                          value={searchQuery}  
-                          onChange={(e) => setSearchQuery(e.target.value)}  
-                        />  
-                        <div className="search-divider"></div>  
-                        <span className="search-icon">  
-                          <Icon name="search" size={16} />  
-                        </span>  
-                      </div>  
-                    </div>  
+                <div style={{ display: 'flex', alignItems: 'center', flex: 1, maxWidth: '450px', margin: '0 1rem' }}>  
+                  <div style={{ position: 'relative', width: '100%', height: '46px', borderRadius: 'var(--radius-full)', background: 'linear-gradient(135deg, rgba(20, 185, 129, 0.15), rgba(5, 150, 105, 0.25))', backdropFilter: 'blur(25px)', border: '1.5px solid rgba(52, 211, 153, 0.35)', display: 'flex', alignItems: 'center' }}>  
+                    <input  
+                      type="text"  
+                      style={{ width: '100%', padding: '0.3rem 3rem 0.3rem 1.2rem', background: 'transparent', border: 'none', color: 'var(--neutral-0)', fontSize: '0.9rem', outline: 'none' }}  
+                      placeholder={t.searchPlaceholder}  
+                      value={searchQuery}  
+                      onChange={(e) => setSearchQuery(e.target.value)}  
+                    />  
+                    <span style={{ position: 'absolute', right: '1rem', color: 'var(--neutral-300)', pointerEvents: 'none' }}><Icon name="search" size={16} /></span>  
                   </div>  
                 </div>  
   
-                <div className="navbar-right-actions">  
-                  <div className="lang-switcher">  
-                    <button className={`lang-btn ${lang === 'ku' ? 'active' : ''}`} onClick={() => setLang('ku')}>کوردی</button>  
-                    <button className={`lang-btn ${lang === 'ar' ? 'active' : ''}`} onClick={() => setLang('ar')}>عربي</button>  
-                    <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</button>  
+                <div>  
+                  <div className={`glass-toggle ${theme === 'dark' ? 'dark-mode' : 'light-mode'}`} onClick={toggleTheme} title="گۆڕینی دۆخ">  
+                    <div className="glass-toggle-labels"><span>🌙</span><span>☀</span></div>  
+                    <div className="glass-toggle-thumb"><Icon name={theme === 'dark' ? 'moon' : 'sun'} size={14} /></div>  
                   </div>  
-  
-                  <button className="btn btn-primary" onClick={() => setIsCartOpen(true)}>  
-                    <Icon name="shopping-cart" size={16} />  
-                    <span>{t.shopNow}</span>  
-                    {cartItems.length > 0 && (  
-                      <span style={{ background: '#fff', color: '#000', borderRadius: '50%', padding: '0.1rem 0.4rem', fontSize: '0.7rem', fontWeight: 'bold' }}>  
-                        {cartItems.reduce((acc, item) => acc + item.quantity, 0)}  
-                      </span>  
-                    )}  
-                  </button>  
                 </div>  
               </div>  
             </div>  
           </header>  
   
-          <div className="main-layout container">  
-            {isSidebarOpen && (  
-              <div className="sidebar-backdrop" onClick={() => setIsSidebarOpen(false)}></div>  
-            )}  
-  
-            <aside className={`sidebar-right ${isSidebarOpen ? 'is-open' : ''}`}>  
-              <div className="green-glass-container">  
-                <h3 className="sidebar-section-title">{t.categoriesTitle}</h3>  
-                <div className="sidebar-menu-list">  
-                  <button  
-                    className={`sidebar-menu-item ${selectedCategory === 'All' ? 'active' : ''}`}  
-                    onClick={() => setSelectedCategory('All')}  
-                  >  
-                    <Icon name="grid" size={16} />  
-                    <span>{t.allCategories}</span>  
-                  </button>  
-                  {categoriesList.filter(c => c !== 'All').map(cat => (  
-                    <button  
-                      key={cat}  
-                      className={`sidebar-menu-item ${selectedCategory === cat ? 'active' : ''}`}  
-                      onClick={() => setSelectedCategory(cat)}  
-                    >  
-                      <Icon name={getCategoryIcon(cat)} size={16} />  
-                      <span>{cat}</span>  
+          <div className="container" style={{ paddingTop: '6.2rem' }}>  
+            <main className="content-area">  
+              {/* --- HERO SPLIT SECTION (Desert Background with Text & Button) --- */}  
+              <section className="hero-split-section" style={{ background: `linear-gradient(rgba(10, 20, 15, 0.55), rgba(4, 12, 8, 0.65)), url('85149.png') no-repeat center center`, backgroundSize: 'cover' }}>  
+                <div className="hero-left-content">  
+                  <h1 className="hero-main-title">{t.heroMainTitle}</h1>  
+                  <div>  
+                    <button className="btn btn-primary" onClick={() => setSelectedCategory('All')}>  
+                      <Icon name="cpu" size={18} />  
+                      <span>سەرجەم بەرهەمەکان</span>  
                     </button>  
-                  ))}  
-                </div>  
-              </div>  
-  
-              <div className="green-glass-container">  
-                <h3 className="sidebar-section-title">ڕێکخستنەکان و بەڕێوەبەر</h3>  
-                <div className="sidebar-menu-list">  
-                  <button  
-                    className="sidebar-menu-item"  
-                    onClick={() => {  
-                      setIsAdminOpen(true);  
-                      setIsSidebarOpen(false);  
-                    }}  
-                  >  
-                    <Icon name="shield-check" size={16} />  
-                    <span>{t.navAdmin}</span>  
-                  </button>  
-                  
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.5rem 0.85rem', background: 'rgba(255, 255, 255, 0.04)', border: '1px solid var(--glass-border)', borderRadius: 'var(--radius-md)', marginTop: '0.5rem' }}>  
-                    <span style={{ fontSize: '0.85rem', fontFamily: 'Shrikhand', color: 'var(--neutral-200)' }}>دۆخی رووناک / تاریک</span>  
-                    <div className={`glass-toggle ${theme === 'dark' ? 'dark-mode' : 'light-mode'}`} onClick={toggleTheme}>  
-                      <div className="glass-toggle-labels">  
-                        <span>🌙</span>  
-                        <span>☀</span>  
-                      </div>  
-                      <div className="glass-toggle-thumb">  
-                        <Icon name={theme === 'dark' ? 'moon' : 'sun'} size={14} />  
-                      </div>  
-                    </div>  
                   </div>  
                 </div>  
-              </div>  
-            </aside>  
+
+                <div className="hero-carousel-wrapper">  
+                  <div className="carousel-3d-stage">  
+                    {carouselImages.map((item, idx) => {  
+                      const total = carouselImages.length;  
+                      const diff = (idx - activeCarouselIndex + total) % total;  
+                      let positionClass = '';  
+                      if (diff === 0) positionClass = 'active';  
+                      else if (diff === 1 || diff === -(total - 1)) positionClass = 'next-1';  
+                      else if (diff === total - 1 || diff === -1) positionClass = 'prev-1';  
+                      else positionClass = 'next-2';  
   
-            <main className="content-area">  
-              <section className="hero-carousel-section">  
-                <div className="carousel-3d-container">  
-                  {carouselImages.map((imgUrl, idx) => (  
-                    <div key={idx} className="carousel-3d-item">  
-                      <img src={imgUrl} alt="Hero Carousel" />  
+                      return (  
+                        <div key={item.id} className={`carousel-card-item ${positionClass}`} onClick={() => setActiveCarouselIndex(idx)}>  
+                          <div className="carousel-card-image-wrap">  
+                            <img src={item.img} alt={item.title} className="carousel-card-image" />  
+                          </div>  
+                          <div className="carousel-card-body">  
+                            <h4 className="carousel-card-title">{item.title}</h4>  
+                            <span className="carousel-card-subtitle">{item.subtitle}</span>  
+                          </div>  
+                        </div>  
+                      );  
+                    })}  
+                  </div>  
+
+                  <div className="carousel-thumbnails-bar">  
+                    <button className="carousel-arrow-btn" onClick={() => setActiveCarouselIndex(prev => (prev - 1 + carouselImages.length) % carouselImages.length)}>‹</button>  
+                    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>  
+                      {carouselImages.map((item, idx) => (  
+                        <button key={item.id} className={`carousel-thumb-btn ${idx === activeCarouselIndex ? 'active' : ''}`} onClick={() => setActiveCarouselIndex(idx)}>  
+                          <img src={item.img} alt="thumb" />  
+                        </button>  
+                      ))}  
                     </div>  
-                  ))}  
+                    <button className="carousel-arrow-btn" onClick={() => setActiveCarouselIndex(prev => (prev + 1) % carouselImages.length)}>›</button>  
+                  </div>  
                 </div>  
               </section>  
-  
+
+              {/* --- PRODUCTS SECTION --- */}  
               <section className="products-section">  
                 <div className="products-glass-container">  
                   <div className="container">  
-                    <div className="section-icon-wrapper">  
-                      <div className="section-icon glass">  
-                        <Icon name="cpu" size={22} />  
-                      </div>  
-                    </div>  
-                    <h2 className="section-title">داهێنانی تەکنەلۆژیا و یاری</h2>  
-                    <p className="section-subtitle">{t.footerDesc}</p>  
-  
                     <div className="products-grid">  
                       {filteredProducts.map(prod => {  
                         const currentImgIndex = activeImageIndices[prod.id] || 0;  
                         const activeImage = prod.images[currentImgIndex] || prod.images[0];  
   
                         return (  
-                          <div  
-                            key={prod.id}  
-                            className={`product-card ${clickedProductId === prod.id ? 'clicked-led' : ''} ${prod.justAdded ? 'just-added' : ''}`}  
-                            onClick={() => handleProductClick(prod)}  
-                          >  
+                          <div key={prod.id} className="product-card" onClick={() => setSelectedProductDetails(prod)}>  
                             <div className="product-image-wrapper">  
-                              <span className="product-badge" style={{ background: 'var(--success-500)' }}>  
-                                {prod.badge}  
-                              </span>  
+                              <span className="product-badge">{prod.badge}</span>  
                               <img src={activeImage} alt={prod.name} className="product-image" />  
                               {prod.images.length > 1 && (  
                                 <>  
-                                  <button className="slider-arrow prev" onClick={(e) => handlePrevImage(e, prod)}>‹</button>  
-                                  <button className="slider-arrow next" onClick={(e) => handleNextImage(e, prod)}>›</button>  
+                                  <button className="slider-arrow prev" onClick={(e) => { e.stopPropagation(); setActiveImageIndices(p => ({...p, [prod.id]: (currentImgIndex - 1 + prod.images.length) % prod.images.length})); }}>‹</button>  
+                                  <button className="slider-arrow next" onClick={(e) => { e.stopPropagation(); setActiveImageIndices(p => ({...p, [prod.id]: (currentImgIndex + 1) % prod.images.length})); }}>›</button>  
                                 </>  
                               )}  
                             </div>  
   
                             <div className="product-content">  
                               <div className="product-rating">  
-                                <Icon name="star" size={14} style={{ fill: '#fbbf24', color: '#fbbf24' }} />  
-                                <span className="product-rating-number">{prod.rating}</span>  
+                                <Icon name="star" size={14} style={{ fill: '#fbbf24' }} />  
+                                <span>{prod.rating}</span>  
                               </div>  
                               <h3 className="product-name">{prod.name}</h3>  
                               <div className="product-specs">  
-                                {prod.specs.map((spec, i) => (  
-                                  <span key={i} className="product-spec">{spec}</span>  
-                                ))}  
+                                {prod.specs.map((spec, i) => <span key={i} className="product-spec">{spec}</span>)}  
                               </div>  
                               <div className="product-bottom">  
                                 <div className="product-prices">  
                                   <span className="product-price">${prod.price}</span>  
                                   {prod.oldPrice && <span className="product-old-price">${prod.oldPrice}</span>}  
                                 </div>  
-                                <button  
-                                  className="btn btn-primary"  
-                                  title={t.addToCart}  
-                                  onClick={(e) => {  
-                                    e.stopPropagation();  
-                                    handleAddToCart(prod);  
-                                  }}  
-                                >  
+                                <button className="btn btn-primary" onClick={(e) => { e.stopPropagation(); handleAddToCart(prod); }}>  
                                   <Icon name="shopping-cart" size={16} />  
                                 </button>  
                               </div>  
@@ -2155,12 +713,85 @@
             </main>  
           </div>  
   
+          {/* --- UIVERSE BOTTOM DOCK --- */}  
+          <div className="bottom-dock-wrapper">  
+            <div className="button-container">  
+              <button className={`button ${selectedCategory === 'All' ? 'active-dock' : ''}`} onClick={() => setSelectedCategory('All')} title="سەرجەم بەرهەمەکان">  
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" fill="currentColor" className="icon">  
+                  <path d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"></path>  
+                </svg>  
+              </button>  
+
+              <button className={`button ${selectedCategory === 'Laptop' ? 'active-dock' : ''}`} onClick={() => setSelectedCategory('Laptop')} title="Laptop">  
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon">  
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>  
+                  <line x1="2" y1="20" x2="22" y2="20"></line>  
+                </svg>  
+              </button>  
+
+              <button className={`button ${selectedCategory === 'Mouse' ? 'active-dock' : ''}`} onClick={() => setSelectedCategory('Mouse')} title="Mouse">  
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon">  
+                  <rect x="5" y="2" width="14" height="20" rx="7"></rect>  
+                  <line x1="12" y1="6" x2="12" y2="10"></line>  
+                </svg>  
+              </button>  
+
+              <button className={`button ${selectedCategory === 'Keyboard' ? 'active-dock' : ''}`} onClick={() => setSelectedCategory('Keyboard')} title="Keyboard">  
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon">  
+                  <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>  
+                  <line x1="6" y1="8" x2="6" y2="8"></line><line x1="10" y1="8" x2="10" y2="8"></line><line x1="14" y1="8" x2="14" y2="8"></line><line x1="18" y1="8" x2="18" y2="8"></line>  
+                  <line x1="6" y1="12" x2="6" y2="12"></line><line x1="10" y1="12" x2="10" y2="12"></line><line x1="14" y1="12" x2="14" y2="12"></line><line x1="18" y1="12" x2="18" y2="12"></line>  
+                  <line x1="8" y1="16" x2="16" y2="16"></line>  
+                </svg>  
+              </button>  
+
+              <button className={`button ${selectedCategory === 'Gaming' ? 'active-dock' : ''}`} onClick={() => setSelectedCategory('Gaming')} title="Gaming">  
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon">  
+                  <line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line>  
+                  <line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line>  
+                  <rect x="2" y="6" width="20" height="12" rx="6"></rect>  
+                </svg>  
+              </button>  
+
+              <button className={`button ${selectedCategory === 'Headset' ? 'active-dock' : ''}`} onClick={() => setSelectedCategory('Headset')} title="Headset">  
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon">  
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>  
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"></path>  
+                  <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>  
+                </svg>  
+              </button>  
+
+              <button className="button" onClick={() => setIsAdminOpen(true)} title="بەڕێوەبەر">  
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" className="icon">  
+                  <path d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047 9.005 9.005 0 0 1 5.9 8.181.75.75 0 1 1-1.499.044 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.5-.045 9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5ZM8 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z"></path>  
+                </svg>  
+              </button>  
+
+              <button className="button" onClick={() => setIsCartOpen(true)} title="سەبەتە">  
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" strokeLinejoin="round" strokeLinecap="round" viewBox="0 0 24 24" strokeWidth="2" fill="none" stroke="currentColor" className="icon">  
+                  <circle r="1" cy="21" cx="9"></circle><circle r="1" cy="21" cx="20"></circle>  
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>  
+                </svg>  
+              </button>  
+            </div>  
+          </div>  
+
+          {/* --- FLOATING LANGUAGE MENU --- */}  
+          <div className="floating-lang-menu">  
+            <input className="checkbox" type="checkbox" />  
+            <span className="button-menu"></span>  
+            <button className="option-a option" onClick={() => setLang('ku')}>کوردی</button>  
+            <button className="option-b option" onClick={() => setLang('ar')}>عربي</button>  
+            <button className="option-c option" onClick={() => setLang('en')}>EN</button>  
+          </div>  
+
           <footer className="footer container">  
             <div className="footer-bottom">  
               <p>{t.rights}</p>  
             </div>  
           </footer>  
-  
+
+          {/* --- ADMIN MODAL --- */}  
           {isAdminOpen && (  
             <div className="modal-overlay" onClick={() => setIsAdminOpen(false)}>  
               <div className="modal-content" onClick={(e) => e.stopPropagation()}>  
@@ -2169,16 +800,8 @@
                   <form onSubmit={handleAdminLogin} className="admin-form">  
                     <h2>{t.adminModalTitle}</h2>  
                     <p style={{ color: 'var(--neutral-400)', fontSize: '0.85rem' }}>{t.adminPasswordLabel}</p>  
-                    <input  
-                      type="password"  
-                      className="admin-input"  
-                      placeholder="••••"  
-                      value={passwordInput}  
-                      onChange={(e) => setPasswordInput(e.target.value)}  
-                    />  
-                    <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>  
-                      {t.loginBtn}  
-                    </button>  
+                    <input type="password" className="admin-input" placeholder="••••" value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} />  
+                    <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>{t.loginBtn}</button>  
                   </form>  
                 ) : (  
                   <div>  
@@ -2190,33 +813,22 @@
                       <input type="text" className="admin-input" placeholder={t.productSpecsPlaceholder} value={newSpecs} onChange={(e) => setNewSpecs(e.target.value)} />  
                       <select className="admin-input" value={newCategory} onChange={(e) => setNewCategory(e.target.value)}>  
                         <option value="Laptop">Laptop</option>  
-                        <option value="Gaming">Gaming</option>  
                         <option value="Mouse">Mouse</option>  
                         <option value="Keyboard">Keyboard</option>  
-                        <option value="Case">Case</option>  
+                        <option value="Gaming">Gaming</option>  
                         <option value="Headset">Headset</option>  
-                        <option value="Console">Console</option>  
                       </select>  
-                      <label style={{ fontSize: '0.8rem', color: 'var(--neutral-300)' }}>{t.uploadImagesLabel}</label>  
+                      <label style={{ fontSize: '0.85rem', color: 'var(--neutral-300)' }}>{t.uploadImagesLabel}</label>  
                       <input type="file" multiple accept="image/*" className="admin-input" onChange={handleImageUpload} />  
-                      <label style={{ fontSize: '0.8rem', color: 'var(--neutral-300)' }}>{t.positionLabel}</label>  
-                      <select className="admin-input" value={newPosition} onChange={(e) => setNewPosition(e.target.value)}>  
-                        <option value="normal">{t.posNormal}</option>  
-                        <option value="top">{t.posTop}</option>  
-                      </select>  
-                      <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>  
-                        {t.addProductBtn}  
-                      </button>  
+                      <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>{t.addProductBtn}</button>  
                     </form>  
                     <div style={{ marginTop: '1.5rem' }}>  
-                      <h4 style={{ marginBottom: '0.5rem' }}>سڕینەوەی کاڵاکان</h4>  
+                      <h4 style={{ marginBottom: '0.5rem' }}>بەڕێوەبردنی کاڵاکان</h4>  
                       <div style={{ maxHeight: '150px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>  
                         {products.map(p => (  
-                          <div key={p.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(255,255,255,0.05)', padding: '0.4rem 0.8rem', borderRadius: '8px' }}>  
-                            <span style={{ fontSize: '0.8rem' }}>{p.name}</span>  
-                            <button onClick={() => handleDeleteProduct(p.id)} style={{ color: '#ef4444', fontSize: '0.8rem', background: 'none', border: 'none', cursor: 'pointer' }}>  
-                              {t.deleteProduct}  
-                            </button>  
+                          <div key={p.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(255,255,255,0.05)', padding: '0.5rem 0.8rem', borderRadius: '8px' }}>  
+                            <span style={{ fontSize: '0.85rem' }}>{p.name}</span>  
+                            <button onClick={() => handleDeleteProduct(p.id)} style={{ color: '#ef4444', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer' }}>{t.deleteProduct}</button>  
                           </div>  
                         ))}  
                       </div>  
@@ -2227,46 +839,36 @@
             </div>  
           )}  
 
+          {/* --- CART MODAL --- */}  
           {isCartOpen && (  
             <div className="modal-overlay" onClick={() => setIsCartOpen(false)}>  
               <div className="modal-content" onClick={(e) => e.stopPropagation()}>  
                 <span className="close-modal" onClick={() => setIsCartOpen(false)}>✕</span>  
                 <h2>{t.cartTitle}</h2>  
                 {cartItems.length === 0 ? (  
-                  <p style={{ color: 'var(--neutral-400)', marginTop: '1rem', textAlign: 'center' }}>{t.emptyCart}</p>  
+                  <p style={{ color: 'var(--neutral-400)', marginTop: '1.5rem', textAlign: 'center' }}>{t.emptyCart}</p>  
                 ) : (  
                   <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>  
                     <div style={{ maxHeight: '200px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>  
                       {cartItems.map(item => (  
-                        <div key={item.product.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(255,255,255,0.05)', padding: '0.5rem', borderRadius: '8px' }}>  
+                        <div key={item.product.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(255,255,255,0.05)', padding: '0.6rem', borderRadius: '8px' }}>  
                           <div>  
                             <div style={{ fontSize: '0.9rem', fontWeight: 'bold' }}>{item.product.name}</div>  
                             <div style={{ fontSize: '0.8rem', color: 'var(--neutral-400)' }}>${item.product.price}</div>  
                           </div>  
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>  
-                            <button onClick={() => handleDecreaseQty(item.product.id)} className="btn-glass" style={{ padding: '0.2rem 0.5rem', borderRadius: '4px' }}>-</button>  
-                            <span>{item.quantity}</span>  
-                            <button onClick={() => handleIncreaseQty(item.product.id)} className="btn-glass" style={{ padding: '0.2rem 0.5rem', borderRadius: '4px' }}>+</button>  
-                            <button onClick={() => handleRemoveCartItem(item.product.id)} style={{ color: '#ef4444', background: 'none', border: 'none', cursor: 'pointer', marginLeft: '0.5rem' }}>✕</button>  
-                          </div>  
+                          <span>x{item.quantity}</span>  
                         </div>  
                       ))}  
                     </div>  
                     <div style={{ borderTop: '1px solid var(--glass-border)', paddingTop: '0.75rem', display: 'flex', justifyContent: 'space-between', fontWeight: 'bold' }}>  
-                      <span>کۆی گشتی:</span>  
+                      <span>کۆی گشتی / Total:</span>  
                       <span>${cartItems.reduce((acc, item) => acc + (item.product.price * item.quantity), 0)}</span>  
                     </div>  
                     <div className="admin-form">  
                       <input type="text" className="admin-input" placeholder={t.fullNameLabel} value={fullName} onChange={(e) => setFullName(e.target.value)} />  
                       <input type="text" className="admin-input" placeholder={t.addressLabel} value={address} onChange={(e) => setAddress(e.target.value)} />  
                       <input type="text" className="admin-input" placeholder={t.phoneLabel} value={phone} onChange={(e) => setPhone(e.target.value)} />  
-                      <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }} onClick={() => {  
-                        alert(t.orderSuccess);  
-                        setCartItems([]);  
-                        setIsCartOpen(false);  
-                      }}>  
-                        {t.confirmOrder}  
-                      </button>  
+                      <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }} onClick={() => { alert(t.orderSuccess); setCartItems([]); setIsCartOpen(false); }}>{t.confirmOrder}</button>  
                     </div>  
                   </div>  
                 )}  
@@ -2274,26 +876,20 @@
             </div>  
           )}  
   
+          {/* --- PRODUCT DETAILS MODAL --- */}  
           {selectedProductDetails && (  
             <div className="modal-overlay" onClick={() => setSelectedProductDetails(null)}>  
               <div className="modal-content" onClick={(e) => e.stopPropagation()}>  
                 <span className="close-modal" onClick={() => setSelectedProductDetails(null)}>✕</span>  
                 <h2>{selectedProductDetails.name}</h2>  
-                <img src={selectedProductDetails.images[0]} alt={selectedProductDetails.name} style={{ width: '100%', borderRadius: '12px', margin: '1rem 0', maxHeight: '200px', objectFit: 'cover' }} />  
-                <p style={{ color: 'var(--neutral-300)', marginBottom: '0.5rem' }}>{t.specsTitle}:</p>  
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem', marginBottom: '1rem' }}>  
-                  {selectedProductDetails.specs.map((s, idx) => (  
-                    <span key={idx} className="product-spec">{s}</span>  
-                  ))}  
+                <img src={selectedProductDetails.images[0]} alt={selectedProductDetails.name} style={{ width: '100%', borderRadius: '12px', margin: '1rem 0', maxHeight: '220px', objectFit: 'cover' }} />  
+                <p style={{ color: 'var(--neutral-300)', marginBottom: '0.5rem', fontWeight: '600' }}>{t.specsTitle}:</p>  
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1.25rem' }}>  
+                  {selectedProductDetails.specs.map((s, idx) => <span key={idx} className="product-spec">{s}</span>)}  
                 </div>  
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>  
-                  <span style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>${selectedProductDetails.price}</span>  
-                  <button className="btn btn-primary" onClick={() => {  
-                    handleAddToCart(selectedProductDetails);  
-                    setSelectedProductDetails(null);  
-                  }}>  
-                    {t.addToCart}  
-                  </button>  
+                  <span style={{ fontSize: '1.4rem', fontWeight: '800' }}>${selectedProductDetails.price}</span>  
+                  <button className="btn btn-primary" onClick={() => { handleAddToCart(selectedProductDetails); setSelectedProductDetails(null); }}>{t.addToCart}</button>  
                 </div>  
               </div>  
             </div>  
