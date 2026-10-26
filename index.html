@@ -71,9 +71,13 @@
     }
 
     .intro-logo-container {
-      position: relative; width: 260px; height: 260px; border-radius: 50%; overflow: hidden;
+      position: relative; width: 220px; height: 220px; border-radius: 50%; overflow: hidden;
       animation: logoExpandAndReveal 5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       box-shadow: 0 0 80px rgba(0, 162, 255, 0.4);
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .intro-logo-img { width: 100%; height: 100%; object-fit: cover; }
@@ -188,7 +192,6 @@
     .slider-nav-arrow.prev-arrow { right: 12px; }
     .slider-nav-arrow.next-arrow { left: 12px; }
 
-    /* بەشی ناوەڕاست (بەرهەمە هەڵبژاردراوەکان لەگەڵ ٤ بەرهەم لە تەنیشت یەکدی) */
     .mid-featured-section {
       width: 100%;
       background: linear-gradient(135deg, rgba(25, 25, 30, 0.9), rgba(10, 10, 12, 0.95));
@@ -473,7 +476,6 @@
     .footer { padding: 1.5rem 0 4rem; border-top: 1px solid var(--glass-border); width: 100%; }
     .footer-bottom { display: flex; justify-content: center; align-items: center; text-align: center; color: var(--neutral-400); font-size: 0.8rem; }
 
-    /* Modal general wrapper for safety on mobile */
     .modal-content {
       background: #0e0e11;
       border: 1px solid rgba(255, 255, 255, 0.12);
@@ -514,7 +516,7 @@
 <body>    
   <div class="intro-splash-screen">
     <div class="intro-logo-container">
-      <img src="logo.png" alt="Hama Tech Logo" class="intro-logo-img" />
+      <img src="logo.png" alt="Hama Tech Logo" class="intro-logo-img" onError="this.src='https://images.pexels.com/photos/8533587/pexels-photo-8533587.jpeg?auto=compress&cs=tinysrgb&h=100&w=100'" />
     </div>
   </div>
 
@@ -917,8 +919,8 @@
             <div className="container">  
               <div className="navbar-white-box">  
                 <a href="#" className="brand" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>  
-                  <div className="brand-logo" style={{ width: '32px', height: '32px', borderRadius: '50%', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.1)' }}>  
-                    <img src="logo.png" alt="logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />  
+                  <div className="brand-logo" style={{ width: '32px', height: '32px', borderRadius: '50%', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.1)', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>  
+                    <img src="logo.png" alt="logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e)=>{e.target.src='https://images.pexels.com/photos/8533587/pexels-photo-8533587.jpeg?auto=compress&cs=tinysrgb&h=100&w=100'}} />  
                   </div>  
                   <span className="brand-name-black">{t.brandName}</span>  
                 </a>  
@@ -979,7 +981,7 @@
 
                     <div className="hero-slide-card" key={carouselImages[activeCarouselIndex]?.id}>  
                       <div className="hero-slide-img-wrap">  
-                        <img src={carouselImages[activeCarouselIndex]?.img} alt={carouselImages[activeCarouselIndex]?.title} className="hero-slide-img" />  
+                        <img src={carouselImages[activeCarouselIndex]?.img} alt={carouselImages[activeCarouselIndex]?.title} className="hero-slide-img" onError={(e)=>{e.target.src='https://images.pexels.com/photos/8533587/pexels-photo-8533587.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'}} />  
                       </div>  
                       <h4 className="hero-slide-title">{carouselImages[activeCarouselIndex]?.title}</h4>  
                       <span className="hero-slide-sub">{carouselImages[activeCarouselIndex]?.subtitle}</span>  
@@ -1314,7 +1316,7 @@
 
                 <div className="daring-brand-logo-row">  
                   <div className="daring-brand-logo-circle">  
-                    <img src="logo.png" alt="brand" />  
+                    <img src="logo.png" alt="brand" onError={(e)=>{e.target.src='https://images.pexels.com/photos/8533587/pexels-photo-8533587.jpeg?auto=compress&cs=tinysrgb&h=100&w=100'}} />  
                   </div>  
                   <span className="daring-brand-text">hama tech</span>  
                 </div>  
