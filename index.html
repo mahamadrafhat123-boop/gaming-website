@@ -65,28 +65,29 @@
 
     .intro-splash-screen {
       position: fixed; inset: 0;
-      background: radial-gradient(circle at center, #0a192f 0%, #02060f 70%, #000000 100%);
+      background: radial-gradient(circle at center, #020617 0%, #000000 70%, #000000 100%);
       z-index: 99999; display: flex; align-items: center; justify-content: center;
-      animation: splashFadeOut 1s ease 5s forwards; pointer-events: none;
+      animation: splashFadeOut 1s ease 4.5s forwards; pointer-events: none;
     }
 
     .intro-logo-container {
       position: relative; width: 220px; height: 220px; border-radius: 50%; overflow: hidden;
-      animation: logoExpandAndReveal 5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-      box-shadow: 0 0 80px rgba(0, 162, 255, 0.4);
+      animation: logoExpandAndReveal 4.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      box-shadow: 0 0 90px rgba(0, 162, 255, 0.6);
       background: #000;
       display: flex;
       align-items: center;
       justify-content: center;
+      border: 2px solid rgba(0, 162, 255, 0.5);
     }
 
     .intro-logo-img { width: 100%; height: 100%; object-fit: cover; }
 
     .intro-logo-container::after {
       content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0) 100%);
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
       transform: rotate(30deg) translateX(-100%);
-      animation: whiteGlowSweep 2s ease-in-out 0.5s infinite;
+      animation: whiteGlowSweep 2s ease-in-out infinite;
     }
 
     @keyframes whiteGlowSweep {
@@ -97,8 +98,8 @@
     @keyframes logoExpandAndReveal {
       0% { transform: scale(0.4); opacity: 0; }
       20% { transform: scale(1.05); opacity: 1; box-shadow: 0 0 100px rgba(255, 255, 255, 0.8); }
-      85% { transform: scale(1); opacity: 1; box-shadow: 0 0 60px rgba(0, 162, 255, 0.6); }
-      100% { transform: scale(4.5); opacity: 0; box-shadow: 0 0 150px rgba(255, 255, 255, 0); }
+      85% { transform: scale(1); opacity: 1; box-shadow: 0 0 70px rgba(0, 162, 255, 0.8); }
+      100% { transform: scale(4.5); opacity: 0; box-shadow: 0 0 150px rgba(0, 162, 255, 0); }
     }
 
     @keyframes splashFadeOut {
@@ -516,29 +517,9 @@
 <body>    
   <div class="intro-splash-screen">
     <div class="intro-logo-container">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" 
-           data-logo="85469_2.png" 
-           alt="Hama Tech Logo" 
-           class="intro-logo-img" 
-           id="splashLogoImg" />
+      <img src="logo.png" alt="Hama Tech Logo" class="intro-logo-img" />
     </div>
   </div>
-
-  <script>
-    // ئەم سکریپتە دڵنیای دەکاتەوە کە لۆگۆکە بێ کەلێن لەسەر هەموو مۆبایلێک بە سەرکەوتوویی بار دەبێت
-    window.addEventListener('DOMContentLoaded', () => {
-      const imgElement = document.getElementById('splashLogoImg');
-      const actualImg = new Image();
-      actualImg.src = "85469_2.png";
-      actualImg.onload = function() {
-        imgElement.src = "85469_2.png";
-      };
-      actualImg.onerror = function() {
-        // ئەگەر فایلەکە نەدۆزرایەوە، وێنەیەکی بەلەنگەری یان لینکی جێگیر بەکار دەهێنێت
-        imgElement.src = "https://images.pexels.com/photos/8533587/pexels-photo-8533587.jpeg?auto=compress&cs=tinysrgb&h=150&w=150";
-      };
-    });
-  </script>
 
   <div class="bg-animated"></div>    
   <div class="bg-blobs">  
@@ -571,7 +552,7 @@
     ];
 
     const initialDefaultCarousel = [  
-      { id: 101, title: 'hama tech Gaming Setup', subtitle: 'Ultimate Gaming Station • RGB • RTX 4090', img: '85469_2.png' },  
+      { id: 101, title: 'hama tech Gaming Setup', subtitle: 'Ultimate Gaming Station • RGB • RTX 4090', img: 'logo.png' },  
       { id: 102, title: 'Razer DeathAdder V3 Pro (Mouse)', subtitle: 'Focus Pro 30K • Wireless • 63g', img: 'https://images.pexels.com/photos/5082579/pexels-photo-5082579.jpeg?auto=compress&cs=tinysrgb&h=650&w=940' },  
       { id: 103, title: 'Polatin Pro RGB (Keyboard)', subtitle: 'Mechanical Switches • Aluminum Frame', img: 'https://images.pexels.com/photos/1772123/pexels-photo-1772123.jpeg?auto=compress&cs=tinysrgb&h=650&w=940' },  
       { id: 104, title: 'ROG Zephyrus G16 (Laptop)', subtitle: 'AMD Ryzen 9 • RTX 4070 • 165Hz', img: 'https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=650&w=940' },  
@@ -940,7 +921,7 @@
               <div className="navbar-white-box">  
                 <a href="#" className="brand" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>  
                   <div className="brand-logo" style={{ width: '32px', height: '32px', borderRadius: '50%', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.1)', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>  
-                    <img src="85469_2.png" alt="logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e)=>{e.target.src='https://images.pexels.com/photos/8533587/pexels-photo-8533587.jpeg?auto=compress&cs=tinysrgb&h=100&w=100'}} />  
+                    <img src="logo.png" alt="logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />  
                   </div>  
                   <span className="brand-name-black">{t.brandName}</span>  
                 </a>  
@@ -1001,7 +982,7 @@
 
                     <div className="hero-slide-card" key={carouselImages[activeCarouselIndex]?.id}>  
                       <div className="hero-slide-img-wrap">  
-                        <img src={carouselImages[activeCarouselIndex]?.img} alt={carouselImages[activeCarouselIndex]?.title} className="hero-slide-img" onError={(e)=>{e.target.src='85469_2.png'}} />  
+                        <img src={carouselImages[activeCarouselIndex]?.img} alt={carouselImages[activeCarouselIndex]?.title} className="hero-slide-img" />  
                       </div>  
                       <h4 className="hero-slide-title">{carouselImages[activeCarouselIndex]?.title}</h4>  
                       <span className="hero-slide-sub">{carouselImages[activeCarouselIndex]?.subtitle}</span>  
@@ -1336,7 +1317,7 @@
 
                 <div className="daring-brand-logo-row">  
                   <div className="daring-brand-logo-circle">  
-                    <img src="85469_2.png" alt="brand" onError={(e)=>{e.target.src='https://images.pexels.com/photos/8533587/pexels-photo-8533587.jpeg?auto=compress&cs=tinysrgb&h=100&w=100'}} />  
+                    <img src="logo.png" alt="brand" />  
                   </div>  
                   <span className="daring-brand-text">hama tech</span>  
                 </div>  
