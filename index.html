@@ -516,9 +516,29 @@
 <body>    
   <div class="intro-splash-screen">
     <div class="intro-logo-container">
-      <img src="85469_2.png" alt="Hama Tech Logo" class="intro-logo-img" onError="this.src='logo.png'" />
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" 
+           data-logo="85469_2.png" 
+           alt="Hama Tech Logo" 
+           class="intro-logo-img" 
+           id="splashLogoImg" />
     </div>
   </div>
+
+  <script>
+    // ئەم سکریپتە دڵنیای دەکاتەوە کە لۆگۆکە بێ کەلێن لەسەر هەموو مۆبایلێک بە سەرکەوتوویی بار دەبێت
+    window.addEventListener('DOMContentLoaded', () => {
+      const imgElement = document.getElementById('splashLogoImg');
+      const actualImg = new Image();
+      actualImg.src = "85469_2.png";
+      actualImg.onload = function() {
+        imgElement.src = "85469_2.png";
+      };
+      actualImg.onerror = function() {
+        // ئەگەر فایلەکە نەدۆزرایەوە، وێنەیەکی بەلەنگەری یان لینکی جێگیر بەکار دەهێنێت
+        imgElement.src = "https://images.pexels.com/photos/8533587/pexels-photo-8533587.jpeg?auto=compress&cs=tinysrgb&h=150&w=150";
+      };
+    });
+  </script>
 
   <div class="bg-animated"></div>    
   <div class="bg-blobs">  
@@ -920,7 +940,7 @@
               <div className="navbar-white-box">  
                 <a href="#" className="brand" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>  
                   <div className="brand-logo" style={{ width: '32px', height: '32px', borderRadius: '50%', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.1)', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>  
-                    <img src="85469_2.png" alt="logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e)=>{e.target.src='logo.png'}} />  
+                    <img src="85469_2.png" alt="logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e)=>{e.target.src='https://images.pexels.com/photos/8533587/pexels-photo-8533587.jpeg?auto=compress&cs=tinysrgb&h=100&w=100'}} />  
                   </div>  
                   <span className="brand-name-black">{t.brandName}</span>  
                 </a>  
@@ -1316,7 +1336,7 @@
 
                 <div className="daring-brand-logo-row">  
                   <div className="daring-brand-logo-circle">  
-                    <img src="85469_2.png" alt="brand" onError={(e)=>{e.target.src='logo.png'}} />  
+                    <img src="85469_2.png" alt="brand" onError={(e)=>{e.target.src='https://images.pexels.com/photos/8533587/pexels-photo-8533587.jpeg?auto=compress&cs=tinysrgb&h=100&w=100'}} />  
                   </div>  
                   <span className="daring-brand-text">hama tech</span>  
                 </div>  
